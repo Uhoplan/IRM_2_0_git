@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Станина в сборе
+NodeClass: Object
+BrowseName: 1:Станина в сборе
+DisplayName: en|Станина в сборе
+Description: en|Станина в сборе
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.Станина в сборе

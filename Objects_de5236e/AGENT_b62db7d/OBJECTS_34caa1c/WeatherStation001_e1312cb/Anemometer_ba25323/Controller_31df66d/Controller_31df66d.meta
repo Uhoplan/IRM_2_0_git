@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WeatherStation001.Anemometer.Controller
+NodeClass: Variable
+BrowseName: 1:Controller
+DisplayName: en|Controller
+Description: en|Controller
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=ObjectTypes.PROJECT.WeatherStationAnemometerType.Controller.RelMirrorInputOutput

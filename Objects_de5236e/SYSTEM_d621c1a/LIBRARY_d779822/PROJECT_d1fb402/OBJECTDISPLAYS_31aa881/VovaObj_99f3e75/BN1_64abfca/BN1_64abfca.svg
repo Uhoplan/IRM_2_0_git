@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" height="421.17" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="253.16">
+ <defs/>
+ <metadata>
+  <atv:parameter substitute="" name="BigBN1" desc="Ходы насоса" behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_1" valuetype="address"/>
+  <atv:parameter name="SmallBN1" desc="Расход БН1" behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_2" valuetype="address"/>
+  <atv:parameter name="MaxBar " desc="Максимальное ограничение " behavior="optional" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="MinBar" desc="Минимальное ограничение " behavior="optional" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="MaxBig" desc="Макс. боль. парам." behavior="optional" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="MaxSmall" desc="Макс.мал.парам." behavior="optional" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="Visability" desc="Видимость ограничений" behavior="optional" defaultvalue="true" valuetype="bool"/>
+  <atv:parameter name="MaxBarSmall" desc="Максимальное значение внутреннего " behavior="optional" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="MinBarSmall" desc="Минимальное значение внутреннего " behavior="hidden" defaultvalue="" valuetype="address"/>
+  <atv:parameter name="VisabilitySmall" desc="Видимость внутреннего круга " behavior="optional" defaultvalue="true" valuetype="bool"/>
+  <atv:gridconfig enabled="false" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="100" atv:refpy="207.507" height="400" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="7.507" id="id_0" width="200" x="0">
+  <atv:argument name="base" prefix="BigBN1"/>
+  <atv:argument name="MaxValue" value="" prefix="MaxBig"/>
+  <atv:argument name="MaxBar" value="" prefix="MaxBar "/>
+  <atv:argument name="MinBar" value="" prefix="MinBar"/>
+  <atv:argument name="Visability" value="" prefix="Visability"/>
+ </svg>
+ <svg atv:refpx="113.81" transform="matrix(0.8525,0,0,0.8785,0,0)" atv:refpy="208.978" height="400" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="37.879" id="id_1" width="200" x="33.506">
+  <atv:argument name="base" prefix="SmallBN1"/>
+  <atv:argument name="MaxValue" value="" prefix="MaxSmall"/>
+  <atv:argument name="MaxBar" value="" prefix="MaxBarSmall"/>
+  <atv:argument name="MinBar" value="" prefix="MinBarSmall"/>
+  <atv:argument name="Visability" value="" prefix="VisabilitySmall"/>
+ </svg>
+ <rect atv:refpx="198.373" atv:refpy="210.12" height="332.934" stroke-width="0" y="43.652" fill="#1f1f1f" id="id_9" stroke="none" width="16.933" x="189.907"/>
+ <rect atv:refpx="199.682" atv:refpy="24.759" height="16" stroke-width="0" y="16.759" fill="#1f1f1f" id="id_10" stroke="none" width="12.336" x="193.514"/>
+ <rect atv:refpx="200.453" atv:refpy="389.048" height="15" stroke-width="0" y="382.994" fill="#1f1f1f" id="id_11" stroke="none" width="12.336" x="194.285"/>
+ <circle atv:refpx="240.156" r="10" cy="15.663" atv:refpy="15.663" stroke-width="0" fill="#1ec9ad" id="id_12" stroke="#0000ff" cx="218.156"/>
+ <foreignObject height="35.984" y="150.337" id="id_8" width="77.567" x="71.17">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Расход</p>
+   <br/>
+   <p style="margin:0">БН1 (л/с)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="27.188" y="188.722" id="id_14" width="64.774" x="72.369">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0" id="first">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="17.273" y="397.273" id="id_16" width="135.623" x="0">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Ходы (ход/мин)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="39.663" y="360.169" id="id_17" width="82.846" x="6.515">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0" id="second">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="45.581" y="6.2" id="id_2" width="67.172" x="0">
+  <div style="width:100%;height:100%;color:white;font-size:1.45rem;font-weight:bold" id="leb" xmlns="http://www.w3.org/1999/xhtml">
+БН1
+</div>
+ </foreignObject>
+ <script type="text/ecmascript"><![CDATA[//webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_3", "nodeId":webMI.query["BigBN1"]});
+//webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_7", "nodeId":webMI.query["SmallBN1"]});
+
+
+
+webMI.data.subscribe(webMI.query["SmallBN1"], function(e) {
+document.getElementById('first').innerHTML = e.value.toFixed(1)
+
+});
+webMI.data.subscribe(webMI.query["BigBN1"], function(e) {
+document.getElementById('second').innerHTML = e.value.toFixed(1)
+
+});
+webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.APDWorking", function(e) {
+var value = e.value;
+if (value == true)
+	document.getElementById('leb').style.color="#1fc9ae"
+if (value == false)
+	document.getElementById('leb').style.color="#36404a"
+
+});]]></script>
+</svg>

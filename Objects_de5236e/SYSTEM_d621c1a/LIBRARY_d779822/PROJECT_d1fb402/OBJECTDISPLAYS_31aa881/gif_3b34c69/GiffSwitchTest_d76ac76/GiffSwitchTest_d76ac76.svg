@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="90" xmlns:xlink="http://www.w3.org/1999/xlink" height="240" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:parameter defaultvalue="AGENT.OBJECTS.SimulatedData.double_1" name="address" behavior="optional" valuetype="address"/>
+  <atv:gridconfig width="20" enabled="true" gridstyle="lines" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <image y="0" transform="matrix(0.5,0,0,0.5,0,0)" width="180" atv:refpy="198.994" xlink:href="../../gifs/drilling.gif" atv:refpx="45.178" x="0" height="480" id="id_drilling"/>
+ <g transform="matrix(0.5,0,0,0.5,485.757,12.0105)" atv:refpy="205.881" atv:refpx="42.964" id="id_washing">
+  <g atv:refpy="215.979" atv:refpx="-881.514" id="id_8">
+   <image y="-24.021" width="180" atv:refpy="215.979" xlink:href="../../gifs/washing.gif" atv:refpx="-881.514" x="-971.514" height="480" id="id_3"/>
+  </g>
+ </g>
+ <image y="0" transform="matrix(0.5,0,0,0.5,0,0)" width="180" atv:refpy="176.653" xlink:href="../../gifs/UP.gif" atv:refpx="44.084" x="0" height="480" id="id_up"/>
+ <image y="0" transform="matrix(0.5,0,0,0.5,0,0)" width="180" atv:refpy="182.869" xlink:href="../../gifs/DOWN.gif" atv:refpx="44.852" x="0" height="480" id="id_down"/>
+ <script type="text/ecmascript"><![CDATA[
+
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_drilling";
+var value = JSON.parse(e.value);
+
+if (value.oper == "БУРЕНИЕ")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+});
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_washing";
+var value = JSON.parse(e.value);
+
+if (value.oper == "ПРОМЫВКА" || value.oper == "ПРОРАБОТКА")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+});
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_down";
+var value = JSON.parse(e.value);
+/*
+if (value.oper == "СПО" && value.suboper == "СПУСК")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+*/
+webMI.gfx.setVisible(id, false);
+});
+
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_up";
+var value = JSON.parse(e.value);
+
+if ((value.oper == "СПО") || value.oper == "Неопределенный" || value.oper == "Постановка" || value.oper == "ШАБЛОНИРОВКА")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+
+});]]></script>
+</svg>

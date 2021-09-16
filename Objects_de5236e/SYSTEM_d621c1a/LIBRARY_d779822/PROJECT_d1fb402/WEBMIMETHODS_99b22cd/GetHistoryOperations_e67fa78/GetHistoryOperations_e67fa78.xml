@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="t1" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="t2" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var from = +t1.postvalues["t1"]; 
+var to = +t2.postvalues["t2"]; 
+var adr = address.postvalues["address"];
+
+var res=[]
+//var day_start=new Date()
+//day_start.setTime(from)
+//var day_end=new Date()
+//day_end.setTime(to)
+var tr=new Date(from)
+
+var now_time=from
+var razn = (24*3600*1000)-(tr.getHours()*3600*1000)-(tr.getMinutes()*60*1000)-(tr.getSeconds()*1000)-tr.getMilliseconds()
+now_time+=razn
+var raw1=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":from,"endT":now_time})
+var now_count=0;
+var now_oper="";
+if (raw1.length==0){
+	now_count=1;
+}
+else{
+	for(var i = 0;i<raw1.length;i++){
+		if(i!=raw1.length-1){
+			var newObj={}
+			newObj.y=0;
+			var dt = new Date()
+			dt.setTime(raw1[i][0])
+			newObj.x=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+			dt.setTime(raw1[i+1][0])
+			newObj.x2=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+			switch(JSON.parse(raw1[i][1]).oper){
+				case "Неопределенный":
+					newObj.color="#999999"
+				break;
+				case "ШАБЛОНИРОВКА":
+					newObj.color="#cc6633"
+				break;
+				case "ПРОРАБОТКА":
+					newObj.color="#666633"
+				break;
+				case "ПРОМЫВКА":
+					newObj.color="#1583dc"
+				break;
+				case "БУРЕНИЕ":
+					newObj.color="#00ff00"
+				break;
+				case "Постановка":  //СПО
+					newObj.color="#ffff00"
+				break;
+				case "СПО":
+					newObj.color="#ffff00"
+				break;
+				case "Разгрузка":
+					newObj.color="#990000"
+				break;
+				case "На клиньях":
+					newObj.color="#9900cc"
+				break;
+				case "Наращивание":
+					newObj.color="#0000c4"
+				break;
+				default:
+					newObj.color="#FFF"
+				break;
+			}
+			res.push(newObj)
+		}
+		else{
+			var newObj={}
+			var dt = new Date()
+			dt.setTime(raw1[i][0])
+			newObj.y=0
+			newObj.x=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+			newObj.x2=100
+			switch(JSON.parse(raw1[i][1]).oper){
+				case "Неопределенный":
+					newObj.color="#999999"
+				break;
+				case "ШАБЛОНИРОВКА":
+					newObj.color="#cc6633"
+				break;
+				case "ПРОРАБОТКА":
+					newObj.color="#666633"
+				break;
+				case "ПРОМЫВКА":
+					newObj.color="#1583dc"
+				break;
+				case "БУРЕНИЕ":
+					newObj.color="#00ff00"
+				break;
+				case "Постановка":  //СПО
+					newObj.color="#ffff00"
+				break;
+				case "СПО":
+					newObj.color="#ffff00"
+				break;
+				case "Разгрузка":
+					newObj.color="#990000"
+				break;
+				case "На клиньях":
+					newObj.color="#9900cc"
+				break;
+				case "Наращивание":
+					newObj.color="#0000c4"
+				break;
+				default:
+					newObj.color="#FFF"
+				break;
+			}
+			res.push(newObj)
+			now_oper=JSON.parse(raw1[i][1]).oper
+		}
+		now_count=1
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+for(var i=now_time;i<to;i+=86400000){
+	var raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":i,"endT":i+86400000})
+	if((raw.length==0)&(now_oper=="")){
+		now_count++;
+	}else if((raw.length==0)&(now_oper!="")){
+		var newObj={}
+		newObj.y=now_count;
+		newObj.x=0
+		if((i+86400000)>to){
+					dt.setTime(Date.now())
+					newObj.x2=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+					console.log(newObj.x2)
+				}
+				else{
+					newObj.x2=100
+				}
+		switch(now_oper){
+				case "Неопределенный":
+					newObj.color="#999999"
+				break;
+				case "ШАБЛОНИРОВКА":
+					newObj.color="#cc6633"
+				break;
+				case "ПРОРАБОТКА":
+					newObj.color="#666633"
+				break;
+				case "ПРОМЫВКА":
+					newObj.color="#1583dc"
+				break;
+				case "БУРЕНИЕ":
+					newObj.color="#00ff00"
+				break;
+				case "Постановка":  //СПО
+					newObj.color="#ffff00"
+				break;
+				case "СПО":
+					newObj.color="#ffff00"
+				break;
+				case "Разгрузка":
+					newObj.color="#990000"
+				break;
+				case "На клиньях":
+					newObj.color="#9900cc"
+				break;
+				case "Наращивание":
+					newObj.color="#0000c4"
+				break;
+				default:
+					newObj.color="#FFF"
+				break;
+			}
+		res.push(newObj)
+		now_count++;
+	}else{
+		if(now_oper!=0){
+			var newObj={}
+			newObj.y=now_count;
+			newObj.x=0
+			var dt=new Date()
+			dt.setTime(raw[0][0])
+			newObj.x2=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+			switch(now_oper){
+				case "Неопределенный":
+					newObj.color="#999999"
+				break;
+				case "ШАБЛОНИРОВКА":
+					newObj.color="#cc6633"
+				break;
+				case "ПРОРАБОТКА":
+					newObj.color="#666633"
+				break;
+				case "ПРОМЫВКА":
+					newObj.color="#1583dc"
+				break;
+				case "БУРЕНИЕ":
+					newObj.color="#00ff00"
+				break;
+				case "Постановка":  //СПО
+					newObj.color="#ffff00"
+				break;
+				case "СПО":
+					newObj.color="#ffff00"
+				break;
+				case "Разгрузка":
+					newObj.color="#990000"
+				break;
+				case "На клиньях":
+					newObj.color="#9900cc"
+				break;
+				case "Наращивание":
+					newObj.color="#0000c4"
+				break;
+				default:
+					newObj.color="#FFF"
+				break;
+			}
+			res.push(newObj)
+		}
+		for(var j = 0;j<raw.length;j++){
+			if(j!=raw.length-1){
+				var newObj={}
+				newObj.y=now_count;
+				var dt=new Date()
+				dt.setTime(raw[j][0])
+				newObj.x=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+				dt.setTime(raw[j+1][0])
+				newObj.x2=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+				switch(JSON.parse(raw[j][1]).oper){
+					case "Неопределенный":
+						newObj.color="#999999"
+					break;
+					case "ШАБЛОНИРОВКА":
+						newObj.color="#cc6633"
+					break;
+					case "ПРОРАБОТКА":
+						newObj.color="#666633"
+					break;
+					case "ПРОМЫВКА":
+						newObj.color="#1583dc"
+					break;
+					case "БУРЕНИЕ":
+						newObj.color="#00ff00"
+					break;
+					case "Постановка":  //СПО
+						newObj.color="#ffff00"
+					break;
+					case "СПО":
+						newObj.color="#ffff00"
+					break;
+					case "Разгрузка":
+						newObj.color="#990000"
+					break;
+					case "На клиньях":
+						newObj.color="#9900cc"
+					break;
+					case "Наращивание":
+						newObj.color="#0000c4"
+					break;
+					default:
+						newObj.color="#FFF"
+					break;
+				}
+				res.push(newObj)
+			}else{
+				var newObj={}
+				var dt=new Date()
+				dt.setTime(raw[j][0])
+				newObj.x=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+				if((i+86400000)>to){
+					dt.setTime(Date.now())
+					newObj.x2=((dt.getHours()*3600)+(dt.getMinutes()*60)+dt.getSeconds())/(24*3600)*100
+					console.log(newObj.x2)
+				}
+				else{
+					newObj.x2=100
+				}
+
+				newObj.y=now_count
+				switch(JSON.parse(raw[j][1]).oper){
+					case "Неопределенный":
+						newObj.color="#999999"
+					break;
+					case "ШАБЛОНИРОВКА":
+						newObj.color="#cc6633"
+					break;
+					case "ПРОРАБОТКА":
+						newObj.color="#666633"
+					break;
+					case "ПРОМЫВКА":
+						newObj.color="#1583dc"
+					break;
+					case "БУРЕНИЕ":
+						newObj.color="#00ff00"
+					break;
+					case "Постановка":  //СПО
+						newObj.color="#ffff00"
+					break;
+					case "СПО":
+						newObj.color="#ffff00"
+					break;
+					case "Разгрузка":
+						newObj.color="#990000"
+					break;
+					case "На клиньях":
+						newObj.color="#9900cc"
+					break;
+					case "Наращивание":
+						newObj.color="#0000c4"
+					break;
+					default:
+						newObj.color="#FFF"
+					break;
+				}
+				res.push(newObj)
+				now_count++;
+				now_oper=JSON.parse(raw[j][1]).oper
+			}
+		}
+	}
+}
+//res=[raw1,now_time,from]
+//if((day_end)
+
+/*var raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":from,"endT":to})
+var res=[]
+var day_start = new Date()
+var day_now = new Date()
+var day_next = new Date()
+day_start.setTime(from)
+day_start=day_start.getDate()+(day_start.getMonth()+1)/100
+for(var i = 0;i<raw.length;i++){
+	if(i!=raw.length-1){
+		day_now.setTime(raw[i][0])
+		var day_now_dm = day_now.getDate()+(day_now.getMonth()+1)/100
+		day_next.setTime(raw[i+1][0])
+		var day_next_dm = day_next.getDate()+(day_next.getMonth()+1)/100
+		//console.log("---",day_now,"----",day_next)
+		var razn=day_next_dm-day_now_dm
+		var std_razn = day_next_dm-day_start
+		
+		if(razn===0){
+			var newObj={}
+			if(std_razn%1===0){
+				newObj.y=std_razn
+			}else{
+				console.log((day_now_dm%1)-(day_start%1))
+			}
+			newObj.x=((day_now.getHours()*3600)+(day_now.getMinutes()*60)+day_now.getSeconds())/86400*100
+			//newObj.x=day_now.getHours()/24*100
+			newObj.x2=((day_next.getHours()*3600)+(day_next.getMinutes()*60)+day_next.getSeconds())/86400*100
+			switch(JSON.parse(raw[i][1]).oper){
+				case "Неопределенный":
+					newObj.color="#999999"
+				break;
+				case "ШАБЛОНИРОВКА":
+					newObj.color="#cc6633"
+				break;
+				case "ПРОРАБОТКА":
+					newObj.color="#666633"
+				break;
+				case "ПРОМЫВКА":
+					newObj.color="#1583dc"
+				break;
+				case "БУРЕНИЕ":
+					newObj.color="#00ff00"
+				break;
+				case "Постановка":  //СПО
+					newObj.color="#ffff00"
+				break;
+				case "СПО":
+					newObj.color="#ffff00"
+				break;
+				case "Разгрузка":
+					newObj.color="#990000"
+				break;
+				case "На клиньях":
+					newObj.color="#9900cc"
+				break;
+				case "Наращивание":
+					newObj.color="#0000c4"
+				break;
+				default:
+					newObj.color="#FFF"
+				break;
+			}
+			res.push(newObj)
+		}
+		else if(razn%1 === 0){
+			console.log("Перенос через день")
+			
+		}
+	}
+}*/
+return(res)]]></code>
+</script>

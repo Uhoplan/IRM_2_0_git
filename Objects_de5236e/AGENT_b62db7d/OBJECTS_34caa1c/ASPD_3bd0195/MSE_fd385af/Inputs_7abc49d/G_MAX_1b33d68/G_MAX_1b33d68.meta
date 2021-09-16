@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE.Inputs.G_MAX
+NodeClass: Variable
+BrowseName: 1:G_MAX
+DisplayName: en|G_MAX
+Description: en|G_MAX
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

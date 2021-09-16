@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Коленчатый вал в сборе.Главный подшипник
+NodeClass: Variable
+BrowseName: 1:Главный подшипник
+DisplayName: en|Главный подшипник
+Description: en|Главный подшипник
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

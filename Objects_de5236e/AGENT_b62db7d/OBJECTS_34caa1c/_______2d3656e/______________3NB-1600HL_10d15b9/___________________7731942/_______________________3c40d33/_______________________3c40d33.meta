@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Коленчатый вал в сборе
+NodeClass: Object
+BrowseName: 1:Коленчатый вал в сборе
+DisplayName: en|Коленчатый вал в сборе
+Description: en|Коленчатый вал в сборе
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.Коленчатый вал в сборе

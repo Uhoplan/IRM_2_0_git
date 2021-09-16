@@ -1,0 +1,1342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015" id="id_43" stroke="#0000ff" stroke-width="0" width="1850" x="0" y="0"/>
+ <foreignObject height="610" id="id_0" width="1491" x="353.305" y="0">
+  <div id="hcontainer" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../highcharts/highcharts.js"/>
+   <script src="../../highcharts/series-label.js"/>
+   <script src="../../highcharts/accessibility.js"/>
+   <figure class="highcharts-figure" style="position:absolute; top:0px; margin-top:0px; width:1300px; height:100%">
+    <div id="GGD_container" style="padding:0px; margin:0px;"/>
+   </figure>
+  </div>
+ </foreignObject>
+ <rect atv:refpx="1702.163" atv:refpy="804.704" fill="#333333" height="376.935" id="id_2" stroke="#000000" stroke-width="2" width="187.116" x="1608.606" y="616.237"/>
+ <rect atv:refpx="1709.569" atv:refpy="523.266" fill="#ffffff" height="30" id="id_3" stroke="#000000" stroke-width="0" width="165" x="1619.07" y="653.266"/>
+ <text atv:refpx="1705.397" atv:refpy="668.136" fill="#000000" font-family="Arial" font-size="12" id="id_4" x="1674.897" y="672.636">00.00.0000</text>
+ <text atv:refpx="1705.5" atv:refpy="629.967" fill="#ffffff" font-family="Arial" font-size="12" id="id_5" x="1664.5" y="634.467">Дата открытия</text>
+ <text atv:refpx="1705.5" atv:refpy="641.205" fill="#ffffff" font-family="Arial" font-size="12" id="id_6" text-anchor="middle" x="1705.5" y="645.705">скважины</text>
+ <rect atv:refpx="1698.549" atv:refpy="608.484" fill="#ffffff" height="30" id="id_7" stroke="#000000" stroke-width="0" width="165" x="1619.05" y="706.484"/>
+ <text atv:refpx="1705.377" atv:refpy="721.354" fill="#000000" font-family="Arial" font-size="12" id="id_8" text-anchor="middle" x="1705.377" y="725.854">00.00.0000</text>
+ <text atv:refpx="1705.48" atv:refpy="694.423" fill="#ffffff" font-family="Arial" font-size="12" id="id_9" text-anchor="middle" x="1705.48" y="698.923">Плановая длительность</text>
+ <rect atv:refpx="1686.195" atv:refpy="618.883" fill="#ffffff" height="30" id="id_11" stroke="#000000" stroke-width="0" width="165" x="1619.696" y="759.883"/>
+ <text atv:refpx="1706.023" atv:refpy="774.753" fill="#000000" font-family="Arial" font-size="12" id="id_12" text-anchor="middle" x="1706.023" y="779.253">00.00.0000</text>
+ <text atv:refpx="1702.126" atv:refpy="747.822" fill="#ffffff" font-family="Arial" font-size="12" id="id_13" text-anchor="middle" x="1702.126" y="752.322">Фактическая длительность</text>
+ <rect atv:refpx="1709.964" atv:refpy="789.735" fill="#ffffff" height="30" id="id_14" stroke="#000000" stroke-width="0" width="165" x="1619.465" y="824.735"/>
+ <text atv:refpx="1705.792" atv:refpy="839.605" fill="#000000" font-family="Arial" font-size="12" id="id_15" text-anchor="middle" x="1705.792" y="844.105">00.00.0000</text>
+ <text atv:refpx="1705.895" atv:refpy="801.436" fill="#ffffff" font-family="Arial" font-size="12" id="id_16" text-anchor="middle" x="1705.895" y="805.936">Глубина забоя</text>
+ <text atv:refpx="1705.895" atv:refpy="812.674" fill="#ffffff" font-family="Arial" font-size="12" id="id_17" text-anchor="middle" x="1705.895" y="817.174">плановая (м)</text>
+ <rect atv:refpx="1709.85" atv:refpy="872.075" fill="#ffffff" height="30" id="id_18" stroke="#000000" stroke-width="0" width="165" x="1619.351" y="889.075"/>
+ <text atv:refpx="1705.678" atv:refpy="903.945" fill="#000000" font-family="Arial" font-size="12" id="id_19" text-anchor="middle" x="1705.678" y="908.445">00.00.0000</text>
+ <text atv:refpx="1705.781" atv:refpy="865.776" fill="#ffffff" font-family="Arial" font-size="12" id="id_20" text-anchor="middle" x="1705.781" y="870.276">Глубина забоя</text>
+ <text atv:refpx="1705.781" atv:refpy="877.014" fill="#ffffff" font-family="Arial" font-size="12" id="id_21" text-anchor="middle" x="1705.781" y="881.514">фактическая (м)</text>
+ <rect atv:refpx="1649.311" atv:refpy="888.151" fill="#ffffff" height="30" id="id_22" stroke="#000000" stroke-width="0" width="165" x="1618.812" y="953.151"/>
+ <text atv:refpx="1705.139" atv:refpy="968.021" fill="#000000" font-family="Arial" font-size="12" id="id_23" text-anchor="middle" x="1705.139" y="972.521">00.00.0000</text>
+ <text atv:refpx="1705.242" atv:refpy="929.852" fill="#ffffff" font-family="Arial" font-size="12" id="id_24" text-anchor="middle" x="1705.242" y="934.352">Глубина</text>
+ <text atv:refpx="1705.242" atv:refpy="941.09" fill="#ffffff" font-family="Arial" font-size="12" id="id_25" text-anchor="middle" x="1705.242" y="945.59">инструмента (м)</text>
+ <foreignObject height="725" id="id_10" width="400" x="0" y="0">
+  <div style="width:100%;height:100%;" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../highcharts/xrange.js"/>
+   <div id="operations_container"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="301.737" id="id_26" width="435" x="0" y="713">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.switch_pie{
+	width:90%;
+	border:0px;	
+	background-color:#333333;
+	color:#26d62b
+}
+.switch_pie:hover{	
+	background-color:#000;
+}
+</style>
+   <button class="switch_pie" id="switchPieChart">График/список</button>
+   <figure class="higcharts-figure" id="pie_figure" style="margin-top:0px;margin-left:0px;display:none">
+    <div id="pie_container"/>
+   </figure>
+   <div id="oper_legend">
+    <br/>
+    <table style="color:white; font-family:Arial; text-align:left; border-spacing:1.5px">
+     <tr>
+      <td style="width:259px;margin-right:7px; text-align:center;">ОПЕРАЦИЯ</td>
+      <td style="width:125px; text-align:center;">ВРЕМЯ (%)</td>
+     </tr>
+     <br/>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#0f0; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Бурение</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_1" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#666633; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Проработка</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_2" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#cc6633; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Шаблонировка</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_3" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#1583dc; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Промывка</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_4" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#0000c4; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Наращивание</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_5" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#9900cc; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>На клиньях</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_6" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#ffff00; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>СПО</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_7" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#990000; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Разгрузка</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_8" style="width:125px; text-align:center;">0</td>
+     </tr>
+     <tr>
+      <td style="width:259px;margin-right:7px;">
+       <div style="padding-left:40px">
+        <div style="width:10px;height:10px;background-color:#999999; display: inline-block; border-radius:50%"/>
+        <div style="display: inline-block">
+         <b>Неопределённый</b>
+        </div>
+       </div>
+      </td>
+      <td id="oper_9" style="width:125px; text-align:center;">0</td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </foreignObject>
+ <rect atv:refpx="128.5" atv:refpy="858.104" fill="#333333" height="250" id="id_27" stroke="#000000" stroke-width="3" width="253" x="2" y="734"/>
+ <rect atv:refpx="328.495" atv:refpy="859" fill="#333333" height="250" id="id_28" stroke="#000000" stroke-width="3" width="125" x="265.995" y="734"/>
+ <rect atv:refpx="1024.979" atv:refpy="753.639" fill="#000000" height="60" id="id_41" stroke="#0000ff" stroke-width="0" width="1086.22" x="475.869" y="756.639"/>
+ <foreignObject height="50" id="id_29" width="1078" x="480" y="761.272">
+  <div id="advance_container" style="width:100%;height:100%; background-color:red" xmlns="http://www.w3.org/1999/xhtml">
+   <figure class="highcharts-figure" style="margin:0">
+    <div id="gotta_go_fast_container"/>
+   </figure>
+  </div>
+ </foreignObject>
+ <text atv:refpx="571.192" atv:refpy="744.015" fill="#ffffff" font-family="Arial" font-size="16" id="id_32" x="488.692" y="748.515">Отклонение   от  нормы   (часы)</text>
+ <rect atv:refpx="755.589" atv:refpy="674.505" fill="#333333" height="24.13" id="id_33" stroke="#0000ff" stroke-width="0" width="84.283" x="713.447" y="730.44"/>
+ <text atv:refpx="755.908" atv:refpy="742.848" fill="#ffff00" font-family="Arial" font-size="16" font-weight="bold" id="id_34" text-anchor="middle" x="755.908" y="748.848">000</text>
+ <text atv:refpx="567.631" atv:refpy="927.223" fill="#ffffff" font-family="Arial" font-size="16" id="id_1" x="487.937" y="931.723">Показатель эффективности</text>
+ <rect atv:refpx="754.834" atv:refpy="918.713" fill="#333333" height="24.13" id="id_30" stroke="#0000ff" stroke-width="0" width="84.283" x="712.692" y="913.648"/>
+ <text atv:refpx="755.153" atv:refpy="926.056" fill="#ffff00" font-family="Arial" font-size="16" font-weight="bold" id="id_31" text-anchor="middle" x="755.153" y="932.056">000</text>
+ <rect atv:refpx="1019.11" atv:refpy="962.792" fill="#000000" height="60" id="id_36" stroke="#0000ff" stroke-width="0" width="1086.22" x="476" y="939.792"/>
+ <text atv:refpx="539.165" atv:refpy="834.057" fill="#ffffff" font-family="Arial" font-size="16" id="id_37" x="487.937" y="838.557">НПВ (часы), итого</text>
+ <rect atv:refpx="754.834" atv:refpy="813.547" fill="#333333" height="24.13" id="id_38" stroke="#0000ff" stroke-width="0" width="84.283" x="712.692" y="820.482"/>
+ <text atv:refpx="755.153" atv:refpy="832.89" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_39" text-anchor="middle" x="755.153" y="838.89">000</text>
+ <rect atv:refpx="1019.11" atv:refpy="857.626" fill="#000000" height="60" id="id_40" stroke="#0000ff" stroke-width="0" width="1086.22" x="476" y="846.626"/>
+ <foreignObject height="129.204" id="id_42" width="857.855" x="637.096" y="574.404">
+  <div style="color:white; font-family: Arial; width:100%;height:100%;justify-content:space-around;display:flex" xmlns="http://www.w3.org/1999/xhtml">
+   <div style="height:100%; display:flex; flex-direction:column; justify-content:center">
+    <div style="display:flex; align-items:center; justify-content:space-around">
+     <img id="db" src="../../GGD_page/button_yellow.png" style="padding-right: 10px; padding-left:20px"/>
+     <div style="font-size:1.3rem;">ПОЛОЖЕНИЕ ДОЛОТА</div>
+    </div>
+    <div style="font-size:0.7rem">ВКЛ/ВЫКЛ</div>
+   </div>
+   <div style="height:100%; display:flex; flex-direction:column; justify-content:center">
+    <div style="display:flex; align-items:center; justify-content:space-around">
+     <img id="pb" src="../../GGD_page/button_white.png" style="padding-right: 10px; padding-left:20px"/>
+     <div style="font-size:1.3rem;">ПО ПРОЕКТУ</div>
+    </div>
+    <div style="font-size:0.7rem">ВКЛ/ВЫКЛ</div>
+   </div>
+   <div style="height:100%; display:flex; flex-direction:column; justify-content:center">
+    <div style="display:flex; align-items:center; justify-content:space-around">
+     <img id="fb" src="../../GGD_page/button_red.png" style="padding-right: 10px; padding-left:20px"/>
+     <div style="font-size:1.3rem;">ФАКТИЧЕСКИ</div>
+    </div>
+    <div style="font-size:0.7rem">ВКЛ/ВЫКЛ</div>
+   </div>
+  </div>
+ </foreignObject>
+ <svg atv:refpx="1726.202" atv:refpy="300.099" height="534" id="id_44" width="150" x="1651.202" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction.Insides" y="39.099"/>
+ <foreignObject height="50" id="id_35" width="1078" x="480" y="944.533">
+  <div id="id_45" style="width:100%;height:100%; background-color:red" xmlns="http://www.w3.org/1999/xhtml">
+   <figure class="highcharts-figure" style="margin:0">
+    <div id="Effecivity_container"/>
+   </figure>
+  </div>
+ </foreignObject>
+ <foreignObject height="50" id="id_47" width="1078" x="480" y="851.184">
+  <div id="id_48" style="width:100%;height:100%; background-color:red" xmlns="http://www.w3.org/1999/xhtml">
+   <figure class="highcharts-figure" style="margin:0">
+    <div id="NPV_container"/>
+   </figure>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var demo=false;
+var GGD_chart = Highcharts.chart(document.getElementById('GGD_container'), {
+    labels: {
+        useHTML: Highcharts.hasBidiBug
+    },
+    chart: {
+      type: 'spline',
+      backgroundColor:'rgba(0,0,0,0)',
+      width:1220,
+      height:610,
+      plotBackgroundColor:'#101010',
+      styledMode:false
+    },
+    title: {
+      text: 'ГРАФИК: ГЛУБИНА/ДЕНЬ',
+      margin:0,
+      style:{
+          color:'#fff'
+      }
+    },
+    xAxis: {
+      type: 'linear',
+      min: 0,
+      title: {
+        text: 'ПРОДОЛЖИТЕЛЬНОСТЬ БУРЕНИЯ (СУТ)',
+        margin:0,
+        style:{
+            color:'#fff',
+            fontSize:'18px'
+        },
+        enabled:false
+      },
+      gridLineWidth:'1px',
+      gridLineColor:'#6e6f70',
+      tickInterval:5,
+      minorTickInterval:1
+    },
+    yAxis: [{
+      title: {
+        text: 'ГЛУБИНА ПО СТВОЛУ (М)',
+        style:{
+            color:'#fff',
+            fontSize:'18px'
+        }
+      },
+      reversed:true,
+      min: 0,
+      gridLineColor:'#6e6f70'
+    },
+    {
+		title:{
+			enabled:false
+		},
+		reversed:true,
+		min: 0,
+		opposite: true,
+		gridLineColor:'#6e6f70'
+    }],
+    tooltip: {
+      /*headerFormat: '<b>{series.name}</b><br>',
+      pointFormat: '{point.x:%e. %b}: {point.y:.2f} m {point.name}'*/
+      formatter: function(){
+		var str="<b>"+this.series.name+"</b><br>"
+		var buf=this.point.name.split(";")
+		str=str+"Дата/Время: "
+		var f = new Date()
+		f.setTime(buf[0])
+		//console.log(f)
+		var fd=f.getHours()
+		if(fd<10){fd="0"+fd}
+		str=str+fd+":"
+		fd=f.getMinutes()
+		if(fd<10){fd="0"+fd}
+		str=str+fd+" "
+		
+		fd=f.getDate()
+		if(fd<10){fd="0"+fd}
+		str=str+fd+"."
+		
+		fd=f.getMonth()+1
+		if(fd<10){fd="0"+fd}
+		str=str+fd+"."
+		
+		fd=f.getFullYear()
+		str=str+fd+"<br>"
+		
+		str=str+"<b>Забой:</b> "
+		str=str+this.y
+		if(buf[1]!=""){
+			str=str+"<br><b>Операция: </b>"
+			str=str+buf[1]
+		}
+		return str
+		//return console.log(this.point.name)     
+      }
+    },
+    legend:{
+        enabled:false
+    },
+  
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        },
+        label:{
+            enabled:false
+        }
+
+      }
+    },
+    credits: {
+        enabled: false
+    },
+  
+    colors: ['#FFF', '#F00', '#FF0'],
+    series: [{
+      name: "План",
+      data: []
+    }, {
+      name: "Факт",
+      data: []
+    }, {
+      name: "Положение долота",
+      data: []
+    }]
+  });
+  
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+var planVis=true;
+var factVis=true;
+var drillVis=true;
+  
+ 
+document.getElementById("pb").addEventListener('click',function(e){
+	if(planVis){
+     GGD_chart.series[0].hide()
+     document.getElementById("pb").setAttribute('src','../../GGD_page/button_gray.png')
+     }else{
+	   GGD_chart.series[0].show()
+	   document.getElementById("pb").setAttribute('src','../../GGD_page/button_white.png')
+     }
+     planVis=!planVis
+     var mx=Math.floor(GGD_chart.axes[0].max*10)/10-1
+	advance_chart.update({xAxis:{max:mx}})
+	Effect_chart.update({xAxis:{max:mx}})
+	NPV_chart.update({xAxis:{max:mx}})
+	mx=Math.floor(GGD_chart.axes[1].max*10)/10
+	GGD_chart.update({yAxis:[{},{max:mx}]})
+	webMI.data.write('AGENT.OBJECTS.RigConstruction.nowMax',mx)
+ })
+ 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ 
+document.getElementById("fb").addEventListener('click',function(e){
+	if(factVis){
+     GGD_chart.series[1].hide()
+     document.getElementById("fb").setAttribute('src','../../GGD_page/button_gray.png')
+     }else{
+	   GGD_chart.series[1].show()
+	   document.getElementById("fb").setAttribute('src','../../GGD_page/button_red.png')
+     }
+     factVis=!factVis
+     var mx=Math.floor(GGD_chart.axes[0].max*10)/10-1
+	advance_chart.update({xAxis:{max:mx}})
+	Effect_chart.update({xAxis:{max:mx}})
+	NPV_chart.update({xAxis:{max:mx}})
+	mx=Math.floor(GGD_chart.axes[1].max*10)/10
+	GGD_chart.update({yAxis:[{},{max:mx}]})
+	webMI.data.write('AGENT.OBJECTS.RigConstruction.nowMax',mx)
+ })
+ 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ 
+document.getElementById("db").addEventListener('click',function(e){
+	if(drillVis){
+     GGD_chart.series[2].hide()
+     document.getElementById("db").setAttribute('src','../../GGD_page/button_gray.png')
+     }else{
+	   GGD_chart.series[2].show()
+	   document.getElementById("db").setAttribute('src','../../GGD_page/button_yellow.png')
+     }
+     drillVis=!drillVis
+     var mx=Math.floor(GGD_chart.axes[0].max*10)/10-1
+	advance_chart.update({xAxis:{max:mx}})
+	Effect_chart.update({xAxis:{max:mx}})
+	NPV_chart.update({xAxis:{max:mx}})
+	mx=Math.floor(GGD_chart.axes[1].max*10)/10
+	GGD_chart.update({yAxis:[{},{max:mx}]})
+	webMI.data.write('AGENT.OBJECTS.RigConstruction.nowMax',mx)
+ })
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ 
+webMI.gfx.setScaledEvents(document.getElementById('GGD_container'),true)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+webMI.data.subscribe("AGENT.OBJECTS.Depth_day_data.start_date", function(e) {
+var id = "id_4";
+var value = new Date();
+value.setTime(e.value)
+//console.log(value)
+var str =""
+var buf=value.getDate()
+if(buf<10){
+	str=str+"0"+buf
+}else{
+	str=str+buf
+}
+str=str+"."
+buf=value.getMonth()
+buf++;
+if(buf<10){
+	str=str+"0"+buf
+}else{
+	str=str+buf
+}
+str=str+"."
+buf=value.getFullYear()
+str=str+buf;
+webMI.gfx.setText(id, str);
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Заполнение 
+
+webMI.data.subscribeBlock(["AGENT.OBJECTS.Depth_day_data.end_date","AGENT.OBJECTS.Depth_day_data.start_date","AGENT.OBJECTS.Depth_day_data.plan_data","AGENT.OBJECTS.IVE50.Well.WellDepth","AGENT.OBJECTS.IVE50.Tool.ToolPosition"], function(e) {
+var id = "id_8";
+var res=e[0].value-e[1].value
+res = Math.floor(res/8640000)/10
+var str=res+" дней"
+webMI.gfx.setText(id, str);
+res = Date.now()-e[1].value
+res = Math.floor(res/8640000)/10
+str=res+" дней"
+webMI.gfx.setText("id_12", str);
+res = JSON.parse(e[2].value)
+res=res[res.length-1].vD
+str=res
+webMI.gfx.setText("id_15", str);
+res=Math.floor(e[3].value*100)/100
+webMI.gfx.setText("id_19", res);
+res=Math.floor(e[4].value*100)/100
+webMI.gfx.setText("id_23", res);
+});
+
+///////////////////////////////////////////////////////////////////////////////////////Заполнение ГГД факт (долото/забой)
+
+webMI.data.read(["AGENT.OBJECTS.Depth_day_data.plan_data","AGENT.OBJECTS.Depth_day_data.end_date","AGENT.OBJECTS.Depth_day_data.start_date"],function(e){
+	var data_raw=JSON.parse(e[0].value)
+	var start_day=e[2].value
+	var end_day=e[1].value
+	var res=[]
+	var plan=[]
+	var fact=[]
+	res=data_raw.map(function(f){
+		var ts=(f.time-start_day)/86400000
+		return {x:ts,y:f.vD,name:f.time+";"+f.opr}
+	})
+	
+	//console.log(res)
+	GGD_chart.series[0].update({data:res})
+	plan=res
+	webMI.data.call("GetHistoryAvrg",{t1:start_day,t2:Date.now(),address:"g:AGENT.OBJECTS.IVE50.Well.WellDepth"},function(f){
+	//console.log(f)
+		res=f.map(function(t){
+		var ts=(Math.floor(t[0])-start_day)/86400000
+		return {x:ts,y:Math.floor(t[1]),name:t[0]+";"}
+		
+	})
+	if(demo){
+	res=[
+	{x: 0.7817290046296296, y: 83, name: "1626005741386.037;"},
+	{x: 0.873454849537037, y: 253, name: "1626013666499.392;"},
+	{x: 0.9519264699074074, y: 348, name: "1626020446447.198;"},
+	{x: 1.0424712847222222, y: 413, name: "1626028269519.425;"},
+	{x: 1.118792638888889, y: 489, name: "1626034863684.998;"},
+	{x: 1.204187025462963, y: 561, name: "1626042241759.228;"},
+	{x: 1.2911338888888888, y: 643, name: "1626049753968.402;"},
+	{x: 1.3691502662037036, y: 730, name: "1626056494583.128;"},
+	{x: 1.459153900462963, y: 805, name: "1626064270897.711;"},
+	{x: 1.540846273148148, y: 897, name: "1626071329118.343;"},
+	{x: 1.625820173611111, y: 972, name: "1626078670863.844;"},
+	{x: 1.700997800925926, y: 1041, name: "1626085166210.717;"},
+	{x: 1.7924923726851851, y: 1075, name: "1626093071341.983;"},
+	{x: 1.8758137847222223, y: 1142, name: "1626100270311.714;"},
+	{x: 1.9571545833333333, y: 1211, name: "1626107298156.902;"},
+	{x: 2.0371472800925927, y: 1283, name: "1626114209525.044;"},
+	{x: 2.1258258912037036, y: 1363, name: "1626121871357.711;"},
+	{x: 2.209161030092593, y: 1439, name: "1626129071513.148;"},
+	{x: 2.2778198032407406, y: 1497, name: "1626135003631.429;"},
+	{x: 2.5240323611111113, y: 1506, name: "1626156276396.937;"},
+	{x: 4.365456956018519, y: 2027, name: "1626315375481.422;"},
+	{x: 4.535435879629629, y: 2337, name: "1626330061660.246;"},
+	{x: 4.625102048611111, y: 2658, name: "1626337808817.029;"},
+	{x: 4.709185104166667, y: 2671, name: "1626345073593.801;"},
+	{x: 4.873467685185185, y: 2702, name: "1626359267608.074;"},
+	{x: 4.9507763194444445, y: 2774, name: "1626365947074.708;"},
+	{x: 5.0425231018518515, y: 2860, name: "1626373873996.704;"},
+	{x: 5.116028090277778, y: 2920, name: "1626380224827.448;"},
+	{x: 10.120882893518518, y: 2927, name: "1626812644282.233;"},
+	{x: 10.20749431712963, y: 2939, name: "1626820127509.743;"},
+	{x: 10.263105462962963, y: 2957, name: "1626824932312.498;"},
+	{x: 10.37004412037037, y: 2981, name: "1626834171812.689;"},
+	{x: 10.458338078703704, y: 2994, name: "1626841800410.59;"},
+	{x: 10.53804306712963, y: 3021, name: "1626848686921.911;"},
+	{x: 10.624462893518519, y: 3034, name: "1626856153594.451;"},
+	{x: 10.694766921296296, y: 3044, name: "1626862227862.196;"},
+	{x: 10.792218564814815, y: 3063, name: "1626870647684.043;"},
+	{x: 10.875950960648149, y: 3091, name: "1626877882163.966;"},{x: 10.980105717592593, y: 3103, name: "1626886881134.103;"},{x: 11.025532581018519, y: 3117, name: "1626890806015.075;"},{x: 11.551185347222223, y: 3130, name: "1626936222414.93;"},{x: 12.767705532407408, y: 3289, name: "1627041329758.26;"},{x: 13.792281296296297, y: 3568, name: "1627129853104.127;"},{x: 13.864634444444444, y: 3983, name: "1627136104416.08;"},{x: 17.501827974537036, y: 4011, name: "1627450357937.511;"},{x: 17.959308796296297, y: 4227, name: "1627450357937.511;"}]
+}
+	GGD_chart.series[1].update({data:res})
+	fact=res
+	setAdvance(plan,fact)
+	
+	for(var i=0;i<plan[plan.length-1].x;i++){
+	}
+	})
+	webMI.data.call("GetHistoryAvrg",{t1:start_day,t2:Date.now(),address:"g:AGENT.OBJECTS.IVE50.Tool.ToolPosition"},function(f){
+	//console.log(f)
+		res=f.map(function(t){
+		var ts=(Math.floor(t[0])-start_day)/86400000
+		return {x:ts,y:Math.floor(t[1]),name:t[0]+";"}
+		
+	})
+	if(demo){res=[{x: 0.6244624537037037, y: 3, name: "1625992153556.771;"},
+	{x: 0.6962450462962962, y: 19, name: "1625998355572.797;"},
+	{x: 0.7848091666666667, y: 77, name: "1626006007512.427;"},
+	{x: 0.8737096412037038, y: 252, name: "1626013688513.304;"},
+	{x: 0.9576694907407407, y: 347, name: "1626020942644.934;"},
+	{x: 1.0424712847222222, y: 413, name: "1626028269519.425;"},
+	{x: 1.1189089583333334, y: 489, name: "1626034873734.879;"},
+	{x: 1.209150810185185, y: 560, name: "1626042670630.808;"},
+	{x: 1.2924768287037036, y: 643, name: "1626049869998.961;"},
+	{x: 1.3758175347222221, y: 709, name: "1626057070635.684;"},
+	{x: 1.459153900462963, y: 805, name: "1626064270897.711;"},
+	{x: 1.540846273148148, y: 897, name: "1626071329118.343;"},
+	{x: 1.625820173611111, y: 972, name: "1626078670863.843;"},
+	{x: 1.708164699074074, y: 1041, name: "1626085785430.196;"},
+	{x: 1.7924923726851851, y: 1075, name: "1626093071341.983;"},
+	{x: 1.8758137847222223, y: 1142, name: "1626100270311.714;"},
+	{x: 1.9571545833333333, y: 1211, name: "1626107298156.902;"},
+	{x: 2.0424948958333333, y: 1262, name: "1626114671559.368;"},
+	{x: 2.1258258912037036, y: 1363, name: "1626121871357.711;"},
+	{x: 2.209161030092593, y: 1439, name: "1626129071513.148;"},
+	{x: 2.2893460069444442, y: 1483, name: "1626135999495.328;"},
+	{x: 2.375297048611111, y: 1331, name: "1626143425665.416;"},
+	{x: 2.4591805555555557, y: 697, name: "1626150673200.411;"},
+	{x: 2.541575914351852, y: 167, name: "1626157792159.154;"},
+	{x: 2.6254066203703705, y: 1037, name: "1626165035132.504;"},
+	{x: 2.7076638425925927, y: 1335, name: "1626172142156.341;"},
+	{x: 2.792515266203704, y: 961, name: "1626179473319.776;"},
+	{x: 2.8755110069444445, y: 317, name: "1626186644151.046;"},
+	{x: 2.9497023842592593, y: 0, name: "1626193054286.498;"},
+	{x: 3.1211407407407408, y: 485, name: "1626207866560.54;"},{x: 3.208617326388889, y: 796, name: "1626215424537.783;"},{x: 3.292066238425926, y: 1141, name: "1626222634523.068;"},{x: 3.5038897453703703, y: 1392, name: "1626240936074.612;"},{x: 3.7091671759259257, y: 1392, name: "1626258672044.885;"},{x: 4.208304282407408, y: 1393, name: "1626301797490.26;"},{x: 4.292491689814815, y: 1726, name: "1626309071282.641;"},{x: 4.3620391666666665, y: 2027, name: "1626315080184.327;"},{x: 4.457530509259259, y: 2087, name: "1626323330636.732;"},{x: 4.541859849537037, y: 2364, name: "1626330616691.899;"},{x: 4.62534037037037, y: 2656, name: "1626337829408.23;"},{x: 4.709185104166667, y: 2671, name: "1626345073593.801;"},{x: 4.7695821875, y: 2669, name: "1626350291901.271;"},{x: 4.87586800925926, y: 2702, name: "1626359474996.286;"},{x: 4.959060439814815, y: 2773, name: "1626366662822.986;"},{x: 5.0425231018518515, y: 2860, name: "1626373873996.704;"},{x: 5.125082395833333, y: 2896, name: "1626381007119.954;"},{x: 5.209200763888889, y: 1822, name: "1626388274946.898;"},{x: 5.292527905092593, y: 1878, name: "1626395474411.942;"},{x: 5.374481550925926, y: 1930, name: "1626402555206.573;"},{x: 5.4586043981481485, y: 1964, name: "1626409823420.112;"},{x: 5.542540567129629, y: 2022, name: "1626417075505.47;"},{x: 5.62583025462963, y: 2082, name: "1626424271734.662;"},{x: 5.709175474537037, y: 2109, name: "1626431472761.52;"},{x: 5.792556527777778, y: 2133, name: "1626438676884.771;"},{x: 5.8758682986111115, y: 2195, name: "1626445875021.383;"},{x: 5.959130613425926, y: 2236, name: "1626453068885.415;"},{x: 6.0425594328703705, y: 2271, name: "1626460277135.596;"},{x: 6.125878819444444, y: 2314, name: "1626467475930.347;"},{x: 6.209178576388889, y: 2356, name: "1626474673029.311;"},{x: 6.292550300925926, y: 2365, name: "1626481876346.857;"},{x: 6.375893993055556, y: 2395, name: "1626489077241.134;"},{x: 6.459228738425926, y: 2410, name: "1626496277363.477;"},{x: 6.542554050925926, y: 2455, name: "1626503476670.618;"},{x: 6.6258990046296296, y: 2491, name: "1626510677674.344;"},{x: 6.709233449074074, y: 2527, name: "1626517877770.059;"},{x: 6.79239349537037, y: 2558, name: "1626525062798.456;"},{x: 6.8744279629629625, y: 2569, name: "1626532150576.089;"},{x: 6.959237175925926, y: 2572, name: "1626539478092.625;"},{x: 7.042555416666667, y: 2617, name: "1626546676788.069;"},{x: 7.125831122685185, y: 2611, name: "1626553871809.713;"},{x: 7.2092378819444445, y: 2052, name: "1626561078153.885;"},{x: 7.291770925925926, y: 1112, name: "1626568209008.39;"},{x: 7.375094571759259, y: 285, name: "1626575408171.086;"},{x: 7.6076744675925925, y: 274, name: "1626595503074.588;"},{x: 7.703161203703703, y: 522, name: "1626603753128.294;"},{x: 7.792595, y: 881, name: "1626611480208.523;"},{x: 7.874408773148148, y: 1891, name: "1626618548918.392;"},{x: 7.958241134259259, y: 2451, name: "1626625792034.034;"},{x: 8.041148275462962, y: 2494, name: "1626632955211.174;"},{x: 8.124926064814815, y: 2518, name: "1626640193612.27;"},{x: 8.209228657407408, y: 2542, name: "1626647477356.959;"},{x: 8.292588923611111, y: 2561, name: "1626654679683.726;"},{x: 8.375920127314815, y: 2569, name: "1626661879499.476;"},{x: 8.45922045138889, y: 2586, name: "1626669076647.171;"},{x: 8.54170951388889, y: 2590, name: "1626676203702.881;"},{x: 8.62579625, y: 2605, name: "1626683468796.682;"},{x: 8.707106180555556, y: 2614, name: "1626690493974.394;"},{x: 8.7925690625, y: 2616, name: "1626697877967.519;"},{x: 8.875442199074074, y: 2639, name: "1626705038206.076;"},{x: 8.959272303240741, y: 2650, name: "1626712281127.848;"},{x: 9.042607731481482, y: 2679, name: "1626719481308.454;"},{x: 9.125943287037037, y: 2688, name: "1626726681500.596;"},{x: 9.209160972222222, y: 2712, name: "1626733871508.151;"},{x: 9.292368344907407, y: 2723, name: "1626741060625.401;"},{x: 9.375941585648148, y: 2739, name: "1626748281353.882;"},{x: 9.459266828703704, y: 2754, name: "1626755480654.956;"},{x: 9.542532858796296, y: 2779, name: "1626762674839.819;"},{x: 9.625910613425926, y: 2802, name: "1626769878677.222;"},{x: 9.707231863425926, y: 2835, name: "1626776904833.208;"},{x: 9.792616527777778, y: 2854, name: "1626784282068.51;"},{x: 9.87383480324074, y: 2883, name: "1626791299327.964;"},{x: 9.959271215277777, y: 2899, name: "1626798681033.95;"},{x: 10.04259545138889, y: 2904, name: "1626805880247.924;"},{x: 10.12595181712963, y: 2917, name: "1626813082237.934;"},{x: 10.209289756944445, y: 2931, name: "1626820282635.215;"},{x: 10.292068368055556, y: 2944, name: "1626827434707.9;"},{x: 10.375956145833333, y: 2962, name: "1626834682611.217;"},{x: 10.458338078703704, y: 2994, name: "1626841800410.589;"},{x: 10.542543229166666, y: 3020, name: "1626849075735.28;"},{x: 10.625666898148149, y: 3034, name: "1626856257620.097;"},{x: 10.708438796296296, y: 3042, name: "1626863409112.533;"},{x: 10.792625775462962, y: 3061, name: "1626870682867.945;"},{x: 10.875950960648149, y: 3091, name: "1626877882163.965;"},{x: 10.955709131944445, y: 3102, name: "1626884773269.162;"},{x: 11.041422893518519, y: 3115, name: "1626892178938.629;"},{x: 11.125952858796296, y: 3121, name: "1626899482327.137;"},{x: 11.208891840277778, y: 3128, name: "1626906648255.267;"},{x: 11.292483055555556, y: 2682, name: "1626913870536.428;"},{x: 11.374716875, y: 2956, name: "1626920975538.994;"},{x: 11.551185347222223, y: 3005, name: "1626936222414.932;"},{x: 11.625952106481481, y: 3032, name: "1626942682262.542;"},{x: 11.708521956018519, y: 2835, name: "1626949816297.232;"},{x: 11.792259710648148, y: 2351, name: "1626957051239.245;"},{x: 11.875904375, y: 2034, name: "1626964278138.251;"},{x: 11.95868851851852, y: 1726, name: "1626971430688.792;"},{x: 12.042277280092593, y: 708, name: "1626978652757.106;"},{x: 12.11591193287037, y: 0, name: "1626985014791.255;"},{x: 12.290264733796297, y: 9, name: "1627000078873.506;"},{x: 12.375470590277779, y: 457, name: "1627007440659.032;"},{x: 12.458959895833333, y: 822, name: "1627014654135.739;"},{x: 12.542118425925926, y: 1288, name: "1627021839032.005;"},{x: 12.625975902777778, y: 1575, name: "1627029084318.8;"},{x: 12.709261435185185, y: 2194, name: "1627036280188.621;"},{x: 12.767705532407408, y: 2771, name: "1627041329758.262;"},{x: 12.866924247685185, y: 2772, name: "1627049902255.816;"},{x: 13.037578078703703, y: 2741, name: "1627064646746.852;"},{x: 13.106338877314816, y: 1716, name: "1627070587679.144;"},{x: 13.459232268518518, y: 1571, name: "1627101077668.189;"},{x: 13.540728680555555, y: 2015, name: "1627108118958.19;"},{x: 13.625442233796296, y: 2532, name: "1627115438209.89;"},{x: 13.70931951388889, y: 3063, name: "1627122685206.42;"},{x: 13.792281296296297, y: 3568, name: "1627129853104.127;"},{x: 13.875986597222223, y: 3569, name: "1627137085242.027;"},{x: 13.936610891203705, y: 3970, name: "1627142323181.147;"},{x: 15.378506331018519, y: 3298, name: "1627266902947.111;"},{x: 15.858739930555556, y: 3734, name: "1627308395130.648;"},{x: 16.04267777777778, y: 3793, name: "1627324287360.72;"},{x: 16.126045069444444, y: 3809, name: "1627331490294.605;"},{x: 16.209372604166667, y: 3848, name: "1627338689793.506;"},{x: 16.29271707175926, y: 3862, name: "1627345890755.18;"},{x: 16.372101400462963, y: 3898, name: "1627352749561.926;"},{x: 16.709283576388888, y: 3906, name: "1627381882101.846;"},{x: 16.792677974537035, y: 3940, name: "1627389087377.028;"},{x: 16.876021215277778, y: 3965, name: "1627396288233.96;"},{x: 16.959391087962963, y: 3977, name: "1627403491390.769;"},{x: 17.042725243055557, y: 3980, name: "1627410691461.526;"},{x: 17.126024953703705, y: 3985, name: "1627417888556.455;"},{x: 17.20926429398148, y: 3991, name: "1627425080435.95;"},{x: 17.292607766203705, y: 3997, name: "1627432281311.476;"},{x: 17.37605068287037, y: 3996, name: "1627439490779.929;"},{x: 17.457944583333333, y: 4000, name: "1627446566412.193;"},{x: 17.542493680555555, y: 4000, name: "1627453871454.165;"},{x: 17.62601797453704, y: 4022, name: "1627461087953.74;"}]
+	}
+	GGD_chart.series[2].update({data:res})
+
+	var mx=Math.floor(GGD_chart.axes[0].max*10)/10-1
+	advance_chart.update({xAxis:{max:mx}})
+	Effect_chart.update({xAxis:{max:mx}})
+	NPV_chart.update({xAxis:{max:mx}})
+	mx=Math.floor(GGD_chart.axes[1].max*10)/10
+	GGD_chart.update({yAxis:[{},{max:mx}]})
+	webMI.data.write('AGENT.OBJECTS.RigConstruction.nowMax',mx)
+	//console.log(GGD_chart.axes)
+	
+	})
+	
+})
+
+///////////////////////////////////////////////////////////////////////////////////////Диаграмма "Ежедневная сводка операций"
+
+var oper_chart = Highcharts.chart(document.getElementById("operations_container"),{
+  chart: {
+      type: 'xrange',
+      width: 400,
+      height:725,
+      backgroundColor:'#1f1f1f',
+      plotBackgroundColor:'#333333'
+  },
+  tooltip:{
+    formatter: function(){
+      var str=""
+      switch (this.color){
+        case '#999999':
+          str=str + 'Операция: Неопределена'
+        break;
+        case '#9900cc':
+          str=str + 'Операция: На клиньях'
+        break;
+        case '#00ff00':
+          str='Операция: Бурение'
+        break;
+        case '#666633':
+          str="Операция: Проработка"
+        break;
+        case '#cc6633':
+          str="Операция: Шаблонировка"
+        break;
+        case '#0000c4':
+          str="Операция: Наращивание"
+        break;
+        case '#ffff00':
+          str="Операция: СПО"
+        break;
+        case '#990000':
+          str="Операция: Разгрузка"
+        break;
+        case '#1583dc':
+          str="Операция: Промывка"
+        break;
+        default:
+          str="Ошибка определения операции"
+        break;
+      }
+      str=str+'<br/>'
+      str=str+Math.floor(this.x/10*24)/10+'ч - '+Math.floor(this.x2/10*24)/10+'ч'
+      return str
+    }
+  },
+  plotOptions:{
+	series:{
+		turboThreshold:60000
+	}
+  },
+  title: {
+      text: 'ЕЖЕДНЕВНАЯ СВОДКА ОПЕРАЦИЙ',
+      style:{
+        "fontSize":"1.2em",
+        color:'white'
+      },
+      margin:0
+  },
+  legend: {
+    enabled:false
+  },
+  credits:{
+    enabled:false
+  },
+  xAxis: {
+      type: 'linear',
+      labels:{
+        format:'{text}%',
+        style:{
+          color:'white',
+          fontSize:'9px'
+        }
+      },
+      gridLineWidth:1,
+      tickInterval:20,
+      min:0,
+      max:100,
+      opposite:true
+  },
+  yAxis: {
+      max:10,
+      title: {
+          text: ''
+      },
+      labels:{
+        style:{
+          color:'white'
+        }
+      },
+      categories: ['02.07', '03.07', '04.07','05.07','06.07','07.07','08.07'],
+      reversed: true,
+      gridLineWidth:0
+  },
+  series: [{
+      name: 'operData',
+      // pointPadding: 0,
+      // groupPadding: 0,
+      pointWidth: 10,
+      borderRadius:0,
+      borderWidth:0,
+      data: [],
+      dataLabels: {
+          enabled: true
+      }
+  }]
+})
+/////////////////////////////////////////////////////////////////////////////////////// Круговая диаграмма операций
+
+var pie_chart = Highcharts.chart(document.getElementById('pie_container'), {
+	labels: {
+        useHTML: Highcharts.hasBidiBug
+    },
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+        width:391,
+        height:300,
+        backgroundColor:'#000'
+    },
+    title: {
+        text:''
+    },
+    tooltip: {
+		/*headerFormat:'<b>{point.name}</b>',
+        pointFormat: '{point.percentage:.1f}%'*/
+        formatter:function(){
+			var str=''
+			str=str+'<b>'+this.point.name+'</b><br>'
+			str=str+Math.floor(this.point.percentage*100)/100+'%'
+			//console.log(this.point)
+			return str
+        }
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },   
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: []
+    }]
+});
+
+///////////////////////////////////////////////////////////////////////////////////////Диаграмма опережение/отставание
+
+var advance_chart = Highcharts.chart(document.getElementById('gotta_go_fast_container'), {
+  chart: {
+      type: 'column',
+      height:50,
+      width:1078,
+      margin:[0,0,0,0],
+      backgroundColor:'#333333'
+  },
+  title: {
+      text: 'Отклонение от нормы (часы)',
+      style:{
+		"display":"none"
+      },
+      
+  },
+  xAxis: {
+      categories: [],
+      min:0,
+      max:25,
+      labels:{
+		enabled:false
+      },
+      tickInterval:1,
+      gridLineWidth:1,
+      gridLineColor:'#6e6f70'
+  },
+  yAxis: {
+      title: {
+          enabled:false
+      },
+      labels:{
+		enabled:false
+      },
+      tickInterval:2,
+      gridLineColor:'#6e6f70'
+  },
+  legend:{
+    enabled:false
+  },
+  credits:{
+    enabled:false
+  },
+  tooltip: {
+      enabled:false
+  },
+  plotOptions: {
+      column: {
+          pointPadding: 0,
+          borderWidth: 0
+      }
+  },
+  series: [{
+      name: 'Advance',
+      data: [],
+      pointRange:1.5
+
+  }]
+});
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+webMI.gfx.setScaledEvents(document.getElementById('gotta_go_fast_container'), true)
+
+///////////////////////////////////////////////////////////////////ГРАФИК ЭФФЕКТИВНОСТИ
+
+var Effect_chart = Highcharts.chart(document.getElementById('Effecivity_container'), {
+  chart: {
+      type: 'line',
+      height:50,
+      width:1078,
+      margin:[0,0,0,0],
+      backgroundColor:'#333333'
+  },
+  title: {
+      style:{
+		"display":"none"
+      },
+      
+  },
+  xAxis: {
+      categories: [],
+      min:0,
+      max:25,
+      tickInterval:1,
+      gridLineWidth:1,
+      gridLineColor:'#6e6f70',
+      labels:{
+		enabled:false
+      }
+  },
+  yAxis: {
+	min:-0.5,
+	max:0.5,
+      title: {
+          enabled:false
+      },
+      labels:{
+		enabled:false
+      },
+      tickInterval:0.5,
+      gridLineColor:'#6e6f70'
+  },
+  legend:{
+    enabled:false
+  },
+  credits:{
+    enabled:false
+  },
+  tooltip: {
+      enabled:false
+  },
+  plotOptions: {
+      column: {
+          pointPadding: 0,
+          borderWidth: 0
+      }
+  },
+  series: [{
+      name: '',
+      data: [
+        
+      ],
+      zones:[{value:-0.02,color:'#ff0000'},{value:0.02,color:'#0cbce8'},{color:'#00ff00'}]
+
+  }]
+});
+
+/////////////////////////////////////////////////////////////////////////////////////// Запрос и формирование данных для ежедневной сводки операций
+
+webMI.data.read(["AGENT.OBJECTS.Depth_day_data.start_date","AGENT.OBJECTS.Depth_day_data.end_date"],function(e){
+	var update_arr=[]
+	var start = new Date()
+	var end = new Date()
+	if(e[1].value>Date.now()){
+		start.setTime(e[0].value)
+		end.setTime(e[1].value)
+	}
+	else{
+		start.setTime(e[0].value)
+		end.setTime(Date.now())
+	}
+	var ran = (end-start)/86400000
+	if((ran%1)!=0){
+		ran=Math.floor(ran+1)
+	}
+	//console.log(ran)
+	for(var i=0;i<=ran;i++){
+		var str=""
+		var ntp=parseInt(e[0].value)+i*86400000
+		var nd=new Date()
+		nd.setTime(ntp)
+		var buf=nd.getDate()
+		if(buf<10){buf="0"+buf}
+		str=str+buf+'.'
+		buf=nd.getMonth()+1
+		if(buf<10){buf="0"+buf}
+		str=str+buf
+		update_arr.push(str)
+	}
+	//console.log("start: "+start,"end: "+end,"now: "+new Date().setTime(Date.now()))
+	console.log(ran, update_arr)	
+	oper_chart.update({
+		yAxis:{
+			max:ran,
+			categories:update_arr
+		}
+	})
+	
+	webMI.data.call("GetHistoryOperations",{t1:start.getTime(),t2:Date.now(),address:"g:AGENT.OBJECTS.Support.Auto.Operation"},function(f){
+		//for(var i=0;i<f.length;i++){if(f[i].x2<f[i].x){f[i].x2=100}}
+		var tmp = [f[0]]
+		for(var i=1;i<f.length;i++){
+			if((tmp[tmp.length-1].color==f[i].color)&(tmp[tmp.length-1].y==f[i].y)){
+				tmp[tmp.length-1].x2=f[i].x2
+			}else{
+				tmp.push(f[i])
+			}
+		}
+		//console.log(f)
+		//console.log(tmp)
+		f=tmp
+		if(demo){f=[{x:0,x2:35,y:0,color:'#999999'},{x:35,x2:40,y:0,color:'#9900cc'},{x:40,x2:100,y:0,color:'#999999'},{x:0,x2:30,y:1,color:'#999999'},{x:30,x2:38,y:1,color:'#9900cc'},{x:38,x2:40,y:1,color:'#999999'},{x:40,x2:43,y:1,color:'#cc6633'},{x:43,x2:65,y:1,color:'#999999'},{x:65,x2:67,y:1,color:'#9900cc'},{x:67,x2:70,y:1,color:'#999999'},{x:70,x2:80,y:1,color:'#cc6633'},{x:80,x2:100,y:1,color:'#999999'},{x:0,x2:30,y:2,color:'#999999'},{x:30,x2:50,y:2,color:'#cc6633'},{x:50,x2:65,y:2,color:'#9900cc'},{x:65,x2:83,y:2,color:'#ffff00'},{x:83,x2:100,y:2,color:'#999999'},{x:0,x2:50,y:3,color:'#00ff00'},{x:50,x2:62,y:3,color:'#0000c4'},{x:62,x2:81,y:3,color:'#666633'},{x:81,x2:100,y:3,color:'#00ff00'},{x:0,x2:20,y:4,color:'#00ff00'},{x:20,x2:38,y:4,color:'#666633'},{x:38,x2:55,y:4,color:'#0000c4'},{x:55,x2:100,y:4,color:'#00ff00'},{x:0,x2:20,y:5,color:'#00ff00'},{x:20,x2:28,y:5,color:'#666633'},{x:28,x2:50,y:5,color:'#0000c4'},{x:50,x2:100,y:5,color:'#00ff00'},{x:0,x2:25,y:6,color:'#ffff00'},{x:25,x2:60,y:6,color:'#666633'},{x:60,x2:78,y:6,color:'#1583dc'},{x:78,x2:100,y:6,color:'#990000'},{x:0,x2:20,y:7,color:'#ffff00'},{x:20,x2:38,y:7,color:'#1583dc'},{x:38,x2:100,y:7,color:'#990000'},{x:0,x2:25,y:8,color:'#9900cc'},{x:25,x2:60,y:8,color:'#666633'},{x:60,x2:80,y:8,color:'#1583dc'},{x:80,x2:100,y:8,color:'#990000'},{x:0,x2:18,y:9,color:'#999999'},{x:18,x2:75,y:9,color:'#666633'},{x:75,x2:100,y:9,color:'#cc6633'},{x:0,x2:30,y:10,color:'#999999'},{x:30,x2:75,y:10,color:'#0000c4'},{x:75,x2:100,y:10,color:'#990000'},{x:0,x2:35,y:11,color:'#999999'},{x:35,x2:70,y:11,color:'#0000c4'},{x:70,x2:100,y:11,color:'#990000'},{x:0,x2:35,y:12,color:'#999999'},{x:35,x2:70,y:12,color:'#cc6633'},{x:70,x2:100,y:12,color:'#990000'},{x:0,x2:5,y:13,color:'#1583dc'},{x:5,x2:18,y:13,color:'#cc6633'},{x:18,x2:20,y:13,color:'#666633'},{x:20,x2:40,y:13,color:'#ffff00'},{x:40,x2:100,y:13,color:'#00ff00'},{x:0,x2:5,y:14,color:'#1583dc'},{x:15,x2:35,y:14,color:'#00ff00'},{x:35,x2:41,y:14,color:'#999999'},{x:41,x2:57,y:14,color:'#0000c4'},{x:57,x2:60,y:14,color:'#ffff00'},{x:60,x2:100,y:14,color:'#00ff00'},{x:0,x2:5,y:15,color:'#1583dc'},{x:5,x2:17,y:15,color:'#cc6633'},{x:17,x2:21,y:15,color:'#666633'},{x:21,x2:41,y:15,color:'#ffff00'},{x:41,x2:100,y:15,color:'#00ff00'},{x:0,x2:5,y:16,color:'#1583dc'},{x:5,x2:35,y:16,color:'#00ff00'},{x:35,x2:42,y:16,color:'#999999'},{x:42,x2:60,y:16,color:'#666633'},{x:60,x2:100,y:16,color:'#00ff00'},{x:0,x2:5,y:17,color:'#1583dc'},{x:5,x2:25,y:17,color:'#cc6633'},{x:25,x2:60,y:17,color:'#00ff00'},{x:60,x2:100,y:17,color:'#666633'},{x:0,x2:50,y:18,color:'#00ff00'},{x:50,x2:62,y:18,color:'#0000c4'},{x:62,x2:81,y:18,color:'#666633'},{x:81,x2:100,y:18,color:'#00ff00'}]}
+		oper_chart.series[0].update({data:f})
+		console.log(f)
+		var pie_chart_data_raw=f.map(function(t){
+			var newObj={}
+			newObj.prod=t.x2-t.x
+			switch (t.color){
+			    case '#999999':
+		          newObj.oper='Неопределенный'
+		        break;
+		        case '#9900cc':
+		          newObj.oper='На клиньях'
+		        break;
+		        case '#00ff00':
+		          newObj.oper='Бурение'
+		        break;
+		        case '#666633':
+		          newObj.oper='Проработка'
+		        break;
+		        case '#cc6633':
+		          newObj.oper='Шаблонировка'
+		        break;
+		        case '#0000c4':
+		          newObj.oper='Наращивание'
+		        break;
+		        case '#ffff00':
+		          newObj.oper='СПО'
+		        break;
+		        case '#990000':
+		          newObj.oper='Разгрузка'
+		        break;
+ 		       case '#1583dc':
+		          newObj.oper='Промывка'
+		        break;
+		        default:
+		          newObj.oper='Ошибка определения операции'
+		        break;
+		      }
+		   return newObj
+		})
+		//console.log(pie_chart_data_raw)
+		var pie_chart_data_categories=[]
+		var pie_chart_data_numbers=[]
+		var pie_data_max=0
+		pie_chart_data_raw.forEach(function(t){
+			var index=pie_chart_data_categories.indexOf(t.oper)
+			if(index==-1){
+				pie_chart_data_categories.push(t.oper)
+				pie_chart_data_numbers.push(t.prod)
+				pie_data_max+=t.prod
+			}
+			else{
+				pie_chart_data_numbers[index]+=t.prod
+				pie_data_max+=t.prod
+			}
+		})
+		var pie_chart_data=[]
+		pie_chart_data_categories.forEach(function(elem,cnt){
+			var newObj={}
+			newObj.name=elem
+			newObj.y=pie_chart_data_numbers[cnt]/pie_data_max*100
+			switch (elem){
+			    case 'Неопределенный':
+		          newObj.color='#999999'
+		        break;
+		        case 'На клиньях':
+		          newObj.color='#9900cc'
+		        break;
+		        case 'Бурение':
+		          newObj.color='#00ff00'
+		        break;
+		        case 'Проработка':
+		          newObj.color='#666633'
+		        break;
+		        case 'Шаблонировка':
+		          newObj.color='#cc6633'
+		        break;
+		        case 'Наращивание':
+		          newObj.colorr='#0000c4'
+		        break;
+		        case 'СПО':
+		          newObj.colorr='#ffff00'
+		        break;
+		        case 'Разгрузка':
+		          newObj.color='#990000'
+		        break;
+ 		       case 'Промывка':
+		          newObj.color='#1583dc'
+		        break;
+		        default:
+		          newObj.color='#FFF'
+		        break;
+		      }
+			pie_chart_data.push(newObj)
+		})
+		
+		
+		//console.log(pie_chart_data)
+		pie_chart.series[0].update({data:pie_chart_data})
+		pie_chart_data.forEach(function(t){
+			var zn=Math.floor(t.y*100)/100
+			switch(t.name){
+				case 'Неопределенный':
+		          document.getElementById('oper_9').innerHTML=zn
+		        break;
+		        case 'На клиньях':
+		          document.getElementById('oper_6').innerHTML=zn
+		        break;
+		        case 'Бурение':
+		          document.getElementById('oper_1').innerHTML=zn
+		        break;
+		        case 'Проработка':
+		          document.getElementById('oper_2').innerHTML=zn
+		        break;
+		        case 'Шаблонировка':
+		          document.getElementById('oper_3').innerHTML=zn
+		        break;
+		        case 'Наращивание':
+		          document.getElementById('oper_5').innerHTML=zn
+		        break;
+		        case 'СПО':
+		          document.getElementById('oper_7').innerHTML=zn
+		        break;
+		        case 'Разгрузка':
+		          document.getElementById('oper_8').innerHTML=zn
+		        break;
+ 		       case 'Промывка':
+		          document.getElementById('oper_4').innerHTML=zn
+		        break;
+		        default:
+		          console.log('ошибка в блоке операций')
+		        break;
+		      }
+		})
+		/**/
+		
+	})
+	
+	
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////ПЕРЕКЛЮЧЕНИЕ ГРАФИК/СПИСОК
+
+var ChartOn=false
+document.getElementById('switchPieChart').addEventListener('click',function(e){
+	if(ChartOn){
+		document.getElementById('pie_figure').style.display='none'
+		document.getElementById('oper_legend').style.display='block'
+		ChartOn=!ChartOn
+	}else{
+		document.getElementById('pie_figure').style.display='block'
+		document.getElementById('oper_legend').style.display='none'
+		ChartOn=!ChartOn
+	}
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////ОПРЕЖЕНИЕ/ОТСТАВАНИЕ
+
+function setAdvance(plan,fact){
+	//console.log(plan)
+	//console.log(fact)
+	var res=[]
+	for(var i=0;i<fact[fact.length-1].x;i++){
+		res.push("")
+	}
+	fact.forEach(function(e){
+		var cnt=Math.floor(e.x)
+		res[cnt]=e
+	})
+	//console.log(res)
+	
+	var adv_chart_data=[]
+	res.forEach(function(e){
+		var buf=[]
+		for(var i=0;i<plan.length;i++){
+			if(plan[i].y>e.y){
+				buf=[plan[i],plan[i-1]]
+				//console.log(buf)
+				break;
+			}
+		}
+		//console.log(buf)
+		if(buf.length!=0){
+			var elem = ((e.y-buf[1].y)/(buf[0].y-buf[1].y))*(buf[0].x-buf[1].x)+buf[1].x-e.x
+			var res_el={}
+			res_el.y=elem;
+			if(elem>0){res_el.color='#00ccff'}else{res_el.color='#ff0000'}
+			adv_chart_data.push(res_el)
+		}else{
+			if(adv_chart_data.length!=0){
+				var res_el={}
+				if(e.y>=plan[plan.length-1].y){
+					res_el.y = plan.filter(function(f){if(f.y==plan[plan.length-1].y){return f}})[0].x-e.x
+					if(res_el.y>0){res_el.color='#00ccff'}else{res_el.color='#ff0000'}
+				}
+				else{
+					res_el.y=adv_chart_data[adv_chart_data.length-1].y-1
+					res_el.color=adv_chart_data[adv_chart_data.length-1].color
+				}
+				
+				
+				adv_chart_data.push(res_el)
+			}else{
+				adv_chart_data.push({y:-1,color:'#ff0000'})
+			}
+		}
+		
+	})
+	//console.log(adv_chart_data)
+	advance_chart.series[0].update({data:adv_chart_data})
+	setNPV(adv_chart_data)
+	setEffectivity(adv_chart_data)
+	var hours = Math.floor(adv_chart_data[adv_chart_data.length-1].y*24*10)/10
+	if(hours<0){
+		webMI.gfx.setFill('id_34','#ff0000')
+	}else{
+		webMI.gfx.setFill('id_34','#00ccff')
+	}
+	webMI.gfx.setText('id_34', hours);
+}
+
+////////////////////////////////////////////////////////////////ЭФФЕКТИВНОСТЬ
+
+function setEffectivity(raw_data){
+	//console.log(raw_data)
+	var numberOfDays=Math.floor(GGD_chart.axes[0].max*10)/10
+	//console.log(numberOfDays)
+	res=[]
+	numberOfDays--;
+	for(var i=0;i<raw_data.length;i++){
+		var buf=0;
+		var t0=numberOfDays*24
+		var dt=0
+		if(i==0){
+			dt=raw_data[i].y*24
+		}
+		else{
+			dt=(raw_data[i].y-raw_data[i-1].y)*24
+		}
+		if(Math.abs(dt)>24){
+			buf=1.5
+		}else{
+			buf=t0/(t0-((t0/24)*dt))
+		}
+		if(buf>1.5){buf=1.5}
+		if(buf<0.5){buf=0.5}
+		buf=[i-0.5,buf-1]
+		res.push(buf)
+		buf=[i+0.5,buf[1]]
+		res.push(buf)
+		numberOfDays--
+	}
+	//console.log(res)
+	var val=Math.floor((res[res.length-1][1]+1)*100)/100
+	//console.log(val)
+	if(val<1){
+		webMI.gfx.setFill('id_31','#ff0000')
+	}
+	else if(val==1){
+		webMI.gfx.setFill('id_31','#0cbce8')
+	}
+	else{
+		webMI.gfx.setFill('id_31','#00ff00')
+	}
+	webMI.gfx.setText('id_31', val);
+	Effect_chart.series[0].update({data:res})
+}
+
+/////////////////////////////////////////////////////////////////////////////кнопка редактировать НПВ
+
+/*document.getElementById('setNPV').addEventListener('click',function(e){
+	webMI.display.openDisplay('AGENT.DISPLAYS.NewView.ForGGD.NPV_table',webMI.query,'main_frame');
+})*/
+webMI.gfx.setScaledEvents(document.getElementById('NPV_container'),true)
+
+/////////////////////////////////////////////////////////////////////////////ГРАФИК НПВ
+
+var NPV_chart = Highcharts.chart(document.getElementById('NPV_container'), {
+  chart: {
+      type: 'column',
+      height:50,
+      width:1078,
+      margin:[0,0,0,0],
+      backgroundColor:'#333333'
+  },
+  title: {
+      text: 'Отклонение от нормы (часы)',
+      style:{
+		"display":"none"
+      },
+      
+  },
+  xAxis: {
+      categories: [],
+      min:0,
+      max:25,
+      labels:{
+		enabled:false
+      },
+      tickInterval:1,
+      gridLineWidth:1,
+      gridLineColor:'#6e6f70'
+  },
+  yAxis: {
+      min:0,
+      title: {
+          enabled:false
+      },
+      labels:{
+		enabled:false
+      },
+      gridLineWidth:0,
+      //tickInterval:2,
+      //gridLineColor:'#6e6f70'
+  },
+  legend:{
+    enabled:false
+  },
+  credits:{
+    enabled:false
+  },
+  tooltip: {
+      enabled:true,
+      headerFormat:'',
+      pointFormat: '{series.name}: <b>{point.y}</b><br/>',
+      valueSuffix: 'ч'
+      
+  },
+  plotOptions: {
+      column: {
+          pointPadding: 0,
+          borderWidth: 0
+      }
+  },
+  series: [{
+      name: 'НПВ',
+      data: [],
+      color:'red',
+      pointRange:1.5
+
+  }]
+});
+
+/////////////////////////////////////////////////////////////////////////////ЗАПОЛНЕНИЕ ГРАФИКА НПВ
+
+/*webMI.data.read('AGENT.OBJECTS.Depth_day_data.NPV',function(e){
+	var res=[]
+	var NPVsum=0
+	var raw = JSON.parse(e.value)
+	raw.forEach(function(f){
+		res.push({y:parseFloat(f.td2),color:'#f00'})
+		NPVsum+=parseFloat(f.td2)
+	})
+	//console.log(res)
+	webMI.gfx.setText('id_39', NPVsum);
+	NPV_chart.series[0].update({data:res})
+})*/
+function setNPV(data){
+console.log(data)
+	var sum=0;
+	res=[]	
+	/*var res=data.map(function(e){
+		if(e.y<0){
+			sum=sum-(e.y*24)
+			return Math.abs(Math.floor(e.y*24*10)/10)		
+		}
+		else{
+			return 0				
+		}	
+	})*/
+	var t=0;
+	data.forEach(function(e){
+		var buf=t-e.y
+		if((buf>0)&&(e.y<0)){
+			res.push(Math.floor(buf*24*10)/10)
+			sum+=Math.floor(buf*24*10)/10		
+		}
+		else{
+			res.push(0)
+		}	
+		t=e.y
+	})
+	console.log(res,sum)
+	webMI.gfx.setText('id_39',Math.floor(sum*10)/10);
+	NPV_chart.series[0].update({data:res})
+	webMI.data.write("AGENT.OBJECTS.Depth_day_data.NPV",JSON.stringify(res))
+	
+}]]></script>
+</svg>

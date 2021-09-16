@@ -1,0 +1,1 @@
+{"npt":"ПВ","subitem":"БУРЕНИЕ","oper":"Постановка","suboper":"на клинья","opertime":0,"operclr":"#663333","suboperclr":"#FFC4C4"}
