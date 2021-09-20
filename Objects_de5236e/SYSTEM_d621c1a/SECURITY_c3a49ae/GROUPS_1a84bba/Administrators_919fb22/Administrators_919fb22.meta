@@ -8,6 +8,7 @@ Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.ENGINEERING.Login
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessIRMaster
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessReport
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessSettings
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Limitation
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.admin
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.user
 Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

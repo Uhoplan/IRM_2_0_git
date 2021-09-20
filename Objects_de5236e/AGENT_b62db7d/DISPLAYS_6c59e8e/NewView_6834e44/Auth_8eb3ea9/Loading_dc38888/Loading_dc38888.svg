@@ -11,8 +11,7 @@
   <rect atv:refpx="960" atv:refpy="540" fill="#1f1f1f" height="1080.00" id="id_3" width="1920.00" x="0" y="0"/>
  </g>
  <text atv:refpx="863.591" atv:refpy="560" fill="#ffffff" font-family="Arial" font-size="72" id="id_1" x="834.5" y="564.5">Loading...</text>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[console.log(parent.document.location)
-var sessions;
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var sessions;
 var currentSession;
 
 var currentTime = new Date().getTime();
@@ -25,6 +24,79 @@ var filter = {
 	address: ["g:AGENT.OBJECTS.Auth.sessions"],
 	timestamp: ["n:>=" + startT + "<" + endT]
 }
+
+
+var hrefArr = parent.document.location.href.split("?");
+var timeout;
+if (hrefArr.length > 1) {
+	var query = hrefArr[1];
+	
+	query = query.split("&");
+	
+	query = query.map(function(item) {
+		return item.split("=");
+	})
+	
+	//query = Object.fromEntries(query);
+	
+	fetch("https://ir-backend.rigintelpro.ru​/api/v1/webmaster/wm_key", {
+		method: "POST",
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ key: query[1][1] })
+	})
+	.then(function(res) {
+		//console.log(1, res);	
+		return res.json()
+	})
+	.then(function(res) {
+		if (typeof res == "string") {throw new Error("access denied by server(wrong token?)")}
+		localStorage.setItem("access_token", res.access_token);
+		localStorage.setItem("refresh_token", res.refresh_token);
+		p = setTimeout(function() {normalLogin(); console.log("no connection")}, 10000)
+		seamlessLogin(query[2][1]) 
+		//normalLogin()
+	})
+	.catch(function(err){
+		normalLogin();
+	})
+	
+} else normalLogin()
+
+
+/////////////////////////
+function seamlessLogin(name) {
+console.log("seamless")
+	webMI.data.read("AGENT.OBJECTS.Auth.users", function(reserved) {
+		clearTimeout(p)
+		console.log("connection established");
+		reserved = JSON.parse(reserved.value);
+		var username = reserved[name].username;
+		var password = reserved[name].password;
+		webMI.data.login(username, password, function(e) {
+			localStorage.setItem("role", name)
+			if (e[""].hasOwnProperty("username") && e[""].username){ 
+				var timestamp = new Date().getTime();
+				var session = Date.now().toString(36) + Math.random().toString(36).substr(2);
+				var path = "AGENT.OBJECTS.Auth.sessions";
+				var authObject = {
+					password: password,
+					username: username,
+					timestamp: timestamp,
+					session: session
+				};
+				
+				localStorage.setItem("session", btoa(authObject.session + "-" + authObject.timestamp));
+				webMI.display.openDisplay(webMI.query["target"])
+				
+				//return sessionData.timestamp == currentSession.timestamp && sessionData.session == currentSession.session
+			} else webMI.display.openDisplay(webMI.query["auth"])
+		})
+	})
+}
+
+function normalLogin() {
 webMI.data.queryFilter(filter, function(e) {
 	//sessions = e.result;
 	
@@ -55,5 +127,7 @@ webMI.data.queryFilter(filter, function(e) {
 		if (!some) webMI.display.openDisplay(webMI.query["auth"])
 	} else webMI.display.openDisplay(webMI.query["auth"])
 })
+}
+
 ]]></script>
 </svg>

@@ -27,5 +27,5 @@ if(resultRaw.status < 0x40000000){
 		avrVal = sumReq/lenres;
 	}
 }
-return avrVal;]]></code>
+return Number(avrVal);]]></code>
 </script>
