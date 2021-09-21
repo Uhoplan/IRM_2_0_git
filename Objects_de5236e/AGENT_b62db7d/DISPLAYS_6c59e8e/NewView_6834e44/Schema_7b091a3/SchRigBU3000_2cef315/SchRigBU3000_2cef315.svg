@@ -34,6 +34,6 @@
   </div>
  </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[document.getElementById('kanat_zero').addEventListener('click',function(e){
-	webMI.data.write('AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.RunHoursMs',0)
+	webMI.data.write('AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat',0)
 })]]></script>
 </svg>

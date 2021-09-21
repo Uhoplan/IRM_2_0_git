@@ -3,7 +3,7 @@
   <metadata>
     <priority>0</priority>
   </metadata>
-  <parameter name="" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="01:00:00"/>
+  <parameter name="" type="interval" trigger="false" relative="false" value="" offset="00:00:00" interval="01:00:00"/>
   <code><![CDATA[var start_day = new UaNode('AGENT.OBJECTS.Depth_day_data.start_date')
 
 console.log(start_day.value)

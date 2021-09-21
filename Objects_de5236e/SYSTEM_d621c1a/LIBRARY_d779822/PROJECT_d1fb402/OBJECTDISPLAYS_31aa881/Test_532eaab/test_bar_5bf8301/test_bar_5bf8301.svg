@@ -122,7 +122,8 @@ webMI.data.subscribe(bar, function(e) {
 
 webMI.data.subscribe(number, function(e) {
 	webMI.data.read(webMI.query['MaxValue'], function(f) {
-    var max =f.value 
+    var max =f.value
+    var min =0; 
 	//console.log('8=====D',max)
 	var restrict1 = max/100*61;
 	var restrict3 = max/100*81;
@@ -130,6 +131,9 @@ webMI.data.subscribe(number, function(e) {
 	if(e.value>max)
 	{
 	value=max;	
+	}
+	if(e.value<min){
+	value = min
 	}
 	red_circle.style.transition = '0.5s ease'
 	blue_circle.style.transition = '0.5s ease'

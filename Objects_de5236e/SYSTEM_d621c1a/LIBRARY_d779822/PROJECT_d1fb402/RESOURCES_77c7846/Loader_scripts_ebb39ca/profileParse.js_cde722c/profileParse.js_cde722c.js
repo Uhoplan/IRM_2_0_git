@@ -154,7 +154,7 @@ function ProcessExcel(data) {
                     break;
                 case 'reading':
                     if(!isNaN(check)){
-						if((temp[forReadData.north]==0)&(temp[forReadData.north]==0)&(temp[forReadData.north]==0)){
+						if((temp[forReadData.east]==0)&(temp[forReadData.depth]==0)&(temp[forReadData.north]==0)){
 							state='eof'
 						}else{
 							res.north.push(parseFloat(temp[forReadData.north]))
