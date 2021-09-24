@@ -46,7 +46,7 @@ but.style.pointerEvents ='none'
   <atv:argument name="complications" value="AGENT.DISPLAYS.NewView.ProfileComplications.Profile"/>
   <atv:argument name="reports" value="AGENT.DISPLAYS.NewView.Supplement.Report_table"/>
   <atv:argument name="documents" value="AGENT.DISPLAYS.NewView.Supplement.Documents_table"/>
-  <atv:argument name="APD" value="AGENT.DISPLAYS.NewView.APD.APD_Main"/>
+  <atv:argument name="APD" value="AGENT.DISPLAYS.NewView.APD.APD_demo"/>
   <atv:argument name="plan" value="AGENT.DISPLAYS.NewView.Pdf.PDF_Selection_View"/>
   <atv:argument name="services" value="AGENT.DISPLAYS.NewView.Services.Service_Params"/>
   <atv:argument name="rig" value="AGENT.DISPLAYS.NewView.Schema.SchRigBU3000"/>

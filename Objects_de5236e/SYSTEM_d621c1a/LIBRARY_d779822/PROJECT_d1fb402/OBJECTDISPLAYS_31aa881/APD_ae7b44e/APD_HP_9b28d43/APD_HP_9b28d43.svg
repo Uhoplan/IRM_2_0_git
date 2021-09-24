@@ -126,7 +126,7 @@ webMI.data.read(["AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Limit_High_War
 		})
 	
 })
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Value.Ing",function(e){
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.HookPosition",function(e){
 	hookPosChart.update({series:[{data:[{target:e.value}]}]})
 })
 ]]></script>

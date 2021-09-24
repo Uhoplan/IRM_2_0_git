@@ -12,6 +12,9 @@
  </metadata>
  <foreignObject height="197.657" id="id_0" width="251.681" x="-0.867" y="-0.274">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.hide{color:white;background-color:grey;pointer-events: none;}
+</style>
    <ul class="topmenu">
     <li class="block" style="padding-left:40px;left:0px;width:60px;height:52px;">
      <p class="submenu-link" href="">
@@ -22,7 +25,7 @@
        <p href="" id="first">Основные</p>
       </li>
       <li>
-       <p href="" id="second">Ограничения</p>
+       <p class="hide" href="" id="second">Ограничения</p>
       </li>
       <li>
        <p href="" id="third">Геология</p>
@@ -35,23 +38,40 @@
    </ul>
   </div>
  </foreignObject>
- <script type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {
 var first = document.getElementById("first")
 var second =  document.getElementById("second")
 var third = document.getElementById("third")
 var fourth = document.getElementById("fourth")
+
+webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+	if ("username" in e) {
+		var username = (e.username != "") ? e.username : null;
+		var loggedIn = (e.username != "");
+		if (loggedIn) {
+			if(username=='korenevrv'){
+				document.getElementById('second').classList.remove("hide")	
+			}
+			
+		} else {
+		}
+	}
+});
+
 first.addEventListener("click", function(){
 
 	webMI.display.openDisplay(webMI.query["firstDisplay"],webMI.query,webMI.query["frame"]);
 }, false)
 
 second.addEventListener("click", function(){
-	webMI.display.openDisplay(webMI.query["secondDisplay"],webMI.query,webMI.query["frame"]);
+ webMI.display.openDisplay(webMI.query["secondDisplay"],webMI.query,webMI.query["frame"]);				
 }, false)
-third.addEventListener("click", function(){
 
-	webMI.display.openDisplay(webMI.query["thirdDisplay"],webMI.query,webMI.query["frame"]);
+
+third.addEventListener("click", function(){
+webMI.display.openDisplay(webMI.query["thirdDisplay"],webMI.query,webMI.query["frame"]);					
 }, false)
+
 fourth.addEventListener("click", function(){
 
 	webMI.display.openDisplay(webMI.query["fourthDisplay"],webMI.query,webMI.query["frame"]);
