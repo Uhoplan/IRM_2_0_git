@@ -40,77 +40,71 @@ var myChart_conf = {
                     var x = (new Date()).getTime(); // current time
 	webMI.data.read(addressList, function(e) {
 	//console.log(e)
-	if(e[0].value < 0){ 
+	if(e[0].value < 0 || !e[0].value){ 
 	var y0 = 0
 	series_0_WeightOnHook.addPoint([e[0].timestamp, y0]);
 	} else {
 	series_0_WeightOnHook.addPoint([e[0].timestamp, +e[0].value.toFixed(2)]);
 	};
 	
-	if(e[1].value < 0){ 
+	if(e[1].value < 0 || !e[1].value ){ 
 	var y1 = 0
 	series_1_LoadOnBit.addPoint([e[1].timestamp, y1]);
 	} else {
 	series_1_LoadOnBit.addPoint([e[1].timestamp, +e[1].value.toFixed(2)]);
 	};
 	
-	if(e[2].value < 0){ 
+	if(e[2].value < 0 || !e[2].value){ 
 	var y2 = 0
 	series_2_HookPosition.addPoint([e[2].timestamp, y2]);
 	} else {
 	series_2_HookPosition.addPoint([e[2].timestamp, +e[2].value.toFixed(2)]);
 	};
+		
 	
-	if(e[2].value < 0){ 
-	var y2 = 0
-	series_2_HookPosition.addPoint([e[2].timestamp, y2]);
-	} else {
-	series_2_HookPosition.addPoint([e[2].timestamp, +e[2].value.toFixed(2)]);
-	};
-	
-	if(e[3].value < 0){ 
+	if(e[3].value < 0 || !e[3].value){ 
 	var y3 = 0
 	series_3_HookSpeed.addPoint([e[3].timestamp, y3]);
 	} else {
 	series_3_HookSpeed.addPoint([e[3].timestamp, +e[3].value.toFixed(2)]);
 	};
 	
-	if(e[4].value < 0){ 
+	if(e[4].value < 0 || !e[4].value){ 
 	var y4 = 0
 	series_4_TDSTorque.addPoint([e[4].timestamp, y4]);
 	} else {
 	series_4_TDSTorque.addPoint([e[4].timestamp, +e[4].value.toFixed(2)]);
 	};
 	
-	if(e[5].value < 0){ 
+	if(e[5].value < 0 || !e[5].value){ 
 	var y5 = 0
 	series_5_TDSSpeed.addPoint([e[5].timestamp, y5]);
 	} else {
 	series_5_TDSSpeed.addPoint([e[5].timestamp, +e[5].value.toFixed(2)]);
 	};
 	
-	if(e[6].value < 0){ 
+	if(e[6].value < 0 || !e[6].value){ 
 	var y6 = 0
 	series_6_PressureManifold.addPoint([e[6].timestamp, y6]);
 	} else {
 	series_6_PressureManifold.addPoint([e[6].timestamp, +e[6].value.toFixed(2)]);
 	};
 	
-	if(e[7].value < 0){ 
+	if(e[7].value < 0 || !e[7].value){ 
 	var y7 = 0
 	series_7_DrillSpeed.addPoint([e[7].timestamp, y7]);
 	} else {
 	series_7_DrillSpeed.addPoint([e[7].timestamp, +e[7].value.toFixed(2)]);
 	};
 	
-	if(e[8].value < 0){ 
+	if(e[8].value < 0 || !e[8].value){ 
 	var y8 = 0
 	series_8_FlowInput.addPoint([e[8].timestamp, y8]);
 	} else {
 	series_8_FlowInput.addPoint([e[8].timestamp, +e[8].value.toFixed(2)]);
 	};
 	
-	if(e[9].value < 0){ 
+	if(e[9].value < 0 || !e[9].value){ 
 	var y9 = 0
 	series_9_FlowOutput.addPoint([e[9].timestamp, y9]);
 	} else {

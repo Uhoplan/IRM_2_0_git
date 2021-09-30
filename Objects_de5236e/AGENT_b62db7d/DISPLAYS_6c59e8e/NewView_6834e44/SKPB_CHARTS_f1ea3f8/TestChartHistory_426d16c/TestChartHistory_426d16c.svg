@@ -77,7 +77,7 @@ var addressList = [		["g:AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"],
                         ["g:AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"], 
                         ["g:AGENT.OBJECTS.IVE50.Well.DrillSpeed"], 
                         ["g:AGENT.OBJECTS.IVE50.Mud.FlowInput"], 
-                        ["g:AGENT.OBJECTS.IVE50.Mud.FlowOutput"],
+                        //["g:AGENT.OBJECTS.IVE50.Mud.FlowOutput"],
                        ];
                        
 var getHistoryData =  function(){
