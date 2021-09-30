@@ -11,11 +11,6 @@
   <rect atv:refpx="960" atv:refpy="540" fill="#1f1f1f" height="1080.00" id="id_3" width="1920.00" x="0" y="0"/>
  </g>
  <text atv:refpx="863.591" atv:refpy="560" fill="#ffffff" font-family="Arial" font-size="72" id="id_1" x="834.5" y="564.5">Loading...</text>
- <foreignObject height="143.48" id="id_10" width="265.493" x="1652.589" y="925.765">
-  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
-   <script src="../../jwt/jwt.js"/>
-  </div>
- </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var sessions;
 var currentSession;
 
@@ -56,21 +51,14 @@ if (hrefArr.length > 1) {
 		return res.json()
 	})
 	.then(function(res) {
-		var quickname;
-		
 		if (typeof res == "string") {throw new Error("access denied by server(wrong token?)")}
-		var decoded = jwt_decode(res.access_token);
-		if (decoded.id == 21) { 
-			quickname = "admin"
-		}
 		localStorage.setItem("access_token", res.access_token);
 		localStorage.setItem("refresh_token", res.refresh_token);
-		
-		p = setTimeout(function() {normalLogin(); console.log("no connection")}, 10000) //a way to get around of bad connection(temp)
-		seamlessLogin(quickname || "user" || query[2][1], decoded.id) 
+		p = setTimeout(function() {normalLogin(); console.log("no connection")}, 10000)
+		seamlessLogin(query[2][1]) 
+		//normalLogin()
 	})
 	.catch(function(err){
-		console.log(err);
 		normalLogin();
 	})
 	
@@ -78,15 +66,14 @@ if (hrefArr.length > 1) {
 
 
 /////////////////////////
-function seamlessLogin(name, id) {
+function seamlessLogin(name) {
+console.log("seamless")
 	webMI.data.read("AGENT.OBJECTS.Auth.users", function(reserved) {
 		clearTimeout(p)
 		console.log("connection established");
 		reserved = JSON.parse(reserved.value);
-		
 		var username = reserved[name].username;
 		var password = reserved[name].password;
-		console.log(name);
 		webMI.data.login(username, password, function(e) {
 			localStorage.setItem("role", name)
 			if (e[""].hasOwnProperty("username") && e[""].username){ 
@@ -100,20 +87,16 @@ function seamlessLogin(name, id) {
 					session: session
 				};
 				
-				console.log("logged in");
-				
-				webMI.data.write(path, JSON.stringify(authObject));
 				localStorage.setItem("session", btoa(authObject.session + "-" + authObject.timestamp));
 				webMI.display.openDisplay(webMI.query["target"])
 				
 				//return sessionData.timestamp == currentSession.timestamp && sessionData.session == currentSession.session
-			} else normalLogin()
+			} else webMI.display.openDisplay(webMI.query["auth"])
 		})
 	})
 }
 
 function normalLogin() {
-console.log("normal login");
 webMI.data.queryFilter(filter, function(e) {
 	//sessions = e.result;
 	

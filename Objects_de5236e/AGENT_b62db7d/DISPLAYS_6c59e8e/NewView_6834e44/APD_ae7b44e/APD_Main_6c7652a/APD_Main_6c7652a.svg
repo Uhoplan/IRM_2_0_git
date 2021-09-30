@@ -381,9 +381,12 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
 
+
 webMI.data.subscribe("AGENT.OBJECTS.ASPD.Mud1.Manifold_Pressure.Sensor.Value", function(e) {
 var id = "id_12";
 var value = e.value;
+
+var value = value*9.87;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });

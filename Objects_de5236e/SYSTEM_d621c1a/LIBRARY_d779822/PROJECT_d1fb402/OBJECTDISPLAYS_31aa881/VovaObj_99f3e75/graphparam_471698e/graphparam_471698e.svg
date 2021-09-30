@@ -11,10 +11,11 @@
  <svg atv:refpx="175" atv:refpy="140.002" height="28.346" id="id_5" transform="matrix(9.8778,0,0,9.8778,0,0)" width="35.433" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2Fgaugeparam%2Fbluepart.svg" y="0"/>
  <svg atv:refpx="175" atv:refpy="140.002" height="28.346" id="id_6" transform="matrix(9.8778,0,0,9.8778,0,0)" width="35.433" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2Fgaugeparam%2Fgreypart.svg" y="0"/>
  <circle atv:refpx="0" atv:refpy="0" cx="0" cy="0" fill="#1f1f1f" id="id_12" r="48" stroke="#0000ff" stroke-width="0"/>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var max=40;
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var max=10;
 webMI.data.read(webMI.query['max'], function(e) {
+
    max =e.value 
-   if(max<30){max=30}
+
 });
 
 
@@ -38,7 +39,7 @@ if (e.value>max)
 		max=e.value;	
 	}
 	var value=e.value/max;
-	
+	console.log(max)
 	//console.log(value)
 	var zerostr="scale(0,0)"
 	var fullstr="scale(1,1)"

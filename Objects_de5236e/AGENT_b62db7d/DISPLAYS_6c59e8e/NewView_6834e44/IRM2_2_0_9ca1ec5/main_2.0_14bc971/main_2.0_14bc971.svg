@@ -95,7 +95,7 @@
   <atv:argument name="Number" value="12"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel12"/>
  </svg>
- <svg atv:refpx="719.099" atv:refpy="550.611" height="421.17" id="id_5" transform="matrix(0.8283,0,0,0.8191,0,0)" width="253.16" x="741.555" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.BN1" y="461.591">
+ <svg atv:refpx="719.099" atv:refpy="551.353" height="421.17" id="id_5" transform="matrix(0.8283,0,0,0.8191,0,0)" width="253.16" x="741.555" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.BN1" y="462.497">
   <atv:argument name="MaxBarSmall" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowPump1"/>
   <atv:argument name="Visability" value="false"/>
   <atv:argument name="VisabilitySmall" value="false"/>
@@ -124,7 +124,7 @@
  <svg atv:refpx="1185.718" atv:refpy="175.214" height="414.05" id="id_66" transform="matrix(0.8453,0,0,0.8453,0,0)" width="382.62" x="1223.223" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.VSPRight" y="-4.481">
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
   <atv:argument name="Max" value="AGENT.OBJECTS.Test.PerMaxMin.VSP.MaxTDSSpeed"/>
-  <atv:argument name="MaxBar" value="60"/>
+  <atv:argument name="MaxBar" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed.High"/>
   <atv:argument name="Visability" value="false"/>
  </svg>
  <svg atv:refpx="1169.487" atv:refpy="184.72" height="315" id="id_67" width="315" x="1024.987" xlink:href="AGENT.DISPLAYS.Test.right-gauge" y="23.22">
@@ -140,7 +140,7 @@
  <svg atv:refpx="774.859" atv:refpy="175.003" height="414.43" id="id_68" transform="matrix(0.8445,0,0,0.8445,0,0)" width="378.62" x="728.184" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.WinchLeft" y="-4.737">
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed"/>
   <atv:argument name="Max" value="AGENT.OBJECTS.Test.PerMaxMin.MaxDrillSpeed"/>
-  <atv:argument name="MaxRestriction" value="AGENT.OBJECTS.SimulatedData.double_3"/>
+  <atv:argument name="MaxRestriction" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed.high"/>
   <atv:argument name="Visability" value="false"/>
  </svg>
  <svg atv:refpx="811.409" atv:refpy="184.503" height="315" id="id_69" width="315" x="635.909" xlink:href="AGENT.DISPLAYS.Test.left-gauge" y="28.003">
