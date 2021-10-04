@@ -50,5 +50,6 @@ but.style.pointerEvents ='none'
   <atv:argument name="plan" value="AGENT.DISPLAYS.NewView.Pdf.PDF_Selection_View"/>
   <atv:argument name="services" value="AGENT.DISPLAYS.NewView.Services.Service_Params"/>
   <atv:argument name="rig" value="AGENT.DISPLAYS.NewView.Schema.SchRigBU3000"/>
+  <atv:argument name="hidroshema" value="AGENT.DISPLAYS.NewView.Schema.SchCSGOTechno"/>
  </svg>
 </svg>

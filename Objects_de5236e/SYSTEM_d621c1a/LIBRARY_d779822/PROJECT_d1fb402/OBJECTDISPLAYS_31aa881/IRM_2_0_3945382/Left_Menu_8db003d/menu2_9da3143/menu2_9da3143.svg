@@ -6,12 +6,12 @@
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Complications" desc="complications and profile display" name="complications" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.IRM2_2_0.main_irm2_0" desc="mainDashbord" name="mainDashbord" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.SKPB_CHARTS.TestCHart" desc="skpbCharts" name="skpbCharts" valuetype="display"/>
-  <atv:parameter behavior="optional" desc="hidroshema" name="hidroshema" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="" desc="rig_shema" name="rig_shema" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="" desc="rig" name="rig" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="" desc="mud_node_shema" name="mud_node_shema" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="" desc="pumps" name="pumps" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="" desc="tools" name="tools" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.CSGOTechno" desc="hidroshema" name="hidroshema" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.Sch2" desc="rig_shema" name="rig_shema" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.SchRigBU3000" desc="rig" name="rig" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.SchCSGO" desc="mud_node_shema" name="mud_node_shema" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.SchMudPump" desc="pumps" name="pumps" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.IR-Test.Equipment" desc="tools" name="tools" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="reports" name="reports" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="documents" name="documents" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="APD" name="APD" valuetype="display"/>
@@ -72,14 +72,14 @@
       src: "url(../../IMG/hidroshema.png)",
       id: "button_5",
       name: "Гидросхема",
-      active: false,
+      active: true,
       path: webMI.query["hidroshema"],
     },
     {
       src: "url(../../IMG/rig_shema.png)",
       id: "button_6",
       name: "Схема буровой установки",
-      active: false,
+      active: true,
       path: webMI.query["rig_shema"],
     },
     {
@@ -93,21 +93,21 @@
       src: "url(../../IMG/mud_node_shema.png)",
       id: "button_8",
       name: "ЦСГО",
-      active: false,
+      active: true,
       path: webMI.query["mud_node_shema"],
     },
     {
       src: "url(../../IMG/pumps.png)",
       id: "button_9",
       name: "Насосы",
-      active: false,
+      active: true,
       path: webMI.query["pumps"],
     },
     {
       src: "url(../../IMG/tools.png)",
       id: "button_10",
       name: "Оборудование",
-      active: false,
+      active: true,
       path: webMI.query["tools"],
     },
     {
