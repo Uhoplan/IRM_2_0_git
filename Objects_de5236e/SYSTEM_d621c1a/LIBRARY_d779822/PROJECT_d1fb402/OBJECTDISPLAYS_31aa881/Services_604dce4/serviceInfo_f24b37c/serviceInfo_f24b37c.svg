@@ -19,6 +19,15 @@
  <foreignObject height="143" id="id_3" width="297.042" x="460.329" y="0">
   <div id="param_id_1" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
  </foreignObject>
+ <foreignObject height="143" id="id_11" width="156.644" x="849.437" y="0">
+  <div id="param_id_2" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
+ </foreignObject>
+ <foreignObject height="143" id="id_12" width="317.479" x="1126.827" y="0">
+  <div id="param_id_3" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
+ </foreignObject>
+ <foreignObject height="143" id="id_13" width="199.357" x="1636.747" y="3.474">
+  <div id="param_id_4" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
+ </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var paramsArray = [
 	"AGENT.OBJECTS.ServiceParams.Bit.organization",
 	"AGENT.OBJECTS.ServiceParams.Bit.engineer",
@@ -45,7 +54,7 @@ function setParams() {
 			var currentParam = document.getElementById("param_id_" + i);
 			
 			currentParam.innerHTML = "";
-			var values = value.split(",");
+			var values = value.split(/[,|;]/g);
 			for (item in values) {
 				currentParam.insertAdjacentHTML("beforeend", "<p style='color:red;white-space: nowrap;'>" + values[item] + "</p>");
 			}
@@ -91,13 +100,4 @@ function beautifyDate(date) {
 		
 	return str
 }]]></script>
- <foreignObject height="143" id="id_11" width="156.644" x="849.437" y="0">
-  <div id="param_id_2" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
- </foreignObject>
- <foreignObject height="143" id="id_12" width="317.479" x="1126.827" y="0">
-  <div id="param_id_3" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
- </foreignObject>
- <foreignObject height="143" id="id_13" width="199.357" x="1636.747" y="3.474">
-  <div id="param_id_4" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
- </foreignObject>
 </svg>

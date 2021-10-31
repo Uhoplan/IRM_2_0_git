@@ -60,7 +60,7 @@ fill: #213a53;
    <div id="container" style="width:100%;height:100%"/>
   </div>
  </foreignObject>
- <script type="text/ecmascript"><![CDATA[webMI.libraryLoader.load(["other/lz-string.min.js"], ["CSS/dark_IRM_Theme.css"], function () {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load(["other/lz-string.min.js"], ["CSS/dark_IRM_Theme.css"], function () {
 webMI.gfx.setScaledEvents(document.getElementById('container'));
 //parent.window.location.reload()
 var to = Date.now();
@@ -93,7 +93,7 @@ getHistoryData();
 
 setInterval(function () {
 			myChart.update({xAxis:{max:Date.now(),min:Date.now()-10*60*1000}})
-					},1000)
+					},3000)
 
 var myChart = Highcharts.stockChart(document.getElementById('container'), myChart_conf)
 

@@ -1,1 +1,1 @@
-C:/Users/IR-Master-Demo/Desktop/Сертификат_rigintelpro.ru/certificate.crt
+C:/Work/cert/certificate.crt

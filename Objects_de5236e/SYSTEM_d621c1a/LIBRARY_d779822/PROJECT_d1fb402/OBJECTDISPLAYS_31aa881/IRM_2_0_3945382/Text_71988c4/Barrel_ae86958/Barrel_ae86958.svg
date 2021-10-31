@@ -16,7 +16,7 @@
  </metadata>
  <rect atv:refpx="196.225" atv:refpy="33.612" fill="#1f1f1f" height="68.179" id="id_1" rx="9.971" ry="9.971" stroke="#4b5e6c" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3.197" width="396.432" x="1.784" y="1.784"/>
  <rect atv:refpx="289.959" atv:refpy="36.832" fill="#4b5e6c" height="47.02" id="id_0" stroke="#4b5e6c" stroke-linecap="butt" stroke-linejoin="round" stroke-width="0" width="180.245" x="199.837" y="13.322"/>
- <foreignObject height="33.698" id="id_2" width="145.763" x="23.51" y="20">
+ <foreignObject height="52.662" id="id_2" width="145.763" x="23.51" y="9.886">
   <div style="display:flex;width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p id="text" style="margin-top:8%"/>
   </div>

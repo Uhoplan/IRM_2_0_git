@@ -35,11 +35,38 @@
    </ul>
   </div>
  </foreignObject>
- <script type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {
 var first = document.getElementById("first")
 var second =  document.getElementById("second")
 var third = document.getElementById("third")
 var fourth = document.getElementById("fourth")
+
+webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+	if ("username" in e) {
+		var username = (e.username != "") ? e.username : null;
+		var loggedIn = (e.username != "");
+		if (loggedIn) {
+			if(!webMI.hasRight("USER.Limitation")){
+				document.getElementById('second').style.display ="none";	
+			}
+			
+		} else {
+		}
+	}
+
+});
+
+
+
+/*
+if(webMI.hasRight("USER.Limitation")===true)
+{
+console.log("##################-TRUE!!!")
+}else 
+{
+console.log("##################-FALSE!!!")
+}*/
+
 first.addEventListener("click", function(){
 
 	webMI.display.openDisplay(webMI.query["firstDisplay"],webMI.query,webMI.query["frame"]);

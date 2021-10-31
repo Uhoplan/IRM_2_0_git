@@ -5,7 +5,8 @@
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.GGD_page" desc="ggd display" name="ggd" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Complications" desc="complications and profile display" name="complications" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.IRM2_2_0.main_irm2_0" desc="mainDashbord" name="mainDashbord" valuetype="display"/>
-  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.SKPB_CHARTS.TestCHart" desc="skpbCharts" name="skpbCharts" valuetype="display"/>
+  <!--  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.SKPB_CHARTS.TestCHart" desc="skpbCharts" name="skpbCharts" valuetype="display"/>-->
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.SKPB.SKPB_param1_present" desc="skpbCharts" name="skpbCharts" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.CSGOTechno" desc="hidroshema" name="hidroshema" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.Sch2" desc="rig_shema" name="rig_shema" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Schema.SchRigBU3000" desc="rig" name="rig" valuetype="display"/>
@@ -17,6 +18,7 @@
   <atv:parameter behavior="optional" defaultvalue="" desc="APD" name="APD" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="plan" name="plan" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="services" name="services" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.APD.APD_Slide" desc="slide" name="slide" valuetype="display"/>
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
@@ -29,7 +31,7 @@
    <nav id="left_menu_nav"/>
   </div>
  </foreignObject>
- <svg atv:refpx="104.673" atv:refpy="902.1" height="197.66" id="id_1" width="251.68" x="-23.032" xlink:href="AGENT.DISPLAYS.Test.test" y="805.955">
+ <svg atv:refpx="104.673" atv:refpy="902.1" height="197.66" id="id_1" width="251.68" x="-20.032" xlink:href="AGENT.DISPLAYS.Test.test" y="849.955">
   <atv:argument name="firstDisplay" value="AGENT.DISPLAYS.Test.Maximus"/>
   <atv:argument name="SecondDisplay" value="AGENT.DISPLAYS.NewView.Set_var"/>
   <atv:argument name="secondDisplay" value="AGENT.DISPLAYS.NewView.Set_var"/>
@@ -121,7 +123,7 @@
       src: "url(../../IMG/documents.png)",
       id: "button_12",
       name: "Документы",
-      active: true,
+      active: false,
       path: webMI.query["documents"],
     },
     {
@@ -131,16 +133,23 @@
       active: true,
       path: webMI.query["APD"],
     },
+     {
+      src: "url(../../IMG/slide.png)",
+      id: "button_14",
+      name: "АПД-ВСП",
+      active: true,
+      path: webMI.query["slide"],
+    },
     {
       src: "url(../../IMG/Docs.png)",
-      id: "button_14",
+      id: "button_15",
       name: "План",
       active: true,
       path: webMI.query["plan"],
     },
     {
       src: "url(../../IMG/service_ico.png)",
-      id: "button_15",
+      id: "button_16",
       name: "Сервисы",
       active: true,
       path: webMI.query["services"],

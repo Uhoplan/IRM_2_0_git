@@ -196,6 +196,11 @@
    <button class="but minus" id="torq_m">-</button>
   </div>
  </foreignObject>
+ <foreignObject height="50" id="id_9" width="290" x="140" y="910">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="recomm">Рекомендации</button>
+  </div>
+ </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function() {
 var trigger = "AGENT.OBJECTS.Set_var.SetVarValues";
 var currentNodeAddressArray = ["AGENT.OBJECTS.ASPD.APD1.Speed.Drill.Limit",
@@ -240,7 +245,7 @@ function addListeners() {
 		for (i in arrayOfIndexes) {
 			console.log(e);
 			console.log(arrayOfIndexes[i])
-			webMI.gfx.setText(arrayOfIndexes[i], e[i].value);
+			webMI.gfx.setText(arrayOfIndexes[i], e[i].value.toFixed(2));
 		}
 		
 	})
@@ -332,5 +337,12 @@ document.getElementById('torq_m').addEventListener('click',function(e){
 	webMI.data.read('AGENT.OBJECTS.Set_var.TDS_torque_limit.TDS_torque_limit_value',function(f){
 		webMI.data.write('AGENT.OBJECTS.Set_var.TDS_torque_limit.TDS_torque_limit_value',f.value-1)
 	})
-})]]></script>
+})
+
+
+
+document.getElementById("recomm").addEventListener("click", function() {
+	webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Halliburton.Halliburton", {}, "main_frame")
+});]]></script>
+ <svg atv:refpx="660" atv:refpy="630" height="300" id="id_11" width="1200" x="60" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Halliburton.Calculated" y="480"/>
 </svg>

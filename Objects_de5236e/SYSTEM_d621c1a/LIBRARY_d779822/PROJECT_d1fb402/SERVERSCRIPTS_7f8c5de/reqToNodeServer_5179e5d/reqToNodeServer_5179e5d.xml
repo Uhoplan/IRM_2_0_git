@@ -27,15 +27,21 @@
   <parameter name="HydroSulfide1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.HydroSulfide1"/>
   <parameter name="NKPR1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1"/>
   <parameter name="csvname" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="irmname" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="BushName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="FieldName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="RigName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="WellName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.WellName"/>
   <code><![CDATA[console.log("reqToNodeServer");
 var fs = new FileSystem();
 var counter = 0;
 while(!fs.isFile(csvname)){
 	//setTimeout(function() { console.log('timeOut 500 mS) }, 500);
 	console.log("reqToNodeServer timeout");
-	if(++counter >100)
-		break;
+		if(++counter >100)
+	break;
 }
+
 var tmplt = new Date(csvname.split('.').shift().split('_').filter(function(str) {return str != 'report';}).join('.'));
 var from = new Date(tmplt.setHours(0,0,0));
 var to = new Date(tmplt.setHours(23,59,0))
@@ -45,10 +51,10 @@ var target_nodes = [
 			[LoadOnBit, 'Нагрузка на долото', 'т'],
 			[HookPosition, 'Положение крюкоблока', 'м'],
 			[HookSpeed, 'Скорость СПО', 'м/c'],
-			[TDSSpeed, 'Обороты ВСП', 'м/c'],
-			[TDSTorque, 'Момент ВСП', 'т'],
 			[PressureManifold,'Давление в манифольде', 'п'],
 			[DrillSpeed, 'Скорость проходки', 'м/ч'],
+			[TDSSpeed, 'Обороты СВП', 'м/c'],
+			[TDSTorque, 'Момент СВП', 'т'],
 			[FlowInput, 'Расход на входе', 'л'],
 			[FlowOutput, 'Поток на выходе', 'л'],
 			[MachineKeyTorque1, 'Момент на машключе 1', 'т'],
@@ -82,9 +88,11 @@ var http = new HTTPClient();
 var body = {
 	//source: 'report_04.12.2020.csv',
 	source: csvname,
+	name: FieldName + " м. " + BushName + " куст " + WellName + " скважина",
 	nodes: UaNodes,
 	params: {starttime: from, endtime: to}
 }
+console.log(body);
 var res = http.request(
 	{
 		protocol: 'http',

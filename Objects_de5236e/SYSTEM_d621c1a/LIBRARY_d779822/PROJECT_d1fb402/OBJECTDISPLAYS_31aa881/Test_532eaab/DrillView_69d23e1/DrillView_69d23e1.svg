@@ -86,22 +86,22 @@
  <svg atv:refpx="91.2" atv:refpy="271.3" height="534" id="id_2" width="150" x="16.2" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction.Insides" y="4.3"/>
  <svg atv:refpx="38.646" atv:refpy="532" height="18" id="id_12" width="12" x="32.646" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FRigView%2Fdoloto.svg" y="523"/>
  <foreignObject height="12.167" id="id_8" width="113.8" x="74.834" y="530.023">
-  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.8rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0">Долото, м</p>
   </div>
  </foreignObject>
  <foreignObject height="12.167" id="id_9" width="113.8" x="74.592" y="557.35">
-  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.8rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0">Забой, м</p>
   </div>
  </foreignObject>
  <foreignObject height="20.126" id="id_13" width="50.457" x="75.403" y="541.801">
-  <div style="width:100%;height:100%;color:white; font-size:0.7rem" xmlns="http://www.w3.org/1999/xhtml">
+  <div style="width:100%;height:100%;color:white; font-size:0.8rem" xmlns="http://www.w3.org/1999/xhtml">
    <p id="first" style="margin:0">0000</p>
   </div>
  </foreignObject>
  <foreignObject height="20.126" id="id_14" width="50.457" x="76.043" y="570.345">
-  <div style="width:100%;height:100%;color:white; font-size:0.7rem" xmlns="http://www.w3.org/1999/xhtml">
+  <div style="width:100%;height:100%;color:white; font-size:0.8rem" xmlns="http://www.w3.org/1999/xhtml">
    <p id="second" style="margin:0">0000</p>
   </div>
  </foreignObject>

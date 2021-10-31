@@ -76,7 +76,6 @@
 	    .deletebut{
 			background-color:#a00;
 			border:none;
-			width:40px;
 			height:40px;
 			margin-bottom:20px;
 			border-radius:12px;
@@ -85,10 +84,8 @@
 			margin-right:10px;
 	    }
 </style>
-   <button class="deletebut hide" id="db1">✖</button>
-   <button class="upload-area-button" id="pswitch">ПЛАН</button>
-   <button class="deletebut hide" id="db2">✖</button>
-   <button class="upload-area-button upload-area-button-f" id="fswitch">ФАКТ</button>
+   <button class="deletebut hide" id="db1">✖ ПЛАН</button>
+   <button class="deletebut hide" id="db2">✖ ФАКТ</button>
   </div>
  </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var CHART = document.getElementById("WELL_CHART")
@@ -113,6 +110,7 @@ var LAYOUT = {
   },
   showlegend:false,
   scene: {
+	aspectmode:'data',
     camera: {
       center: {
         x: 0,
@@ -128,7 +126,7 @@ var LAYOUT = {
         x: 0,
         y: 0,
         z: 1,
-      },
+      }
     },
     bgcolor: BG_COLOR,
     xaxis: {
@@ -158,6 +156,7 @@ var LAYOUT = {
       },
     },
     zaxis: {
+		autorange:'reversed',
       title: {
         text: "Глубина по вертикали, м",
         font: {
@@ -166,11 +165,10 @@ var LAYOUT = {
       },
       tickfont: {
         color: AXIES_TICK_COLOR,
-      },
-      autorange: "reversed",
+      }
     },
   },
-  autosize: false,
+  autosize: true,
   width: 750,
   height: 1015,
   margin: {
@@ -224,7 +222,7 @@ var traces = [
 	hovertemplate:"Глубина по вертикали:%{z} м<br>Север:%{x} м<br>Восток:%{y} м<extra></extra>",
 	line: {
 		color: "#FF0000",
-		width: 6,
+		width: 10,
 		opacity: 1,
 	},
 	x:[],
@@ -275,15 +273,61 @@ var traces = [
 	y: [],
 	z: [],
 },
+{
+	type: "scatter3d",
+	mode: "markers+text",
+	name: "Компас имена",
+	showlegend: false,
+	text: ['Восток','Север'],
+	texttemplate: "%{text}",
+	textfont: {
+		color: MAIN_TEXT_COLOR,
+		size: 12,
+	},
+	marker: {
+		color: [],
+		symbol: "circle",
+		size: 6,
+		opacity: 1,
+	},
+	x: [100,0],
+	y: [0,100],
+	z: [0,0],
+},
+{
+	type: "scatter3d",
+	mode: "lines",
+	name: "Компас линии",
+	showlegend: false,
+	meta: [],
+	textfont: {
+		color: MAIN_TEXT_COLOR,
+		size: 12,
+	},
+	line: {
+		color: "#fff",
+		width: 6,
+		opacity: 1,
+	},
+	x: [0,100,0,0],
+	y: [0,0,0,100],
+	z: [0,0,0,0],
+}
 ]
 
 webMI.data.read(['AGENT.OBJECTS.3D_WELL.fact.FactChartData','AGENT.OBJECTS.3D_WELL.plan.PlanChartData','AGENT.OBJECTS.3D_WELL.complications.CompChartData'],function(e){
-	//console.log(JSON.parse(e[0].value))
+	var max = 100
+	var min = 0
 	for(var i=0;i<2;i++){
 		traces[i].x=JSON.parse(e[i].value).north
+		 
 		traces[i].y=JSON.parse(e[i].value).east
+		
 		traces[i].z=JSON.parse(e[i].value).depth
 	}
+	
+	
+	
 	var distances = [0]
 	for(var i=1;i<traces[0].x.length;i++){
 		var res=Math.sqrt(Math.pow((traces[0].x[i]-traces[0].x[i-1]),2)+Math.pow((traces[0].y[i]-traces[0].y[i-1]),2)+Math.pow((traces[0].z[i]-traces[0].z[i-1]),2))
@@ -413,7 +457,7 @@ webMI.gfx.setText("id_24", res);
 
 //////////////////////////////////////////КАСТОМНАЯ ЛЕГЕНДА
 
-document.getElementById('pswitch').addEventListener('click',function(e){
+/*document.getElementById('pswitch').addEventListener('click',function(e){
 	if(e.target.classList.contains('inactive')){
 		e.target.classList.remove('inactive')
 		Plotly.addTraces(CHART,traces[1])
@@ -447,7 +491,7 @@ document.getElementById('fswitch').addEventListener('click',function(e){
 			Plotly.addTraces(CHART,traces[1])
 		}
 	}
-})
+})*/
 
 webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
 	if ("username" in e) {

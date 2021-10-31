@@ -59,7 +59,7 @@
  <rect atv:refpx="1257.242" atv:refpy="269.477" fill="#ccffcc" height="52.289" id="id_11" stroke="#3e4e3e" stroke-width="2" width="108.3" x="1203.092" y="243.333"/>
  <text atv:refpx="1230.793" atv:refpy="277.47" fill="#000000" font-family="Arial" font-size="36" id="id_12" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-40.5455,0.2443)" x="1255.789" y="282.002">Давл</text>
  <rect atv:refpx="1359.845" atv:refpy="66.267" fill="#ccffcc" height="89.399" id="id_15" stroke="#3e4e3e" stroke-width="3.397" width="242.283" x="489.728" y="421.14"/>
- <text atv:refpx="1527.28" atv:refpy="80.378" fill="#000000" font-family="Arial" font-size="36" id="id_16" text-anchor="middle" transform="matrix(1.7438,0,0,1.708,-398.1918,-299.8887)" x="580.346" y="461.076">Скор</text>
+ <text atv:refpx="1527.28" atv:refpy="80.378" fill="#000000" font-family="Arial" font-size="36" id="id_16" text-anchor="middle" transform="matrix(1.7438,0,0,1.708,-398.1893,-299.894)" x="580.345" y="461.079">Скор</text>
  <rect atv:refpx="1444.794" atv:refpy="290.833" fill="#ccffcc" height="89.399" id="id_19" stroke="#3e4e3e" stroke-width="3.397" width="236.109" x="777.542" y="421.493"/>
  <text atv:refpx="1583.494" atv:refpy="304.694" fill="#000000" font-family="Arial" font-size="36" id="id_20" text-anchor="middle" transform="matrix(1.6994,0,0,1.708,-577.4804,-299.9631)" x="869.224" y="461.181">Нагр</text>
  <rect atv:refpx="1425.119" atv:refpy="69.57" fill="#ccffcc" height="89.399" id="id_22" stroke="#3e4e3e" stroke-width="3.397" width="237.24" x="1072.961" y="420.942"/>
@@ -70,7 +70,7 @@
  <rect atv:refpx="1688.041" atv:refpy="67.367" fill="#ccffcc" height="89.399" id="id_29" stroke="#3e4e3e" stroke-width="3.397" width="175.663" x="1644.788" y="421.493"/>
  <text atv:refpx="1793.348" atv:refpy="81.23" fill="#000000" font-family="Arial" font-size="36" id="id_30" text-anchor="middle" transform="matrix(1.7438,0,0,1.708,-1249.7526,-299.9624)" x="1708.721" y="461.18">Об</text>
  <rect atv:refpx="613.892" atv:refpy="786.214" fill="#ffffff" height="73.926" id="id_36" rx="11.729" ry="9.154" stroke="#808080" stroke-width="8" width="239.768" x="491.94" y="749.251"/>
- <text atv:refpx="1333.704" atv:refpy="623.142" fill="#000000" font-family="Arial" font-size="32" font-weight="bold" id="id_37" text-anchor="middle" transform="matrix(1.6994,0,0,1.708,-381.6289,-529.049)" x="588.181" y="781.753">Скор</text>
+ <text atv:refpx="1333.704" atv:refpy="623.142" fill="#000000" font-family="Arial" font-size="32" font-weight="bold" id="id_37" text-anchor="middle" transform="matrix(1.6994,0,0,1.708,-381.6636,-529.0595)" x="588.201" y="781.759">Скор</text>
  <rect atv:refpx="901.201" atv:refpy="788.212" fill="#ffffff" height="73.926" id="id_38" rx="11.729" ry="9.154" stroke="#808080" stroke-width="8" width="239.768" x="779.249" y="751.249"/>
  <text atv:refpx="1574.66" atv:refpy="625.14" fill="#000000" font-family="Arial" font-size="32" font-weight="bold" id="id_39" text-anchor="middle" transform="matrix(1.6994,0,0,1.708,-582.5622,-530.4635)" x="872.99" y="783.751">Нагр</text>
  <rect atv:refpx="1190.577" atv:refpy="788.212" fill="#ffffff" height="73.926" id="id_40" rx="11.729" ry="9.154" stroke="#808080" stroke-width="8" width="239.768" x="1068.625" y="751.249"/>
@@ -93,7 +93,6 @@
  <text atv:refpx="1513.594" atv:refpy="393.292" fill="#000000" font-family="Arial" font-size="24" id="id_5" text-anchor="middle" transform="matrix(1.4239,0,0,1.3586,-362.3373,-242.5576)" x="885.194" y="701.824">Нагр</text>
  <text atv:refpx="1828.707" atv:refpy="393.292" fill="#000000" font-family="Arial" font-size="24" id="id_6" text-anchor="middle" transform="matrix(1.4239,0,0,1.3586,-486.4656,-242.5576)" x="1178.992" y="701.824">Давл</text>
  <text atv:refpx="2168.991" atv:refpy="393.292" fill="#000000" font-family="Arial" font-size="24" id="id_7" text-anchor="middle" transform="matrix(1.4239,0,0,1.3586,-608.1308,-242.5576)" x="1468.48" y="701.824">Ммнт</text>
- <text atv:refpx="319.347" atv:refpy="535.465" fill="#000000" font-family="Arial" font-size="28" id="id_test" transform="matrix(1.0335,0,0,0.999,-9.7941,0.512)" x="296.977" y="542.988">Test</text>
  <text atv:refpx="585.987" atv:refpy="355.145" fill="#000000" font-family="Arial" font-size="36" font-weight="bold" id="id_TextSpeed" transform="matrix(1.0335,0,0,0.999,-17.4079,0.3263)" x="524.344" y="365.173">Скорость</text>
  <text atv:refpx="877.598" atv:refpy="357.143" fill="#000000" font-family="Arial" font-size="36" font-weight="bold" id="id_TextLoad" transform="matrix(1.0335,0,0,0.999,-27.1329,0.3283)" x="815.254" y="367.171">Нагрузка</text>
  <text atv:refpx="1159.779" atv:refpy="335.165" fill="#000000" font-family="Arial" font-size="36" font-weight="bold" id="id_TextPressure1" transform="matrix(1.0335,0,0,0.999,-36.754,0.3064)" x="1102.063" y="345.193">Перепад</text>
@@ -124,12 +123,25 @@
  <text atv:refpx="1416.734" atv:refpy="89.411" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_TextWarning" transform="matrix(1.0335,0,0,0.999,-43.5026,0.0689)" x="1303.593" y="99.431">Предупреждение</text>
  <rect atv:refpx="1708.355" atv:refpy="90.41" fill="#840000" height="56.943" id="id_Alarm" rx="0" ry="0" stroke="#373737" stroke-width="2" width="274.908" x="1570.9" y="61.938"/>
  <text atv:refpx="1707.616" atv:refpy="90.41" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_TextAlalrm" transform="matrix(1.0335,0,0,0.999,-55.4424,0.0699)" x="1660.646" y="100.43">Авария</text>
- <rect atv:refpx="511.059" atv:refpy="883.117" fill="#b6b6b6" height="79.92" id="id_0" stroke="#3e4e3e" stroke-width="0" width="486.772" x="267.673" y="843.157"/>
+ <rect atv:refpx="511.386" atv:refpy="882.96" fill="#b6b6b6" height="79.92" id="id_0" stroke="#3e4e3e" stroke-width="0" width="486.772" x="268" y="843"/>
  <rect atv:refpx="1351.284" atv:refpy="883.117" fill="#b6b6b6" height="79.92" id="id_8" stroke="#3e4e3e" stroke-width="0" width="449.567" x="1126.501" y="843.157"/>
  <rect atv:refpx="341.051" atv:refpy="300.2" fill="#b6b6b6" height="176.823" id="id_13" stroke="#0000ff" stroke-width="0" width="233.568" x="224.267" y="211.788"/>
  <rect atv:refpx="918.253" atv:refpy="967.532" fill="#b6b6b6" height="96.903" id="id_14" stroke="#373737" stroke-width="0" width="1836.506" x="0" y="914.086"/>
  <rect atv:refpx="39.272" atv:refpy="460.04" fill="#b6b6b6" height="452.547" id="id_17" stroke="#0000ff" stroke-width="0" width="70.277" x="4.134" y="233.766"/>
  <svg atv:refpx="41.856" atv:refpy="461.538" height="450" id="id_18" transform="matrix(1.0335,0,0,0.999,0,0)" width="69" x="6" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.APD.APD_HP" y="237"/>
+ <rect atv:refpx="615.441" atv:refpy="259.74" fill="#b6b6b6" height="81.918" id="id_24" stroke="#808080" stroke-width="0" width="257.338" x="486.772" y="218.781"/>
+ <rect atv:refpx="102.832" atv:refpy="802.198" fill="#ffffff" height="57.942" id="id_27" rx="11.634" ry="11.246" stroke="#808080" stroke-width="8" width="116.784" x="44.44" y="773.227"/>
+ <text atv:refpx="99.186" atv:refpy="801.698" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_28" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-2.388,0.7804)" x="100.811" y="811.719">Низ</text>
+ <rect atv:refpx="102.832" atv:refpy="900.1" fill="#ffffff" height="57.942" id="id_31" rx="11.634" ry="11.246" stroke="#808080" stroke-width="8" width="116.784" x="44.44" y="886.114"/>
+ <text atv:refpx="99.186" atv:refpy="914.585" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_32" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-2.388,0.8932)" x="100.811" y="924.606">Низ</text>
+ <text atv:refpx="108.516" atv:refpy="717.283" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_33" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-1.4882,0.6956)" x="106.44" y="726.804">Глубина</text>
+ <text atv:refpx="112.133" atv:refpy="748.252" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_34" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-0.4845,0.7265)" x="108.969" y="757.773">инструмента</text>
+ <text atv:refpx="97.665" atv:refpy="862.138" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_35" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-1.6612,0.8403)" x="96.107" y="871.659">Забой</text>
+ <rect atv:refpx="1783" atv:refpy="32" fill="#b6b6b6" height="52" id="id_21" stroke="#373737" stroke-width="0" width="130" x="1718" y="6"/>
+ <g atv:refpx="1790.255" atv:refpy="32.5" id="id_53" transform="matrix(0.9727,0,0,0.9138,376.9966,5.6126)">
+  <svg atv:refpx="1443.882" atv:refpy="15.424" height="30" id="id_54" width="110" x="1388.882" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.date_display" y="0.424"/>
+  <svg atv:refpx="1458.882" atv:refpy="55.424" height="30" id="id_55" width="60" x="1414.882" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.time_display" y="28.424"/>
+ </g>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Turned_On", function(e) {
 var id = "id_TurnedOn"; //2
 var idt = "id_TextTurnedOn";
@@ -374,7 +386,8 @@ if (value == true){
 }
 });
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Weight.Value", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook", function(e) {
 var id = "id_10";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
@@ -391,7 +404,8 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Load.PID.Inputs.Input", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Load.Drill", function(e) {
 var id = "id_20";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
@@ -518,13 +532,7 @@ var id = "id_32";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
-});]]></script>
- <rect atv:refpx="615.441" atv:refpy="259.74" fill="#b6b6b6" height="81.918" id="id_24" stroke="#808080" stroke-width="0" width="257.338" x="486.772" y="218.781"/>
- <rect atv:refpx="102.832" atv:refpy="802.198" fill="#ffffff" height="57.942" id="id_27" rx="11.634" ry="11.246" stroke="#808080" stroke-width="8" width="116.784" x="44.44" y="773.227"/>
- <text atv:refpx="99.186" atv:refpy="801.698" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_28" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-2.388,0.7804)" x="100.811" y="811.719">Низ</text>
- <rect atv:refpx="102.832" atv:refpy="900.1" fill="#ffffff" height="57.942" id="id_31" rx="11.634" ry="11.246" stroke="#808080" stroke-width="8" width="116.784" x="44.44" y="886.114"/>
- <text atv:refpx="99.186" atv:refpy="914.585" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_32" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-2.388,0.8932)" x="100.811" y="924.606">Низ</text>
- <text atv:refpx="108.516" atv:refpy="717.283" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_33" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-1.4882,0.6956)" x="106.44" y="726.804">Глубина</text>
- <text atv:refpx="112.133" atv:refpy="748.252" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_34" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-0.4845,0.7265)" x="108.969" y="757.773">инструмента</text>
- <text atv:refpx="97.665" atv:refpy="862.138" fill="#000000" font-family="Arial" font-size="28" font-weight="bold" id="id_35" text-anchor="middle" transform="matrix(1.0335,0,0,0.999,-1.6612,0.8403)" x="96.107" y="871.659">Забой</text>
+});
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_16", "nodeId":"AGENT.OBJECTS.ASPD.APD1.Speed.Drill"});]]></script>
 </svg>

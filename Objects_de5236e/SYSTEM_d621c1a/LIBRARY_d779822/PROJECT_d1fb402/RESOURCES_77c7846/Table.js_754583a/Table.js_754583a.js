@@ -1,10 +1,13 @@
-var evt = new CustomEvent("submit", { "bubbles":true, "cancelable": true });  
+var evt = new CustomEvent("submit", { "bubbles": true, "cancelable": true });
+var saveEvent = new CustomEvent("saveTable", { "bubbles": true, "cancelable": true });
+/*
 var tempColumns = {
 	mud: [{"id":"_s4rz5qvxvfj","name":"Тип","field":"Тип"},{"id":"_xk16pg0m52l","name":"Тип раствора","field":"Тип раствора"},{"id":"_8rxc7u2cxf9","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_hjc3ryn4vt","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_u52el7crqrg","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_157tz4z4img","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_jcc24d9adgt","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_dmgnp6au1qc","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_bsixhjlgxj8","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_9gy8grbpo8","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_0h1xxz5akuga","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_m3yr23407r","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_7ytgs480iqv","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_xtqq9wqnkc","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_sa8le0ikgvb","name":"pH","field":"pH"},{"id":"_bbuy28l9kt5","name":"V в скв.","field":"V в скв."},{"id":"_7ekv02mnf7r","name":"V приг.","field":"V приг."},{"id":"_p14udq732ls","name":"V общ.","field":"V общ."}],
 	bit: [{"id":"_4vienyl3s3k","name":"№ долота","field":"№ долота"},{"id":"_mxfdspqmh5r","name":"№ спуска","field":"№ спуска"},{"id":"_6b61lcwesp8","name":"Диам., мм","field":"Диам., мм"},{"id":"_rm6ohkz1wz","name":"Модель","field":"Модель"},{"id":"_47psrd59vuh","name":"сер. №","field":"сер. №"},{"id":"_wgk3rit7no","name":"Насадки","field":"Насадки"},{"id":"_300av5b1zch","name":"Глубина от","field":"Глубина от"},{"id":"_b1jpnjvzg87","name":"Глубина до","field":"Глубина до"},{"id":"_cf1a1pdkcf","name":"Прох., м","field":"Прох., м"},{"id":"_m9sqind3hin","name":"Часы бур.","field":"Часы бур."},{"id":"_2bwb03tk18q","name":"М/час","field":"М/час"},{"id":"_5jzcngn0fhn","name":"Состояние долота","field":"Состояние долота"},{"id":"_d2ya34wpsp9","name":"Причина подъема","field":"Причина подъема"}],
 	NNB: [{"id":"_4kuxdjivypv","name":"Дата","field":"Дата"},{"id":"_h3ejf8f2o3i","name":"№ долота","field":"№ долота"},{"id":"_rte5or036vn","name":"№ спуска","field":"№ спуска"},{"id":"_x5omid9za2","name":"Диам., мм","field":"Диам., мм"},{"id":"_u2idbz8z2um","name":"Модель","field":"Модель"},{"id":"_87ud8vbdoha","name":"сер. №","field":"сер. №"},{"id":"_3t83rz3s1z2","name":"Насадки","field":"Насадки"},{"id":"_z8x4l6ladz9","name":"Глуб. от","field":"Глуб. от"},{"id":"_w2keo18gof","name":"До","field":"До"},{"id":"_x286dpgdkds","name":"Прох., м","field":"Прох., м"},{"id":"_kkjploiet1","name":"Часы бур.","field":"Часы бур."},{"id":"_xa3gt3vbzog","name":"М/час","field":"М/час"},{"id":"_1v01mm1v6d5","name":"Состояние долота","field":"Состояние долота"},{"id":"_hndhgt94a4","name":"Причина подъема","field":"Причина подъема"},{"id":"_a7ifuhm3vd7","name":"КНБК","field":"КНБК"},{"id":"_rljvahx81xj","name":"Объём шлама, м3","field":"Объём шлама, м3"}],
 	concrete: []
 };
+*/
 
 function Table(id, columns, type) {
 	this.id = id;
@@ -28,7 +31,7 @@ function Table(id, columns, type) {
 		row: "table__row",
 		rowDomain: "table__row-domain"
 	};
-	
+	this.fastInput = null;
 
 	var matchReg = /.*_.*-.*/;
 	var that = this;
@@ -37,14 +40,10 @@ function Table(id, columns, type) {
 	var form = null;
 	var inputValue;
 	
-	var tbodyStyles = "overflow:scroll;max-width:100%;max-height:100%;display:block;";
-	//var rowsDivInnerTable = "<tbody id=" + this.id + "_table__rows data-table=body name=tbody></tbody>"
-	//var headingDivInnerTable = "<tbody id=" + this.id + "_table__heading data-table=heading name=theading></tbody>";
-	//var rowsDiv = "<table id=" + this.id + "_table__rows-container styles=" + tbodyStyles + ">" + rowsDivInnerTable + "</table>";
-	//var headingDiv = "<table id=" + this.id + "_table__heading-container>" + headingDivInnerTable + "</table>";
-	//console.log(this);
+	var tbodyStyles = "overflow:auto;max-width:100%;max-height:100%;display:block;";
 	var headingDiv = "<tbody id=" + this.id + "_table__heading data-table=heading name=theading></tbody>";
 	var rowsDiv = "<tbody id=" + this.id + "_table__rows data-table=body name=tbody></tbody>";
+
 	this.table.innerHTML = "";
 	if (this.type != "plan") {
 		this.table.onclick = function(e) {
@@ -63,7 +62,6 @@ function Table(id, columns, type) {
 	//this.table.ondblclick = function(e) {
 		//editing(e.target);
 	//}
-	
 	
 	if (this.table.parentElement.id.includes("table")) {
 		this.table.parentElement.addEventListener("scroll", function() {
@@ -95,25 +93,15 @@ function Table(id, columns, type) {
 	// *** on input submit ***
 		if (Object.keys(currentlyEditing).length < 1) return
 		
-		//webMI.data.write(inputVar, currentlyEditing.path.row[currentlyEditing.path.domain])
-		
-		//webMI.data.read(inputVar, function(e) {		
-			//inputValue = e.value;
-			
-			currentlyEditing.path.row[currentlyEditing.path.domain] = that.input.value;
-			//currentlyEditing.path.row[currentlyEditing.path.domain] = inputValue;
-			currentlyEditing.element.innerHTML = "";
-			currentlyEditing.element.insertAdjacentHTML("beforeend", that.input.value);
-			//currentlyEditing.element.insertAdjacentHTML("beforeend", inputValue);
-			currentlyEditing = {};
-			that.input.style.visibility = "hidden";
-			//temp
-			//that.data.timestamp = new Date();
-			//tableToSend = that.data;
-			//console.log(that.data)
-			
-		//})
+		currentlyEditing.path.row[currentlyEditing.path.domain] = that.input.value;
+		currentlyEditing.element.innerHTML = "";
+		currentlyEditing.element.insertAdjacentHTML("beforeend", that.input.value);
+		currentlyEditing = {};
+		that.input.style.visibility = "hidden";
+		that.input.dispatchEvent(saveEvent);
 	}
+	//gomennasorry
+	that.submit = submit;
 
 	function replaceInputPosition(e) {
 		var rect = e.getBoundingClientRect();
@@ -138,7 +126,6 @@ function Table(id, columns, type) {
 		function addSubmitEvent(form) {
 			form.addEventListener("submit", function(e) {
 				e.preventDefault();
-				//console.log("submit");
 				submit();			
 			})			
 		}
@@ -155,11 +142,10 @@ function Table(id, columns, type) {
 		currentlyEditing.element = element;
 		currentlyEditing.path = getValueObjectFromId(element.id);
 		replaceInputPosition(element);
+		that.currentlyEditing = currentlyEditing;
 		//should put pub-sub or observer pattern here
 		that.input.style.visibility = "visible";
 		that.input.value = element.innerHTML;
-		
-		//webMI.data.write(inputVar, currentlyEditing.path.row[currentlyEditing.path.domain])
 	}
 
 	function getValueObjectFromId(id) {
@@ -194,7 +180,33 @@ Table.prototype.addRow = function(rowValues, rowObj) {
 	that.render(that.data.rows);
 }
 
-Table.prototype.render = function (rowsData) {
+Table.prototype.fastAdd = function(values) {
+	var that = this;
+	var index = that.data.rows.indexOf(that.currentlyEditing.path.row)
+	var rowKeys = Object.keys(that.data.rows[index])
+	var init =  rowKeys.indexOf(that.currentlyEditing.path.domain[0]);
+	var counter = init;
+	var row = that.data.rows[index]
+	var values = values.split("\t")
+	
+	if (values.length > 1) { 
+		values.map(function(value) {
+			if (that.data.columns[counter] && value) {
+				row[rowKeys[counter]] = value.replace("\r\n", "")
+			}
+			if (!value) counter --
+			
+			counter ++
+		});
+		row[rowKeys[init]] = values[0];
+		that.input.value = values[0];
+		that.input.style.visibility = 'hidden';
+		that.render(that.data.rows);
+	}
+	that.input.dispatchEvent(saveEvent);
+}
+
+Table.prototype.render = function(rowsData) {
 	var rows = "";
 	var that = this;
 	//var tableElement = document.querySelector("[data-table='body']");
@@ -215,7 +227,11 @@ Table.prototype.render = function (rowsData) {
 		var rowValues = Object.keys(rowObj);
 		var row = "";
 		for (var j = 0; j < rowValues.length; j++) {
-			row += "<td id=" + that.id + "_td_" + index + "-" + j + " class=" + that.classes.rowDomain + ">" + rowObj[rowValues[j]] + "</td>";
+			var some = that.data.columns.some(function(column) { return rowValues[j] == column.field })
+			if (some) {
+				row += "<td id=" + that.id + "_td_" + index + "-" + j + " class=" + that.classes.rowDomain + ">" + rowObj[rowValues[j]] + "</td>";
+			} else console.log("else")
+			
 		}
 	
 		return row
@@ -230,10 +246,6 @@ Table.prototype.render = function (rowsData) {
 	
 	tableElement.innerHTML = ""
 	tableElement.insertAdjacentHTML("beforeend",  rows);
-	
-	//temp
-	//that.data.timestamp = new Date();
-	//tableToSend = that.data;
 }
 
 Table.prototype.init = function() {
@@ -267,32 +279,74 @@ Table.prototype.init = function() {
 	
 	if (that.type != "plan") {
 		var buttonAddRow = document.getElementById(that.id + "_buttonAddRow");
-		buttonAddRow.onclick = function() {
+		//var buttonFastAdd = document.getElementById(that.id + "_buttonFastAdd");
+		
+		if (buttonAddRow) buttonAddRow.onclick = function() {
 			that.addRow();
 		}
+		/*
+		if (buttonFastAdd) buttonFastAdd.onclick = function() {
+			that.fastAdd();
+		}
+		*/
 		this.input.style.position = "fixed";
 		this.input.style.zIndex = 99;
+		this.input.addEventListener('paste', function(event) {
+			that.fastAdd((event.clipboardData || window.clipboardData).getData('text'))
+		})
 		this.input.addEventListener('keydown', function(f) {
-		if (f.srcElement.getAttribute('readonly') != 'true') {
-			if (f.key == 'Backspace') {
-				f.srcElement.value = f.srcElement.value.slice(0,-1);
-				//console.log("backspace")
+			if (f.srcElement.getAttribute('readonly') != 'true') {
+				if (f.key == 'Backspace') {
+					var start = f.srcElement.selectionStart;
+					var end =  f.srcElement.selectionEnd;
+					var temp = f.srcElement.value.split("");
+					if (end != start) {
+						temp.splice(start, (end - start));
+						f.srcElement.value = temp.join("");
+						f.srcElement.selectionStart = start;
+						f.srcElement.selectionEnd = start;
+						
+					} else {
+						temp.splice(start - 1, 1);
+						f.srcElement.value = temp.join("");
+						f.srcElement.selectionStart = start - 1;
+						f.srcElement.selectionEnd = start - 1;
+						
+					}
+				}
+				if (f.key == 'Enter') {
+					!document.getElementById(that.id + "_table__input-form").dispatchEvent(evt);
+				}
 			}
-			if (f.key == 'Enter') {
-				!document.getElementById(that.id + "_table__input-form").dispatchEvent(evt);
-				//console.log("212");
-				//!f.srcElement.dispatchEvent(evt);
-			}
-		}
-			/*	
-			} else if (!isNaN(f.key)) {
-			}
-			else {
-				f.srcElement.value=f.srcElement.value.slice(0,-1)
-			}}
-			else{}
-			*/
-			
 		})
 	}
+}
+
+function addEvents(input, fn) {
+	input.addEventListener('keydown', function(f) {
+		if (f.srcElement.getAttribute('readonly') != 'true') {
+			if (f.key == 'Backspace') {
+				var start = f.srcElement.selectionStart;
+				var end =  f.srcElement.selectionEnd;
+				var temp = f.srcElement.value.split("");
+
+				if (end != start) {
+					temp.splice(start, (end - start));
+
+					f.srcElement.value = temp.join("");
+					f.srcElement.selectionStart = start;
+					f.srcElement.selectionEnd = start;
+				} else {
+					temp.splice(start - 1, 1);
+
+					f.srcElement.value = temp.join("");
+					f.srcElement.selectionStart = start - 1;
+					f.srcElement.selectionEnd = start - 1;
+				}
+			}
+			if (f.key == 'Enter') {
+				fn(input.value)
+			}
+		}
+	})
 }

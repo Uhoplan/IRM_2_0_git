@@ -147,7 +147,7 @@
    <div id="popup" style="display:none;padding: 1rem 2rem;background:#000;color:white;">Сохранение...</div>
   </div>
  </foreignObject>
- <script atv:desc="" atv:name="j in" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
 webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
 var depthDayData = depthData.value;
 
@@ -199,7 +199,22 @@ var currentCol;
 var tableFactCols;
 
 var historyState = [];
+var planHistoryState = [];
+
 var buttonSave = document.getElementById("buttonSave");
+
+var planExceptions = ["NNB", "Concrete"]
+
+function excludePlans() {
+	if (planExceptions.includes(currentService)) {
+		//console.log(writePlan, currentService)
+		writePlan.style.display = "none";
+		
+		return true
+	}
+	return false	
+}
+excludePlans()
 
 webMI.trigger.connect("changeFactTableData", function(data){
 	var filter = {};
@@ -207,13 +222,13 @@ webMI.trigger.connect("changeFactTableData", function(data){
 	var path2 = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct") + ".current";
 	// change !Bit to Bit?
 	if (currentService == "Bit" || currentService == "NNB") path = "AGENT.OBJECTS.ServiceParams." + currentService + ".temp." + "tableCols";
-	//console.log(data)
 	filter.type=["v:1"];
 	filter.address = ["g:AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + data.value  + ".fact"];
 	filter.timestamp = ["n:>=" + depthDayData + "<" + new Date().getTime()];
 	
 	webMI.data.queryFilter(filter, function(e) {
 		var result = [];
+		
 		for (i in e.result) {
 			if (e.result[i].servertimestamp > depthDayData) {
 				if (e.result[i].value && e.result[i].value.length > 0)
@@ -229,11 +244,10 @@ webMI.trigger.connect("changeFactTableData", function(data){
 			var resCols = JSON.parse(res[0].value).columns;
 			
 			tableFactCols = resCols;
-			//console.log(path2)
-			//console.log(res[1], depthDayData)
+			
 			if ((currentService == "!Bit" || currentService == "!NNB") && res[1].value.length > 0 && res[1].timestamp > depthDayData) {
 				result.push(JSON.parse(res[1].value).rows[0]);
-				
+			
 			}
 			updateTable({
 				value: { rows: result, columns: resCols },
@@ -242,12 +256,14 @@ webMI.trigger.connect("changeFactTableData", function(data){
 		})
 	})
 });
+
 function excludeExceptions(e, i) {
 	var res = Object.values(JSON.parse(e.result[i].value).rows[0])
-	var bitOld = currentService == "Bit" && e.result[i].timestamp < 1631764925721
+	var bitOld = currentService == "Bit" && e.result[i].timestamp < 1634223078087
 	
 	return res[1] != "Тестовый" && res[1] != "Тестовый2" && res[0] != "тест" && !bitOld
 }
+
 webMI.trigger.connect("colClickTrigger", function(e) {
 	sectionElement.innerHTML = colNames[e.value];
 	currentCol = e.value;
@@ -276,10 +292,24 @@ webMI.trigger.connect("changeTableData", function(e) {
 webMI.trigger.fire("changeServiceTrigger", webMI.query["type"]);
 
 
-function isHistory(row) {
+function isHistory(row, type) {
+	if (type == "plan") {
+		if (planHistoryState.includes(row)) {
+		
+			return true
+		}
+		
+		return planHistoryState.some(function(object) {
+			
+			return Object.values(object).every(function(item, index) {
+				
+				return item == Object.values(row)[index]
+			})
+		})
+	}
+	
 	if (historyState.includes(row)) {
 	
-
 		return true
 	}
 	
@@ -292,31 +322,81 @@ function isHistory(row) {
 	})
 }
 
+function hotSave() {
+	var planArr;
+	var factArr;
+	
+	if (table) planArr = table.data.rows.filter(function(item) {
+		return !isHistory(item, "plan")
+	})
+	if (tableFact) factArr = tableFact.data.rows.filter(function(item) {
+		return !isHistory(item)
+	})
+	
+	localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(planArr));
+	localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(factArr));
+}
+
+function hotGet(id) {
+
+	return localStorage.getItem(id + '_' + currentService + '_' + currentCol)
+}
+
 function updateTable(item) {
-	if (item.type == "plan") {
-		table = new Table("table", item.value.columns, { type: "plan" });
-		table.init();
-		if (item.value.rows) table.render(item.value.rows);
+	var rows
+	
+	if (item.value.rows) rows = JSON.parse(JSON.stringify(item.value.rows))
+	
+	if (item.type == "plan" && !planExceptions.includes(currentService)) {
 		
-		return	
+		table = new Table("table", item.value.columns, { type: "plan" });
+		
+		table.table.removeEventListener("saveTable", hotSave);
+		table.table.addEventListener("saveTable", hotSave);
+		table.init();
+		
+		var hot = hotGet(table.table.id) 
+		
+		if (hot) {
+			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+		}
+		
+		if (item.value.rows) {
+			planHistoryState = JSON.parse(JSON.stringify(item.value.rows));
+			table.render(rows);
+		} 
+		
+		return
 	}
 	if (item.type == "fact") {
+	
 		historyState = JSON.parse(JSON.stringify(item.value.rows));
+		//concat gethot with item rows here
 		tableFact = new Table("tableFact", item.value.columns, { type: "fact" });
+		tableFact.table.removeEventListener("saveTable", hotSave);
+		tableFact.table.addEventListener("saveTable", hotSave);
 		tableFact.init();
 		
-		if (item.value.rows && item.value.rows[0]) tableFact.render(item.value.rows);
+		var hot = hotGet(tableFact.table.id) 
+		
+		if (hot) {
+			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+		}
+		
+		if (rows && rows[0]) tableFact.render(rows);
+		
 		tableFact.table.addEventListener("click", function(e) {
-			setTimeout(function(e) {backlight(tableFact.data.rows)}, 0)
+			setTimeout(function(e) { backlight(rows) }, 0)
 		})
+		
 		if (!isButton) {
 			isButton = !isButton;
 			document.getElementById(tableFact.id + "_buttonAddRow").addEventListener("click", function() {
 				backlight(tableFact.data.rows);
 				tableFact.table.scrollIntoView(false);
 			});
-		}		
-		//console.log(tableFact.data)
+		}
+		
 		if (tableFact.data.rows) backlight(tableFact.data.rows);
 		
 		return
@@ -346,15 +426,10 @@ function saveTable(rows) {
 							
 							if (e.timestamp > depthDayData) {
 								webMI.data.write(path, JSON.stringify(currentBit));
-								//console.log(e.timestamp)
 								
 								var result = rows;
 								
-								//console.log("before ", id, result);
 								result.splice(id - 1, 1, currentBit.rows[0]);
-								//console.log("after ", result);
-								//console.log(result)
-								//setTimeout(function() { webMI.trigger.fire("changeFactTableData", currentCol) }, 0);
 								
 								updateTable({
 									value: { rows: result, columns: tableFactCols },
@@ -379,6 +454,7 @@ function saveTable(rows) {
 		} else console.log("history data")
 	}
 	backlight(tableFact.data.rows);
+	localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify([]));
 	throwPopup("Данные сохранены")
 }
 
@@ -408,57 +484,54 @@ function savePrev() {
 		//console.log(allCurrentBits)
 		var arrToWrite = [];
 		
-			allCurrentBits = allCurrentBits.map(function(bit, index) {
-				if (bit.value) { 
-					bitValue = JSON.parse(bit.value);
-					
-					return new Promise(function(resolve, reject) {
-						bitDataCalc(bitValue).then(function(res) {
-						
-							bitValue.rows[0].maxLoad = res.loadOnBit.max;
-							bitValue.rows[0].load = res.loadOnBit.avg;
-							bitValue.rows[0].flowInput = res.mud.avg;
-							bitValue.rows[0].minVmex = res.drillSpeed.min;
-							bitValue.rows[0].diffPressure = res.diffPressure.avg;
-							
-							resolve(bitValue)
-						})
-					})
-				} else return false
-			});
-			
-			Promise.all(allCurrentBits)
-			.then(function(values) {
-				var emptyArr = [];
-			
-				allColsFactArr = allColsFactArr.filter(function(itemPath, index) {
-					if (!values[index]) return false
-					
-					return true
-				});
-				allColsArr = allColsArr.filter(function(col, index) {
-					return values[index]
-				});
-				allColsArr.map(function() {
-					emptyArr.push("");
-				})
-				values = values.filter(function(value) {
-					if (!value) return false
-					
-					return value;
-				}).map(function(value) {
-					return value ? JSON.stringify(value) : value
-				})
+		allCurrentBits = allCurrentBits.map(function(bit, index) {
+			if (bit.value) { 
+				bitValue = JSON.parse(bit.value);
 				
-			
-				webMI.data.write(allColsFactArr, values);
-				webMI.data.write(allColsArr, emptyArr);
-				//console.log("v: ", values, allColsFactArr, allColsArr);
+				return new Promise(function(resolve, reject) {
+					bitDataCalc(bitValue).then(function(res) {
+					
+						bitValue.rows[0].maxLoad = res.loadOnBit.max;
+						bitValue.rows[0].load = res.loadOnBit.avg;
+						bitValue.rows[0].flowInput = res.mud.avg;
+						bitValue.rows[0].minVmex = res.drillSpeed.min;
+						bitValue.rows[0].diffPressure = res.diffPressure.avg;
+						
+						resolve(bitValue)
+					})
+				})
+			} else return false
+		});
+		
+		Promise.all(allCurrentBits)
+		.then(function(values) {
+			var emptyArr = [];
+		
+			allColsFactArr = allColsFactArr.filter(function(itemPath, index) {
+				if (!values[index]) return false
+				
+				return true
+			});
+			allColsArr = allColsArr.filter(function(col, index) {
+				return values[index]
+			});
+			allColsArr.map(function() {
+				emptyArr.push("");
 			})
-			.catch(function(err) { console.log(err) });
+			values = values.filter(function(value) {
+				if (!value) return false
+				
+				return value;
+			}).map(function(value) {
+				return value ? JSON.stringify(value) : value
+			})
 			
-		//})
-		//webMi.data.write(allColsFactArr, )
+		
+			webMI.data.write(allColsFactArr, values);
+			webMI.data.write(allColsArr, emptyArr);
+			//console.log("v: ", values, allColsFactArr, allColsArr);
+		})
+		.catch(function(err) { console.log(err) });
 	})
 	//console.log(allColsArr)
 }
@@ -488,36 +561,6 @@ function bitDataCalc(bit, time) {
 					start: null,
 					end: null
 				};
-				/*
-				var tempTest = {
-					start: null,
-					end: null
-				};
-				var currentDepth = Object.keys(bit.rows[0]).filter(function(unit) {
-				
-					return unit.includes("Глубина") || unit.includes("глубина") || unit == "depthFromTo"
-				})[0];
-				*/
-				
-				/*
-				wd.result.map(function(item) {
-					
-					if (!currentWDTimestamp.end) {
-						if (item.value > bit.rows[0][currentDepth].split("-")[0] && item.value <= bit.rows[0][currentDepth].split("-")[1]) {
-							tempTest.end = item.value;
-							currentWDTimestamp.end = item.servertimestamp;
-						}
-					}
-				});
-				wd.result.reverse().map(function(item) {
-					if (!currentWDTimestamp.start) {
-						 if (item.value >= bit.rows[0][currentDepth].split("-")[0]) {
-							tempTest.start = item.value;
-							currentWDTimestamp.start = item.servertimestamp;
-						 }
-					} 
-				});
-				*/
 				var result = {
 					loadOnBit: {},
 					mud: {},
@@ -582,7 +625,7 @@ function backlight(rows) {
 			document.getElementById(tableFact.id + "_tr_" + i).style.pointerEvents = "none";
 			document.getElementById(tableFact.id + "_button_" + i + "_delete").style.visibility = "hidden";
 		}
-		if (isHistory(rows[i]) && table.data.rows.length > 0) {
+		if (isHistory(rows[i]) && table.data.rows.length > 0 && !excludePlans()) {
 			var items = Object.values(rows[i]);
 			var planItems = Object.values(table.data.rows[0]);
 			for (j in items) {
@@ -603,10 +646,7 @@ function backlight(rows) {
 			}
 		}
 	}
-	//}
 }
-
-
 
 buttonSave.addEventListener("click", function(e) {
 	saveTable(tableFact.data.rows);
@@ -621,7 +661,9 @@ uploadPlan.addEventListener("change", function(e) {
 })
 
 function changeMenuMode(mode) {
-	writePlan.innerHTML = mode == "edit" ? "Отменить" : "Ввести план";
+	if (!planExceptions.includes(currentService)) {
+		writePlan.innerHTML = mode == "edit" ? "Отменить" : "Ввести план";
+	} else excludePlans()
 	savePlan.style.display = mode == "edit" ? "block" : "none";
 	editingPlan = mode == "edit" ? true : false;
 	planAddButton.style.visibility = mode == "edit" ? "visible" : "hidden";
@@ -640,7 +682,8 @@ writePlan.addEventListener("click", function() {
 			changeMenuMode("edit");
 			table = new Table("table", res.columns, { type: "fact" });
 			table.init();
-			table.addRow();
+			table.render(JSON.parse(JSON.stringify(currentPlan.rows)));
+			//table.addRow();
 		} else if (editingPlan) {
 			//console.log(editingPlan);
 			table = new Table("table", currentPlan.columns, { type: "plan" });
@@ -663,6 +706,8 @@ savePlan.addEventListener("click", function() {
 		writePlan.innerHTML = "Ввести план";
 		
 		webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), JSON.stringify(table.data))
+		
+		localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify([]));
 		
 		table = new Table("table", cTable.columns, { type: "plan" });
 		table.init();

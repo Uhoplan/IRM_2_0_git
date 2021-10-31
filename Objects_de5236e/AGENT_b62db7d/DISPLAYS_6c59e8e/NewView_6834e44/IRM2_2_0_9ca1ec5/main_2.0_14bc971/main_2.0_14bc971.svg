@@ -12,7 +12,7 @@
   <atv:argument name="MaxRightSulfur" value="10"/>
   <atv:argument name="gaz" value="AGENT.OBJECTS.Test.ForMainWindow.Stub"/>
   <atv:argument name="maxGaz" value="AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxGas"/>
-  <atv:argument name="RoREnt" value="AGENT.OBJECTS.Test.PerMaxMin.ORB.one"/>
+  <atv:argument name="RoREnt" value="AGENT.OBJECTS.ServiceParams.Mud.cols.Direct.fact"/>
   <atv:argument name="MaxRoREnt" value="AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxDensityInput"/>
   <atv:argument name="RoRExt" value="AGENT.OBJECTS.Test.PerMaxMin.ORB.one"/>
   <atv:argument name="MaxRoRExt" value="AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxDensityOutput"/>
@@ -289,7 +289,7 @@ if (value == false)
 
 });]]></script>
  <svg atv:refpx="156.861" atv:refpy="821.5" height="71" id="id_17" transform="matrix(0.6901,0,0,0.6901,0,0)" width="400" x="24.391" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Text.Barrel" y="1154.838">
-  <atv:argument name="Text" value="Наработка т/к"/>
+  <atv:argument name="Text" value="Наработка тальканата"/>
   <atv:argument name="Value" value="(т/км)"/>
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
  </svg>

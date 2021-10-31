@@ -1,1 +1,1 @@
-C:/Users/IR-Master-Demo/Desktop/Сертификат_rigintelpro.ru/rigintelpro_key.pem
+C:/Work/cert/rigintelpro_key.pem
