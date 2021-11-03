@@ -66,7 +66,7 @@
  </foreignObject>
  <foreignObject height="31.636" id="id_2" width="330.864" x="84.568" y="87.409">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
-   <p class="green-text" id="currentService" style="text-align:center;">Растворный сервис</p>
+   <p class="green-text" id="currentService" style="text-align:center;">Загрузка...</p>
   </div>
  </foreignObject>
  <foreignObject height="36.777" id="id_7" width="350" x="75" y="151.402">
@@ -91,6 +91,15 @@ var serviceNames = {
 	"Bit": "Долотный сервис",
 	"Concrete": "Цементаж"
 };
+
+function setCurrentService() {
+	if (hasRight("Concrete")) currentService = "Concrete"
+	if (hasRight("NNB")) currentService = "NNB"
+	if (hasRight("Bit")) currentService = "Bit"
+	if (hasRight("Mud")) currentService = "Mud"
+	currentServiceEl.innerHTML = serviceNames[currentService];
+}
+setCurrentService();
 
 var buttons = [
 	{
@@ -130,9 +139,10 @@ function generateForm() {
 generateForm();
 
 function createButton(data, i) {
+	var disabling = hasRight(data.datasetValue) ? "" : "pointer-events:none;background-color:grey;color:black;"
 	//var label = "<label for=" + "radio_" + i + " class=" + data.class + " style='font-size:10px;text-align:center;'>" + data.label + "</label>";
 	//var input = "<input value=" + data.datasetValue + " type='radio' id=radio_" + i + " name=currentService style='width:100%;display:none;' data-" + data.dataset + "=" + data.datasetValue + "/>";
-	var button = "<button type='button' class=" + data.class + " style='width:100%;font-size:10px;' data-" + data.dataset + "=" + data.datasetValue + ">" + data.label + "</button>";
+	var button = "<button type='button' class=" + data.class + " style='" + disabling + "width:100%;font-size:10px;' data-" + data.dataset + "=" + data.datasetValue + ">" + data.label + "</button>";
 	
 	return button
 	//return input + label
@@ -161,6 +171,10 @@ radioButtonsContainer.addEventListener("click", function(event) {
 		fillInputs();
 	}
 });
+
+function hasRight(right) {
+	return webMI.hasRight("USER." + right) || webMI.hasRight("USER.Services")
+}
 
 function fillInputs() {
 	if (!currentService) currentService = "Mud"

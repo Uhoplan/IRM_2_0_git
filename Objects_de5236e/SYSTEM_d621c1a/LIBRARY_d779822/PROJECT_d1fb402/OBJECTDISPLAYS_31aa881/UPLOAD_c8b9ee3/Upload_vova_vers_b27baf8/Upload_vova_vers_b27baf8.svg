@@ -51,7 +51,7 @@
   </body>
  </foreignObject>
  <text atv:refpx="59.401" atv:refpy="51.849" fill="#ffffff" font-family="Arial" font-size="10" id="selectMessage" text-anchor="start" visibility="visible" x="5.192" y="56.349">T{No File Selected}</text>
- <script type="text/ecmascript"><![CDATA[var dataString = "";
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var dataString = "";
 var dataArr = [];
 var fileName = "";
 console.log(webMI.query["isCsvMain"])
@@ -143,7 +143,7 @@ webMI.addEvent("write", "click", function (e) {
 			httpRequest.setRequestHeader("Content-Type", "multipart/form-data");
 			var requestParams=""
 			
-				console.log("her1")
+			
 				requestParams =
 				"data=" +
 				encodeURIComponent(encodeURI(data)) +

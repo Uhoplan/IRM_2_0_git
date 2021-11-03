@@ -99,27 +99,27 @@
   <atv:argument name="First" value="Расход"/>
   <atv:argument name="Second" value="на входе,"/>
   <atv:argument name="Third" value="л/с"/>
-  <atv:argument name="min" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MinFlowInput"/>
-  <atv:argument name="max" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowInput"/>
+  <atv:argument name="min" value="AGENT.OBJECTS.IVE50.Mud.FlowInputRangeMin"/>
+  <atv:argument name="max" value="AGENT.OBJECTS.IVE50.Mud.FlowInputRangeMax"/>
  </svg>
  <svg atv:refpx="1184.221" atv:refpy="755.895" height="131.79" id="id_30" transform="matrix(1.0315,0,0,1,0,0)" width="134.22" x="1076.103" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Max" y="690">
-  <atv:argument name="First" value="Поток"/>
+  <atv:argument name="First" value="Расход"/>
   <atv:argument name="Second" value="на выходе,"/>
   <atv:argument name="Third" value="л/с"/>
-  <atv:argument name="min" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MinFlowOutput"/>
-  <atv:argument name="max" value="AGENT.OBJECTS.IVE50.Mud.FlowOutput.high"/>
+  <atv:argument name="min" value="AGENT.OBJECTS.IVE50.Mud.FlowOutputRangeMin"/>
+  <atv:argument name="max" value="AGENT.OBJECTS.IVE50.Mud.FlowOutputRangeMax"/>
  </svg>
  <svg atv:refpx="756.284" atv:refpy="755.895" height="131.79" id="id_31" transform="matrix(1.0315,0,0,1,0,0)" width="134.22" x="659.234" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Max" y="690">
   <atv:argument name="First" value="Давление в"/>
   <atv:argument name="Second" value="манифольде,"/>
-  <atv:argument name="Third" value="МПа"/>
+  <atv:argument name="Third" value="атм"/>
   <atv:argument name="min" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MinPressureManifold"/>
   <atv:argument name="max" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold.High"/>
  </svg>
  <svg atv:refpx="894.22" atv:refpy="755.895" height="131.79" id="id_32" transform="matrix(1.0315,0,0,1,0,0)" width="134.22" x="794.959" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Max" y="690">
   <atv:argument name="First" value="Перепад"/>
   <atv:argument name="Second" value="давления,"/>
-  <atv:argument name="Third" value="(МПа)"/>
+  <atv:argument name="Third" value="атм"/>
   <atv:argument name="min" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MinPressureDrop"/>
   <atv:argument name="max" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxPressureDrop"/>
  </svg>

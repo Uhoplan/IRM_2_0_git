@@ -80,18 +80,7 @@
    <p id="down" style="margin:0">0000</p>
   </div>
  </foreignObject>
- <script type="text/ecmascript"><![CDATA[
-
-
-webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.APDWorking", function(e) {
-var value = e.value;
-if (value == true)
-	document.getElementById('leb').style.color="#1fc9ae"
-if (value == false)
-	document.getElementById('leb').style.color="#36404a"
-
-});
-webMI.data.subscribe(webMI.query["rrc"], function(e) {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.subscribe(webMI.query["rrc"], function(e) {
 document.getElementById('left').innerHTML = e.value.toFixed(1)
 });
 webMI.data.subscribe(webMI.query["lrc"], function(e) {

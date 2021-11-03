@@ -1,62 +1,61 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" height="255.2" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100">
+<svg height="255.2" version="1.2" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <linearGradient y1="1.47945" gradientUnits="objectBoundingBox" id="linear_3" y2="0.0684932" x1="0.547945" x2="0.534247">
-   <stop stop-color="#6699ff" offset="0"/>
-   <stop stop-color="#6699ff" offset="0.5604170000000001"/>
-   <stop stop-color="#ffe70c" offset="0.7677079999999999"/>
-   <stop stop-color="#ff0000" offset="1"/>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_3" x1="0.547945" x2="0.534247" y1="1.47945" y2="0.0684932">
+   <stop offset="0" stop-color="#6699ff"/>
+   <stop offset="0.5604170000000001" stop-color="#6699ff"/>
+   <stop offset="0.7677079999999999" stop-color="#ffe70c"/>
+   <stop offset="1" stop-color="#ff0000"/>
   </linearGradient>
  </defs>
  <metadata>
-  <atv:parameter substitute="" name="ConsumptionIn" desc="Расход на входе " behavior="optional" defaultvalue="" valuetype="address"/>
-  <atv:parameter name="MaxConIn" desc="Максимум расход на входе " behavior="optional" defaultvalue="" valuetype="number"/>
-  <atv:parameter substitute="$ST1$" name="St1" desc="Строка 1" behavior="optional" defaultvalue="1" valuetype="string"/>
-  <atv:parameter substitute="$ST2$" name="St2" desc="Строка 1" behavior="optional" defaultvalue="2" valuetype="string"/>
-  <atv:parameter substitute="$ST3$" name="St3" desc="Строка с ед. измерения" behavior="optional" defaultvalue="3" valuetype="string"/>
-  <atv:gridconfig enabled="false" height="20" gridstyle="lines" width="20"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Переменная привязки" name="NodeToDisplay(base)" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" desc="Максимум на шкале" name="MaxOfRange" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="1" desc="Строка 1" name="St1" substitute="$ST1$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="2" desc="Строка 1" name="St2" substitute="$ST2$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="3" desc="Строка с ед. измерения" name="St3" substitute="$ST3$" valuetype="string"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
- <rect atv:refpx="43.846" atv:refpy="136.337" height="181.135" stroke-width="0" stroke-linejoin="miter" y="74.072" fill="#303e49" id="id_1" stroke="#1f1f1f" width="35.039" x="30.167"/>
- <rect atv:refpx="43.806" atv:refpy="135.866" height="163.815" stroke-width="0" stroke-linejoin="miter" y="82.755" fill="url(#linear_3)" id="id_3" stroke="none" width="21.068" x="37.111"/>
- <rect atv:refpx="43.726" atv:refpy="79.733" height="156.641" stroke-width="4.804" stroke-linejoin="miter" y="86.188" fill="#1f1f1f" id="id_6" stroke="#1f1f1f" width="16.997" x="39.085"/>
- <rect atv:refpx="43.611" atv:refpy="137.681" height="165.849" stroke-width="5.01" stroke-linejoin="miter" y="82.212" fill="none" id="id_0" stroke="#1f1f1f" width="24.159" x="35.359"/>
- <foreignObject height="17.258" y="0.338" id="id_4" width="90.023" x="4.152">
+ <rect atv:refpx="43.846" atv:refpy="136.337" fill="#303e49" height="181.135" id="id_1" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="0" width="35.039" x="30.167" y="74.072"/>
+ <rect atv:refpx="43.806" atv:refpy="135.866" fill="url(#linear_3)" height="163.815" id="id_3" stroke="none" stroke-linejoin="miter" stroke-width="0" width="21.068" x="37.111" y="82.755"/>
+ <rect atv:refpx="43.66" atv:refpy="80.651" fill="#1f1f1f" height="157" id="id_6" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="4.804" width="17" x="39.018" y="86.121"/>
+ <rect atv:refpx="43.611" atv:refpy="137.681" fill="none" height="165.849" id="id_0" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="5.01" width="24.159" x="35.359" y="82.212"/>
+ <foreignObject height="17.258" id="id_4" width="90.023" x="4.152" y="0.338">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0" id="firstStroke">Надпись</p>
+   <p id="firstStroke" style="margin:0">Надпись</p>
   </div>
  </foreignObject>
- <foreignObject height="17.258" y="16.528" id="id_5" width="106.442" x="-2.672">
+ <foreignObject height="17.258" id="id_5" width="106.442" x="-2.672" y="16.528">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0" id="SecondString">Надпись</p>
+   <p id="SecondString" style="margin:0">Надпись</p>
   </div>
  </foreignObject>
- <foreignObject height="17.258" y="30.885" id="id_7" width="90.023" x="4.945">
+ <foreignObject height="17.258" id="id_7" width="90.023" x="4.945" y="30.885">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0" id="thirdString">Надпись</p>
+   <p id="thirdString" style="margin:0">Надпись</p>
   </div>
  </foreignObject>
- <foreignObject height="22.446" y="48.99" id="id_15" width="67.729" x="14.562">
+ <foreignObject height="22.446" id="id_15" width="67.729" x="14.562" y="48.99">
   <div style="width:100%;height:100%;color:white; font-size:1rem;text-align:center;font-size:0.7rem" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0" id="number">0000</p>
+   <p id="number" style="margin:0">0000</p>
   </div>
  </foreignObject>
- <script type="text/ecmascript"><![CDATA[
-webMI.data.subscribe(webMI.query["ConsumptionIn"], function(e) {
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[/*
+webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
 document.getElementById('number').innerHTML = e.value.toFixed(1)
 });
-//webMI.data.subscribe(webMI.query["St1"].value, function(e) {
-//console.log(e+'8=====D')
+
 document.getElementById('firstStroke').innerHTML = webMI.query["St1"]
-//});
 document.getElementById('SecondString').innerHTML = webMI.query["St2"]
 document.getElementById('thirdString').innerHTML = webMI.query["St3"]
 
 //webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_12", "nodeId":webMI.query['ConsumptionIn']});
-webMI.data.subscribe(webMI.query["ConsumptionIn"], function(e) {
-var max = webMI.query['MaxConIn']
+webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
+var max = webMI.query['MaxOfRange']
 var id = "id_6";
 var value = e.value;
+console.log("######",e.value)
 if(value<0){
 value=0;
 }
@@ -67,5 +66,37 @@ max=value
 webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
 
 });
-]]></script>
+*/
+ var max; 
+ webMI.data.read(webMI.query['MaxOfRange'], function(e) {
+	max = e.value;  
+  })
+webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
+  document.getElementById('number').innerHTML = e.value.toFixed(1)
+  });
+  //webMI.data.subscribe(webMI.query["St1"].value, function(e) {
+  //console.log(e+'8=====D')
+  document.getElementById('firstStroke').innerHTML = webMI.query["St1"]
+  //});
+  document.getElementById('SecondString').innerHTML = webMI.query["St2"]
+  document.getElementById('thirdString').innerHTML = webMI.query["St3"]
+  
+  //webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_12", "nodeId":webMI.query['ConsumptionIn']});
+  webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
+  
+  
+  var id = "id_6";
+  var value = e.value;
+  console.log("####", max,"$$$$", e.value)
+  if(value<0){
+  value=0;
+  }
+  if(value>max)
+  {
+  max=value
+  } 
+  webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
+  
+  });
+  ]]></script>
 </svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.Bit
+NodeClass: Object
+BrowseName: 1:Bit
+DisplayName: en|Bit
+Description: en|Bit
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Bit
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.bitservice
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

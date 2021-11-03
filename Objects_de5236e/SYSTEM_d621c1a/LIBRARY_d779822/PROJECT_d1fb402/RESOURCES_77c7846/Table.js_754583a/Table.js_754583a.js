@@ -1,5 +1,6 @@
 var evt = new CustomEvent("submit", { "bubbles": true, "cancelable": true });
 var saveEvent = new CustomEvent("saveTable", { "bubbles": true, "cancelable": true });
+var deleteEvent = new CustomEvent("deleteTableRow", { "bubbles": true, "cancelable": true });
 /*
 var tempColumns = {
 	mud: [{"id":"_s4rz5qvxvfj","name":"Тип","field":"Тип"},{"id":"_xk16pg0m52l","name":"Тип раствора","field":"Тип раствора"},{"id":"_8rxc7u2cxf9","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_hjc3ryn4vt","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_u52el7crqrg","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_157tz4z4img","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_jcc24d9adgt","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_dmgnp6au1qc","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_bsixhjlgxj8","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_9gy8grbpo8","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_0h1xxz5akuga","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_m3yr23407r","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_7ytgs480iqv","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_xtqq9wqnkc","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_sa8le0ikgvb","name":"pH","field":"pH"},{"id":"_bbuy28l9kt5","name":"V в скв.","field":"V в скв."},{"id":"_7ekv02mnf7r","name":"V приг.","field":"V приг."},{"id":"_p14udq732ls","name":"V общ.","field":"V общ."}],
@@ -79,14 +80,26 @@ function Table(id, columns, type) {
 	
 	function deleteRow(e) {
 		var rowNumber = e.target.id.replace(/[^\d]/g, "");
-		//console.log(rowNumber);
 		var row = document.getElementById(that.id + "_tr_" + rowNumber);
 		
-		//console.log(that.id + "_tr_" + rowNumber);
+		try {
+			e.target.dispatchEvent(deleteEvent);
+			//console.log(e.target)
+		}
+		catch(err) {
+			console.log(err);	
+		}
 		row.remove();
+		// delete this webmi
+		//webMI.trigger.fire("deleteTableRow", { table: that.table.id, id: that.data.rows[rowNumber] })
+		//console.log(that.data.rows[rowNumber])
 		that.data.rows.splice(rowNumber, 1);
+		
 		submit();
 		that.render(that.data.rows);
+		
+		
+		//console.log("dispatch delete");
 	}
 
 	function submit() {
@@ -226,12 +239,12 @@ Table.prototype.render = function(rowsData) {
 		// *** RETURN ROW ***
 		var rowValues = Object.keys(rowObj);
 		var row = "";
+		
 		for (var j = 0; j < rowValues.length; j++) {
 			var some = that.data.columns.some(function(column) { return rowValues[j] == column.field })
 			if (some) {
 				row += "<td id=" + that.id + "_td_" + index + "-" + j + " class=" + that.classes.rowDomain + ">" + rowObj[rowValues[j]] + "</td>";
-			} else console.log("else")
-			
+			} else console.log("invalid row")
 		}
 	
 		return row
