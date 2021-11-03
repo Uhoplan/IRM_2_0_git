@@ -261,5 +261,7 @@
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel14"/>
  </svg>
  <line atv:refpx="1262.819" atv:refpy="1172.759" id="id_18" stroke="#0000ff" stroke-width="1" x1="1062.551" x2="1463.088" y1="1173.056" y2="1172.462"/>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[]]></script>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[]]><![CDATA[
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_1", "nodeId":"AGENT.OBJECTS.IRM_VERSION"});]]></script>
+ <text atv:refpx="1668.588" atv:refpy="965.465" fill="#ffffff" font-family="Arial" font-size="12" id="id_1" x="1648.588" y="969.965">version</text>
 </svg>
