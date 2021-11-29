@@ -19,7 +19,7 @@
  </metadata>
  <rect atv:refpx="43.846" atv:refpy="136.337" fill="#303e49" height="181.135" id="id_1" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="0" width="35.039" x="30.167" y="74.072"/>
  <rect atv:refpx="43.806" atv:refpy="135.866" fill="url(#linear_3)" height="163.815" id="id_3" stroke="none" stroke-linejoin="miter" stroke-width="0" width="21.068" x="37.111" y="82.755"/>
- <rect atv:refpx="43.66" atv:refpy="80.651" fill="#1f1f1f" height="157" id="id_6" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="4.804" width="17" x="39.018" y="86.121"/>
+ <rect atv:refpx="47.111" atv:refpy="80.668" fill="#1f1f1f" height="157.933" id="id_6" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="4.804" width="17" x="39" y="85.188"/>
  <rect atv:refpx="43.611" atv:refpy="137.681" fill="none" height="165.849" id="id_0" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="5.01" width="24.159" x="35.359" y="82.212"/>
  <foreignObject height="17.258" id="id_4" width="90.023" x="4.152" y="0.338">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
@@ -41,62 +41,37 @@
    <p id="number" style="margin:0">0000</p>
   </div>
  </foreignObject>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[/*
-webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
-document.getElementById('number').innerHTML = e.value.toFixed(1)
-});
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//webMI.addOnload(function () { 
+var max;
+var value;
+webMI.data.read(webMI.query['MaxOfRange'], function(e) {
+	console.log('MaxOfRange', e.value)
+	max = Number(e.value); 
+	webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {   
+  var id = "id_6";
+  if(!e.value) {
+	value = 0;
+	} 
+  value = e.value;
+  
+  console.log(webMI.query["St1"], e.value)
 
-document.getElementById('firstStroke').innerHTML = webMI.query["St1"]
-document.getElementById('SecondString').innerHTML = webMI.query["St2"]
-document.getElementById('thirdString').innerHTML = webMI.query["St3"]
-
-//webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_12", "nodeId":webMI.query['ConsumptionIn']});
-webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
-var max = webMI.query['MaxOfRange']
-var id = "id_6";
-var value = e.value;
-console.log("######",e.value)
-if(value<0){
-value=0;
-}
-if(value>max)
-{
-max=value
-} 
-webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
-
-});
-*/
- var max; 
- webMI.data.read(webMI.query['MaxOfRange'], function(e) {
-	max = e.value;  
-  })
-webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
-  document.getElementById('number').innerHTML = e.value.toFixed(1)
+  webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
   });
-  //webMI.data.subscribe(webMI.query["St1"].value, function(e) {
-  //console.log(e+'8=====D')
+  })
+
+
+webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
+  document.getElementById('number').innerHTML = e.value < 0 ? e.value = 0 : Number(e.value).toFixed(1)
+  });
+
   document.getElementById('firstStroke').innerHTML = webMI.query["St1"]
-  //});
   document.getElementById('SecondString').innerHTML = webMI.query["St2"]
   document.getElementById('thirdString').innerHTML = webMI.query["St3"]
-  
-  //webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_12", "nodeId":webMI.query['ConsumptionIn']});
-  webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
-  
-  
-  var id = "id_6";
-  var value = e.value;
-  console.log("####", max,"$$$$", e.value)
-  if(value<0){
-  value=0;
-  }
-  if(value>max)
-  {
-  max=value
-  } 
-  webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
-  
-  });
-  ]]></script>
+ 
+
+
+
+
+ ]]></script>
 </svg>

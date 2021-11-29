@@ -23,6 +23,7 @@ function Table(id, columns, type) {
 	if (type) {
 		if (type.name) this.name = type.name;
 		if (type.type) this.type = type.type;
+		if (type.undeletable) this.undeletable = true;
 	}
 	this.input = null;
 	this.form = null;
@@ -123,8 +124,8 @@ function Table(id, columns, type) {
 		that.input.style.left = rect.left + "px";
 		that.input.style.width = rect.width + "px";
 		that.input.style.height = rect.height + "px";
-		that.input.style.color = e.style.color;
-		that.input.style.background = e.style.background;
+		that.input.style.color = e.style.color || "#FFF";
+		that.input.style.background = e.style.background || "rgb(31, 31, 31)";
 	}	
 	
 	function editing(element) {
@@ -219,6 +220,19 @@ Table.prototype.fastAdd = function(values) {
 	that.input.dispatchEvent(saveEvent);
 }
 
+Table.prototype.fill = function(rowsData) {
+	var that = this;
+	
+	this.render(rowsData);	
+	
+	this.data.rows.map(function(row, index) {
+		that.data.columns.map(function(column) {
+			if (!row[column.field]) row[column.field] = "";
+		})
+	})
+	this.render(this.data.rows)
+}
+
 Table.prototype.render = function(rowsData) {
 	var rows = "";
 	var that = this;
@@ -232,7 +246,7 @@ Table.prototype.render = function(rowsData) {
 		var orangeRound = "<span class=orange-round>" + reversedCross +  "</span>"
 		var button = "<button id=" + that.id + "_button_" + id + "_delete" + " class='table__delete-button table__button'>" + orangeRound + "</button>"
 	
-		return "<td id=" + that.id + "_id_" + id + "_delete class=table__row-domain >" + button + "</td>"
+		return that.undeletable ? "" : "<td id=" + that.id + "_id_" + id + "_delete class=table__row-domain >" + button + "</td>"
 	}
 
 	function addRow(rowObj, index) {
@@ -280,7 +294,7 @@ Table.prototype.init = function() {
 		columns += "<th id=th_" + i + " class=" + this.classes.headerDomain + ">" + this.data.columns[i].name + "</th>";
 	}
 	
-	if (that.type !== "plan") columns += "<th id=th_" + i + " class=" + this.classes.headerDomain + ">" + "Удалить строку" + "</th>"	
+	if (that.type !== "plan" && !that.undeletable) columns += "<th id=th_" + i + " class=" + this.classes.headerDomain + ">" + "Удалить строку" + "</th>"	
 	
 	// temporary decision
 	//if (this.form) this.form = null;

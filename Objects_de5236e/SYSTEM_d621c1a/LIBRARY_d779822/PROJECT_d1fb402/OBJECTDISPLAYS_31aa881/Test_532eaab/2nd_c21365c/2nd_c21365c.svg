@@ -124,20 +124,20 @@ webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPla
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_29", "nodeId":webMI.query["RightSulfur"]});
 
 webMI.data.subscribe(webMI.query["gaz"], function(e) {
-//document.getElementById('first').innerHTML = e.value.toFixed(1)
-document.getElementById('temp').innerHTML = "----"
+document.getElementById('first').innerHTML = e.value.toFixed(1)
+//document.getElementById('temp').innerHTML = "----"
 });
 webMI.data.subscribe(webMI.query["gradus"], function(e) {
-//document.getElementById('temp').innerHTML = e.value.toFixed(1)
-document.getElementById('temp').innerHTML = "----"
+document.getElementById('temp').innerHTML = e.value.toFixed(1)
+//document.getElementById('temp').innerHTML = "----"
 });
 webMI.data.subscribe(webMI.query["RoRExt"], function(e) {
-//document.getElementById('left').innerHTML = e.value.toFixed(2)
-document.getElementById('left').innerHTML = "----"
+document.getElementById('left').innerHTML = parseFloat(e.value).toFixed(2)
+//document.getElementById('left').innerHTML = "----"
 });
 webMI.data.subscribe(webMI.query["RoREnt"], function(e) {
-//document.getElementById('right').innerHTML = Object.values(JSON.parse(e.value).rows[0])[2]
-document.getElementById('left').innerHTML = "----"
+document.getElementById('right').innerHTML = parseFloat(e.value).toFixed(2)
+//document.getElementById('left').innerHTML = "----"
 });
 /*
 webMI.data.read("AGENT.OBJECTS.ServiceParams.Mud.cols.Direct.fact", function(e){

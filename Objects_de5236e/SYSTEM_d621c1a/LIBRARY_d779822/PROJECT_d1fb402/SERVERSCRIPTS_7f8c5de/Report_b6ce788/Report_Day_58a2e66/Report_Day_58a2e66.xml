@@ -96,6 +96,7 @@ console.log('Start report script');
 				TimeRoundTripsRise:'',
 				TimeDrillPipeSlips:'',
 				TimeAddingDrillPipe:'',
+				TimeStop:'',
 				TimeUndefined:'',
 			},
 			APD: {
@@ -183,7 +184,7 @@ console.log('Start report script');
 //		ofs.open();
 
 		var arrobjoperations =[];
-		
+console.log('Start Operations');		
 		var wellDepthStart;
 		var wellDepthStartObj = call("getUaDataByDate",{strnode:well_depth,datestop: from});
 		if(wellDepthStartObj){
@@ -222,9 +223,9 @@ console.log('Start report script');
 		var countIrmDrillingSlide = 0;
 		var fullPenetrationIrmDrillingRotor = 0;
 		var fullPenetrationIrmDrillingSlide = 0;
+		var fullTimeIrmStop = 0;
 		
-		
-		
+				
 		var fullTimeApdDrilling = 0;
 		var fullTimeApdRise = 0;
 		var fullTimeApdDescent = 0;
@@ -245,7 +246,7 @@ console.log('Start report script');
 		var countApdModeTorque = 0;
 	
 // get data from operations
-		var nodeReportOperation = new UaNode("AGENT.OBJECTS.Support.ReportOperation");
+		var nodeReportOperation = new UaNode("AGENT.OBJECTS.Support.ReportOperation"); // the AGENT.OBJECTS.Support.ReportOperation means the calculate of Operations
 	if (nodeReportOperation.exists()){
 		try {
 		var data_objects = rig_operation;//"Support.Auto.Operation,ASPD.APD1.Running,ASPD.APD1.MasterMode,ASPD.APD1.ModeReg"
@@ -304,7 +305,8 @@ console.log('Start report script');
 /////////////////////////////////////////		
 			
 		
-/*		
+//////////////////////////////////////////////////////////////////////////////////		
+console.log("start 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
 		arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
 			console.log("item: " + index);
 			for(var key in itemObj){
@@ -312,7 +314,8 @@ console.log('Start report script');
 				console.log("key = "+key+ ", val = "+value); 
 			}
 		});
-*/		
+console.log("stop 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");		
+//////////////////////////////////////////////////////////////////////////////////		
 		}
 		catch(excoper){
 			console.log("Operation exception " + excoper);			
@@ -668,12 +671,14 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 					console.log("4 item: " + index);											
 					var work;
 					var work_mode;
+					var idoper;
 					if(itemObj.identifier==rig_operation){
 						var workObj = JSON.parse(itemObj.value);
-						work = workObj.oper;
+						work = workObj.oper.toUpperCase();						
 						work_mode = workObj.suboper;
-						console.log(work+' '+work_mode);
+						idoper = workObj.id;
 						fullTimeIrm += itemObj.timework;
+						console.log(work+' '+work_mode+' timework = '+itemObj.timework+' fullTimeIrm = '+fullTimeIrm);						
 						switch(work){
 							case 'БУРЕНИЕ':
 								fullTimeIrmDrilling+=itemObj.timework;
@@ -693,50 +698,69 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 							case 'СПО':
 								fullTimeIrmSPO+=itemObj.timework;
 								switch(work_mode){
+									case 'подъем':
 									case 'медленный подъем':
 									case 'быстрый подъем':
-									case 'крюкоблок идет вверх быстро':
-									case 'крюкоблок идет вверх медленно':
-									case 'выброс':
-									case 'постановка на клинья':
+									case 'подъем с вращением':
+									case 'подъем от забоя с вращением':
+									case 'медленный подъем с вращением':
+									case 'медленный подъем от забоя с вращением':
+									case 'медленный подъем от забоя с циркуляцией без вращения':
 										fullTimeIrmSPORise+=itemObj.timework;
 										break;
-									case 'медленный спуск':
+									case 'спуск':
 									case 'быстрый спуск':
-									case 'падение':
+									case 'быстрый спуск с вращением':
+									case 'быстрый спуск к забою с вращением':
+									case 'медленный спуск':
+									case 'медленный спуск с вращением':
+									case 'медленный спуск к забою с вращением':
 										fullTimeIrmSPODescent+=itemObj.timework;
 										break;
 								}
 								break;		
-							case 'Промывка':
+							case 'ПРОМЫВКА':
 								fullTimeIrmWashing+=itemObj.timework;
+								console.log('fullTimeIrmWashing = '+fullTimeIrmWashing);
 								break;
-							case 'Проработка':
+							case 'ПРОРАБОТКА':
 								fullTimeIrmReaming+=itemObj.timework;
 								switch(work_mode){
 									case 'при подъеме':
 										fullTimeIrmReamingRise+=itemObj.timework;
 										break;
 									case 'при спуске':
+									case 'при спуске над забоем':
 										fullTimeIrmReamingDescent+=itemObj.timework;
 										break;
 								}
 								break;
-							case 'Шаблонировка':
+							case 'ШАБЛОНИРОВКА':
 								fullTimeIrmWiperTrip+=itemObj.timework;
 								switch(work_mode){
 									case 'при подъеме':
+									case 'при подъеме над забоем':
 										fullTimeIrmWiperTripRise+=itemObj.timework;
 										break;
 									case 'при спуске':
+									case 'при спуске над забоем':
 										fullTimeIrmWiperTripDescent+=itemObj.timework;
 										break;
 								}
 								break;
-							case 'На клиньях':
+							case 'НА КЛИНЬЯХ':
 								fullTimeIrmDrillPipeSlips+=itemObj.timework;
 								break;
-							case 'Неопределенный':
+							case 'ПОСТАНОВКА':
+								fullTimeIrmDrillPipeSlips+=itemObj.timework;
+								break;
+							case 'СНЯТИЕ':
+								fullTimeIrmDrillPipeSlips+=itemObj.timework;
+								break;		
+							case 'ОСТАНОВКА':
+								fullTimeIrmStop+=itemObj.timework;
+								break;	
+							case 'НЕОПРЕДЕЛЕННЫЙ':
 								fullTimeIrmUndfined+=itemObj.timework;
 								break;
 						}						
@@ -1018,6 +1042,7 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 			console.log("fullTimeIrmWiperTripRise: "+fullTimeIrmWiperTripRise);
 			console.log("fullTimeIrmWiperTripDescent: "+fullTimeIrmWiperTripDescent);
 			console.log("fullTimeIrmUndfined: "+fullTimeIrmUndfined);
+			console.log("fullTimeIrmStop: "+fullTimeIrmStop);
 		}
 		
 		console.log("fullTimeApd: "+fullTimeApd);	
@@ -1084,11 +1109,12 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 			var strTimeRoundTripsRise = call("Sec2Date",{sec:Math.floor(fullTimeIrmSPORise/1000)});
 			var strTimeDrillPipeSlips = call("Sec2Date",{sec:Math.floor(fullTimeIrmDrillPipeSlips/1000)});
 			var strTimeUndefined = call("Sec2Date",{sec:Math.floor(fullTimeIrmUndfined/1000)});
+			var strTimeStop = call("Sec2Date",{sec:Math.floor(fullTimeIrmStop/1000)});
 			
-			var strNamingIrmFull = "ИТОГО:;Общее время(ч:м:с);Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Неопределенность(ч:м:с)";
+			var strNamingIrmFull = "ИТОГО:;Общее время(ч:м:с);Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Остановка(ч:м:с);Неопределенность(ч:м:с)";
 			ofs.writeLine(strNamingIrmFull);			
 			
-			objJSON.Operations.OperationsTitle = "Операции:;Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Наращивание(ч:м:с);Неопределенность(ч:м:с)";
+			objJSON.Operations.OperationsTitle = "Операции:;Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Наращивание(ч:м:с);Остановка(ч:м:с);Неопределенность(ч:м:с)";
 			objJSON.Operations.TimeDrilling = strTimeDrilling;
 			objJSON.Operations.Penetration = strPenetration;
 			objJSON.Operations.TimeRotor = strTimeRotor;
@@ -1109,6 +1135,7 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 			objJSON.Operations.TimeRoundTripsRise = strTimeRoundTripsRise;
 			objJSON.Operations.TimeDrillPipeSlips = strTimeDrillPipeSlips;
 			objJSON.Operations.TimeAddingDrillPipe = '-';
+			objJSON.Operations.TimeStop = strTimeStop;			
 			objJSON.Operations.TimeUndefined = strTimeUndefined;
 						
 			var strToFileIrmFull = ";"
@@ -1131,7 +1158,8 @@ console.log("stop 33333333333333333333333333333333333333333333333333333333333333
 								+strTimeRoundTripsFull+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPO)+"%);"
 								+strTimeRoundTripsDescent+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPODescent)+"%);"
 								+strTimeRoundTripsRise+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPORise)+"%);"
-								+strTimeDrillPipeSlips+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrillPipeSlips)+"%);"							
+								+strTimeDrillPipeSlips+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrillPipeSlips)+"%);"
+								+strTimeStop+" ("+calcPrct(fullTimeIrm, fullTimeIrmStop)+"%);"							
 								+strTimeUndefined+" ("+calcPrct(fullTimeIrm, fullTimeIrmUndfined)+"%);"
 								;
 								

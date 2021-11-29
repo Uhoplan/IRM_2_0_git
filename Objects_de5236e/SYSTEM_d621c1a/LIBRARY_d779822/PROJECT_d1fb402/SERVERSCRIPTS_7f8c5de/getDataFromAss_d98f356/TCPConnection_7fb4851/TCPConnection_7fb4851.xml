@@ -5,7 +5,7 @@
   </metadata>
   <parameter name="startup" type="startup" trigger="true" relative="false" value=""/>
   <parameter name="connection" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Halliburton.connection"/>
-  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:00:10"/>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:01:00"/>
   <code><![CDATA[if (connection) return
 
 var connectionNode = new UaNode("ns=1;s=AGENT.OBJECTS.Halliburton.connection");

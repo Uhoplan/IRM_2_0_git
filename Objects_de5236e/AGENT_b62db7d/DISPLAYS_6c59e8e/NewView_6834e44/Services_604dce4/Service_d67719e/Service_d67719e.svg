@@ -127,7 +127,7 @@
    </button>
   </div>
  </foreignObject>
- <foreignObject height="32" id="id_13" width="232" x="1091.31" y="141">
+ <foreignObject height="32" id="id_13" width="232" x="1091" y="141">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <button class="button-blue" id="buttonViewFiles" style="font-size: 12px;">Просмотреть файлы</button>
   </div>
@@ -137,7 +137,7 @@
    <svg atv:refpx="927.347" atv:refpy="70.305" height="150" id="id_10" width="1850" x="2.347" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.serviceInfo" y="-4.695"/>
   </g>
  </g>
- <foreignObject height="35.212" id="id_16" width="265.263" x="30.517" y="145.542">
+ <foreignObject height="35.212" id="id_16" width="265.263" x="-302.822" y="161.974">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <button class="button-blue" id="buttonChemicals" style="display:none;">Хим.реагенты</button>
   </div>
@@ -147,7 +147,12 @@
    <div id="popup" style="display:none;padding: 1rem 2rem;background:#000;color:white;">Сохранение...</div>
   </div>
  </foreignObject>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
+ <foreignObject height="32" id="id_19" width="232" x="32.297" y="150.238">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="reports" style="font-size: 12px;display:none;">Суточные рапорты</button>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="elId" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
 webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
 var depthDayData = depthData.value;
 
@@ -183,14 +188,14 @@ var headers = {
     plan: {
       Bit: {"columns":[{"id":"_3sn49ujz2ps1","name":"Номер рейса","field":"runNumber", editable: true},{"id":"_3sn49ujz2ps2","name":"Конструкция скважины","field":"rigConstruction"},{"id":"_3sn49ujz2ps3","name":"Свита","field":"suite"},{"id":"_3sn49ujz2ps4","name":"Литология","field":"lithology"},{"id":"_3sn49ujz2ps5","name":"Диам., мм","field":"diam"},{"id":"_3sn49ujz2ps25","name":"Модель","field":"model"},{"id":"_3sn49ujz2ps6","name":"Интервал от","field":"intervalFrom"},{"id":"_3sn49ujz2ps7","name":"Интервал до","field":"intervalTo"},{"id":"_3sn49ujz2ps8","name":"Проходка (м)","field":"drilling"},{"id":"_3sn49ujz2ps118","name":"Часы бур. (м)","field":"drillingTime"},{"id":"_3sn49ujz2ps9","name":"Средняя мех. скорость (м/ч)","field":"avgMechSpeed"},{"id":"_3sn49ujz2ps10","name":"Нагрузка (т)","field":"load"},{"id":"_3sn49ujz2ps11","name":"Максимальное допустимое значение нагрузки (т)","field":"maxLoad"},{"id":"_3sn49ujz2ps27","name":"Момент (кН*м)","field":"torque"},{"id":"_3sn49ujz2ps15","name":"Обороты рот./СВП (об/мин)","field":"rotorTurnover"},{"id":"_3sn49ujz2ps13","name":"Δ P насоса (атм)","field":"pPumpDelta"},{"id":"_3sn49ujz2ps12","name":"Q (л/сек)","field":"q"}]},
       // Concrete: {"columns":[{"id":"1","name":"Тип обсадной колонны","field":"casingType"},{"id":"2","name":"Длина колонны для списания","field":"WOColumnLength"},{"id":"3","name":"Кол-во труб, шт","field":"pipeNumber"},{"id":"4","name":"Глубина установки башмака по стволу","field":"shoeDepthByBore"},{"id":"5","name":"Глубина установки башмака по вертикали","field":"ShoeDepthByVertical"},{"id":"6","name":"Глубина установки ЦКОДа по стволу","field":"CKODDepthByBore"},{"id":"7","name":"Начало цементирования","field":"concreteStart"},{"id":"8","name":"Окончание цементирования","field":"concreteEnd"},{"id":"9","name":"Продолжительность","field":"duration"},{"id":"10","name":"Объем буфера","field":"bufferVolume"},{"id":"11","name":"Плотность буфера","field":"bufferDensity"},{"id":"12","name":"Марка облегченного цемента","field":"LconcreteGrade"},{"id":"13","name":"Объем облегченного цементного раствора","field":"LconcreteVolume"},{"id":"14","name":"Плотность облегченного цементного раствора","field":"LconcreteDensity"},{"id":"15","name":"Марка тяжелого цемента","field":"HconcreteGrade"},{"id":"16","name":"Объем тяжелого цементного раствора","field":"HconcreteVolume"},{"id":"17","name":"Плотность тяжелого цементного раствора","field":"HconcreteDensity"},{"id":"18","name":"Объем продавочной жидкости","field":"displFluidVol"},{"id":"19","name":"Плотность продавочной жидкости","field":"displFluidDens"},{"id":"20","name":"Давление СТОП","field":"STOPpressure"},{"id":"21","name":"ЦКОД держит","field":"CKODholds"},{"id":"22","name":"Цементирование проведено согласно плану работ","field":"concretePlanned"},{"id":"23","name":"Примечания","field":"comments"},{"id":"24","name":"Жидкость на выходе","field":"flowOutput"},{"id":"25","name":"Плотность на выходе","field":"densityOutput"},{"id":"26","name":"Объем на выходе","field":"volumeOutput"}],"rows":[{"casingType":"2","WOColumnLength":"","pipeNumber":"","shoeDepthByBore":"","ShoeDepthByVertical":"","CKODDepthByBore":"","concreteStart":"","concreteEnd":"","duration":"","bufferVolume":"","bufferDensity":"","LconcreteGrade":"","LconcreteVolume":"","LconcreteDensity":"","HconcreteGrade":"","HconcreteVolume":"","HconcreteDensity":"","displFluidVol":"","displFluidDens":"","STOPpressure":"","CKODholds":"","concretePlanned":"","comments":"","flowOutput":"","densityOutput":"","volumeOutput":""}]},
-      Mud: {"columns":[{"id": "_5vre21kbapc1", "name": "Дата", "field": "Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."}],"rows":[{"Дата": "12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"},
+      Mud: {"columns":[{"id":"_5vre21kbapc1","name":"Дата","field":"Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."},{"id":"electrostability","name":"Электростабильность (В)","field":"electrostability"},{"id":"differentials","name":"Соотношение","field":"differentials"}],"rows":[{"Дата":"12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"},
       // NNB: {"columns":[{"id":"1","name":"№ п/п","field":"number"},{"id":"2","name":"Элемент","field":"element"},{"id":"3","name":"Принадлежность","field":"affiliation"},{"id":"4","name":"Серийный номер","field":"serialNumber"},{"id":"5","name":"D наруж. тела трубы, ВЗД, Яса (мм)","field":"DiamOut"},{"id":"6","name":"D внутр. тела трубы, ВЗД, Яса (мм)","field":"DiamIn"},{"id":"6","name":"D max наружный","field":"DiamMax"},{"id":"7","name":"Присоединительная резьба (тип/размер) (мм)","field":"connectingThread"},{"id":"8","name":"Тип соединения","field":"connectingType"},{"id":"9","name":"Длина (м)","field":"length"},{"id":"10","name":"Сум. длина (м)","field":"sumLength"},{"id":"11","name":"Вес. общ. (кг)","field":"weightTotalweight"},{"id":"12","name":"Сум. вес (кг)","field":"sumWeight"}]} 
     },
     fact: {
       Bit: {"columns":[{"id":"_3sn49ujz2ps1","name":"Номер рейса","field":"runNumber"},{"id":"_3sn49ujz2ps2","name":"Конструкция скважины","field":"rigConstruction"},{"id":"_3sn49ujz2ps5","name":"Диам., мм","field":"diam"},{"id":"_3sn49ujz2ps25","name":"Модель","field":"model"},{"id":"_3sn49ujz2ps26","name":"сер. №","field":"serialNumber"},{"id":"_3sn49ujz2ps17","name":"Насадки на долото","field":"bitNozzles"},{"id":"_3sn49ujz2ps6","name":"Интервал от","field":"intervalFrom"},{"id":"_3sn49ujz2ps7","name":"Интервал до","field":"intervalTo"},{"id":"_3sn49ujz2ps8","name":"Проходка (м)","field":"drilling"},{"id":"_3sn49ujz2ps28","name":"Часы бур.","field":"drillingTime"},{"id":"_3sn49ujz2ps9","name":"Средняя мех. скорость (м/ч)","field":"avgMechSpeed"},{"id":"_3sn49ujz2ps10","name":"Нагрузка (т)","field":"load"},{"id":"_3sn49ujz2ps27","name":"Момент (кН*м)","field":"torque"},{"id":"_3sn49ujz2ps15","name":"Обороты рот./СВП (об/мин)","field":"rotorTurnover"},{"id":"_3sn49ujz2ps13","name":"P насоса (атм)","field":"pPump"},{"id":"_3sn49ujz2ps13","name":"Δ P насоса (атм)","field":"pPumpDelta"},{"id":"_3sn49ujz2ps12","name":"Q (л/сек)","field":"q"},{"id":"_3sn49ujz2ps18","name":"Отработка долота","field":"bitDrilling"},{"id":"_3sn49ujz2ps29","name":"Причина подъема","field":"comment"}]},
       NNB: {"columns":[{"id":"1","name":"№ п/п","field":"number"},{"id":"2","name":"Элемент","field":"element"},{"id":"3","name":"Принадлежность","field":"affiliation"},{"id":"4","name":"Серийный номер","field":"serialNumber"},{"id":"5","name":"D наруж. тела трубы, ВЗД, Яса (мм)","field":"DiamOut"},{"id":"6","name":"D внутр. тела трубы, ВЗД, Яса (мм)","field":"DiamIn"},{"id":"6","name":"D max наружный","field":"DiamMax"},{"id":"7","name":"Присоединительная резьба (тип/размер) (мм)","field":"connectingThread"},{"id":"8","name":"Тип соединения","field":"connectingType"},{"id":"9","name":"Длина (м)","field":"length"},{"id":"10","name":"Сум. длина (м)","field":"sumLength"},{"id":"11","name":"Вес. общ. (кг)","field":"weightTotalweight"},{"id":"12","name":"Сум. вес (кг)","field":"sumWeight"}]},
       Concrete: {"columns":[{"id":"1","name":"Тип обсадной колонны","field":"casingType"},{"id":"2","name":"Длина колонны для списания","field":"WOColumnLength"},{"id":"3","name":"Кол-во труб, шт","field":"pipeNumber"},{"id":"4","name":"Глубина установки башмака по стволу","field":"shoeDepthByBore"},{"id":"5","name":"Глубина установки башмака по вертикали","field":"ShoeDepthByVertical"},{"id":"6","name":"Глубина установки ЦКОДа по стволу","field":"CKODDepthByBore"},{"id":"7","name":"Начало цементирования","field":"concreteStart"},{"id":"8","name":"Окончание цементирования","field":"concreteEnd"},{"id":"9","name":"Продолжительность","field":"duration"},{"id":"10","name":"Объем буфера","field":"bufferVolume"},{"id":"11","name":"Плотность буфера","field":"bufferDensity"},{"id":"12","name":"Марка облегченного цемента","field":"LconcreteGrade"},{"id":"13","name":"Объем облегченного цементного раствора","field":"LconcreteVolume"},{"id":"14","name":"Плотность облегченного цементного раствора","field":"LconcreteDensity"},{"id":"15","name":"Марка тяжелого цемента","field":"HconcreteGrade"},{"id":"16","name":"Объем тяжелого цементного раствора","field":"HconcreteVolume"},{"id":"17","name":"Плотность тяжелого цементного раствора","field":"HconcreteDensity"},{"id":"18","name":"Объем продавочной жидкости","field":"displFluidVol"},{"id":"19","name":"Плотность продавочной жидкости","field":"displFluidDens"},{"id":"20","name":"Давление СТОП","field":"STOPpressure"},{"id":"21","name":"ЦКОД держит","field":"CKODholds"},{"id":"22","name":"Цементирование проведено согласно плану работ","field":"concretePlanned"},{"id":"23","name":"Примечания","field":"comments"},{"id":"24","name":"Жидкость на выходе","field":"flowOutput"},{"id":"25","name":"Плотность на выходе","field":"densityOutput"},{"id":"26","name":"Объем на выходе","field":"volumeOutput"}],"rows":[{"casingType":"2","WOColumnLength":"","pipeNumber":"","shoeDepthByBore":"","ShoeDepthByVertical":"","CKODDepthByBore":"","concreteStart":"","concreteEnd":"","duration":"","bufferVolume":"","bufferDensity":"","LconcreteGrade":"","LconcreteVolume":"","LconcreteDensity":"","HconcreteGrade":"","HconcreteVolume":"","HconcreteDensity":"","displFluidVol":"","displFluidDens":"","STOPpressure":"","CKODholds":"","concretePlanned":"","comments":"","flowOutput":"","densityOutput":"","volumeOutput":""}]},
-      Mud: {"columns":[{"id": "_5vre21kbapc1", "name": "Дата", "field": "Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."}],"rows":[{"Дата": "12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"}
+	  Mud: {"columns":[{"id":"_5vre21kbapc1","name":"Дата","field":"Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."},{"id":"electrostability","name":"Электростабильность (В)","field":"electrostability"},{"id":"differentials","name":"Соотношение","field":"differentials"}],"rows":[{"Дата":"12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"}
     }
 }
 
@@ -203,7 +208,7 @@ var serviceNames = {
 var colNames = {
 	"Direct": "Направление",
 	"Kond": "Кондуктор",
-	"TechCol": "Техническая колонна",
+	"TechCol": "Пилотный ствол",
 	"Tail": "Хвостовик",
 	"ExCol": "Эксплуатационная колонна"
 };
@@ -249,7 +254,7 @@ webMI.trigger.connect("changeFactTableData", function(data){
 	if (currentService == "Bit" || currentService == "NNB") path = "AGENT.OBJECTS.ServiceParams." + currentService + ".temp." + "tableCols";
 	filter.type=["v:1"];
 	filter.address = ["g:AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + data.value  + ".fact"];
-	filter.timestamp = ["n:>=" + depthDayData + "<" + new Date().getTime()];
+	filter.timestamp = ["n:>=" + parseInt(depthDayData) + "<" + new Date().getTime()];
 	
 	webMI.data.queryFilter(filter, function(e) {
 		var result = [];
@@ -268,7 +273,7 @@ webMI.trigger.connect("changeFactTableData", function(data){
 		webMI.data.read(((currentService == "!Bit" || currentService == "!NNB") ? [path, path2] : [path]), function(res) {
 			//var resCols = JSON.parse(res[0].value).columns;
 			var resCols = headers.fact[currentService].columns;
-			//console.log(headers.fact[currentService])
+			
 			
 			tableFactCols = resCols;
 			
@@ -285,8 +290,8 @@ webMI.trigger.connect("changeFactTableData", function(data){
 });
 
 function excludeExceptions(e, i) {
-	var res = Object.values(JSON.parse(e.result[i].value).rows[0])
-	var bitOld = currentService == "Bit" && e.result[i].timestamp < 1634223078087
+	var res = Object.values(JSON.parse(e.result[i].value).rows[0]);
+	var bitOld = currentService == "Bit" && e.result[i].timestamp < 1634223078087;
 	
 	return res[1] != "Тестовый" && res[1] != "Тестовый2" && res[0] != "тест" && !bitOld
 }
@@ -304,8 +309,10 @@ webMI.trigger.connect("colClickTrigger", function(e) {
 webMI.trigger.connect("changeServiceTrigger", function(e) {
 	service.innerHTML = serviceNames[e.value];
 	currentService = e.value;
+	
 	if (currentService == "Mud") chemicals.style.display = "none"
 	else chemicals.style.display = "none"
+	
 	webMI.trigger.fire("colClickTrigger", currentCol ? currentCol : "Direct");
 	
 	if (currentService == "Mud" && reports) {
@@ -317,10 +324,10 @@ webMI.trigger.connect("changeTableData", function(e) {
 	var path = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + e.value;
 	
 	webMI.data.read(path, function(res) {
-		//console.log(JSON.parse(res.value).rows)
-		//console.log(headers.plan[currentService].columns)
+		
+		
 		if (!excludePlans()) {
-			updateTable({value: { rows: JSON.parse(res.value).rows, columns: headers.plan[currentService].columns }, type: "plan"});
+			updateTable({value: { rows: res.timestamp > depthDayData ? JSON.parse(res.value).rows : null, columns: headers.plan[currentService].columns }, type: "plan"});
 		}
 		if (tableFact && tableFact.data && tableFact.data.rows) backlight(tableFact.data.rows);
 	})
@@ -329,19 +336,14 @@ webMI.trigger.connect("changeTableData", function(e) {
 webMI.trigger.fire("changeServiceTrigger", webMI.query["type"]);
 
 function isHistory(row, type) {
+	
 	if (type == "plan") {
 		if (planHistoryState.includes(row)) {
 		
 			return true
 		}
 		
-		return planHistoryState.some(function(object) {
-			
-			return Object.values(object).every(function(item, index) {
-				
-				return item == Object.values(row)[index]
-			})
-		})
+		return false
 	}
 	
 	if (historyState.includes(row)) {
@@ -349,37 +351,30 @@ function isHistory(row, type) {
 		return true
 	}
 	
-	return historyState.some(function(object) {
-		
-		return Object.values(object).every(function(item, index) {
-			
-			return item == Object.values(row)[index]
-		})
-	})
+	return false
 }
 
 function hotSave() {
 	var planArr;
 	var factArr;
-	//console.log("hotSave");	
+		
 	if (table) planArr = table.data.rows.filter(function(item) {
+		
 		return !isHistory(item, "plan") && !isEmpty(item)
 	})
 	if (tableFact) factArr = tableFact.data.rows.filter(function(item) {
 		return !isHistory(item) && !isEmpty(item);
 	})
-	//console.log(factArr);
-	localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(planArr));
-	localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(factArr));
+	
+	if (table) localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(planArr));
+	if (tableFact) localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(factArr));
 }
 
 function hotDelete() {
-	// quality content
-	return function() {
-		setTimeout(function() {
-			hotSave();
-		}, 0);
-	}
+// quality content
+	setTimeout(function() {
+		hotSave();
+	}, 0);
 }
 
 function findEqual(row) {
@@ -411,10 +406,20 @@ function hotGet(id) {
 	return localStorage.getItem(id + '_' + currentService + '_' + currentCol)
 }
 
+function shallowClone(arr) {
+	var res = []
+	
+	arr.map(function(item) {
+		res.push(item)
+	})
+
+	return res
+}
+
 function updateTable(item) {
 	var rows;
 	
-	if (item.value.rows) rows = JSON.parse(JSON.stringify(item.value.rows))
+	if (item.value.rows) rows = item.value.rows
 	
 	if (item.type == "plan" && !planExceptions.includes(currentService)) {
 		
@@ -423,8 +428,8 @@ function updateTable(item) {
 		table.table.removeEventListener("saveTable", hotSave);
 		table.table.addEventListener("saveTable", hotSave);
 		
-		table.table.removeEventListener("deleteTableRow", hotDelete());
-		table.table.addEventListener("deleteTableRow", hotDelete());
+		table.table.removeEventListener("deleteTableRow", hotDelete);
+		table.table.addEventListener("deleteTableRow", hotDelete);
 		
 		table.init();
 		
@@ -435,23 +440,24 @@ function updateTable(item) {
 		}
 		
 		if (item.value.rows) {
-			planHistoryState = JSON.parse(JSON.stringify(item.value.rows));
-			table.render(rows);
+			planHistoryState = shallowClone(item.value.rows);
+			//planHistoryState = JSON.parse(JSON.stringify(item.value.rows));
+			table.fill(rows);
 		} 
 		
 		return
 	}
 	if (item.type == "fact") {
-	
-		historyState = JSON.parse(JSON.stringify(item.value.rows));
+		
+		historyState = shallowClone(item.value.rows);
 		//concat gethot with item rows here
 		tableFact = new Table("tableFact", item.value.columns, { type: "fact" });
 		
 		tableFact.table.removeEventListener("saveTable", hotSave);
 		tableFact.table.addEventListener("saveTable", hotSave);
 		
-		tableFact.table.removeEventListener("deleteTableRow", hotDelete());
-		tableFact.table.addEventListener("deleteTableRow", hotDelete());
+		tableFact.table.removeEventListener("deleteTableRow", hotDelete);
+		tableFact.table.addEventListener("deleteTableRow", hotDelete);
 		
 		tableFact.init();
 		
@@ -461,7 +467,9 @@ function updateTable(item) {
 			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
 		}
 		
-		if (rows && rows[0]) tableFact.render(rows);
+		if (rows && rows[0]) {
+			tableFact.fill(rows);
+		}
 		
 		tableFact.table.addEventListener("click", function(e) {
 			setTimeout(function(e) { backlight(rows) }, 0)
@@ -532,8 +540,9 @@ function saveTable(rows) {
 		} else console.log("history data")
 	}
 	backlight(tableFact.data.rows);
+	//console.log("386");
 	localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify([]));
-	throwPopup("Данные сохранены")
+	throwPopup("Данные сохранены");
 }
 
 function throwPopup(text) {
@@ -685,7 +694,7 @@ function bitDataCalc(bit, time) {
 function isEmpty(row) {
 	var some = true;
 	values = Object.values(row);
-	//console.log(row)
+	
 	for (i in values) {
 		if (values[i].replace(/\s/, "").length > 0) {
 			some = false;	
@@ -699,6 +708,7 @@ function backlight(rows) {
 	//if (currentService != "Bit") {
 	for (i in rows) {
 		if (isHistory(rows[i])) {
+			
 			document.getElementById(tableFact.id + "_tr_" + i).style.pointerEvents = "none";
 			document.getElementById(tableFact.id + "_button_" + i + "_delete").style.visibility = "hidden";
 		}
@@ -748,30 +758,34 @@ function changeMenuMode(mode) {
 }
 
 writePlan.addEventListener("click", function() {
-	webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) {
-		var res = JSON.parse(e.value);
+	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) { 5678
+		var res = headers.fact[currentService].columns;
 		
 		if (!editingPlan) {
 			currentPlan = table.data;
 			changeMenuMode("edit");
-			table = new Table("table", res.columns, { type: "fact" });
+			table = new Table("table", res, { type: "fact" });
 			table.init();
-			table.render(JSON.parse(JSON.stringify(currentPlan.rows)));
+			//table.fill(JSON.parse(JSON.stringify(currentPlan.rows)));
+			table.fill(shallowClone(currentPlan.rows));
+			
 		} else if (editingPlan) {
 			table = new Table("table", currentPlan.columns, { type: "plan" });
 			table.init();
-			table.render(currentPlan.rows);
+			table.fill(currentPlan.rows);
 			changeMenuMode("cancel");
 		}
-	})
+	//})
 })
 
 savePlan.addEventListener("click", function() {
-	webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) {
-		var res = JSON.parse(e.value);
+	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) {
+		//var res = JSON.parse(e.value);
+		var cTable = { rows: shallowClone(table.data.rows), columns: shallowClone(table.data.columns) }
+		
 		editingPlan = false;
 		savePlan.style.display = "none";
-		var cTable = JSON.parse(JSON.stringify(table.data));
+		//var cTable = JSON.parse(JSON.stringify(table.data));
 		writePlan.innerHTML = "Ввести план";
 		
 		webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), JSON.stringify(table.data))
@@ -780,8 +794,8 @@ savePlan.addEventListener("click", function() {
 		
 		table = new Table("table", cTable.columns, { type: "plan" });
 		table.init();
-		table.render(cTable.rows);
-	})
+		table.fill(cTable.rows);
+	//})
 })
 
 chemicals.addEventListener("click", function() {
@@ -831,6 +845,7 @@ function match(data, type) {
 
 
 var columns = [""];
+/*
 // *******************************************************  PARSE FUNCTIONS ******************************************************* 
 function parseResult(data, template) {
 	// *** PARSING DATA ***
@@ -898,6 +913,7 @@ function parseResult(data, template) {
 	
 	return JSON.parse(JSON.stringify(result))
 }
+*/
 
 function readFile(file) {
 	var fileReader = new FileReader;

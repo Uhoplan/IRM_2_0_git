@@ -11,7 +11,7 @@
   </linearGradient>
  </defs>
  <metadata>
-  <atv:parameter behavior="mandatory" defaultvalue="Name" desc="Name" name="Name" substitute="#NAME#" valuetype="string"/>
+  <atv:parameter behavior="mandatory" defaultvalue="" desc="Name" name="Name" substitute="#NAME#" valuetype="address"/>
   <atv:parameter behavior="mandatory" defaultvalue="Состояние" desc="Label1" name="Label1" substitute="#LABEL1#" valuetype="string"/>
   <atv:parameter behavior="mandatory" desc="Value1" name="Value1" valuetype="address"/>
   <atv:parameter behavior="optional" defaultvalue="" desc="Unit1" name="Unit1" substitute="#UN1#" valuetype="string"/>
@@ -37,6 +37,8 @@
   <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusUncertain" group="Status" valuetype="global"/>
   <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusBad" group="Status" valuetype="global"/>
   <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusUnknown" group="Status" valuetype="global"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="adding_str1" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="adding_str2" valuetype="string"/>
   <atv:gridconfig enabled="true" gridstyle="lines" height="2" width="2"/>
   <atv:snapconfig enabled="true" height="2" width="2"/>
  </metadata>
@@ -49,13 +51,13 @@
  <rect atv:refpx="50.999" atv:refpy="30.102" fill="none" font-size="10" height="15" id="id_27" stroke="#e1e1e1" stroke-linejoin="round" stroke-width="0" width="100" x="1" y="23.602"/>
  <rect atv:refpx="118.499" atv:refpy="30.102" fill="none" height="15" id="id_28" stroke="#e1e1e1" stroke-width="0" width="37" x="100" y="23.602"/>
  <rect atv:refpx="-11.703" atv:refpy="0.061" fill="none" height="15" id="id_29" stroke="#e1e1e1" stroke-linejoin="round" stroke-width="0" width="27" x="137" y="23.602"/>
- <text atv:refpx="82.856" atv:refpy="9.398" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" id="id_30" text-anchor="middle" x="82.5" y="13.5">#NAME#</text>
+ <text atv:refpx="79.856" atv:refpy="9.898" fill="#ffffff" font-family="Arial" font-size="12" font-weight="bold" id="id_30" text-anchor="middle" x="79.5" y="14">#NAME#</text>
  <text atv:refpx="23.604" atv:refpy="24.5" fill="#cdcdcd" font-family="Arial" font-size="10" id="id_31" text-anchor="start" x="1.5" y="29">#LABEL1#</text>
  <rect atv:refpx="50.999" atv:refpy="44.752" fill="none" font-size="10" height="15" id="id_70" stroke="#e1e1e1" stroke-linejoin="round" stroke-width="0" width="100" x="1" y="40.253"/>
  <rect atv:refpx="118.499" atv:refpy="44.752" fill="none" font-size="10" height="15" id="id_71" stroke="#e1e1e1" stroke-width="0" width="37" x="100" y="40.253"/>
  <rect atv:refpx="-11.703" atv:refpy="14.712" fill="none" font-size="10" height="15" id="id_72" stroke="#e1e1e1" stroke-linejoin="round" stroke-width="0" width="27" x="137" y="40.253"/>
  <text atv:refpx="27.5" atv:refpy="40.5" fill="#cdcdcd" font-family="Arial" font-size="10" id="id_73" text-anchor="start" x="1.5" y="44">#LABEL2#</text>
- <text atv:refpx="118" atv:refpy="40.5" fill="#cdcdcd" font-family="Arial" font-size="10" id="id_74" text-anchor="middle" x="118" y="44">1000</text>
+ <text atv:refpx="118" atv:refpy="40.5" fill="#cdcdcd" font-family="Arial" font-size="10" id="id_74" text-anchor="middle" x="118" y="44">0</text>
  <text atv:refpx="149.232" atv:refpy="40.047" fill="#cdcdcd" font-family="Arial" font-size="10" id="id_75" text-anchor="middle" transform="matrix(0.8613,0,0,0.8225,19.9212,5.5025)" x="150.128" y="45">#UN2#</text>
  <rect atv:refpx="50.999" atv:refpy="59.752" fill="none" font-size="10" height="15" id="id_76" stroke="#e1e1e1" stroke-linejoin="round" stroke-width="0" width="100" x="1" y="56.253"/>
  <rect atv:refpx="118.499" atv:refpy="59.752" fill="none" font-size="10" height="15" id="id_77" stroke="#e1e1e1" stroke-width="0" width="37" x="100" y="56.253"/>
@@ -116,5 +118,13 @@ if (value == false)
 		
 	});
 });*/
+]]><![CDATA[
+webMI.data.subscribe(webMI.query["Name"], function(e) {
+var id = "id_30";
+var value = e.value;
+webMI.gfx.setText(id, value);
+
+});
+
 ]]></script>
 </svg>

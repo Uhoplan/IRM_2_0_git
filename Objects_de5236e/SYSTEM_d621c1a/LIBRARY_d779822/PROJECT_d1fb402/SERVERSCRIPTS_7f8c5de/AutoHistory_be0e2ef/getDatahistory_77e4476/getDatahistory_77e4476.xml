@@ -11,16 +11,17 @@ var nodeJsonArray = new UaNode(strJSONArray);
 var valJsonArray = nodeJsonArray.value;
 
 if(valJsonArray===null){
-	console.log('No JsonArray');
+	//console.log('No JsonArray');
 	return null;
 }
 //console.log('valJsonArray = '+valJsonArray);
 var arrObj = [];
 if(valJsonArray !=''){
 	arrObj = JSON.parse(valJsonArray);
-} else {
-	console.log('No JsonArray');
 }
+// else {
+//	console.log('No JsonArray');
+//}
 //console.log('arrObjRec.length = '+arrObj.length);
 if(numvalue){
 	if(arrObj.length > 0){ 	

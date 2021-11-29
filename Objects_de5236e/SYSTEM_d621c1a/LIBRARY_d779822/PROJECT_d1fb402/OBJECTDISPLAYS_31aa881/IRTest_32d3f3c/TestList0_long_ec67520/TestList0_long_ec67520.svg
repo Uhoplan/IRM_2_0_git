@@ -11,4 +11,5 @@
  </g>
  <rect atv:refpx="82.5" atv:refpy="10" fill="#4b5e6c" fill-opacity="0.784314" height="20" id="id_6" rx="0" ry="0" stroke="#8a8a8a" stroke-linejoin="round" stroke-opacity="0.784314" stroke-width="0" width="165" x="0" y="0"/>
  <text atv:refpx="82.856" atv:refpy="10.398" fill="#ffffff" fill-opacity="0.784314" font-family="Arial" font-size="12" font-weight="bold" id="id_30" text-anchor="middle" x="82.5" y="14.5">#NAME#</text>
+ <script type="text/ecmascript"/>
 </svg>

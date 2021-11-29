@@ -38,7 +38,7 @@
  </foreignObject>
  <foreignObject height="16.915" id="id_12" width="87.081" x="54" y="485.458">
   <div id="tail" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0">Хвостовик</p>
+   <p style="margin:0; width: 100%; height:3rem;">Хвостовик</p>
   </div>
  </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var tail=document.getElementById('id_1')
@@ -63,7 +63,9 @@ webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.direction','AGENT.OBJE
 		if(e[1].value){
 			Direct.style.display='block'
 			dlabel.style.display='block'
-			webMI.gfx.setScaleY('id_6', webMI.translate(e[0].value, 0, f.value, 0, 1));
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_6', webMI.translate(res, 0, f.value, 0, 1));
 		}else{
 			Direct.style.display='none'
 			dlabel.style.display='none'
@@ -78,7 +80,9 @@ webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.conductor','AGENT.OBJE
 		if(e[1].value){
 			klabel.style.display='block'
 			Kond.style.display='block'
-			webMI.gfx.setScaleY('id_4', webMI.translate(e[0].value, 0, f.value, 0, 1));
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_4', webMI.translate(res, 0, f.value, 0, 1));
 		}else{
 			Kond.style.display='none'
 			klabel.style.display='none'
@@ -93,7 +97,9 @@ webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.obsCol','AGENT.OBJECTS
 		if(e[1].value){
 			tclabel.style.display='block'
 			TechCol.style.display='block'
-			webMI.gfx.setScaleY('id_3', webMI.translate(e[0].value, 0, f.value, 0, 1));
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_3', webMI.translate(res, 0, f.value, 0, 1));
 		}else{
 			TechCol.style.display='none'
 			tclabel.style.display='none'
@@ -108,7 +114,9 @@ webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.EcsCol','AGENT.OBJECTS
 		if(e[1].value){
 			elabel.style.display='block'
 			ExCol.style.display='block'
-			webMI.gfx.setScaleY('id_2', webMI.translate(e[0].value, 0, f.value, 0, 1));
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_2', webMI.translate(res, 0, f.value, 0, 1));
 		}else{
 			ExCol.style.display='none'
 			elabel.style.display='none'
@@ -123,7 +131,9 @@ webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.tail','AGENT.OBJECTS.R
 		if(e[1].value){
 			tlabel.style.display='block'
 			tail.style.display='block'
-			webMI.gfx.setScaleY('id_1', webMI.translate(e[0].value, 0, f.value, 0, 1));
+			res = e[0].value
+			if(res < 2000){res = 2000}
+			webMI.gfx.setScaleY('id_1', webMI.translate(res, 0, f.value, 0, 1));
 		}else{
 			tail.style.display='none'
 			tlabel.style.display='none'

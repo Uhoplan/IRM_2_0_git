@@ -39,13 +39,13 @@
  <text atv:refpx="1705.139" atv:refpy="968.021" fill="#000000" font-family="Arial" font-size="12" id="id_23" text-anchor="middle" x="1705.139" y="972.521">00.00.0000</text>
  <text atv:refpx="1705.242" atv:refpy="929.852" fill="#ffffff" font-family="Arial" font-size="12" id="id_24" text-anchor="middle" x="1705.242" y="934.352">Глубина</text>
  <text atv:refpx="1705.242" atv:refpy="941.09" fill="#ffffff" font-family="Arial" font-size="12" id="id_25" text-anchor="middle" x="1705.242" y="945.59">инструмента (м)</text>
- <foreignObject height="1000" id="id_10" width="400" x="0" y="0">
+ <foreignObject height="700" id="id_10" width="400" x="0" y="0">
   <div style="width:100%;height:100%;" xmlns="http://www.w3.org/1999/xhtml">
    <script src="../../highcharts/xrange.js"/>
    <div id="operations_container"/>
   </div>
  </foreignObject>
- <foreignObject height="301.737" id="id_26" width="435" x="25.822" y="1036.949">
+ <foreignObject height="301.737" id="id_26" width="457.536" x="16.608" y="725.882">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <style>
 .switch_pie{
@@ -63,118 +63,18 @@
     <div id="pie_container"/>
    </figure>
    <div id="oper_legend">
-    <br/>
-    <table style="color:white; font-family:Arial; text-align:left; border-spacing:1.5px">
+    <table id="oper_table" style="color:white; font-family:Arial; text-align:left; border-spacing:1.5px">
      <tr>
       <td style="width:259px;margin-right:7px; text-align:center;">ОПЕРАЦИЯ</td>
       <td style="width:125px; text-align:center;">ВРЕМЯ (%)</td>
      </tr>
      <br/>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#0f0; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Бурение</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_1" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#666633; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Проработка</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_2" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#cc6633; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Шаблонировка</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_3" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#1583dc; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Промывка</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_4" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#0000c4; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Наращивание</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_5" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#9900cc; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>На клиньях</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_6" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#ffff00; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>СПО</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_7" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#990000; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Разгрузка</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_8" style="width:125px; text-align:center;">0</td>
-     </tr>
-     <tr>
-      <td style="width:259px;margin-right:7px;">
-       <div style="padding-left:40px">
-        <div style="width:10px;height:10px;background-color:#999999; display: inline-block; border-radius:50%"/>
-        <div style="display: inline-block">
-         <b>Неопределённый</b>
-        </div>
-       </div>
-      </td>
-      <td id="oper_9" style="width:125px; text-align:center;">0</td>
-     </tr>
     </table>
    </div>
   </div>
  </foreignObject>
- <rect atv:refpx="154.322" atv:refpy="1182.053" fill="#333333" height="250" id="id_27" stroke="#000000" stroke-width="3" width="253" x="27.822" y="1057.949"/>
- <rect atv:refpx="354.317" atv:refpy="1182.949" fill="#333333" height="250" id="id_28" stroke="#000000" stroke-width="3" width="125" x="291.817" y="1057.949"/>
+ <rect atv:refpx="145.108" atv:refpy="870.986" fill="#333333" height="250" id="id_27" stroke="#000000" stroke-width="3" width="253" x="18.608" y="746.882"/>
+ <rect atv:refpx="345.103" atv:refpy="871.882" fill="#333333" height="250" id="id_28" stroke="#000000" stroke-width="3" width="125" x="282.603" y="746.882"/>
  <rect atv:refpx="1024.979" atv:refpy="753.639" fill="#000000" height="60" id="id_41" stroke="#0000ff" stroke-width="0" width="1086.22" x="475.869" y="756.639"/>
  <foreignObject height="50" id="id_29" width="1078" x="480" y="761.272">
   <div id="advance_container" style="width:100%;height:100%; background-color:red" xmlns="http://www.w3.org/1999/xhtml">
@@ -501,12 +401,12 @@ webMI.data.read(["AGENT.OBJECTS.Depth_day_data.plan_data","AGENT.OBJECTS.Depth_d
 	plan=res
 	webMI.data.call("GetHistoryAvrg",{t1:start_day,t2:Date.now(),address:"g:AGENT.OBJECTS.IVE50.Well.WellDepth"},function(f){
 	//console.log(f)
+	
 		res=f.map(function(t){
 		var ts=(Math.floor(t[0])-start_day)/86400000
 		return {x:ts,y:Math.floor(t[1]),name:t[0]+";"}
 		
 	})
-
 	GGD_chart.series[1].update({data:res})
 	fact=res
 	setAdvance(plan,fact)
@@ -516,7 +416,7 @@ webMI.data.read(["AGENT.OBJECTS.Depth_day_data.plan_data","AGENT.OBJECTS.Depth_d
 	})
 	webMI.data.call("GetHistoryAvrg",{t1:start_day,t2:Date.now(),address:"g:AGENT.OBJECTS.IVE50.Tool.ToolPosition"},function(f){
 	//console.log(f)
-		res=f.map(function(t){
+			res=f.map(function(t){
 		var ts=(Math.floor(t[0])-start_day)/86400000
 		return {x:ts,y:Math.floor(t[1]),name:t[0]+";"}
 		
@@ -542,7 +442,7 @@ var oper_chart = Highcharts.chart(document.getElementById("operations_container"
   chart: {
       type: 'xrange',
       width: 400,
-      height:1010,
+      height:700,
       backgroundColor:'#1f1f1f',
       plotBackgroundColor:'#333333'
   },
@@ -838,7 +738,54 @@ webMI.data.read(["AGENT.OBJECTS.Depth_day_data.start_date","AGENT.OBJECTS.Depth_
 	webMI.data.call("GetHistoryOperations",{t1:start.getTime(),t2:Date.now(),address:"g:AGENT.OBJECTS.Support.Auto.Operation"},function(f){
 		console.log(f)
 		oper_chart.series[0].update({data:f[0]})
-		
+		var oper_raw = f[0].map(function(el){
+			var obj = {
+				oper : el.name,
+				prod: (el.x2-el.x),
+				color: (el.color)			
+			}
+			if(obj.oper === "Постановка "){obj.oper = "Постановка"}
+			if(obj.oper === "Остановка "){obj.oper = "Остановка"}
+			return obj		
+		})
+		var namesArr=[]
+		var numbersArr=[]
+		var colorsArr=[]
+		var max = 0
+		oper_raw.forEach(function(el){
+				var index  = namesArr.indexOf(el.oper)
+				if(index===-1){
+					namesArr.push(el.oper)
+					numbersArr.push(el.prod)
+					colorsArr.push(el.color)
+					max+=el.prod
+				}
+				else{
+					numbersArr[index]+=el.prod
+					max+=el.prod
+				}
+			})
+		var operations = []
+		numbersArr.forEach(function(el,cnt){
+				if(namesArr[cnt]!=null){
+				var Obj = {
+					id:"",
+					color:colorsArr[cnt],
+					name:namesArr[cnt],
+					time:el/max*100
+				}
+				operations.push(Obj)}
+			})
+		console.log(operations)
+		pie_chart.series[0].update({data:operations.map(function(el){return{name:el.name, y:el.time}}), colors:operations.map(function(item){return item.color})})
+		operations.forEach(function(item){
+			var text_to_push = '<tr><td style="width:259px;margin-right:7px;"><div style="padding-left:40px">'
+			text_to_push +=	'<div style="width:10px;height:10px;background-color:'+item.color+'; display: inline-block; border-radius:50%"></div>'
+			text_to_push += '<div style="display: inline-block"><b>'+item.name+'</b></div></div></td><td id="oper_1" style="width:125px; text-align:center;">'
+			text_to_push += item.time.toFixed(1) + '</td></tr>'
+			console.log(text_to_push)
+			document.getElementById('oper_table').insertAdjacentHTML('beforeend',text_to_push)
+		})
 	})
 	
 	

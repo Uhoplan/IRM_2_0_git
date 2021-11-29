@@ -405,7 +405,8 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Load.Drill", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit", function(e) {
 var id = "id_20";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));

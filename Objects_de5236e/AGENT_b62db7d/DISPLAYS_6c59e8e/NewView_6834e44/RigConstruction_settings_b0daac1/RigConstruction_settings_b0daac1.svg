@@ -5,7 +5,7 @@
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
- <rect atv:refpx="640" atv:refpy="340" fill="#1f1f1f" height="680" id="id_4" stroke="#0000ff" stroke-width="0" width="1280" x="0" y="0"/>
+ <rect atv:refpx="640.429" atv:refpy="340.858" fill="#1f1f1f" height="680" id="id_4" stroke="#0000ff" stroke-width="0" width="1280" x="0.429" y="0.858"/>
  <rect atv:refpx="233.8" atv:refpy="189.272" fill="#2a2c2b" height="277.694" id="id_13" stroke="#0000ff" stroke-width="0" width="338.159" x="64.721" y="50.425"/>
  <rect atv:refpx="230.685" atv:refpy="201.751" fill="#242424" height="243.923" id="id_12" stroke="#0000ff" stroke-width="0" width="301.972" x="79.699" y="79.789"/>
  <rect atv:refpx="237.745" atv:refpy="193.467" fill="#000000" height="243.923" id="id_0" stroke="#0000ff" stroke-width="0" width="301.972" x="86.759" y="71.506"/>
@@ -37,7 +37,7 @@
  </svg>
  <text atv:refpx="260.329" atv:refpy="101.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_6" x="219.5" y="111.5">Направление</text>
  <text atv:refpx="249.926" atv:refpy="147.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_7" x="219.5" y="157.5">Кондуктор</text>
- <text atv:refpx="258.1" atv:refpy="193.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_9" x="219.5" y="203.5">Тех. колонна</text>
+ <text atv:refpx="262.559" atv:refpy="193.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_9" x="219.5" y="203.5">Пилотн. ствол</text>
  <text atv:refpx="237.724" atv:refpy="63.08" fill="#67de43" font-family="Arial" font-size="12" id="id_14" x="152.315" y="67.58">КОНСТРУКЦИЯ СКВАЖИНЫ</text>
  <rect atv:refpx="157.139" atv:refpy="195.615" fill="#1f1f1f" height="32" id="id_15" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.639" y="224.615"/>
  <svg atv:refpx="157.174" atv:refpy="195.706" height="31" id="id_16" width="80" x="120.174" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="225.206">

@@ -5,5 +5,6 @@ DisplayName: en|Limitations
 Description: en|Limitations
 EventNotifier: 0
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Limitation
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.korenevrv
 Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

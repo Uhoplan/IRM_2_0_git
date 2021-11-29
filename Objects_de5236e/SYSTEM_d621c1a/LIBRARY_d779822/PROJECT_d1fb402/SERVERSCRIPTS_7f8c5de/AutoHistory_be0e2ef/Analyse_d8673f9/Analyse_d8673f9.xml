@@ -4,7 +4,7 @@
     <priority>0</priority>
   </metadata>
   <parameter name="timer" type="timer" trigger="true" relative="false" value="" starttime="00:00:00" repeat="00:00:05"/>
-  <code><![CDATA[var consolelog=true;
+  <code><![CDATA[var consolelog=false;
 consolelog?console.log("-----------------------------------------------------------------------------------------------------"):'';
 
 var limitBottomHole = 1;
@@ -74,11 +74,11 @@ if(isDeepening){
 	consolelog?console.log('Углубления нет'):'';
 }
 
+
 var isPressureRise = call('AutoHistory.isPressureRise');
 if(isPressureRise)
 	consolelog?console.log('Перепад'):'';
-//call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#006633', suboperclr:'#33CC66'});
-//console.log('Auto.GetOperationObj.value = ',call('AutoHistory.GetOperationObj').value);
+
 var CurOperationObj = JSON.parse(call('AutoHistory.GetOperationObj').value);
 
 consolelog?console.log(' '):'';
@@ -86,7 +86,8 @@ consolelog?console.log(CurOperationObj.oper+' '+CurOperationObj.suboper):'';
 
 consolelog?console.log('.....................................................................................................'):'';
 
-if(!isCirc && !isWeightOnHook){
+//if(!isCirc && !isWeightOnHook){
+if(!isWeightOnHook){
 	var nodeStartOnWedges = new UaNode("AGENT.OBJECTS.Support.Auto.StartOnWedges");
 	var operObj = call('AutoHistory.GetOperationObj');
 	var operObjJson = JSON.parse(operObj.value);
@@ -103,15 +104,15 @@ if(!isCirc && !isWeightOnHook){
 	var isTdsRun = call('AutoHistory.isTdsRun');
 	var isPipeKeyRun = call('AutoHistory.isPipeKeyRun');
 	if(hookDir == 2){
-		call('AutoHistory.SetOperation',{oper:'На клиньях', suboper:'крюкоблок идет вверх', operclr:'#663300', suboperclr:'#2E1802'});
+		call('AutoHistory.SetOperation',{id:'6.2', group:'КЛИНЬЯ', oper:'На клиньях', suboper:'крюкоблок идет вверх', operclr:'#663300', suboperclr:'#2E1802'});
 	} else if(isPipeKeyRun){
-		call('AutoHistory.SetOperation',{oper:'На клиньях', suboper:'работа трубного ключа', operclr:'#663300', suboperclr:'#F0D087'});
+		call('AutoHistory.SetOperation',{id:'6.4', group:'КЛИНЬЯ', oper:'На клиньях', suboper:'работа трубного ключа', operclr:'#663300', suboperclr:'#F0D087'});
 		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasPipeKeyRun', varvalue: true});
 	} else if(isTdsRun){
-		call('AutoHistory.SetOperation',{oper:'На клиньях', suboper:'работа ВСП', operclr:'#663300', suboperclr:'#BD6E20'});
+		call('AutoHistory.SetOperation',{id:'6.5', group:'КЛИНЬЯ', oper:'На клиньях', suboper:'работа ВСП', operclr:'#663300', suboperclr:'#BD6E20'});
 		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasTdsRun', varvalue: true});
 	} else {
-		call('AutoHistory.SetOperation',{oper:'На клиньях', operclr:'#663300', suboperclr:'#DB865C'});
+		call('AutoHistory.SetOperation',{id:'6.1', group:'КЛИНЬЯ', oper:'На клиньях', operclr:'#663300', suboperclr:'#DB865C'});
 	}
 
 /*	
@@ -125,60 +126,60 @@ if(!isCirc && !isWeightOnHook){
 }
 
 if(isWeightOnHook && isCirc && isRotation && isDeepening && hookDir == -1 && isPressureRise){
-	call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
+	call('AutoHistory.SetOperation',{id:'1.1', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
 	return;
 }
 if(isWeightOnHook && isCirc && !isRotation && isDeepening && hookDir == -1 && isPressureRise){
-	call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#009933'});
+	call('AutoHistory.SetOperation',{id:'1.2', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#009933'});
 	return;
 }
 if(isWeightOnHook && isCirc && isDeepening && hookDir == 0 && call('AutoHistory.getHookPos') <= 0 && diffWellPos >= 0 && diffWellPos < limitBottomHole){
-	call('AutoHistory.SetOperation',{oper: 'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
+	call('AutoHistory.SetOperation',{id:'4.1', group:'ПРОМЫВКА', oper: 'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
 	return;
 }
 
 if(isWeightOnHook && isCirc && isDeepening && (hookDir == 0 || hookDir == -1) && CurOperationObj.oper == 'БУРЕНИЕ'){
 	//call('AutoHistory.SetOperation',CurOperationObj);
 	if(isRotation)
-		call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
+		call('AutoHistory.SetOperation',{id:'1.1', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
 	else
-		call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});
+		call('AutoHistory.SetOperation',{id:'1.2', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});
 	return;
 }
 
 if(isWeightOnHook && isCirc && isDeepening && CurOperationObj.oper == 'ПРОМЫВКА' && CurOperationObj.suboper == 'на забое'){
 	if(isRotation)
-		call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
+		call('AutoHistory.SetOperation',{id:'1.1', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#1EE661', suboperclr:'#009933'});
 	else
-		call('AutoHistory.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});	
+		call('AutoHistory.SetOperation',{id:'1.2', group:'БУРЕНИЕ', oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});	
 	return;
 }
 
 if(isWeightOnHook && isCirc && !isDeepening && (hookDir > 0 || hookDir < 0)){
 	if(isRotation){	
 		if(hookDir > 0)	
-			call('AutoHistory.SetOperation',{oper:'ПРОРАБОТКА',suboper:'при подъеме', operclr:'#666633', suboperclr:'#999933'});
+			call('AutoHistory.SetOperation',{id:'2.1', group:'ПРОРАБОТКА', oper:'ПРОРАБОТКА',suboper:'при подъеме', operclr:'#666633', suboperclr:'#999933'});
 		else {
 			if(diffWellPos >= 0 && diffWellPos < limitBottomHole){
-				call('AutoHistory.SetOperation',{oper:'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
+				call('AutoHistory.SetOperation',{id:'4.1', group:'ПРОМЫВКА', oper:'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
 			} else if(diffWellPos > 0 && diffWellPos < limitAboveBottomHole){
-				call('AutoHistory.SetOperation',{oper:'ПРОРАБОТКА', suboper:'при спуске над забоем', operclr:'#666633', suboperclr:'#CCCC33'});
+				call('AutoHistory.SetOperation',{id:'2.3', group:'ПРОРАБОТКА', oper:'ПРОРАБОТКА', suboper:'при спуске над забоем', operclr:'#666633', suboperclr:'#CCCC33'});
 			} else {
-				call('AutoHistory.SetOperation',{oper:'ПРОРАБОТКА', suboper:'при спуске', operclr:'#666633', suboperclr:'#CCCC33'});
+				call('AutoHistory.SetOperation',{id:'2.2', group:'ПРОРАБОТКА', oper:'ПРОРАБОТКА', suboper:'при спуске', operclr:'#666633', suboperclr:'#CCCC33'});
 			}		
 		}
 	} else {	
 		if(hookDir > 0){
 			if(diffWellPos >= 0 && diffWellPos < limitAboveBottomHole){	
-				call('AutoHistory.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при подъеме над забоем', operclr:'#CC6633', suboperclr:'#FF9933'});
+				call('AutoHistory.SetOperation',{id:'3.3', group:'ШАБЛОНИРОВКА', oper:'ШАБЛОНИРОВКА',suboper:'при подъеме над забоем', operclr:'#CC6633', suboperclr:'#FF9933'});
 			} else {
-				call('AutoHistory.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при подъеме', operclr:'#CC6633', suboperclr:'#FF9933'});
+				call('AutoHistory.SetOperation',{id:'3.1', group:'ШАБЛОНИРОВКА', oper:'ШАБЛОНИРОВКА',suboper:'при подъеме', operclr:'#CC6633', suboperclr:'#FF9933'});
 			}	
 		} else {	
 			if(diffWellPos >= 0 && diffWellPos < limitAboveBottomHole){
-				call('AutoHistory.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при спуске над забоем', operclr:'#CC6633', suboperclr:'#FFCC00'});
+				call('AutoHistory.SetOperation',{id:'3.4', group:'ШАБЛОНИРОВКА', oper:'ШАБЛОНИРОВКА',suboper:'при спуске над забоем', operclr:'#CC6633', suboperclr:'#FFCC00'});
 			} else {
-				call('AutoHistory.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при спуске', operclr:'#CC6633', suboperclr:'#FFCC00'});
+				call('AutoHistory.SetOperation',{id:'3.2', group:'ШАБЛОНИРОВКА', oper:'ШАБЛОНИРОВКА',suboper:'при спуске', operclr:'#CC6633', suboperclr:'#FFCC00'});
 			}
 		}	
 	}
@@ -187,11 +188,11 @@ if(isWeightOnHook && isCirc && !isDeepening && (hookDir > 0 || hookDir < 0)){
 
 if(isWeightOnHook && isCirc && !isDeepening && hookDir == 0){
 	if(diffWellPos >= 0 && diffWellPos < limitBottomHole){
-		call('AutoHistory.SetOperation',{oper:'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
+		call('AutoHistory.SetOperation',{id:'4.1', group:'ПРОМЫВКА', oper:'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
 	} else if(diffWellPos > limitBottomHole && diffWellPos < limitAboveBottomHole){
-		call('AutoHistory.SetOperation',{oper:'ПРОМЫВКА', suboper:'над забоем', operclr:'#1583DC', suboperclr:'#026AD1'});
+		call('AutoHistory.SetOperation',{id:'4.2', group:'ПРОМЫВКА', oper:'ПРОМЫВКА', suboper:'над забоем', operclr:'#1583DC', suboperclr:'#026AD1'});
 	} else {
-		call('AutoHistory.SetOperation',{oper:'ПРОМЫВКА', suboper:'в статике', operclr:'#1583DC', suboperclr:'#389CFF'});
+		call('AutoHistory.SetOperation',{id:'4.3', group:'ПРОМЫВКА', oper:'ПРОМЫВКА', suboper:'в статике', operclr:'#1583DC', suboperclr:'#389CFF'});
 	}
 	return;
 }
@@ -228,27 +229,27 @@ if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir > 0 || h
 	if(hookDir > 0){
 		if(toolDir < 0){
 			if(hookDir==2)
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'подъем',operclr:'#663333', suboperclr:'#A84660'});
+				call('AutoHistory.SetOperation',{id:'5.2', group:'СПО', oper:'СПО',suboper:'подъем',operclr:'#663333', suboperclr:'#A84660'});
 			else	
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'медленный подъем',operclr:'#663333', suboperclr:'#302222'});
+				call('AutoHistory.SetOperation',{id:'5.5', group:'СПО', oper:'СПО',suboper:'медленный подъем',operclr:'#663333', suboperclr:'#302222'});
 		} else if(toolDir > 0){
-			call('AutoHistory.SetOperation',{oper:'СПО',suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
+			call('AutoHistory.SetOperation',{id:'5.9', group:'СПО', oper:'СПО',suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
 		} else if(toolDir==0){
 			if(hookDir == 1)
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'подъем',operclr:'#663333', suboperclr:'#A84660'});
+				call('AutoHistory.SetOperation',{id:'5.2', group:'СПО', oper:'СПО',suboper:'подъем',operclr:'#663333', suboperclr:'#A84660'});
 			else if(hookDir == 2)
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'быстрый подъем',operclr:'#663333', suboperclr:'#B8252C'});
+				call('AutoHistory.SetOperation',{id:'5.1', group:'СПО', oper:'СПО',suboper:'быстрый подъем',operclr:'#663333', suboperclr:'#B8252C'});
 		}
 		return; 
 	} else if(hookDir < 0){
 		if(toolDir > 0){
 			if(hookDir==-2)
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
+				call('AutoHistory.SetOperation',{id:'5.9', group:'СПО', oper:'СПО',suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
 			else if(hookDir==-1)	
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'медленный спуск',operclr:'#B58F76', suboperclr:'#8F7171'});
+				call('AutoHistory.SetOperation',{id:'5.13', group:'СПО', oper:'СПО',suboper:'медленный спуск',operclr:'#B58F76', suboperclr:'#8F7171'});
 			return;	
 		} if(toolDir < 0){
-			call('AutoHistory.SetOperation',{oper:'СПО',suboper:'быстрый подъем',operclr:'#663333', suboperclr:'#B8252C'});
+			call('AutoHistory.SetOperation',{id:'5.1', group:'СПО', oper:'СПО',suboper:'быстрый подъем',operclr:'#663333', suboperclr:'#B8252C'});
 			return;
 		} else if(toolDir==0){
 			//var diffWellTool = call('AutoHistory.getDiffWellDepthAndToolPos');	
@@ -267,7 +268,7 @@ if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir > 0 || h
 					if(CurOperationObj.oper == 'На клиньях')
 						call('AutoHistory.SetOperation',CurOperationObj);
 					else {
-						call('AutoHistory.SetOperation',{oper:'Постановка',suboper:'на клинья',operclr:'#663300', suboperclr:'#F5B06C'});	
+						call('AutoHistory.SetOperation',{id:'6.7', group:'КЛИНЬЯ', oper:'Постановка',suboper:'на клинья',operclr:'#663300', suboperclr:'#F5B06C'});	
 					}
 				return;
 			}
@@ -276,15 +277,15 @@ if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir > 0 || h
 					if(CurOperationObj.oper == 'На клиньях')
 						call('AutoHistory.SetOperation',CurOperationObj);
 					else {
-						call('AutoHistory.SetOperation',{oper:'Снятие',suboper:'с клиньев',operclr:'#663300', suboperclr:'#F5B06C'});	
+						call('AutoHistory.SetOperation',{id:'6.8', group:'КЛИНЬЯ', oper:'Снятие',suboper:'с клиньев',operclr:'#663300', suboperclr:'#F5B06C'});	
 					}
 				return;
 			}
 			
 			if(hookDir == -1)
-				call('AutoHistory.SetOperation',{oper:'СПО',suboper:'медленный спуск',operclr:'#B58F76', suboperclr:'#8F7171'});
+				call('AutoHistory.SetOperation',{id:'5.13', group:'СПО', oper:'СПО',suboper:'медленный спуск',operclr:'#B58F76', suboperclr:'#8F7171'});
 			else 
-				call('AutoHistory.SetOperation',{oper:'СПО', suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
+				call('AutoHistory.SetOperation',{id:'5.9', group:'СПО', oper:'СПО', suboper:'быстрый спуск',operclr:'#B58F76', suboperclr:'#700404'});
 			return;
 		}
 	} 
@@ -298,7 +299,7 @@ if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir == -1 ||
 	consolelog?console.log('WeightOnHookMQ.stopVal = ',WeightOnHookMQ.stopVal):'';
 	consolelog?console.log('WeightOnHookMQ.diffVal = ',WeightOnHookMQ.diffVal):'';
 	if(WeightOnHookMQ.angle > 30){
-		call('AutoHistory.SetOperation',{oper:'Снятие',suboper:'с клиньев',operclr:'#663300', suboperclr:'#996E43'});
+		call('AutoHistory.SetOperation',{id:'6.8', group:'КЛИНЬЯ', oper:'Снятие',suboper:'с клиньев',operclr:'#663300', suboperclr:'#996E43'});
 		return;
 	}
 }
@@ -310,7 +311,7 @@ if(!isWeightOnHook && !isCirc && !isDeepening && (hookDir == -1 || hookDir == 0)
 	consolelog?console.log('WeightOnHookMQ.stopVal = ',WeightOnHookMQ.stopVal):'';
 	consolelog?console.log('WeightOnHookMQ.diffVal = ',WeightOnHookMQ.diffVal):'';
 	if(WeightOnHookMQ.angle < -20){
-		call('AutoHistory.SetOperation',{oper:'Постановка',suboper:'на клинья',operclr:'#663300', suboperclr:'#F5B06C'});
+		call('AutoHistory.SetOperation',{id:'6.7', group:'КЛИНЬЯ', oper:'Постановка',suboper:'на клинья',operclr:'#663300', suboperclr:'#F5B06C'});
 		return;
 	}
 }
@@ -322,38 +323,38 @@ if(isWeightOnHook && isCirc && !isDeepening && hookDir == -1){
 //	console.log('Tool Posit ', toolPos);
 //	console.log('Well Depth ', wellDepth);	
 	if(diffWellPos < limitAboveBottomHole && diffWellPos > limitBottomHole){
-		call('AutoHistory.SetOperation',{oper: 'ПРОМЫВКА',suboper:'подведение к забою', operclr:'#1583DC', suboperclr:'#0251A1'});
+		call('AutoHistory.SetOperation',{id:'4.4', group:'ПРОМЫВКА', oper: 'ПРОМЫВКА',suboper:'подведение к забою', operclr:'#1583DC', suboperclr:'#0251A1'});
 		return;
 	} else if(diffWellPos >= 0 && diffWellPos > limitBottomHole){
-		call('AutoHistory.SetOperation',{oper: 'ПРОМЫВКА',suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
+		call('AutoHistory.SetOperation',{id:'4.1', group:'ПРОМЫВКА', oper: 'ПРОМЫВКА',suboper:'на забое', operclr:'#1583DC', suboperclr:'#4CA8C7'});
 		return;
 	}
 }
 
 if(isWeightOnHook && isCirc && isDeepening && hookDir < 0){
 	if(isRotation)
-		call('AutoHistory.SetOperation',{oper: 'БУРЕНИЕ', suboper:'ротором',operclr:'#1EE661', suboperclr:'#009933'});
+		call('AutoHistory.SetOperation',{id:'1.1', group:'БУРЕНИЕ', oper: 'БУРЕНИЕ', suboper:'ротором',operclr:'#1EE661', suboperclr:'#009933'});
 	else
-		call('AutoHistory.SetOperation',{oper: 'БУРЕНИЕ', suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});	
+		call('AutoHistory.SetOperation',{id:'1.2', group:'БУРЕНИЕ', oper: 'БУРЕНИЕ', suboper:'слайдом', operclr:'#1EE661', suboperclr:'#33CC66'});	
 	return;
 }
 if(isWeightOnHook && isCirc && !isRotation && isDeepening && hookDir == 1 && diffWellPos < limitBottomHole){
-	call('AutoHistory.SetOperation',{oper:'СПО', suboper:'медленный подъем от забоя с циркуляцией без вращения', operclr: '#663333', suboperclr:'#9E8E8E'});	
+	call('AutoHistory.SetOperation',{id:'5.8', group:'СПО', oper:'СПО', suboper:'медленный подъем от забоя с циркуляцией без вращения', operclr: '#663333', suboperclr:'#9E8E8E'});	
 	return;
 }
 
 if(isWeightOnHook && !isCirc && isRotation && !isDeepening && hookDir > 0){
 	if(diffWellPos >= 0 && diffWellPos < limitBottomHole){
 		if(hookDir == 1)
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'медленный подъем от забоя с вращением', operclr: '#663333', suboperclr:'#9E8E8E'});
+			call('AutoHistory.SetOperation',{id:'5.7', group:'СПО', oper:'СПО', suboper:'медленный подъем от забоя с вращением', operclr: '#663333', suboperclr:'#9E8E8E'});
 		else 
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'подъем от забоя с вращением', operclr: '#663333', suboperclr:'#FFC4C4'});
+			call('AutoHistory.SetOperation',{id:'5.4', group:'СПО', oper:'СПО', suboper:'подъем от забоя с вращением', operclr: '#663333', suboperclr:'#FFC4C4'});
 		return;
 	} else if(diffWellPos >= limitBottomHole){
 		if(hookDir == 1)
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'медленный подъем с вращением', operclr: '#663333', suboperclr:'#A6400A'});
+			call('AutoHistory.SetOperation',{id:'5.6', group:'СПО', oper:'СПО', suboper:'медленный подъем с вращением', operclr: '#663333', suboperclr:'#A6400A'});
 		else
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'подъем с вращением', operclr: '#663333', suboperclr:'#CF4B3A'});	
+			call('AutoHistory.SetOperation',{id:'5.3', group:'СПО', oper:'СПО', suboper:'подъем с вращением', operclr: '#663333', suboperclr:'#CF4B3A'});	
 		return;
 	}
 }
@@ -361,15 +362,15 @@ if(isWeightOnHook && !isCirc && isRotation && !isDeepening && hookDir > 0){
 if(isWeightOnHook && !isCirc && isRotation && !isDeepening && hookDir < 0){
 	if(diffWellPos < limitAboveBottomHole){
 		if(hookDir == -1)
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'медленный спуск к забою с вращением', operclr: '#B58F76', suboperclr:'#9C5959'});
+			call('AutoHistory.SetOperation',{id:'5.15', group:'СПО', oper:'СПО', suboper:'медленный спуск к забою с вращением', operclr: '#B58F76', suboperclr:'#9C5959'});
 		else 
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'быстрый спуск к забою с вращением', operclr: '#B58F76', suboperclr:'#CCB3B3'});
+			call('AutoHistory.SetOperation',{id:'5.12', group:'СПО', oper:'СПО', suboper:'быстрый спуск к забою с вращением', operclr: '#B58F76', suboperclr:'#CCB3B3'});
 		return;
 	} else if(diffWellPos >= limitAboveBottomHole){
 		if(hookDir == -1)
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'медленный спуск с вращением', operclr: '#B58F76', suboperclr:'#CF8F8F'});
+			call('AutoHistory.SetOperation',{id:'5.14', group:'СПО', oper:'СПО', suboper:'медленный спуск с вращением', operclr: '#B58F76', suboperclr:'#CF8F8F'});
 		else
-			call('AutoHistory.SetOperation',{oper:'СПО', suboper:'быстрый спуск с вращением', operclr: '#B58F76', suboperclr:'#D16B6B'});	
+			call('AutoHistory.SetOperation',{id:'5.11', group:'СПО', oper:'СПО', suboper:'быстрый спуск с вращением', operclr: '#B58F76', suboperclr:'#D16B6B'});	
 		return;
 	}
 }
@@ -377,25 +378,99 @@ if(isWeightOnHook && !isCirc && isRotation && !isDeepening && hookDir < 0){
 if(isWeightOnHook && !isCirc && !isDeepening && hookDir == 0){
 	if(isRotation){
 		if(diffWellPos < limitBottomHole){
-			call('AutoHistory.SetOperation',{oper:'Остановка', suboper:'на забое без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#CFFFF1'});
+			call('AutoHistory.SetOperation',{id:'7.6', group:'ОСТАНОВКА', oper:'Остановка', suboper:'на забое без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#CFFFF1'});
 		} else if(diffWellPos >= limitBottomHole && diffWellPos < limitAboveBottomHole){
-			call('AutoHistory.SetOperation',{oper:'Остановка', suboper:'над забоем без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#DEFFB0'});	
+			call('AutoHistory.SetOperation',{id:'7.5', group:'ОСТАНОВКА', oper:'Остановка', suboper:'над забоем без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#DEFFB0'});	
 		} else {
-			call('AutoHistory.SetOperation',{oper:'Остановка', suboper:'без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#A6FFAC'});
+			call('AutoHistory.SetOperation',{id:'7.4', group:'ОСТАНОВКА', oper:'Остановка', suboper:'без циркуляции с вращением', operclr: '#37BABF', suboperclr:'#A6FFAC'});
 		}
 	} else {
 		if(diffWellPos < limitBottomHole){	
-			call('AutoHistory.SetOperation',{oper:'Остановка ', suboper:'на забое без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#76DEBB'});
+			call('AutoHistory.SetOperation',{id:'7.3', group:'ОСТАНОВКА', oper:'Остановка ', suboper:'на забое без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#76DEBB'});
 		} else if(diffWellPos >= limitBottomHole && diffWellPos < limitAboveBottomHole){
-			call('AutoHistory.SetOperation',{oper:'Остановка', suboper:'над забоем без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#73FFC2'});
+			call('AutoHistory.SetOperation',{id:'7.2', group:'ОСТАНОВКА', oper:'Остановка', suboper:'над забоем без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#73FFC2'});
 		} else {
-			call('AutoHistory.SetOperation',{oper:'Остановка', suboper:'без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#ABFFC8'});
+			call('AutoHistory.SetOperation',{id:'7.1', group:'ОСТАНОВКА', oper:'Остановка', suboper:'без циркуляции без вращения', operclr: '#37BABF', suboperclr:'#ABFFC8'});
 		}
 	}
 	return;
 }
 
 
-call('AutoHistory.SetOperation',{oper:'Неопределенный',operclr: '#A8A890', suboperclr:'#A8A890'});
+call('AutoHistory.SetOperation',{id:'8.1', group:'НЕОПРЕДЕЛЕННЫЙ', oper:'Неопределенный',operclr: '#A8A890', suboperclr:'#A8A890'});
+
+
+//Halliburton//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var HalliMD = new UaNode('AGENT.OBJECTS.Support.Halliburton.MD');
+var HalliMeasuredWeightTripIn = new UaNode('AGENT.OBJECTS.Support.Halliburton.MeasuredWeightTripIn');
+var HalliMeasuredWeightTripOut = new UaNode('AGENT.OBJECTS.Support.Halliburton.MeasuredWeightTripOut');
+var HalliMeasuredWeightOffBottom = new UaNode('AGENT.OBJECTS.Support.Halliburton.MeasuredWeightOffBottom');
+var HalliMeasuredWeightSlide = new UaNode('AGENT.OBJECTS.Support.Halliburton.MeasuredWeightSlide');
+var HalliTorqueOnBottom = new UaNode('AGENT.OBJECTS.Support.Halliburton.TorqueOnBottom');
+var HalliTorqueOffBottom = new UaNode('AGENT.OBJECTS.Support.Halliburton.TorqueOffBottom');
+var HalliPressure = new UaNode('AGENT.OBJECTS.Support.Halliburton.Pressure');
+var HalliECD = new UaNode('AGENT.OBJECTS.Support.Halliburton.ECD');
+
+HalliMD.assign({value: toolPos});
+var CurOperJsonObj = JSON.parse(call('AutoHistory.GetOperationObj').value);
+var RotorTorque = new UaNode('AGENT.OBJECTS.IVE50.Tool.RotorTorque');
+if(CurOperJsonObj.oper == 'БУРЕНИЕ' && CurOperJsonObj.suboper == 'ротором'){	
+	HalliTorqueOffBottom.assign({value: RotorTorque.value});
+} else {
+	HalliTorqueOffBottom.assign({value: 0});
+}
+if(isWeightOnHook){
+	var CurrWeightOnHook = call('AutoHistory.getWeightOnHook');
+	if(CurOperJsonObj.oper == 'БУРЕНИЕ' && CurOperJsonObj.suboper == 'слайдом'){	
+		HalliMeasuredWeightTripIn.assign({value: 0});
+		HalliMeasuredWeightTripOut.assign({value: 0});
+		HalliMeasuredWeightOffBottom.assign({value: 0});
+		HalliMeasuredWeightSlide.assign({value:CurrWeightOnHook});
+	} else {
+		if(diffWellPos >= limitBottomHole){	
+			if(hookDir < 0){
+				HalliMeasuredWeightTripIn.assign({value:CurrWeightOnHook});
+				HalliMeasuredWeightTripOut.assign({value: 0});
+				HalliMeasuredWeightOffBottom.assign({value: 0});
+				HalliMeasuredWeightSlide.assign({value: 0});
+			} else if(hookDir > 0){
+				HalliMeasuredWeightTripIn.assign({value: 0});
+				HalliMeasuredWeightTripOut.assign({value:CurrWeightOnHook});
+				HalliMeasuredWeightOffBottom.assign({value: 0});
+				HalliMeasuredWeightSlide.assign({value: 0});
+			} else if(hookDir == 0){
+				HalliMeasuredWeightTripIn.assign({value: 0});
+				HalliMeasuredWeightTripOut.assign({value: 0});
+				HalliMeasuredWeightOffBottom.assign({value:CurrWeightOnHook});
+				HalliMeasuredWeightSlide.assign({value: 0});
+			}
+		} else {
+			HalliMeasuredWeightTripIn.assign({value: 0});
+			HalliMeasuredWeightTripOut.assign({value: 0});
+			HalliMeasuredWeightOffBottom.assign({value: 0});
+			HalliMeasuredWeightSlide.assign({value: 0});
+		}
+	}
+	HalliPressure.assign({value: call('AutoHistory.getPressureManifold')});
+	HalliECD.assign({value: 0});
+}
+var HalliObj = {};
+HalliObj.MD = HalliMD.value;
+HalliObj.MeasuredWeightTripIn = HalliMeasuredWeightTripIn.value;
+HalliObj.MeasuredWeightTripOut = HalliMeasuredWeightTripOut.value;
+HalliObj.MeasuredWeightOffBottom = HalliMeasuredWeightOffBottom.value;
+HalliObj.MeasuredWeightSlide = HalliMeasuredWeightSlide.value;
+HalliObj.TorqueOnBottom = HalliTorqueOnBottom.value;
+HalliObj.TorqueOffBottom = HalliTorqueOffBottom.value;
+HalliObj.Pressure = HalliPressure.value;
+HalliObj.ECD = HalliECD.value;
+
+var HalliJson = JSON.stringify(HalliObj);
+var nodeHalliJson = new UaNode('AGENT.OBJECTS.Rig.Halliburton.HalliJson');
+nodeHalliJson.assign(HalliJson);
+ 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 return;]]></code>
 </script>

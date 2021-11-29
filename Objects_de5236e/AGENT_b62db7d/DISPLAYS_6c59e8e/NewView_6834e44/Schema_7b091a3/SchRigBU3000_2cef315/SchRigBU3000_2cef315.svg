@@ -7,22 +7,12 @@
  </metadata>
  <line atv:refpx="1074.978" atv:refpy="79.806" id="id_7" stroke="#4b5e6c" stroke-width="2" x1="1172.065" x2="977.892" y1="80.138" y2="79.473"/>
  <image atv:refpx="854.381" atv:refpy="503.621" height="613" id="id_0" transform="matrix(1.6531,0,0,1.4739,0,0)" width="325" x="354.345" xlink:href="../../BU3000/bu-3000_front.png" y="35.185"/>
- <svg atv:refpx="1651.578" atv:refpy="503.856" height="65" id="id_8" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="975.843" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long" y="314.649">
-  <atv:argument name="Name" value="Талевый канат 28мм"/>
-  <atv:argument name="Value3" value="20-05-2021"/>
-  <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
-  <atv:argument name="Unit2" value="т/м"/>
-  <atv:argument name="Value2" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
- </svg>
  <svg atv:refpx="670.965" atv:refpy="78.454" height="65" id="id_1" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="347.446" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long" y="21.55">
-  <atv:argument name="Name" value="СВП EMI"/>
+  <atv:argument name="Name" value="AGENT.OBJECTS.Test.DrillingRig.VSP_name"/>
   <atv:argument name="Value3" value="20-05-2021"/>
   <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
  </svg>
  <line atv:refpx="1074.039" atv:refpy="203.814" id="id_4" stroke="#4b5e6c" stroke-width="2" x1="1161.511" x2="986.568" y1="204.146" y2="203.481"/>
- <svg atv:refpx="1290.42" atv:refpy="201.021" height="20" id="id_39" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="744.418" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" y="128.494">
-  <atv:argument name="Name" value="Вышка BT-C200"/>
- </svg>
  <line atv:refpx="1259.59" atv:refpy="472.346" id="id_5" stroke="#4b5e6c" stroke-width="2" x1="1524.007" x2="995.172" y1="471.144" y2="473.548"/>
  <svg atv:refpx="1301.07" atv:refpy="81.139" height="20" id="id_6" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="751.243" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" y="45.896">
   <atv:argument name="Name" value="Кронблок"/>
@@ -36,4 +26,11 @@
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[document.getElementById('kanat_zero').addEventListener('click',function(e){
 	webMI.data.write('AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat',0)
 })]]></script>
+ <svg atv:refpx="1652.788" atv:refpy="488.155" height="65" id="id_13" transform="matrix(1.5576,0,0,1.4462,0,0)" width="165" x="978.628" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long_for_tall" y="305.054">
+  <atv:argument name="Name" value="AGENT.OBJECTS.Test.DrillingRig.DiametrRope"/>
+  <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <atv:argument name="Value2" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
+  <atv:argument name="Unit2" value="т/км"/>
+ </svg>
+ <svg atv:refpx="1288.091" atv:refpy="203.919" height="20" id="id_14" transform="matrix(1.5576,0,0,1.45,0,0)" width="165" x="744.485" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.CSGO.Rig_name" y="130.634"/>
 </svg>
