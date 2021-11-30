@@ -41,7 +41,6 @@
 var id = "id_6";
 var max = webMI.query["MaxVolume"];
 var value = e.value;
-console.log("tselickov",value)
 if(value==undefined)
 {
 document.getElementById("liq_block").style.opacity = "1";

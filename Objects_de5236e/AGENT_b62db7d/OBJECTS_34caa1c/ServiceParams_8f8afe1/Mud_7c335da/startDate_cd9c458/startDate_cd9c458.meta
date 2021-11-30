@@ -3,8 +3,7 @@ NodeClass: Variable
 BrowseName: 1:startDate
 DisplayName: en|startDate
 Description: en|startDate
-DataType: DateTime
+DataType: String
 ValueRank: -1
 AccessLevel: 7
 Reference: forward HasTypeDefinition BaseVariableType
-Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

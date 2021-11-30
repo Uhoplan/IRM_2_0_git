@@ -26,7 +26,8 @@
   <parameter name="oper_time_pump2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2.RunHoursMs"/>
   <parameter name="oper_time_drawworks" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.RunHoursMs"/>
   <parameter name="rig_operation" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Support.Auto.Operation"/>
-  <code><![CDATA[try	{
+  <code><![CDATA[conosle.log('point1')
+try	{
 console.log('Start report script');
 		var node_rig_name = new UaNode(rig_name);
 		var node_field_name = new UaNode(field_name);

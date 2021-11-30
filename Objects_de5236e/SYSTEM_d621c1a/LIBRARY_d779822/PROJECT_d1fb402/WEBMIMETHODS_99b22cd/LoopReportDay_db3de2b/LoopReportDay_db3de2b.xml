@@ -6,7 +6,8 @@
   <parameter name="RepStartDate" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.StartReportDate"/>
   <parameter name="RepFinishDate" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FinishReportDate"/>
   <parameter name="boolRunning" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Test.ForMainWindow.dataRepRunning"/>
-  <code><![CDATA[var fileLoad = new UaNode(boolRunning);
+  <code><![CDATA[console.log('point3')
+var fileLoad = new UaNode(boolRunning);
 console.log('fileLoad = ',fileLoad.value);									
 if(fileLoad.value){
 	fileLoad.assign({value:false});
@@ -30,7 +31,7 @@ if(fileLoad.value){
 		console.log('ODBC_report_apd is running'+count)
 		curdate.setDate(curdate.getDate() + 1);												
 	//	nrd.assign({value: curdate});								 
-		call("ODBC_report_apd",{report_date:curdate});
+		call("Report.Report_Day",{report_date:curdate});
 		
 		}
 	fileLoad.assign({value:true});

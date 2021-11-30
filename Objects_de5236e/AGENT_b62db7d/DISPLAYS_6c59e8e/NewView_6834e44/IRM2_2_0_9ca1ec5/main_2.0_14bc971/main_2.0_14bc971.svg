@@ -46,7 +46,7 @@
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1"/>
   <atv:argument name="MaxVolume" value="100"/>
  </svg>
- <svg atv:refpx="850.17" atv:refpy="591.151" height="255.2" id="id_9" transform="matrix(0.73,0,0,0.8033,0,0)" width="100" x="1114.616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.bar.BarConsumptionIn" y="603.324">
+ <svg atv:refpx="850.17" atv:refpy="593.019" height="255.2" id="id_9" transform="matrix(0.73,0,0,0.8033,0,0)" width="100" x="1114.616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.bar.BarConsumptionIn" y="605.649">
   <atv:argument name="St1" value="Расход"/>
   <atv:argument name="St2" value="на входе"/>
   <atv:argument name="St3" value="л/с"/>
@@ -263,5 +263,5 @@
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
  </svg>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[]]></script>
- <text atv:refpx="1747.979" atv:refpy="964.948" fill="#ffffff" font-family="Arial" font-size="12" id="id_3" x="1713.667" y="969.448">version 2.1.1</text>
+ <text atv:refpx="1747.979" atv:refpy="964.948" fill="#ffffff" font-family="Arial" font-size="12" id="id_3" x="1713.667" y="969.448">version 2.1.2</text>
 </svg>

@@ -48,7 +48,7 @@ function setParams() {
 		for (i in paramsArray) {
 			var value = res[i].value;
 			if (paramsArray[i].includes("startDate")) {
-				value = beautifyDate(new Date(value));
+				value = beautifyDate(new Date(parseFloat(value)));
 			}
 			//document.getElementById("param_id_" + i).innerHTML = value;
 			var currentParam = document.getElementById("param_id_" + i);

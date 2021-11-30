@@ -69,7 +69,7 @@
    <p class="green-text" id="currentService" style="text-align:center;">Растворный сервис</p>
   </div>
  </foreignObject>
- <foreignObject height="36.777" id="id_7" width="350" x="75" y="151.402">
+ <foreignObject height="36.777" id="id_7" width="350" x="-495.629" y="150.213">
   <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;" xmlns="http://www.w3.org/1999/xhtml">
    <label style="widtht:100%;height:100%;box-sizing:border-box;">
     <div class="button-blue" style="width:350px;max-width:100%;height:45px;max-height:100%;text-align:center;box-sizing:border-box;display:flex;align-items:center;justify-content:center;">Загрузить план</div>
@@ -168,7 +168,7 @@ function fillInputs() {
 	webMI.data.read(paths, function(e) {
 		for (i in e) {
 			var input = document.getElementById("input_" + serviceData[i]);
-			input.value = input.id.includes("startDate") ? beautifyDate(new Date(e[i].value)) : e[i].value;
+			input.value = input.id.includes("startDate") ? beautifyDate(new Date(parseFloat(e[i].value))) : e[i].value;
 		}
 	})
 }
@@ -183,9 +183,9 @@ function save() {
 
 	fillPaths(serviceData);
 	for (i in serviceData) {
-		var input = document.getElementById("input_" + serviceData[i])
+		var input = document.getElementById("input_" + serviceData[i]);
 		
-		values.push(input.id.includes("startDate") ? uglifyDate(input.value).getTime() : input.value);
+		values.push(input.id.includes("startDate") ? uglifyDate(input.value).getTime() + "" : input.value);
 		//console.log("date:", uglifyDate(input.value));
 	}
 	webMI.data.write(paths, values)
