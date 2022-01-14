@@ -42,13 +42,13 @@
  <text atv:refpx="1650.236" atv:refpy="920.437" fill="#ffffff" font-family="Arial" font-size="12" id="id_26" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-472.2713,-101.2027)" x="1635.335" y="923.648">инструмента (м)</text>
  <svg atv:refpx="168.074" atv:refpy="101.4" height="130" id="id_64" transform="matrix(1.4371,0,0,1.3771,0,0)" width="200" x="13.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.HookView" y="3.631"/>
  <svg atv:refpx="230.627" atv:refpy="598.055" height="591" id="id_28" transform="matrix(1.4371,0,0,1.3771,0,0)" width="290" x="3.479" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.DrillView" y="138.774"/>
- <foreignObject height="120" id="id_27" width="252.861" x="1520" y="20">
-  <div style="width:100%;height:100%; display:flex; flex-wrap:wrap" xmlns="http://www.w3.org/1999/xhtml">
+ <foreignObject height="223.288" id="id_27" width="252.861" x="1520" y="20">
+  <div style="width:100%;height:100%;" xmlns="http://www.w3.org/1999/xhtml">
    <style>
 		.upload-area-button{
 		    border-radius:12px;
             height:40px;
-            min-width:80%;
+            min-width:40%;
             margin-bottom: 20px;
             color:white;
             background-color:#177ddc;
@@ -56,16 +56,17 @@
             font-size:1.7rem;
             border:1px solid #177ddc;
             transition: 0.2s ease;
+            text-align:center;
         }
         .upload-area-button-f{
 			background-color:#f00;
 			border:1px solid #f00;     
         }
         .upload-area-button:hover{
-		    background-color:gray
+		    background-color:gray;
 	    }
         .inactive{
-		    background-color:rgb(10,34,46);
+		    background-color:gray;
 	    }
 	    .inactive:hover{
 		    background-color:rgb(10,34,46);
@@ -83,9 +84,45 @@
 			font-size:1.5rem;
 			margin-right:10px;
 	    }
+	    .upload-area-button-red{
+			border-radius:12px;
+            height:40px;
+            min-width:40%;
+            margin-bottom: 20px;
+            color:white;
+            background-color:#f00;
+            border:none;
+            font-size:1.7rem;
+            border:1px solid #f00;
+            transition: 0.2s ease;
+            text-align:center;
+	    }
+	    .chart-legend-line{
+			width:20px;
+			height:5px;
+			display:inline-block;
+	    }
+	    .plan{
+			background-color:#177ddc;	    
+	    }
+	    .fact{
+			background-color:red;
+	    }
+	    .chart-custom-leg{
+			color:white;
+			width:100%;			    
+	    }
 </style>
    <button class="deletebut hide" id="db1">✖ ПЛАН</button>
    <button class="deletebut hide" id="db2">✖ ФАКТ</button>
+   <div class="chart-custom-leg" id="pswitch">
+    <div class="chart-legend-line plan"/>
+    <div style="display:inline-block;">План</div>
+   </div>
+   <div class="chart-custom-leg" id="fswitch">
+    <div class="chart-legend-line fact"/>
+    <div style="display:inline-block;">Факт</div>
+   </div>
   </div>
  </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var CHART = document.getElementById("WELL_CHART")
@@ -457,41 +494,71 @@ webMI.gfx.setText("id_24", res);
 
 //////////////////////////////////////////КАСТОМНАЯ ЛЕГЕНДА
 
-/*document.getElementById('pswitch').addEventListener('click',function(e){
-	if(e.target.classList.contains('inactive')){
-		e.target.classList.remove('inactive')
-		Plotly.addTraces(CHART,traces[1])
-	}else{
-		e.target.classList.add('inactive')
+document.getElementById('pswitch').addEventListener('click',function(e){
+console.log(e)
+	needEl = document.getElementById('pswitch')
+	subEl = document.getElementById('fswitch')
+	ok = true;
+	while (ok){
 		try{
-		Plotly.deleteTraces(CHART,2)
-		}catch(e){}
-		try{
-		Plotly.deleteTraces(CHART,1)
-		}catch(e){}
-		if(!document.getElementById('fswitch').classList.contains('inactive')){
-			Plotly.addTraces(CHART,traces[0])
+			console.log('deleting smth')
+			Plotly.deleteTraces(CHART, 0)
 		}
+		catch (err){
+		console.log(err)
+			ok = false		
+		}	
 	}
+	if(needEl.classList.contains('inactive')){
+		needEl.classList.remove('inactive')
+		Plotly.addTraces(CHART, traces[1])	
+	}
+	else{
+		needEl.classList.add('inactive')	
+	}
+	if(subEl.classList.contains('inactive')){
+		console.log('fact is invisible!')
+	}
+	else{
+		Plotly.addTraces(CHART, traces[0])	
+	}
+	Plotly.addTraces(CHART, traces[3])
+	Plotly.addTraces(CHART, traces[4])
 })
 
 document.getElementById('fswitch').addEventListener('click',function(e){
-	if(e.target.classList.contains('inactive')){
-		e.target.classList.remove('inactive')
-		Plotly.addTraces(CHART,traces[0])
-	}else{
-		e.target.classList.add('inactive')
+console.log(e)
+	needEl = document.getElementById('fswitch')
+	subEl = document.getElementById('pswitch')
+	ok = true;
+	while (ok){
 		try{
-		Plotly.deleteTraces(CHART,2)
-		}catch(e){}
-		try{
-		Plotly.deleteTraces(CHART,1)
-		}catch(e){}
-		if(!document.getElementById('pswitch').classList.contains('inactive')){
-			Plotly.addTraces(CHART,traces[1])
+			console.log('deleting smth')
+			Plotly.deleteTraces(CHART, 0)
 		}
+		catch (err){
+		console.log(err)
+			ok = false		
+		}	
 	}
-})*/
+	if(needEl.classList.contains('inactive')){
+		needEl.classList.remove('inactive')
+		Plotly.addTraces(CHART, traces[0])	
+	}
+	else{
+		needEl.classList.add('inactive')	
+	}
+	if(subEl.classList.contains('inactive')){
+		console.log('fact is invisible!')
+	}
+	else{
+		Plotly.addTraces(CHART, traces[1])	
+	}
+	Plotly.addTraces(CHART, traces[3])
+	Plotly.addTraces(CHART, traces[4])
+})
+
+
 
 webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
 	if ("username" in e) {
