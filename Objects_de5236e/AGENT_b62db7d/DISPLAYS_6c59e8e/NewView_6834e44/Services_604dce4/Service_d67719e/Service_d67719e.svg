@@ -149,7 +149,7 @@
  </foreignObject>
  <foreignObject height="32" id="id_19" width="232" x="32.297" y="150.238">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
-   <button class="button-blue" id="reports" style="font-size: 12px;display:none;">Суточные рапорты</button>
+   <button class="button-blue" id="reports" style="font-size: 12px;display:none;">рапорты</button>
   </div>
  </foreignObject>
  <script atv:desc="" atv:name="elId" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
@@ -228,9 +228,17 @@ var planExceptions = ["NNB", "Concrete"]
 var reports = document.getElementById("reports");
 if (reports) 
 reports.addEventListener("click", function() {
-	webMI.display.openDisplay(
+	if (currentService == "Mud") webMI.display.openDisplay(
 		"SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.DetailedDaily",
 		{ service: currentService },
+		"main_frame"
+	)
+	if (currentService == "NNB") webMI.display.openDisplay(
+		"SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.DetailedNNB",
+		{ 
+			service: currentService,
+			col: currentCol
+		},
 		"main_frame"
 	)
 });
@@ -315,7 +323,7 @@ webMI.trigger.connect("changeServiceTrigger", function(e) {
 	
 	webMI.trigger.fire("colClickTrigger", currentCol ? currentCol : "Direct");
 	
-	if (currentService == "Mud" && reports) {
+	if ((currentService == "Mud" || currentService == "NNB") && reports) {
 		reports.style.display = "block";
 	} 
 });
@@ -694,7 +702,7 @@ function bitDataCalc(bit, time) {
 function isEmpty(row) {
 	var some = true;
 	values = Object.values(row);
-	
+	//console.log(values)
 	for (i in values) {
 		if (values[i].replace(/\s/, "").length > 0) {
 			some = false;	
@@ -759,7 +767,7 @@ function changeMenuMode(mode) {
 
 writePlan.addEventListener("click", function() {
 	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) { 5678
-		var res = headers.fact[currentService].columns;
+		var res = headers.plan[currentService].columns;
 		
 		if (!editingPlan) {
 			currentPlan = table.data;

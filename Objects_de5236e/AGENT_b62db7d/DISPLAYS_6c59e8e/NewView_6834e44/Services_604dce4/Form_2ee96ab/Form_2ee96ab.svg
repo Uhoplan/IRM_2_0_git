@@ -129,10 +129,15 @@ function generateForm() {
 }
 generateForm();
 
+
 function createButton(data, i) {
+	var disabled = !hasRight(data.datasetValue) ? "background:grey;color:#000;pointer-events:none;" : ""
+	
 	//var label = "<label for=" + "radio_" + i + " class=" + data.class + " style='font-size:10px;text-align:center;'>" + data.label + "</label>";
 	//var input = "<input value=" + data.datasetValue + " type='radio' id=radio_" + i + " name=currentService style='width:100%;display:none;' data-" + data.dataset + "=" + data.datasetValue + "/>";
-	var button = "<button type='button' class=" + data.class + " style='width:100%;font-size:10px;' data-" + data.dataset + "=" + data.datasetValue + ">" + data.label + "</button>";
+	var button = "<button type=button class=" + data.class + " style=width:100%;font-size:10px;" + disabled + " data-" + data.dataset + "=" + data.datasetValue + ">" + data.label + "</button>";
+	
+	//console.log(button)	
 	
 	return button
 	//return input + label
@@ -144,6 +149,17 @@ function fillContainer() {
 	}
 }
 //fillContainer();
+
+function hasRight(right) {
+
+	if(webMI.hasRight("USER." + right) || webMI.hasRight("USER." + "Services")){
+		return true
+	}
+	
+	return false
+}
+
+//console.log(hasRight("Bit"))
 
 function fillPaths(data) {
 	paths = [];

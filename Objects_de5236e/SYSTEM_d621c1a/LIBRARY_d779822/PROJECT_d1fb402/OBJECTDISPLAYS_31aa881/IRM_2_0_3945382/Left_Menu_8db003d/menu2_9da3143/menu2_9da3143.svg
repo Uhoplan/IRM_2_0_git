@@ -26,17 +26,18 @@
   <rect atv:refpx="33.5" atv:refpy="540" fill="#2e2d3b" height="1080.00" id="id_10" width="67.00" x="0" y="0"/>
  </g>
  <svg atv:refpx="32.73" atv:refpy="30.401" height="54" id="id_2" width="47" x="9.23" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2Flogo_ir_master.svg" y="3.401"/>
- <foreignObject height="1007.714" id="id_0" width="115.13" x="1.853" y="67.153">
+ <foreignObject height="1007.714" id="id_0" width="115.13" x="-0.147" y="67.153">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <nav id="left_menu_nav"/>
   </div>
  </foreignObject>
- <svg atv:refpx="104.673" atv:refpy="902.1" height="197.66" id="id_1" width="251.68" x="-20.032" xlink:href="AGENT.DISPLAYS.Test.test" y="849.955">
+ <svg atv:refpx="113.046" atv:refpy="963.925" height="220" id="id_1" transform="matrix(1.0295,0,0,1.1138,0,0)" width="251.68" x="-19.659" xlink:href="AGENT.DISPLAYS.Test.test" y="761.283">
   <atv:argument name="firstDisplay" value="AGENT.DISPLAYS.Test.Maximus"/>
-  <atv:argument name="SecondDisplay" value="AGENT.DISPLAYS.NewView.Set_var"/>
   <atv:argument name="secondDisplay" value="AGENT.DISPLAYS.NewView.Set_var"/>
   <atv:argument name="thirdDisplay" value="AGENT.DISPLAYS.NewView.Geology_settings"/>
+  <atv:argument name="SecondDisplay" value="AGENT.DISPLAYS.NewView.Set_var"/>
   <atv:argument name="fourthDisplay" value="AGENT.DISPLAYS.NewView.RigConstruction_settings"/>
+  <atv:argument name="fifthDisplay" value="AGENT.DISPLAYS.NewView.DrillingPumps"/>
  </svg>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/left_menu.css"], function () {
   var nav = document.getElementById("left_menu_nav");
@@ -163,6 +164,7 @@
     },*/
   ];
   nav.addEventListener("click", function (e) {
+  //console.log("aaaaaaaaaaaaaaaaaa")
 	if(e.target.id.includes("button_")){	
 	var currentConfig =	buttonsConfig.find(function(item, index) {
 			return item.id == e.target.id

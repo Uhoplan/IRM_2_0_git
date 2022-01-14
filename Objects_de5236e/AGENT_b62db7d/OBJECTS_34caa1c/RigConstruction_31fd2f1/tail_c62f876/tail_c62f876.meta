@@ -3,7 +3,7 @@ NodeClass: Variable
 BrowseName: 1:tail
 DisplayName: en|tail
 Description: en|tail
-DataType: Int32
+DataType: Float
 ValueRank: -1
 AccessLevel: 7
 Reference: forward HasTypeDefinition BaseVariableType

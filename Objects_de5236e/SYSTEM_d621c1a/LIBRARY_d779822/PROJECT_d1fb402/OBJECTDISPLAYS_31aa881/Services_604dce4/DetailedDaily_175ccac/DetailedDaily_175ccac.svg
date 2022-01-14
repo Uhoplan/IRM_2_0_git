@@ -222,7 +222,7 @@
 </style>
   </div>
  </foreignObject>
- <foreignObject height="49.884" id="id_7" width="61.62" x="1772.918" y="944.266">
+ <foreignObject height="49.884" id="id_7" width="61.62" x="1700" y="946.613">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <img id="print" src="../../excelParse/icons/printer.png" style="background:#fff;width:2.5rem;height:2.5rem;border-radius:8px;cursor:pointer;"/>
   </div>
@@ -347,7 +347,7 @@ pub.subscribe("setReport", function(data) {
 		//table.fill(data.rows)
 		//table.table.removeEventListener("submit", submitHandler)
 		//table.table.addEventListener("submit", submitHandler)
-		tContainer.innerHTML = inject()
+		tContainer.innerHTML = inject(currentService)
 		toElement(data)
 		currentData = data
 	}

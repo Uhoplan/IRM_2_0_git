@@ -1,4 +1,4 @@
-function toElement(elems, container) {
+function toElement(elems, container, service) {
   // var len = 74
   // var container = document.getElementById("container")
   for (elem in elems) {
@@ -49,6 +49,7 @@ function toElement(elems, container) {
             cell.style.width = "100%"
             cell.style.borderRight = "1px solid #FFF"
             cell.style.minHeight = "2.3rem"
+            cell.style.textAlign = "center"
             cell.textContent = elems[elem].value[colId][rowId]
             
             row.appendChild(cell)
@@ -65,7 +66,26 @@ function toElement(elems, container) {
 
   //console.log(elems)
 }
+/*
+function renderNNB(elems, container, service) {
+	var arr = []
+	var data = Object.assign(currentData, { timestamp: currentTimestamp }, { signature: currentSig })
+	
+	webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".reports", function(rep) {
+		if (rep.value.length > 0 && rep.timestamp > startDate) {
+			arr = JSON.parse(rep.value)
+		}
+		var id = arr.findIndex(function(item) {
+		
+			return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(currentTimestamp).setHours(0, 0, 0, 0)
+		})
+		
+		if (id) arr.splice(id, 1, data)
+		else arr.push(data)
+		
+		webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".reports", JSON.stringify(arr))
+	})
 
-function renderSkeleton() {
-
+		//webMI.trigger.fire("setReports", item)
 }
+*/

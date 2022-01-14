@@ -8,12 +8,12 @@
 var retObj = call("AutoHistory.MinQuad", {nodeStr: nodeHookPosStr, countSec:nodeTimeAnalyse.value});
 			
 /*
-console.log('retObj.angle = '+retObj.angle);
-console.log('retObj.startVal = '+retObj.startVal);
-console.log('retObj.stopVal = '+retObj.stopVal);
-console.log('retObj.avrVal = '+retObj.avrVal);
-console.log('retObj.diffVal = '+retObj.diffVal);
-console.log('retObj.speedVal = '+retObj.speedVal);
+console.log('HOOK retObj.angle = '+retObj.angle);
+console.log('HOOK retObj.startVal = '+retObj.startVal);
+console.log('HOOK retObj.stopVal = '+retObj.stopVal);
+console.log('HOOK retObj.avrVal = '+retObj.avrVal);
+console.log('HOOK retObj.diffVal = '+retObj.diffVal);
+console.log('HOOK retObj.speedVal = '+retObj.speedVal);
 */
 
 if(retObj.angle > 0){

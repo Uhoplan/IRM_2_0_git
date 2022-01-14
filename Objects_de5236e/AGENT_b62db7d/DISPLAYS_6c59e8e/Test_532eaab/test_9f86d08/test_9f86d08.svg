@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<svg height="197.66" version="1.2" width="251.68" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg height="220" version="1.2" width="251.68" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs/>
  <metadata>
   <atv:parameter behavior="optional" defaultvalue="" name="firstDisplay" valuetype="display"/>
@@ -7,15 +7,17 @@
   <atv:parameter behavior="optional" defaultvalue="" name="secondDisplay" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" name="thirdDisplay" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="" name="fourthDisplay" valuetype="display"/>
+  <atv:parameter behavior="optional" name="SecondDisplay" valuetype="address"/>
+  <atv:parameter behavior="optional" name="fifthDisplay" valuetype="address"/>
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
- <foreignObject height="197.657" id="id_0" width="251.681" x="-0.867" y="-0.274">
+ <foreignObject height="220.567" id="id_0" width="251.681" x="-0.867" y="-0.274">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <ul class="topmenu">
     <li class="block" style="padding-left:40px;left:0px;width:60px;height:52px;">
      <p class="submenu-link" href="">
-      <img src="../../IMG/settings.png" style="padding-bottom:0px;top:10px;position:absolute;height:30px;width:30px"/>
+      <img src="../../IMG/settings.png" style="padding-bottom:0px;top:10px;position:absolute;height:30px;width:30px;"/>
      </p>
      <ul class="submenu">
       <li>
@@ -30,6 +32,9 @@
       <li>
        <p href="" id="fourth">Конструкция скважины</p>
       </li>
+      <li>
+       <p href="" id="fifth">Буровые насосы</p>
+      </li>
      </ul>
     </li>
    </ul>
@@ -40,6 +45,7 @@ var first = document.getElementById("first")
 var second =  document.getElementById("second")
 var third = document.getElementById("third")
 var fourth = document.getElementById("fourth")
+var fifth = document.getElementById("fifth")
 
 webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
 	if ("username" in e) {
@@ -67,8 +73,13 @@ console.log("##################-TRUE!!!")
 console.log("##################-FALSE!!!")
 }*/
 
-first.addEventListener("click", function(){
+fifth.addEventListener("click", function(){
 
+	webMI.display.openDisplay(webMI.query["fifthDisplay"],webMI.query,webMI.query["frame"]);
+}, false)
+
+first.addEventListener("click", function(){
+console.log("aaaaaaaaaaaaaaaaaa")
 	webMI.display.openDisplay(webMI.query["firstDisplay"],webMI.query,webMI.query["frame"]);
 }, false)
 
@@ -84,5 +95,7 @@ fourth.addEventListener("click", function(){
 	webMI.display.openDisplay(webMI.query["fourthDisplay"],webMI.query,webMI.query["frame"]);
 }, false)
 })
+
+
 ]]></script>
 </svg>

@@ -3,7 +3,7 @@ NodeClass: Variable
 BrowseName: 1:obsCol
 DisplayName: en|obsCol
 Description: en|obsCol
-DataType: Int16
+DataType: Float
 ValueRank: -1
 AccessLevel: 7
 Reference: forward HasTypeDefinition BaseVariableType

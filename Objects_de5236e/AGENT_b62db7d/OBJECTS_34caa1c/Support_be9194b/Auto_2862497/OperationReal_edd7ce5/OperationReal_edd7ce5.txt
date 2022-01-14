@@ -1,0 +1,1 @@
+{"npt":"ПВ","group":"ШАБЛОНИРОВКА ПОДЪЕМ","oper":"ШАБЛОНИРОВКА","suboper":"при подъеме","opertime":0,"operclr":"#CC6633","suboperclr":"#FF9933","timestartgroup":1642146330025,"timestart":"2022-01-14T07:45:35.021Z","servertime":"2022-01-14T07:45:35.021Z","sourcetime":"2022-01-14T07:45:35.021Z","timework":10006,"timestop":1642146345027,"timeworkgroup":15002}

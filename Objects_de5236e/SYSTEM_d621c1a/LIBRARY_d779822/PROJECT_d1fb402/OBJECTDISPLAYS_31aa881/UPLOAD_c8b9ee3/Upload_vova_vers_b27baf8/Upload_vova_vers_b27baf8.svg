@@ -25,7 +25,7 @@
   <atv:overwrite height="39.999" id="outer_frame" transform="matrix(0.5,0,0,0.75,0,0)" width="160"/>
  </svg>
  <text atv:refpx="61.883" atv:refpy="118.778" fill="#ffffff" font-family="Arial" font-size="16" id="saveMessage" visibility="hidden" x="15.499" y="123.278">T{saveMessage}</text>
- <svg atv:refpx="138.601" atv:refpy="96.919" height="30" id="write" transform="matrix(2,0,0,1.3333,0,0)" width="80" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="72.746">
+ <svg atv:refpx="138.601" atv:refpy="97.383" height="30" id="write" transform="matrix(2,0,0,1.3333,0,0)" width="80" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="73.094">
   <atv:argument name="label" value="T{Загрузить}"/>
   <atv:argument name="focusStrokeColor" value="SYSTEM.GLOBALS.Colors.ButtonStroke"/>
   <atv:argument name="fontColor" value="SYSTEM.GLOBALS.plan.ColorGreen"/>
@@ -33,28 +33,32 @@
   <atv:argument name="strokePressed" value="#177ddc"/>
   <atv:argument name="borderColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
   <atv:argument name="fillColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
-  <atv:overwrite height="38" id="id_6" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
-  <atv:overwrite id="button_symbol" transform="matrix(0.5,0,0,0.75,0,0)" x="70" y="10"/>
-  <atv:overwrite id="button_label_2" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="31.5"/>
-  <atv:overwrite id="button_label_1" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="16.5"/>
-  <atv:overwrite id="button_label" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="24.5"/>
-  <atv:overwrite height="36" id="button_stroke" transform="matrix(0.5,0,0,0.75,0,0)" width="156"/>
-  <atv:overwrite height="38" id="button_bg" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
-  <atv:overwrite height="40" id="outer_frame" transform="matrix(0.5,0,0,0.75,0,0)" width="160"/>
+  <atv:overwrite height="37.999" id="id_6" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5,0,0,0.75,0,0)" x="70" y="9.999"/>
+  <atv:overwrite id="button_label_2" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="31.499"/>
+  <atv:overwrite id="button_label_1" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="16.499"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="24.499"/>
+  <atv:overwrite height="35.999" id="button_stroke" transform="matrix(0.5,0,0,0.75,0,0)" width="156"/>
+  <atv:overwrite height="37.999" id="button_bg" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite height="39.999" id="outer_frame" transform="matrix(0.5,0,0,0.75,0,0)" width="160"/>
  </svg>
- <text atv:refpx="14.97" atv:refpy="72.071" fill="#ffffff" font-family="Arial" font-size="10" id="selectFileSize" text-anchor="start" visibility="visible" x="5.082" y="76.571">T{0kB}</text>
+ <text atv:refpx="14.599" atv:refpy="72.071" fill="#ffffff" font-family="Arial" font-size="10" id="selectFileSize" text-anchor="start" visibility="visible" x="4.711" y="76.571">T{0kB}</text>
  <foreignObject height="38" id="id_1" width="20" x="143.728" y="58.13">
   <body xmlns="http://www.w3.org/1999/xhtml">
-   <form>
-    <input id="file" style="visibility: hidden;" type="file"/>
+   <form enctype="multipart/form-data" id="formSelect">
+    <input id="well" name="well" style="display:none" value="123"/>
+    <input id="bush" name="bush" style="display:none" value="456"/>
+    <input id="field" name="field" style="display:none" value="456"/>
+    <input id="file" name="file" style="display:none" type="file"/>
    </form>
+   <script src="../../WritingDocJS.js"/>
   </body>
  </foreignObject>
  <text atv:refpx="59.401" atv:refpy="51.849" fill="#ffffff" font-family="Arial" font-size="10" id="selectMessage" text-anchor="start" visibility="visible" x="5.192" y="56.349">T{No File Selected}</text>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var dataString = "";
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[
+var dataString = "";
 var dataArr = [];
 var fileName = "";
-console.log(webMI.query["isCsvMain"])
 
 
 webMI.gfx.setText("selectMessage", "Файл не выбран");
@@ -89,7 +93,21 @@ webMI.addEvent("select", "click", function (e) {
     document.getElementById("file").click();
 });
 
+
+//Часть кода записи в папку 
+webMI.data.read("AGENT.OBJECTS.Rig.General.WellName",function(e){
+document.getElementById('well').value = e.value 
+})
+webMI.data.read("AGENT.OBJECTS.Rig.General.FieldName",function(e){
+document.getElementById('field').value = e.value 
+})
+webMI.data.read("AGENT.OBJECTS.Rig.General.BushName",function(e){
+document.getElementById('bush').value = e.value 
+})
 webMI.addEvent("write", "click", function (e) {
+console.log('point1')
+sendToServ(document.getElementById('formSelect'));
+console.log('point2')
   var value = true;
   return (function (value) {
     if (dataString != "" && fileName != "") {
@@ -137,7 +155,7 @@ webMI.addEvent("write", "click", function (e) {
         httpRequest.open("POST", "../../scripts/uploadfile");
         
 			
-		console.log(fileName)
+		
 		var mainFileName = fileName.substring(0,fileName.length-4)
 			
 			httpRequest.setRequestHeader("Content-Type", "multipart/form-data");

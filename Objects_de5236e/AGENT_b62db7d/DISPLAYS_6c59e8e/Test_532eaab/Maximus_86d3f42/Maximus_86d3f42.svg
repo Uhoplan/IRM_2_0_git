@@ -9,6 +9,7 @@
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Settings.ReportFromToDay" name="fifth_display" valuetype="display"/>
   <atv:parameter behavior="optional" defaultvalue="main_frame" name="frame" valuetype="string"/>
   <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.Test.table" name="six_display" valuetype="display"/>
+  <atv:parameter behavior="hidden" defaultvalue="SYSTEM.GLOBALS.rigintel.DrillPumps.DrillPumpsNames" name="DrillPumpsNames" valuetype="global"/>
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="true" height="10" width="10"/>
  </metadata>
@@ -39,7 +40,7 @@
   <atv:argument name="min" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.Low"/>
   <atv:argument name="max" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.High"/>
  </svg>
- <svg atv:refpx="745.019" atv:refpy="388.876" height="131.79" id="id_12" transform="matrix(1.0315,0,0,1,0,0)" width="134.22" x="649.54" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Max" y="320">
+ <svg atv:refpx="745.018" atv:refpy="388.876" height="131.79" id="id_12" transform="matrix(1.0315,0,0,1,0,0)" width="134.22" x="649.54" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Max" y="320">
   <atv:argument name="First" value="Скорость"/>
   <atv:argument name="Second" value="СПО, м/с"/>
   <atv:argument name="min" value="AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.Low"/>

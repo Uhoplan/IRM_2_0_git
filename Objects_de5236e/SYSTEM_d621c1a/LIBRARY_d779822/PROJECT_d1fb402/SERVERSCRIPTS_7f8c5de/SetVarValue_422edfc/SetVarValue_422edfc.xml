@@ -8,7 +8,6 @@
   <code><![CDATA[var nodevar = new UaNode(varname);
 if(nodevar.value != varvalue){
 	var res = nodevar.assign({value: varvalue});
-	console.log("Set var value: ",varname," = ",varvalue);
-}
-]]></code>
+	//console.log("Set var value: ",varname," = ",varvalue);
+}]]></code>
 </script>

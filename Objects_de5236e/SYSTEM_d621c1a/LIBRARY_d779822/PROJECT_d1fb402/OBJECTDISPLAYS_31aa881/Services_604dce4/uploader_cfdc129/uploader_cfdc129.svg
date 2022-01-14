@@ -26,6 +26,13 @@
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var uploader = document.getElementById("fileUpload")
 var timestamp = new Date().getTime()
 var currentCol = "Direct"
+var currentService = "Mud"
+var currentKNBK = 0
+var startDate
+
+webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(e) {
+	startDate = e.value
+})
 
 webMI.trigger.connect("renderDaily", function(e) {
 	//console.log("fire");
@@ -51,29 +58,50 @@ webMI.trigger.connect("renderDaily", function(e) {
 	*/
 	try {
 		var value = e.value
+		
 		value.timestamp = timestamp
-		webMI.data.read("AGENT.OBJECTS.ServiceParams.Mud.reports", function(rep) {
+		if (value["НомерКНБК"]) {
+			value.id = value["НомерКНБК"].value[0][0]
+			
+		} 
+		webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".reports", function(rep) {
 			var arr = rep.value;
-			if (arr.length > 0) {
+			
+			if (arr.length > 0 && rep.timestamp > startDate) {
 				arr = JSON.parse(rep.value)
-				//console.log(arr.length)
+				
 				var id = arr.findIndex(function(item) {
-					return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(value.timestamp).setHours(0 ,0 ,0 ,0)
+					if (currentService != "NNB") {
+					
+						return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(value.timestamp).setHours(0, 0, 0, 0)
+					}
+					else {
+						//console.log(item, value)
+						return item.id == value.id
+					}
 				})
 				
-				if (id && id > -1) arr.splice(id, 1, value)
-				else arr.push(value)
+				if ((id || id == 0) && id > -1) {
+					//console.log("splice")
+					arr.splice(id, 1, value)
+				} 
+				else {
+					//console.log("push")
+					arr.push(value)
+				} 
 			}
 			else {
+				//console.log("else")
 				arr = []
 				arr.push(value)
 			} 
-			//console.log(arr)
-			webMI.data.write("AGENT.OBJECTS.ServiceParams.Mud.reports", JSON.stringify(arr))
+			
+			webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".reports", JSON.stringify(arr))
 		})
 		
 		webMI.trigger.fire("setReport", e.value)
-		snatch(e.value, currentCol)
+		webMI.trigger.fire("setCurrentKNBK", value.id)
+		snatch(e.value, currentCol, currentService)
 	}
 	catch(err) {
 		console.log("uploader display err:", err)
@@ -84,12 +112,20 @@ webMI.trigger.connect("colSelect", function(e) {
 	currentCol = e.value
 })
 
+webMI.trigger.connect("setCurrentKNBK", function(e) {
+	currentKNBK = e.value
+})
+
+webMI.trigger.connect("setService", function(e) {
+	currentService = e.value
+})
+
 webMI.trigger.connect("changeUploadDate", function(e) {
 	timestamp = e.value;
 })
 
 uploader.addEventListener("change", function() {
-	upload(uploader, timestamp)
+	upload(uploader, currentService)
 })
 
 

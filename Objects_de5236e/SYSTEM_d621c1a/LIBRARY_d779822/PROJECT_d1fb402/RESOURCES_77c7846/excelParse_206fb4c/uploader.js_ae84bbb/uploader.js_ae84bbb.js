@@ -1,4 +1,4 @@
-function upload(el) {
+function upload(el, currentService) {
   var fileUpload = el
 
     if (typeof (FileReader) != "undefined") {
@@ -7,7 +7,7 @@ function upload(el) {
         //For Browsers other than IE.
         if (reader.readAsBinaryString) {
             reader.onload = function (e) {
-                processExcel(e.target.result)
+                processExcel(e.target.result, currentService)
             }
             reader.readAsBinaryString(fileUpload.files[0])
         } else {
@@ -15,20 +15,22 @@ function upload(el) {
             reader.onload = function (e) {
                 var data = "";
                 var bytes = new Uint8Array(e.target.result);
+                
                 for (var i = 0; i < bytes.byteLength; i++) {
                     data += String.fromCharCode(bytes[i])
                 }
-                processExcel(data);
+                processExcel(data, currentService);
             }
             //reader.readAsArrayBuffer(fileUpload.files[0]);
         }
     } else {
         alert("This browser does not support HTML5.")
     }
+    console.log("serv", currentService)
 
 	el.value = ''    
 }
-function processExcel(data) {
+function processExcel(data, service) {
   var workbook = XLSX.read(data, {
       type: 'binary'
   });
@@ -54,8 +56,8 @@ function processExcel(data) {
         counter++;
 	    } 
 	}
-  parse(dataToParse)
-  turnToTableFormat(dataToParse)
+  parse(dataToParse, service)
+  //turnToTableFormat(dataToParse)
 }
 
 function findLongest(arr) {
@@ -95,6 +97,8 @@ function turnToTableFormat(data) {
 		//webMI.trigger.fire("renderDaily", res)
 	}
 }
+
+/*
 
 function findElems(arr, index) {
   var items = shitMap()[index]
@@ -218,3 +222,4 @@ function shitMap() {
 		104: [1, 10, 19, 27, 35],
 	}
 }
+*/

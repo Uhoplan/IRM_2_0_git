@@ -1,8 +1,13 @@
 var ex = Object.keys(mudRowCreator().rows[0])
+//no comment
 
-function snatch(obj, col) {
+function snatch(obj, col, service) {
 	//console.log("got: ", obj, col)
-	
+	if (service == "NNB") {
+		snatchNNB(obj, col, service)
+		
+		return	
+	}
 	//var tempo = res.rows[0]
 	var mudParams = obj["ПАРАМЕТРЫРАСТВОРА"].value	
 	var	vParam1 = obj["ОБЪЕМЫРАСТВОРА(м3)"].value[1][0]
@@ -13,6 +18,7 @@ function snatch(obj, col) {
 	
 	results.map(function(item, index) {
 		var tempo = results[index].rows[0]
+		
 		tempo["Дата"] = beautifyDate2(new Date(obj.timestamp)) || ""
 		tempo["Тип раствора"] = obj["Типраствора:"].value[0][0] || ""
 		tempo[ex[15]] = vParam1
@@ -29,11 +35,56 @@ function snatch(obj, col) {
 				results[1].rows[0][preres] = mudParams[3][index]
 			}
 		}
-		//switch(item)
 	})
-	//console.log(results)
 	
-	var prev = localStorage.getItem("tableFact_Mud_" + col)
+	redrop(results, service, col)
+}
+
+function snatchNNB(obj, col, service) {
+//console.log(obj)
+	var params = deleteEmpty(obj["№п/п"].value)
+	var rows = []
+	var sumWeight = 0
+	
+	for (var i = 0; i < params[0].length; i++) {
+		if (params[0][i]) {
+			rows.push(nnbRowCreator())
+		}
+	}
+	
+	params.map(function(item, itemId) {
+		var rowNum = 0
+		
+		item.map(function(val, rowId) {
+			var param
+			//console.log(params[0])
+			if (params[0][rowId]) {
+				// main row
+				param = nnbParamSwitcher(itemId, "main")
+				//console.log(rowNum, rows[rowNum])
+				if (rows[rowNum] && param) rows[rowNum].rows[0][param] = val
+				
+				if (itemId == 10) {
+					sumWeight+= parseFloat(val.replace(",", ".")) || 0
+					rows[rowNum].rows[0].sumWeight = sumWeight + ""
+				} 
+			}
+			else {
+				// invalid or sub row
+				param = nnbParamSwitcher(itemId, "sub")
+				if (rows[rowNum] && param) itemId != 4  ? rows[rowNum].rows[0][param] += " / " + val : rows[rowNum].rows[0][param] = val
+				rowNum++
+			}
+		})
+	})
+
+	redrop(rows, service, col, function(item, arg) {
+		console.log(item)
+	 })
+}
+
+function redrop(data, service, col, middleware, arg) {
+	var prev = localStorage.getItem("tableFact_" + service + "_" + col)
 	var res
 	
 	if (prev && prev.length > -1) {
@@ -42,16 +93,56 @@ function snatch(obj, col) {
 	else {
 		res = []
 	}
-	results.map(function(result) {
+	data.map(function(result) {
 		res.push(result.rows[0])
 	})
 	
-	localStorage.setItem("tableFact_Mud_" + col, JSON.stringify(res))	
+	localStorage.setItem("tableFact_" + service + "_" + col, JSON.stringify(res))
+	if (middleware) middleware(res, arg)
 }
 
+function deleteEmpty(arrOfArrs) {
+	
+	return arrOfArrs.map(function(arr) {
+		//arr.shift()
+		
+		return arr
+	})
+}
 
+function nnbRowCreator() {
 
-//console.log("ex: ", ex)
+	return {"rows":[{"number":"","element":"","affiliation":"","serialNumber":"","DiamOut":"","DiamIn":"","DiamMax":"","connectingThread":"","connectingType":"","length":"","sumLength":"","weightTotalweight":"","sumWeight":""}]}
+}
+
+function nnbParamSwitcher(id, type) {
+	var map = {
+		0: "number",
+		1: "element",
+		2: "affiliation",
+		3: "serialNumber",
+		4: "DiamOut",
+		5: "DiamMax",
+		6: "connectingThread",
+		7: "connectingType",
+		8: "length",
+		9: "sumLength",
+		10: "weightTotalweight"
+	}
+	
+	var subMap = {
+		4: "DiamIn",
+		6: "connectingThread",
+		7: "connectingType",
+	}
+	
+	if (type == "main") {
+		return map[id]
+	}
+	if (type == "sub") {
+		return subMap[id]
+	}
+}
 
 function paramSwitcher(item, data) {
 	item = item.toLowerCase()

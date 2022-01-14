@@ -142,7 +142,8 @@
   <svg atv:refpx="1443.882" atv:refpy="15.424" height="30" id="id_54" width="110" x="1388.882" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.date_display" y="0.424"/>
   <svg atv:refpx="1458.882" atv:refpy="55.424" height="30" id="id_55" width="60" x="1414.882" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.time_display" y="28.424"/>
  </g>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Turned_On", function(e) {
+ <text atv:refpx="1351.5" atv:refpy="276" fill="#000000" font-family="Arial" font-size="16" id="id_56" x="1339.5" y="280.5">атм.</text>
+ <script atv:desc="" atv:name="шв" type="text/ecmascript"><![CDATA[webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Turned_On", function(e) {
 var id = "id_TurnedOn"; //2
 var idt = "id_TextTurnedOn";
 var value = e.value;
@@ -387,6 +388,7 @@ if (value == true){
 });
 
 
+
 webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook", function(e) {
 var id = "id_10";
 var value = e.value;
@@ -395,11 +397,10 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Mud1.Manifold_Pressure.Sensor.Value", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold", function(e) {
 var id = "id_12";
 var value = e.value;
-
-var value = value*9.87;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
@@ -418,7 +419,8 @@ var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Torque.PID.Inputs.Input", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.TDS.TDSTorque", function(e) {
 var id = "id_26";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
@@ -426,7 +428,8 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Tool.Drillstem.Frequency", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.TDS.TDSSpeed", function(e) {
 var id = "id_30";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
@@ -501,7 +504,8 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Value.Ing", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.HookSpeed", function(e) {
 var id = "id_64";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
@@ -521,20 +525,22 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Tool.Bit.Depth.Value", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Tool.ToolPosition", function(e) {
 var id = "id_28";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
 
-webMI.data.subscribe("AGENT.OBJECTS.ASPD.Well1.Depth.Value", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.IVE50.Well.WellDepth", function(e) {
 var id = "id_32";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 
 });
 
-webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_16", "nodeId":"AGENT.OBJECTS.ASPD.APD1.Speed.Drill"});]]></script>
- <text atv:refpx="1351.5" atv:refpy="276" fill="#000000" font-family="Arial" font-size="16" id="id_56" x="1339.5" y="280.5">атм.</text>
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_16", "nodeId":"AGENT.OBJECTS.IVE50.Well.DrillSpeed"});]]></script>
 </svg>

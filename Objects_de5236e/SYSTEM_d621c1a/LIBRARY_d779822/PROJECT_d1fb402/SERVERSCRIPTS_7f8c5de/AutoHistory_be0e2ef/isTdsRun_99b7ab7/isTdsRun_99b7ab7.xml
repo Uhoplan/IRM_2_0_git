@@ -7,12 +7,12 @@
   <code><![CDATA[var retObj = call("AutoHistory.MinQuad", {nodeStr: nodeTdsTorqueStr, countsec: 5});//
 /*
 console.log('....................................................................................................');
-console.log('angle = ',retObj.angle); 
-console.log('startVal = ',retObj.startVal);
-console.log('stopVal = ',retObj.stopVal);
-console.log('avrVal = ',retObj.avrVal);
-console.log('diffVal = ',retObj.diffVal);
-console.log('speedVal = ',retObj.speedVal);
+console.log('TDS angle = ',retObj.angle); 
+console.log('TDS startVal = ',retObj.startVal);
+console.log('TDS stopVal = ',retObj.stopVal);
+console.log('TDS avrVal = ',retObj.avrVal);
+console.log('TDS diffVal = ',retObj.diffVal);
+console.log('TDS speedVal = ',retObj.speedVal);
 */
 if(retObj.angle > 15 && retObj.diffVal > 5){
 	console.log('Фронт момента СВП');

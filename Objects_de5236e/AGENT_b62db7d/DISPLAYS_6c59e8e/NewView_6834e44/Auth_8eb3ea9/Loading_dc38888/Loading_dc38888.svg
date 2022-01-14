@@ -60,7 +60,7 @@ if (hrefArr.length > 1) {
 		
 		if (typeof res == "string") {throw new Error("access denied by server(wrong token?)")}
 		var decoded = jwt_decode(res.access_token);
-		if (decoded.id == 21) { 
+		if (decoded.id == 21 || decoded.id == 176) { 
 			quickname = "admin"
 		}
 		localStorage.setItem("access_token", res.access_token);

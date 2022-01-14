@@ -5,57 +5,20 @@
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
- <rect atv:refpx="640.429" atv:refpy="340.858" fill="#1f1f1f" height="680" id="id_4" stroke="#0000ff" stroke-width="0" width="1280" x="0.429" y="0.858"/>
+ <rect atv:refpx="642.065" atv:refpy="340.858" fill="#1f1f1f" height="680" id="id_4" stroke="#0000ff" stroke-width="0" width="1280" x="2.065" y="0.858"/>
  <rect atv:refpx="233.8" atv:refpy="189.272" fill="#2a2c2b" height="277.694" id="id_13" stroke="#0000ff" stroke-width="0" width="338.159" x="64.721" y="50.425"/>
  <rect atv:refpx="230.685" atv:refpy="201.751" fill="#242424" height="243.923" id="id_12" stroke="#0000ff" stroke-width="0" width="301.972" x="79.699" y="79.789"/>
  <rect atv:refpx="237.745" atv:refpy="193.467" fill="#000000" height="243.923" id="id_0" stroke="#0000ff" stroke-width="0" width="301.972" x="86.759" y="71.506"/>
  <rect atv:refpx="160.045" atv:refpy="102.409" fill="#1f1f1f" height="32" id="id_1" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="119.545" y="86.409"/>
- <svg atv:refpx="160" atv:refpy="102.5" height="31" id="id_2" width="80" x="120" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="87">
-  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.direction"/>
-  <atv:argument name="editingBorderColor" value="#4386f2"/>
-  <atv:argument name="controlTintColor" value="#4386f2"/>
-  <atv:argument name="fill" value="#000000"/>
-  <atv:argument name="editingBackgroundColor" value="#000000"/>
-  <atv:argument name="controlBackgroundColor" value="#000000"/>
- </svg>
  <rect atv:refpx="159.844" atv:refpy="148.365" fill="#1f1f1f" height="32" id="id_8" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="119.344" y="132.365"/>
- <svg atv:refpx="159.891" atv:refpy="148.391" height="31" id="id_3" width="80" x="119.891" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="132.891">
-  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.conductor"/>
-  <atv:argument name="editingBorderColor" value="#4386f2"/>
-  <atv:argument name="controlTintColor" value="#4386f2"/>
-  <atv:argument name="controlBackgroundColor" value="#000000"/>
-  <atv:argument name="editingBackgroundColor" value="#000000"/>
-  <atv:argument name="fill" value="#000000"/>
- </svg>
  <rect atv:refpx="159.965" atv:refpy="194.409" fill="#1f1f1f" height="32" id="id_11" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.465" y="178.409"/>
- <svg atv:refpx="160" atv:refpy="194.5" height="31" id="id_5" width="80" x="120" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="179">
-  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.obsCol"/>
-  <atv:argument name="editingBorderColor" value="#4386f2"/>
-  <atv:argument name="controlTintColor" value="#4386f2"/>
-  <atv:argument name="controlBackgroundColor" value="#000000"/>
-  <atv:argument name="fill" value="#000000"/>
- </svg>
  <text atv:refpx="260.329" atv:refpy="101.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_6" x="219.5" y="111.5">Направление</text>
  <text atv:refpx="249.926" atv:refpy="147.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_7" x="219.5" y="157.5">Кондуктор</text>
  <text atv:refpx="262.559" atv:refpy="193.98" fill="#ffffff" font-family="Arial" font-size="18" id="id_9" x="219.5" y="203.5">Пилотн. ствол</text>
  <text atv:refpx="237.724" atv:refpy="63.08" fill="#67de43" font-family="Arial" font-size="12" id="id_14" x="152.315" y="67.58">КОНСТРУКЦИЯ СКВАЖИНЫ</text>
  <rect atv:refpx="157.139" atv:refpy="195.615" fill="#1f1f1f" height="32" id="id_15" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.639" y="224.615"/>
- <svg atv:refpx="157.174" atv:refpy="195.706" height="31" id="id_16" width="80" x="120.174" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="225.206">
-  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.EcsCol"/>
-  <atv:argument name="editingBorderColor" value="#4386f2"/>
-  <atv:argument name="controlTintColor" value="#4386f2"/>
-  <atv:argument name="controlBackgroundColor" value="#000000"/>
-  <atv:argument name="fill" value="#000000"/>
- </svg>
  <text atv:refpx="266.448" atv:refpy="240.186" fill="#ffffff" font-family="Arial" font-size="18" id="id_17" x="219.674" y="249.706">Экспл. колонна</text>
  <rect atv:refpx="43.489" atv:refpy="224.094" fill="#1f1f1f" height="32" id="id_18" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.989" y="271.094"/>
- <svg atv:refpx="43.524" atv:refpy="224.185" height="31" id="id_19" width="80" x="120.524" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="271.685">
-  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.tail"/>
-  <atv:argument name="editingBorderColor" value="#4386f2"/>
-  <atv:argument name="controlTintColor" value="#4386f2"/>
-  <atv:argument name="controlBackgroundColor" value="#000000"/>
-  <atv:argument name="fill" value="#000000"/>
- </svg>
  <text atv:refpx="250.45" atv:refpy="286.665" fill="#ffffff" font-family="Arial" font-size="18" id="id_20" x="220.024" y="296.185">Хвостовик</text>
  <foreignObject height="26" id="id_24" width="26" x="349" y="93">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
@@ -121,4 +84,128 @@ opArr.forEach(function(e,cnt){
 	})
 })]]></script>
  <svg atv:refpx="644.532" atv:refpy="336.803" height="534" id="id_10" width="150" x="569.532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction.Insides" y="69.803"/>
+ <svg atv:refpx="154.674" atv:refpy="137.958" height="30" id="id_21" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="151.18" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="134.958">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.conductor"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="154.674" atv:refpy="173.722" height="30" id="id_22" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="151.172" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="180.722">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.obsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="154.674" atv:refpy="207.234" height="30" id="id_23" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="151.172" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="227.234">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.EcsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="154.674" atv:refpy="240.748" height="30" id="id_28" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="151.172" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="271.748">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.tail"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="154.674" atv:refpy="106.026" height="30" id="id_30" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="151.172" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="91.026">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.direction"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <rect atv:refpx="228.447" atv:refpy="485.451" fill="#2a2c2b" height="277.694" id="id_3" stroke="#0000ff" stroke-width="0" width="338.159" x="64.368" y="346.604"/>
+ <rect atv:refpx="225.332" atv:refpy="497.93" fill="#242424" height="243.923" id="id_5" stroke="#0000ff" stroke-width="0" width="301.972" x="79.346" y="375.968"/>
+ <rect atv:refpx="232.392" atv:refpy="489.646" fill="#000000" height="243.923" id="id_16" stroke="#0000ff" stroke-width="0" width="301.972" x="86.406" y="367.685"/>
+ <rect atv:refpx="154.692" atv:refpy="398.588" fill="#1f1f1f" height="32" id="id_19" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="119.192" y="382.588"/>
+ <rect atv:refpx="154.491" atv:refpy="444.544" fill="#1f1f1f" height="32" id="id_32" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="118.991" y="428.544"/>
+ <rect atv:refpx="154.612" atv:refpy="490.588" fill="#1f1f1f" height="32" id="id_33" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.112" y="474.588"/>
+ <text atv:refpx="259.976" atv:refpy="398.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_34" x="219.147" y="407.679">Направление</text>
+ <text atv:refpx="249.573" atv:refpy="444.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_35" x="219.147" y="453.679">Кондуктор</text>
+ <text atv:refpx="262.206" atv:refpy="490.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_36" x="219.147" y="499.679">Пилотн. ствол</text>
+ <text atv:refpx="258.803" atv:refpy="359.259" fill="#67de43" font-family="Arial" font-size="12" id="id_37" x="151.962" y="363.759">КОНСТРУКЦИЯ СКВАЖИНЫ (ФАКТ)</text>
+ <rect atv:refpx="151.786" atv:refpy="491.794" fill="#1f1f1f" height="32" id="id_38" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.286" y="520.794"/>
+ <text atv:refpx="266.095" atv:refpy="536.365" fill="#ffffff" font-family="Arial" font-size="18" id="id_39" x="219.321" y="545.885">Экспл. колонна</text>
+ <rect atv:refpx="38.136" atv:refpy="520.273" fill="#1f1f1f" height="32" id="id_40" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="119.636" y="567.273"/>
+ <text atv:refpx="250.097" atv:refpy="582.844" fill="#ffffff" font-family="Arial" font-size="18" id="id_41" x="219.671" y="592.364">Хвостовик</text>
+ <svg atv:refpx="149.321" atv:refpy="434.137" height="30" id="id_52" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="150.653" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="431.137">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.conductor"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.321" atv:refpy="469.901" height="30" id="id_53" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="150.645" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="476.901">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.obsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.321" atv:refpy="503.413" height="30" id="id_54" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="150.645" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="523.413">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.EcsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="154.321" atv:refpy="536.927" height="30" id="id_55" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="150.645" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="567.927">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.tail"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.321" atv:refpy="402.205" height="30" id="id_56" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="150.645" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="387.205">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.direction"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
 </svg>

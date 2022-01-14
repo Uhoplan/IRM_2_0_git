@@ -3,7 +3,7 @@ NodeClass: Variable
 BrowseName: 1:conductor
 DisplayName: en|conductor
 Description: en|conductor
-DataType: Int16
+DataType: Float
 ValueRank: -1
 AccessLevel: 7
 Reference: forward HasTypeDefinition BaseVariableType

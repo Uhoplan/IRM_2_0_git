@@ -3,7 +3,7 @@ NodeClass: Variable
 BrowseName: 1:direction
 DisplayName: en|direction
 Description: en|direction
-DataType: Int16
+DataType: Float
 ValueRank: -1
 AccessLevel: 7
 Reference: forward HasTypeDefinition BaseVariableType

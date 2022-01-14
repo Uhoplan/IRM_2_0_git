@@ -10,7 +10,7 @@
  </g>
  <text atv:refpx="82.597" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_4" x="26" y="32">Подрядчик:</text>
  <text atv:refpx="422.748" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_5" x="374.597" y="32">Инженер:</text>
- <text atv:refpx="808.346" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_7" x="764.409" y="32">Телефон:</text>
+ <text atv:refpx="798.346" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_7" x="754.409" y="32">Телефон:</text>
  <text atv:refpx="1044.902" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_8" x="995.07" y="32">Эл. почта:</text>
  <text atv:refpx="1526.973" atv:refpy="26.5" fill="#ffffff" font-family="FiraCode Nerd Font" font-size="18" id="id_9" x="1430.19" y="32">Дата начала работ:</text>
  <foreignObject height="143" id="id_2" width="236.244" x="123.333" y="0">
@@ -19,7 +19,7 @@
  <foreignObject height="143" id="id_3" width="297.042" x="460.329" y="0">
   <div id="param_id_1" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
  </foreignObject>
- <foreignObject height="143" id="id_11" width="119.859" x="849.437" y="0">
+ <foreignObject height="143" id="id_11" width="144.76" x="839.437" y="0">
   <div id="param_id_2" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
  </foreignObject>
  <foreignObject height="143" id="id_12" width="324.836" x="1089.47" y="0">
@@ -48,7 +48,8 @@ function setParams() {
 		for (i in paramsArray) {
 			var value = res[i].value;
 			if (paramsArray[i].includes("startDate")) {
-				value = beautifyDate(new Date(parseFloat(value)));
+				console.log("startDate:", parseFloat(res[i].value))
+				value = beautifyDate(new Date(parseFloat(res[i].value)));
 			}
 			//document.getElementById("param_id_" + i).innerHTML = value;
 			var currentParam = document.getElementById("param_id_" + i);
