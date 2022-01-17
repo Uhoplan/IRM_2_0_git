@@ -58,14 +58,6 @@
   <atv:argument name="NodeToDisplay(base)" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
   <atv:argument name="MaxOfRange" value="AGENT.OBJECTS.IVE50.Mud.FlowInputRangeMax"/>
  </svg>
- <svg atv:refpx="337.309" atv:refpy="1115.275" height="71" id="id_13" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="352.141" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1573.179">
-  <atv:argument name="Number" value="2"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2"/>
- </svg>
- <svg atv:refpx="437.287" atv:refpy="1111.578" height="71" id="id_14" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="495.662" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1567.826">
-  <atv:argument name="Number" value="3"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel3"/>
- </svg>
  <svg atv:refpx="952.009" atv:refpy="808.523" height="71" id="id_16" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1234.568" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
   <atv:argument name="Number" value="3"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel4"/>
@@ -81,26 +73,10 @@
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel6"/>
   <atv:argument name="MaxVolume" value="40"/>
  </svg>
- <svg atv:refpx="750.455" atv:refpy="1013.593" height="71" id="id_21" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="945.227" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1425.984">
-  <atv:argument name="Number" value="7"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel7"/>
- </svg>
- <svg atv:refpx="750.581" atv:refpy="1074.752" height="71" id="id_22" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="945.411" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1514.518">
-  <atv:argument name="Number" value="8"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel8"/>
- </svg>
- <svg atv:refpx="750.237" atv:refpy="1134.593" height="71" id="id_23" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="944.915" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1601.144">
-  <atv:argument name="Number" value="9"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel9"/>
- </svg>
  <svg atv:refpx="722.009" atv:refpy="808.523" height="71" id="id_24" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="923.055" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
   <atv:argument name="Number" value="2"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel10"/>
-  <atv:argument name="MaxVolume" value="40"/>
- </svg>
- <svg atv:refpx="974.191" atv:refpy="1041.983" height="71" id="id_25" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1266.41" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1467.082">
-  <atv:argument name="Number" value="11"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel11"/>
+  <atv:argument name="MaxVolume" value="10"/>
  </svg>
  <svg atv:refpx="1122.009" atv:refpy="808.523" height="71" id="id_26" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1478.61" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
   <atv:argument name="Number" value="5"/>
@@ -197,11 +173,6 @@
  <foreignObject height="56.743" id="id_37" width="160.957" x="920" y="740">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0.6">Рабочие ёмкости</p>
-  </div>
- </foreignObject>
- <foreignObject height="56.743" id="id_38" width="207.315" x="823.83" y="994.991">
-  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0.6">Блок приготовления раствора</p>
   </div>
  </foreignObject>
  <foreignObject height="56.743" id="id_39" width="174.679" x="646" y="740">
