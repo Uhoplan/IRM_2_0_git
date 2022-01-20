@@ -440,12 +440,13 @@ function updateTable(item) {
 		table.table.addEventListener("deleteTableRow", hotDelete);
 		
 		table.init();
-		
+		/*
 		var hot = hotGet(table.table.id) 
 		
 		if (hot) {
 			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
 		}
+		*/
 		
 		if (item.value.rows) {
 			planHistoryState = shallowClone(item.value.rows);
@@ -769,13 +770,21 @@ writePlan.addEventListener("click", function() {
 	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) { 5678
 		var res = headers.plan[currentService].columns;
 		
-		if (!editingPlan) {
+		if (!editingPlan) {			
 			currentPlan = table.data;
+			
+			var hot = hotGet(table.table.id);
+			var rows = currentPlan.rows || [];
+			
+			if (hot) {
+				rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+			}
+			
 			changeMenuMode("edit");
 			table = new Table("table", res, { type: "fact" });
 			table.init();
 			//table.fill(JSON.parse(JSON.stringify(currentPlan.rows)));
-			table.fill(shallowClone(currentPlan.rows));
+			table.fill(shallowClone(rows));
 			
 		} else if (editingPlan) {
 			table = new Table("table", currentPlan.columns, { type: "plan" });

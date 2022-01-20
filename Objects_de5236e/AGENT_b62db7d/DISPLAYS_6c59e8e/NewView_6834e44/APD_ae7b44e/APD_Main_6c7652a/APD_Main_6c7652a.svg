@@ -505,7 +505,8 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.data.subscribe("AGENT.OBJECTS.IVE50.Drawworks.HookSpeed", function(e) {
+
+webMI.data.subscribe("AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Value.Ing", function(e) {
 var id = "id_64";
 var value = e.value;
 webMI.gfx.setText(id, webMI.sprintf("%.2f", value));

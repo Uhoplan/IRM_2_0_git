@@ -52,4 +52,7 @@ but.style.pointerEvents ='none'
   <atv:argument name="rig" value="AGENT.DISPLAYS.NewView.Schema.SchRigBU3000"/>
   <atv:argument name="hidroshema" value="AGENT.DISPLAYS.NewView.Schema.SchCSGOTechno"/>
  </svg>
+ <svg atv:refpx="1760.633" atv:refpy="16.292" height="15" id="id_9" width="15" x="1753.133" xlink:href="AGENT.DISPLAYS.Test.OPC-elem" y="8.792">
+  <atv:argument name="signal" value="AGENT.OBJECTS.opc.isActive1500"/>
+ </svg>
 </svg>
