@@ -37,11 +37,22 @@
 </div>
  </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var lebedka = document.getElementById('leb')
-console.log("lebedka =", lebedka)
- webMI.addOnload(function () { 
-webMI.data.subscribe(webMI.query["base"],function(e){
-	document.getElementById("ROP").innerHTML=Math.round(e.value*10)/10
-})
+
+
+ webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Running", function(e) {
+ var valueApdRun = e.value;
+
+	if (valueApdRun == false){
+			 document.getElementById("ROP").innerHTML = 0.00;
+		}
+		
+	webMI.data.subscribe(webMI.query["base"],function(e){
+		var baseValue = e.value;
+		document.getElementById("ROP").innerHTML=baseValue;
+		})
+
+});
+
 webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.APDWorking", function(e) {
 var value = e.value;
 console.log(document.getElementById('leb'))
@@ -60,5 +71,6 @@ if (value == false)
 	webMI.gfx.setFill(id, "#343e47");
 
 });
-})]]></script>
+
+]]></script>
 </svg>

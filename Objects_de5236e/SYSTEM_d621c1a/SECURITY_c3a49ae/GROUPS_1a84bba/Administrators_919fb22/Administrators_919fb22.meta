@@ -11,4 +11,5 @@ Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessSettings
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Limitation
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.admin
 Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
 Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

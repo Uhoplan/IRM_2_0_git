@@ -62,10 +62,10 @@ function snatchNNB(obj, col, service) {
 				// main row
 				param = nnbParamSwitcher(itemId, "main")
 				//console.log(rowNum, rows[rowNum])
-				if (rows[rowNum] && param) rows[rowNum].rows[0][param] = val
+				if (rows[rowNum] && param && rows[rowNum]) rows[rowNum].rows[0][param] = val
 				
-				if (itemId == 10) {
-					sumWeight+= parseFloat(val.replace(",", ".")) || 0
+				if (itemId == 10 && rows[rowNum]) {
+					sumWeight+= Math.floor(parseInt(val.replace(",", ".")) * 100) / 100 || 0
 					rows[rowNum].rows[0].sumWeight = sumWeight + ""
 				} 
 			}

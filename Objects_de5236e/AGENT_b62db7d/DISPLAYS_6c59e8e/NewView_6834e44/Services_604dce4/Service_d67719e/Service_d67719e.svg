@@ -9,7 +9,7 @@
  <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0" transform="matrix(1.4453,0,0,1.4926,0,0)">
   <rect atv:refpx="640" atv:refpy="340" fill="#1f1f1f" height="680.00" id="id_1" width="1280.00" x="0" y="0"/>
  </g>
- <foreignObject height="39.906" id="serviceName" width="310" x="770" y="131.721">
+ <foreignObject height="39.906" id="serviceName" width="310" x="770" y="123.721">
   <div style="width:100%;height:100%text-align:center;" xmlns="http://www.w3.org/1999/xhtml">
    <p id="service" style="color:white;text-align:center;">Сервис загружается...</p>
   </div>
@@ -44,7 +44,7 @@
    </div>
   </div>
  </foreignObject>
- <foreignObject height="44.602" id="id_11" width="310" x="770" y="161.67">
+ <foreignObject height="44.602" id="id_11" width="310" x="770" y="149.67">
   <div style="width:100%;height:100%;text-align:center;" xmlns="http://www.w3.org/1999/xhtml">
    <p id="currentSection" style="color:rgb(55, 222, 57);">Кондуктор</p>
   </div>
@@ -992,4 +992,6 @@ function getAvgAndMax(path, currentWDTimestamp, next) {
 })
 
 ]]></script>
+ <text atv:refpx="920.5" atv:refpy="198.657" fill="#ffffff" font-family="Arial" font-size="18" id="id_15" x="904.5" y="203.157">ПЛАН</text>
+ <text atv:refpx="919" atv:refpy="444.956" fill="#ffffff" font-family="Arial" font-size="18" id="id_18" x="904.5" y="449.456">ФАКТ</text>
 </svg>

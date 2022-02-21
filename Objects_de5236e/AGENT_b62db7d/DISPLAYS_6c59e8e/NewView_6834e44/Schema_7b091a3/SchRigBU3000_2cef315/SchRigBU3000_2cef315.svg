@@ -148,4 +148,32 @@
   <atv:overwrite height="23.642" id="id_2" transform="matrix(1.1064,0,0,1.33,0,0)" width="90.38" y="-0.022"/>
   <atv:overwrite id="button_clickarea" transform="matrix(1,0,0,1.0451,0,-0.6929)"/>
  </svg>
+ <g atv:refpx="1927.764" atv:refpy="624.766" id="id_38" transform="matrix(1,0,0,1,191.1018,-66.1044)">
+  <svg atv:refpx="1738.066" atv:refpy="690.967" height="31" id="id_37" transform="matrix(1.0841,0,0,1,0,0)" width="100" x="1553.186" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Combobox" y="675.467">
+   <atv:argument name="text1" value="T{6x7}"/>
+   <atv:argument name="text1value" value="6х7"/>
+   <atv:argument name="text2" value="T{5x6}"/>
+   <atv:argument name="text2value" value="5х6"/>
+   <atv:argument name="text3" value="T{3x4}"/>
+   <atv:argument name="text3value" value="3х4"/>
+   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.rigging"/>
+   <atv:overwrite id="combobox_clickarea" transform="matrix(1,0,0,1,0,0)"/>
+   <atv:overwrite id="id_0" points="100.913,14 86.913,14 93.913,21 100.913,14" transform="matrix(0.9224,0,0,1,0,0)"/>
+   <atv:overwrite id="combobox_label" transform="matrix(0.9224,0,0,1,0,0)"/>
+   <atv:overwrite id="combobox_stroke" transform="matrix(0.9224,0,0,1,0,0)" width="108.413"/>
+  </svg>
+  <svg atv:refpx="1718.052" atv:refpy="688.774" height="31" id="id_36" width="80" x="1681.052" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="675.274">
+   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.rigging"/>
+   <atv:argument name="validation" value="String"/>
+  </svg>
+ </g>
+ <svg atv:refpx="1948.952" atv:refpy="551.547" height="31" id="id_40" width="160" x="1868.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20DateTime" y="536.047">
+  <atv:overwrite id="button_label" transform="matrix(0.6002,0,0,1,9.4772,0)"/>
+ </svg>
+ <svg atv:refpx="1606.5" atv:refpy="424.415" height="20" id="id_27" width="165" x="1524" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" y="414.415">
+  <atv:argument name="Name" value="Макс. наработка"/>
+ </svg>
+ <svg atv:refpx="1740.926" atv:refpy="423.184" height="31" id="id_35" width="80" x="1700.926" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="406.684">
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.talkMax"/>
+ </svg>
 </svg>

@@ -3,7 +3,7 @@
   <metadata>
     <priority>0</priority>
   </metadata>
-  <parameter name="timer" type="timer" trigger="true" relative="false" value="" starttime="00:00:00" repeat="00:00:05"/>
+  <parameter name="timer" relative="false" repeat="00:00:05" starttime="00:00:00" trigger="true" type="timer" value=""/>
   <code><![CDATA[var consolelog=false;
 consolelog?console.log("-----------------------------------------------------------------------------------------------------"):'';
 

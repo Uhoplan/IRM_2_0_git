@@ -11,6 +11,7 @@
  <metadata>
   <atv:parameter behavior="optional" name="Text" valuetype="address"/>
   <atv:parameter behavior="optional" name="Value" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="1" name="Multiplier" valuetype="number"/>
   <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
@@ -26,10 +27,10 @@
    <div id="value" style="margin-top:10%"/>
   </div>
  </foreignObject>
- <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var multi = webMI.query['Multiplier'] || 1
 document.getElementById('text').insertAdjacentHTML('beforeend',webMI.query['Text'])
 document.getElementById('value').insertAdjacentHTML('beforeend',webMI.query['Value'])
 webMI.data.subscribe(webMI.query['base'],function(e){
-	document.getElementById('value').innerHTML = ('beforeend',Math.floor(e.value)/1000 +' ' + webMI.query['Value'])
+	document.getElementById('value').innerHTML = ('beforeend',Math.floor(e.value)/1000 * multi +' ' + webMI.query['Value'])
 })]]></script>
 </svg>

@@ -17,7 +17,7 @@
   <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
   <atv:snapconfig enabled="false" height="10" width="10"/>
  </metadata>
- <rect atv:refpx="228.285" atv:refpy="439.999" fill="#363636" height="860" id="id_3" stroke="#363636" stroke-width="8" width="436.569" x="10" y="10"/>
+ <rect atv:refpx="228.285" atv:refpy="438.651" fill="#363636" height="860" id="id_3" stroke="#363636" stroke-width="8" width="436.569" x="10" y="8.652"/>
  <foreignObject height="30" id="id_StemDiameter_bg" width="250" x="102.258" y="500">
   <div style="z-index:-10; display:flex; justify-content:center; align-items:center; width:100%;height:100%;background-color:#bcbcbc;border-radius:5px;" xmlns="http://www.w3.org/1999/xhtml">
 -
@@ -28,9 +28,9 @@
  <text atv:refpx="223.197" atv:refpy="226.155" fill="#ffffff" font-family="Arial" font-size="15" id="id_16" transform="matrix(1.1967,0,0,1.1967,-34.8153,-41.307)" x="181.497" y="228">Тип насоса</text>
  <text atv:refpx="220.52" atv:refpy="316.801" fill="#ffffff" font-family="Arial" font-size="15" id="id_17" transform="matrix(1.1967,0,0,1.1967,-22.6927,-59.1369)" x="119.867" y="318.645">Коэффициент наполнения</text>
  <text atv:refpx="221.314" atv:refpy="396.801" fill="#ffffff" font-family="Arial" font-size="15" id="id_18" transform="matrix(1.1967,0,0,1.1967,-30.3429,-74.8729)" x="158.76" y="398.645">Диаметр поршня</text>
- <text atv:refpx="220.273" atv:refpy="576.156" fill="#ffffff" font-family="Arial" font-size="15" id="id_19" transform="matrix(1.1967,0,0,1.1967,-26.3413,-110.152)" x="137.916" y="578">Число ходов в минуту</text>
- <text atv:refpx="220.784" atv:refpy="486.156" fill="#ffffff" font-family="Arial" font-size="15" id="id_20" transform="matrix(1.1967,0,0,1.1967,-31.5199,-92.449)" x="164.743" y="488">Диаметр штока</text>
- <text atv:refpx="214.157" atv:refpy="666.801" fill="#ffffff" font-family="Arial" font-size="15" font-weight="bold" id="id_21" transform="matrix(1.1967,0,0,1.1967,-27.6359,-127.9819)" x="144.998" y="668.645">Расход расчетный</text>
+ <text atv:refpx="216.208" atv:refpy="576.156" fill="#ffffff" font-family="Arial" font-size="15" id="id_19" transform="matrix(1.1967,0,0,1.1967,-23.7995,-110.152)" x="125.494" y="578">Число ходов (ходы/мин)</text>
+ <text atv:refpx="221.026" atv:refpy="486.156" fill="#ffffff" font-family="Arial" font-size="15" id="id_20" transform="matrix(1.1967,0,0,1.1967,-31.5674,-92.449)" x="164.985" y="488">Диаметр штока</text>
+ <text atv:refpx="217.728" atv:refpy="666.801" fill="#ffffff" font-family="Arial" font-size="15" id="id_21" transform="matrix(1.1967,0,0,1.1967,-24.741,-127.9819)" x="130.28" y="668.645">Расход расчетный (л/c)</text>
  <svg atv:refpx="227.26" atv:refpy="346.145" height="31" id="id_9" transform="matrix(3.125,0,0,1,0,0)" width="80" x="32.723" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.MikAnd.EditableLabel_rig1" y="330.645">
   <atv:argument name="enumList" prefix=""/>
   <atv:argument name="base" prefix="DrillPumpFillingRatio"/>

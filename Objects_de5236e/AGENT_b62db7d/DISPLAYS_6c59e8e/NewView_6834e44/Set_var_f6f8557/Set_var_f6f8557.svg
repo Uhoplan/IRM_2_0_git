@@ -201,6 +201,10 @@
    <button class="button-blue" id="recomm">Рекомендации</button>
   </div>
  </foreignObject>
+ <svg atv:refpx="660" atv:refpy="630" height="300" id="id_11" width="1200" x="60" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Halliburton.Calculated" y="480"/>
+ <foreignObject height="60" id="secret" width="150" x="1670" y="930">
+  <div id="secretContainer" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
+ </foreignObject>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function() {
 var trigger = "AGENT.OBJECTS.Set_var.SetVarValues";
 var currentNodeAddressArray = ["AGENT.OBJECTS.ASPD.APD1.Speed.Drill.Limit",
@@ -343,6 +347,26 @@ document.getElementById('torq_m').addEventListener('click',function(e){
 
 document.getElementById("recomm").addEventListener("click", function() {
 	webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Halliburton.Halliburton", {}, "main_frame")
-});]]></script>
- <svg atv:refpx="660" atv:refpy="630" height="300" id="id_11" width="1200" x="60" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Halliburton.Calculated" y="480"/>
+});
+
+function signalSettingsControl() {
+	if (!webMI.hasRight("USER." + "SignalControl")) return
+	var sContainer = document.getElementById("secretContainer")
+	
+	var btn = parent.document.createElement("button")
+	btn.classList.add("button__label-dark")
+	btn.textContent = "Управление сигналами"
+	
+	sContainer.appendChild(btn)
+	
+	btn.addEventListener("click", function() {
+		webMI.display.openDisplay("AGENT.DISPLAYS.NewView.SignalControl.ControlPanel", {}, "main_frame")		
+	})
+
+}
+signalSettingsControl()
+
+
+
+]]></script>
 </svg>

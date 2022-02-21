@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nnode" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth.WellDepthRaw"/>
+  <code><![CDATA[var wellDepth = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth'});
+var wellDepthRaw = nnode.value;//call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth.WellDepthSensor'});
+
+
+if(wellDepthRaw >= wellDepth || (wellDepthRaw < wellDepth && wellDepthRaw > 1500)){
+console.log('wellDepth = '+wellDepth);
+console.log('wellDepthRaw = '+nnode.value);
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth',varvalue:nnode.value});	
+}]]></code>
+</script>

@@ -8,7 +8,7 @@
  <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_30">
   <rect atv:refpx="895.505" atv:refpy="488.66" fill="#1f1f1f" height="977.32" id="id_31" width="1791.01" x="0" y="0"/>
  </g>
- <svg atv:refpx="1559.511" atv:refpy="572.071" height="500" id="id_0" transform="matrix(0.8583,0,0,0.8279,0,0)" width="510" x="1561.815" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.2nd" y="436.271">
+ <svg atv:refpx="1559.005" atv:refpy="570.882" height="500" id="id_0" transform="matrix(0.8583,0,0,0.8279,0,0)" width="510" x="1561.226" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.2nd" y="434.835">
   <atv:argument name="LeftSulfur" value="AGENT.OBJECTS.Test.ForMainWindow.Stub"/>
   <atv:argument name="RightSulfur" value="AGENT.OBJECTS.Test.ForMainWindow.Stub"/>
   <atv:argument name="MaxLeftSulfur" value="10"/>
@@ -34,7 +34,7 @@
   <atv:argument name="NodeToDisplay(base)" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
   <atv:argument name="MaxOfRange" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold.High"/>
  </svg>
- <svg atv:refpx="1561.568" atv:refpy="167.854" height="400" id="id_2" transform="matrix(0.857,0,0,0.7992,0,0)" width="410" x="1617.114" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.1st" y="5.228">
+ <svg atv:refpx="1565.701" atv:refpy="163.676" height="400" id="id_2" transform="matrix(0.857,0,0,0.7992,0,0)" width="410" x="1621.937" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.1st" y="0">
   <atv:argument name="rrc" value="AGENT.OBJECTS.ASPD.Drawworks.Brakes.Works.N1.Pressure"/>
   <atv:argument name="lrc" value="AGENT.OBJECTS.ASPD.Drawworks.Brakes.Works.N2.Pressure"/>
   <atv:argument name="stopbrake" value="AGENT.OBJECTS.ASPD.Drawworks.Brakes.Parking.Pressure"/>
@@ -110,7 +110,7 @@
  </foreignObject>
  <svg atv:refpx="112.791" atv:refpy="72.936" height="130" id="id_64" width="200" x="9.791" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.HookView" y="2.936"/>
  <svg atv:refpx="1186.877" atv:refpy="175.214" height="414.05" id="id_66" transform="matrix(0.8453,0,0,0.8453,0,0)" width="382.62" x="1224.594" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.VSPRight" y="-4.481">
-  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
   <atv:argument name="Max" value="AGENT.OBJECTS.Test.PerMaxMin.VSP.MaxTDSSpeed"/>
   <atv:argument name="MaxBar" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed.High"/>
   <atv:argument name="Visability" value="false"/>
@@ -214,15 +214,6 @@
    <p style="margin:0;">РАСТВОРА</p>
   </div>
  </foreignObject>
- <svg atv:refpx="1665.028" atv:refpy="876.631" height="73.2" id="id_19" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2315.069" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1246.788">
-  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.viscosity"/>
- </svg>
- <svg atv:refpx="1663.861" atv:refpy="934.231" height="73.2" id="id_27" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2313.296" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1331.036">
-  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss"/>
- </svg>
- <svg atv:refpx="1667.57" atv:refpy="817.065" height="73.2" id="id_29" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2318.679" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1159.515">
-  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.density"/>
- </svg>
  <foreignObject height="47.1" id="id_12" width="124.761" x="1480.429" y="854.439">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0">Вязкость</p>
@@ -243,7 +234,8 @@
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
  </svg>
  <text atv:refpx="1747.979" atv:refpy="964.948" fill="#ffffff" font-family="Arial" font-size="12" id="id_3" x="1713.667" y="969.448">version 2.1.3</text>
- <foreignObject height="975.61" id="id_32" width="1785.978" x="0" y="0">
+ <svg atv:refpx="432.013" atv:refpy="94.785" height="67.88" id="id_33" transform="matrix(0.6448,0,0,0.6158,0,0)" width="212.11" x="563.896" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.timer.timer_oper" y="119.972"/>
+ <foreignObject height="980" id="id_32" width="1790" x="0" y="0">
   <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
    <style>
         .modal-overlay{
@@ -318,6 +310,12 @@
     </script>
   </div>
  </foreignObject>
+ <svg atv:refpx="154" atv:refpy="934" height="71" id="id_13" transform="matrix(0.69,0,0,0.6761,0,0)" width="400" x="23.188" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Text.Barrel" y="1272.083">
+  <atv:argument name="Multiplier" value="1000"/>
+  <atv:argument name="Value" value="(т/км)"/>
+  <atv:argument name="Text" value="Макс. наработка тальканата"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.talkMax"/>
+ </svg>
  <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.read(['AGENT.OBJECTS.RigConstruction.direction',
 			'AGENT.OBJECTS.RigConstruction.conductor',
 			'AGENT.OBJECTS.RigConstruction.obsCol',
@@ -325,40 +323,40 @@
 			'AGENT.OBJECTS.RigConstruction.tail',
 			'AGENT.OBJECTS.IVE50.Well.WellDepth',
 			'AGENT.OBJECTS.Depth_day_data.start_date'],function(e){
-				console.log(e)
+				//console.log(e)
 				resCol = 0
 				for(var i = 0;i<5;i++){
-				console.log(e[i])
-				console.log(e[5])
+				//console.log(e[i])
+				//console.log(e[5])
 					if(e[i].value<e[5].value & e[i].value!=0){console.log('nth')}
 					else{
 						resCol = i;
 						break;					
 					}
 				}
-				console.log('<colnum>'+resCol)
-				serviceName = ''
+				//console.log('<colnum>'+resCol)
+				sectionName = ''
 				normalName =''
 				switch (resCol){
 					case 0:
 						normalName = 'Направление'
-						serviceName = 'Direct'
+						sectionName = 'Direct'
 						break;
 					case 1:
 						normalName = 'Кондуктор'
-						serviceName = 'Kond'
+						sectionName = 'Kond'
 						break;
 					case 2:
 						normalName = 'Пилотный ствол'
-						serviceName = 'TechCol'
+						sectionName = 'TechCol'
 						break;
 					case 3:
 						normalName = 'Эксплуатационная колонна'
-						serviceName = 'ExCol'
+						sectionName = 'ExCol'
 						break;
 					case 4:
 						normalName = 'Хвостовик'
-						serviceName = 'Tail'
+						sectionName = 'Tail'
 						break;				
 				}
 				document.getElementById('modal-info-text').innerHTML = '<b>Сейчас бурится:</b></br><br/>'+normalName+'<br/>'
@@ -366,7 +364,7 @@
 				webMI.data.call("GetHistorySimple",{t1:e[6].value,t2:Date.now(),address:"g:AGENT.OBJECTS.ServiceParams.NNB.cols.TechCol.fact"},function(rawNNB){
 					document.getElementById('modal-info-text').innerHTML += '<b>КНБК</b>: <br/>'
 					rawNNB.forEach(function(item){
-						console.log(JSON.parse(item))
+						//console.log(JSON.parse(item))
 						document.getElementById('modal-info-text').innerHTML += JSON.parse(item).rows[0].element+'<br/>'			
 					})
 					
@@ -374,5 +372,16 @@
 				})
 						
 			})]]></script>
- <svg atv:refpx="432.013" atv:refpy="94.785" height="67.88" id="id_33" transform="matrix(0.6448,0,0,0.6158,0,0)" width="212.11" x="563.896" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.timer.timer_oper" y="119.972"/>
+ <svg atv:refpx="1670" atv:refpy="815" height="73.2" id="id_14" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1156.56">
+  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.density"/>
+  <atv:argument name="maxParam" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.density.plan"/>
+ </svg>
+ <svg atv:refpx="1670" atv:refpy="876" height="73.2" id="id_21" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.206" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1245.791">
+  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.viscosity"/>
+  <atv:argument name="maxParam" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.viscosity.plan"/>
+ </svg>
+ <svg atv:refpx="1670" atv:refpy="934" height="73.2" id="id_22" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.206" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1330.698">
+  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss"/>
+  <atv:argument name="maxParam" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss.plan"/>
+ </svg>
 </svg>

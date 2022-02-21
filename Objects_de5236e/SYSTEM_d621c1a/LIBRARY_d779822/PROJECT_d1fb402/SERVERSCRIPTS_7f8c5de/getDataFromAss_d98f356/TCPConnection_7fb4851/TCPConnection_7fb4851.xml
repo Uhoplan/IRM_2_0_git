@@ -16,7 +16,7 @@ connectionNode.assign({value: Boolean(true)})
 function connect() {
 	try {
 		t.connect("127.0.0.1", 8081);
-		console.log("[TCPConnection]: connected");
+		//console.log("[TCPConnection]: connected");
 		
 		while(1) {
 			var response_content = t.receive(1000000000);
@@ -34,7 +34,7 @@ function connect() {
 						nnode.assign({value: JSON.stringify(item.value)});
 					}
 					catch(e){
-						console.log("[TCPConnection] Error: Cannot assign value for ", nodeidstr);
+						//console.log("[TCPConnection] Error: Cannot assign value for ", nodeidstr);
 					}
 				})
 				//console.log(res.idnode);			
@@ -72,11 +72,11 @@ function connect() {
 				*/				
 				}		
 				catch(e){
-					console.log("[TCPConnection] Error: Cannot parse XML!!", e);
+					//console.log("[TCPConnection] Error: Cannot parse XML!!", e);
 				}				
 			}
 			else {
-				console.log("[TCPConnection]: no content received");
+				//console.log("[TCPConnection]: no content received");
 				//break;
 			}
 		}	
@@ -84,14 +84,14 @@ function connect() {
 		connectionNode.assign({value: false});
 	}
 	catch(e){
-		console.log("[TCPConnection]: Cannot connect to TCP server");
+		//console.log("[TCPConnection]: Cannot connect to TCP server");
 		t.close();
 		connectionNode.assign({value: false})
 		//connect();
 	}
 	finally {
 		if(!!t){
-			console.log("[TCPConnection]: connection closed");
+			//console.log("[TCPConnection]: connection closed");
 			t.close();
 			connectionNode.assign({value: false})
 		}

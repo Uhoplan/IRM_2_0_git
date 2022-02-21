@@ -543,5 +543,17 @@ webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
 });
 
 
-webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_16", "nodeId":"AGENT.OBJECTS.IVE50.Well.DrillSpeed"});]]></script>
+
+
+webMI.data.subscribe("AGENT.OBJECTS.ASPD.APD1.Running", function(e) {
+ var valueApdRun = e.value;
+
+	if (valueApdRun == false){
+			 document.getElementById("id_16").innerHTML = 0.00;
+		}
+		
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", 
+{"decimalPlaces":"0", "id":"id_16", "nodeId":"AGENT.OBJECTS.IVE50.Well.DrillSpeed"}); 
+
+});]]></script>
 </svg>
