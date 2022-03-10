@@ -44,7 +44,7 @@
   <atv:argument name="maxRRC" value="AGENT.OBJECTS.Test.PerMaxMin.APD.MaxN2Pressure"/>
   <atv:argument name="maxLRC" value="AGENT.OBJECTS.Test.PerMaxMin.APD.MaxN1Pressure"/>
  </svg>
- <svg atv:refpx="522.016" atv:refpy="808.519" height="71" id="id_8" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="617.284" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
+ <svg atv:refpx="522.016" atv:refpy="808.519" height="71" id="id_8" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="630.204" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1158.078">
   <atv:argument name="Number" value="1"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1"/>
   <atv:argument name="MaxVolume" value="25"/>
@@ -58,32 +58,22 @@
   <atv:argument name="NodeToDisplay(base)" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
   <atv:argument name="MaxOfRange" value="AGENT.OBJECTS.IVE50.Mud.FlowInputRangeMax"/>
  </svg>
- <svg atv:refpx="952.009" atv:refpy="808.523" height="71" id="id_16" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1234.568" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
-  <atv:argument name="Number" value="3"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel4"/>
-  <atv:argument name="MaxVolume" value="40"/>
- </svg>
- <svg atv:refpx="952.009" atv:refpy="878.523" height="71" id="id_18" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1234.568" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1230.457">
-  <atv:argument name="Number" value="4"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel5"/>
-  <atv:argument name="MaxVolume" value="40"/>
- </svg>
- <svg atv:refpx="1122.009" atv:refpy="878.523" height="71" id="id_20" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1478.61" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1230.457">
+ <svg atv:refpx="952.009" atv:refpy="878.523" height="71" id="id_18" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1335.774" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1275.003">
   <atv:argument name="Number" value="6"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel6"/>
   <atv:argument name="MaxVolume" value="40"/>
  </svg>
- <svg atv:refpx="722.009" atv:refpy="808.523" height="71" id="id_24" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="923.055" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
-  <atv:argument name="Number" value="2"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel10"/>
-  <atv:argument name="MaxVolume" value="10"/>
- </svg>
- <svg atv:refpx="1122.009" atv:refpy="808.523" height="71" id="id_26" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1478.61" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
-  <atv:argument name="Number" value="5"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel12"/>
+ <svg atv:refpx="1121.509" atv:refpy="877.751" height="71" id="id_20" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1579.098" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1273.885">
+  <atv:argument name="Number" value="7"/>
+  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel7"/>
   <atv:argument name="MaxVolume" value="40"/>
  </svg>
- <svg atv:refpx="719.099" atv:refpy="551.353" height="421.17" id="id_5" transform="matrix(0.8283,0,0,0.8191,0,0)" width="253.16" x="741.555" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.BN1" y="462.497">
+ <svg atv:refpx="722.009" atv:refpy="808.523" height="71" id="id_24" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="921.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1158.078">
+  <atv:argument name="Number" value="2"/>
+  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2"/>
+  <atv:argument name="MaxVolume" value="10"/>
+ </svg>
+ <svg atv:refpx="714.869" atv:refpy="552.522" height="421.17" id="id_5" transform="matrix(0.8283,0,0,0.8191,0,0)" width="253.16" x="736.448" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.BN1" y="463.924">
   <atv:argument name="MaxBarSmall" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowPump1"/>
   <atv:argument name="Visability" value="false"/>
   <atv:argument name="VisabilitySmall" value="false"/>
@@ -141,6 +131,21 @@
   <atv:argument name="MaxHookPosition" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.High"/>
   <atv:argument name="MaxSPOSpeed" value="AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.High"/>
  </svg>
+ <svg atv:refpx="952.009" atv:refpy="808.523" height="71" id="id_16" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1208.728" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1158.078">
+  <atv:argument name="Number" value="3"/>
+  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel3"/>
+  <atv:argument name="MaxVolume" value="40"/>
+ </svg>
+ <svg atv:refpx="1130.009" atv:refpy="808.523" height="71" id="id_26" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1464.255" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1158.078">
+  <atv:argument name="Number" value="4"/>
+  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel4"/>
+  <atv:argument name="MaxVolume" value="40"/>
+ </svg>
+ <svg atv:refpx="1324.009" atv:refpy="808.522" height="71" id="id_49" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1706.862" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1158.078">
+  <atv:argument name="Number" value="5"/>
+  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel5"/>
+  <atv:argument name="MaxVolume" value="40"/>
+ </svg>
  <svg atv:refpx="942.619" atv:refpy="591.503" height="255.2" id="id_70" transform="matrix(0.73,0,0,0.8033,0,0)" width="100" x="1241.258" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.bar.BarConsumptionIn" y="603.77">
   <atv:argument name="ConsumptionIn" value="AGENT.OBJECTS.IVE50.Mud.FlowOutput"/>
   <atv:argument name="MaxConIn" value="30"/>
@@ -165,24 +170,19 @@
  </svg>
  <svg atv:refpx="419.851" atv:refpy="421.963" height="240" id="id_4" width="90" x="394.851" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.gif.processVisualization" y="296.963"/>
  <rect atv:refpx="1644.502" atv:refpy="866.347" fill="#1f1f1f" height="222.521" id="id_7" stroke="#0000ff" stroke-width="0" width="293.579" x="1515.712" y="746.087"/>
- <foreignObject height="56.743" id="id_36" width="160.957" x="442" y="740">
+ <foreignObject height="56.743" id="id_36" width="160.957" x="442" y="760">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0.6">ЦСГО</p>
   </div>
  </foreignObject>
- <foreignObject height="56.743" id="id_37" width="160.957" x="920" y="740">
+ <foreignObject height="56.743" id="id_37" width="160.957" x="1005.03" y="760">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0.6">Рабочие ёмкости</p>
+   <p style="text-align: center;">Рабочие ёмкости</p>
   </div>
  </foreignObject>
- <foreignObject height="56.743" id="id_39" width="174.679" x="646" y="740">
+ <foreignObject height="56.743" id="id_39" width="174.679" x="646" y="760">
   <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0.6">Доливная ёмкость</p>
-  </div>
- </foreignObject>
- <foreignObject height="56.743" id="id_40" width="174.679" x="1255" y="740">
-  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
-   <p style="margin:0.6">Блок хранения раствора</p>
   </div>
  </foreignObject>
  <foreignObject height="47.64" id="id_42" width="260.049" x="875.346" y="715.813">
@@ -202,11 +202,6 @@
    <p style="margin:0.6">Текущий процесс:</p>
   </div>
  </foreignObject>
- <svg atv:refpx="1378.009" atv:refpy="808.522" height="71" id="id_49" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1810.221" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1129.126">
-  <atv:argument name="Number" value="7"/>
-  <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel13"/>
-  <atv:argument name="MaxVolume" value="10"/>
- </svg>
  <foreignObject height="92.55" id="id_53" width="291.378" x="1517.421" y="715.018">
   <div id="leftDown" style="width:100%;height:100%;color:white;font-size:1.7rem;font-weight:bold;line-height: 0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0;">ПАРАМЕТРЫ</p>
@@ -230,7 +225,7 @@
  </foreignObject>
  <svg atv:refpx="156.861" atv:refpy="821.5" height="71" id="id_17" transform="matrix(0.6901,0,0,0.6901,0,0)" width="400" x="24.391" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Text.Barrel" y="1154.838">
   <atv:argument name="Text" value="Наработка тальканата"/>
-  <atv:argument name="Value" value="(т/км)"/>
+  <atv:argument name="Value" value="(т.км)"/>
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
  </svg>
  <text atv:refpx="1747.979" atv:refpy="964.948" fill="#ffffff" font-family="Arial" font-size="12" id="id_3" x="1713.667" y="969.448">version 2.1.3</text>
@@ -312,7 +307,7 @@
  </foreignObject>
  <svg atv:refpx="154" atv:refpy="934" height="71" id="id_13" transform="matrix(0.69,0,0,0.6761,0,0)" width="400" x="23.188" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Text.Barrel" y="1272.083">
   <atv:argument name="Multiplier" value="1000"/>
-  <atv:argument name="Value" value="(т/км)"/>
+  <atv:argument name="Value" value="(т.км)"/>
   <atv:argument name="Text" value="Макс. наработка тальканата"/>
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.talkMax"/>
  </svg>
@@ -373,7 +368,7 @@
 						
 			})]]></script>
  <svg atv:refpx="1670" atv:refpy="815" height="73.2" id="id_14" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1156.56">
-  <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.density"/>
+  <atv:argument name="param" value="AGENT.OBJECTS.IVE50.Mud.Properties.MudDensityIn"/>
   <atv:argument name="maxParam" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.density.plan"/>
  </svg>
  <svg atv:refpx="1670" atv:refpy="876" height="73.2" id="id_21" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.206" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1245.791">
@@ -383,5 +378,8 @@
  <svg atv:refpx="1670" atv:refpy="934" height="73.2" id="id_22" transform="matrix(0.689,0,0,0.6831,0,0)" width="203.2" x="2322.206" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.leftDown" y="1330.698">
   <atv:argument name="param" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss"/>
   <atv:argument name="maxParam" value="AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss.plan"/>
+ </svg>
+ <svg atv:refpx="615" atv:refpy="905" height="50" id="id_19" width="350" x="440" xlink:href="AGENT.DISPLAYS.Test.totalVolume" y="880">
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel8"/>
  </svg>
 </svg>

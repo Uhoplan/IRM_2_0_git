@@ -113,7 +113,7 @@ if(!resultArray || resultArray.length==0 || resultArray.length==1){
 			{
 				return (rad * 180) / Math.PI;
 			}
-			var angleDeg = Math.floor(radToDeg(angleRad) * 100) / 100;
+			var angleDeg = Math.floor(radToDeg(angleRad) * 100) / 100;	
 //			console.log("Угол = ", angleDeg, ' град.');
 			
 			arrObj.forEach(function(item, i, arrObj){

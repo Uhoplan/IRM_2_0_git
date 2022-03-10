@@ -61,5 +61,5 @@ webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPla
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_32", "nodeId":"AGENT.OBJECTS.Rig.General.BushName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_35", "nodeId":"AGENT.OBJECTS.Rig.General.RigName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_34", "nodeId":"AGENT.OBJECTS.Rig.Brigade.BrigadeName"});]]></script>
- <text atv:refpx="1457.729" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Ханты-Мансийск</text>
+ <text atv:refpx="1452.729" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Новый Уренгой</text>
 </svg>

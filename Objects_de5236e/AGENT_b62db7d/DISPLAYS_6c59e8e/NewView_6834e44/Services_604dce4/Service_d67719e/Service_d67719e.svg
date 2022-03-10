@@ -152,6 +152,8 @@
    <button class="button-blue" id="reports" style="font-size: 12px;display:none;">рапорты</button>
   </div>
  </foreignObject>
+ <text atv:refpx="920.5" atv:refpy="198.657" fill="#ffffff" font-family="Arial" font-size="18" id="plan_header" x="904.5" y="203.157">ПЛАН</text>
+ <text atv:refpx="919" atv:refpy="444.956" fill="#ffffff" font-family="Arial" font-size="18" id="id_18" x="904.5" y="449.456">ФАКТ</text>
  <script atv:desc="" atv:name="elId" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
 webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
 var depthDayData = depthData.value;
@@ -246,9 +248,11 @@ reports.addEventListener("click", function() {
 function excludePlans() {
 	if (planExceptions.includes(currentService)) {
 		writePlan.style.display = "none";
+		document.getElementById("plan_header").style.visibility = "hidden";
 		
 		return true
 	}
+	document.getElementById("plan_header").style.visibility = "visible";	
 	
 	return false	
 }
@@ -992,6 +996,4 @@ function getAvgAndMax(path, currentWDTimestamp, next) {
 })
 
 ]]></script>
- <text atv:refpx="920.5" atv:refpy="198.657" fill="#ffffff" font-family="Arial" font-size="18" id="id_15" x="904.5" y="203.157">ПЛАН</text>
- <text atv:refpx="919" atv:refpy="444.956" fill="#ffffff" font-family="Arial" font-size="18" id="id_18" x="904.5" y="449.456">ФАКТ</text>
 </svg>

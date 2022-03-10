@@ -191,6 +191,7 @@ function ProcessExcel(data) {
         }
         if (stop) { break; }
     }
+    
     console.log(timestart)
     while (timestart.indexOf('/') != -1) {
         timestart = timestart.replace('/', '.')

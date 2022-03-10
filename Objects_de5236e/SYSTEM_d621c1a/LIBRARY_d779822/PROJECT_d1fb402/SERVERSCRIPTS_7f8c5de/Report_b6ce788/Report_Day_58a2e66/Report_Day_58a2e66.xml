@@ -21,12 +21,13 @@
   <parameter name="hook_pos" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition"/>
   <parameter name="pressure_manifold" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
   <parameter name="diff_pressure" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.DiffPressure"/>
-  <parameter name="oper_time_wireline" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.talkanat"/>
+  <parameter name="oper_time_wireline" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
   <parameter name="oper_time_pump1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1.RunHoursMs"/>
   <parameter name="oper_time_pump2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2.RunHoursMs"/>
   <parameter name="oper_time_drawworks" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.RunHoursMs"/>
   <parameter name="rig_operation" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Support.Auto.Operation"/>
-  <parameter name="slide_run" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.Slide.Run"/>
+  <parameter name="slide_run" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.Slide.Running"/>
+  <parameter name="tool_pos" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.ToolPosition"/>
   <code><![CDATA[try	{
   console.log('Start report script');
       var node_rig_name = new UaNode(rig_name);
@@ -73,7 +74,7 @@
       
       
       var objJSON = {
-        version: "1.1.6l",
+        version: "1.1.5d",
         date: strDate,
         Operations: {
           OperationsTitle:'123',
@@ -185,8 +186,30 @@
       
   //		var ofs = new OutputFileStream(exportDir + exportFn, "utf8");
   //		ofs.open();
+function fillRunningIntervals(history, fillArr) {
+	var lastTrue = null;
+    history.forEach(function(apdTick) {
+		if (apdTick.value && !lastTrue) {
+			lastTrue = apdTick;
+		}
+		if (!apdTick.value && lastTrue) {
+			lastTrue.timestop = apdTick.timestart;
+			lastTrue.timework = lastTrue.timestop-lastTrue.timestart;
+			fillArr.push(lastTrue);
+			lastTrue = null;
+		}
+    });
   
+    if (lastTrue) {
+		lastTrue.timestop = to;
+		lastTrue.timework = lastTrue.timestop-lastTrue.timestart;
+        fillArr.push(lastTrue);
+    }
+    lastTrue = null
+}  
       var arrobjoperations =[];
+	  var arrobjirpak =[];
+	  var arrobjosc =[];
   console.log('Start Operations');		
       var wellDepthStart;
       var wellDepthStartObj = call("getUaDataByDate",{strnode:well_depth,datestop: from});
@@ -253,10 +276,12 @@
       var countApdModePressure = 0;
       var countApdModeSpeed = 0;
       var countApdModeTorque = 0;
+      var fullTimeApdReaming = 0;
+      var fullAPDReamingPenetration = 0;
     
   // get data from operations
       var nodeReportOperation = new UaNode("AGENT.OBJECTS.Support.ReportOperation"); // the AGENT.OBJECTS.Support.ReportOperation means the calculate of Operations
-    if (nodeReportOperation.exists()){
+    if (nodeReportOperation.exists()){ //check operations
       try {
       var data_objects = rig_operation;//"Support.Auto.Operation,ASPD.APD1.Running,ASPD.APD1.MasterMode,ASPD.APD1.ModeReg"
       var nodes = data_objects.split(',');
@@ -277,7 +302,7 @@
         });
         
         data.forEach(function (datapoint) {
-        arrobjoperations.push(datapoint);
+			arrobjoperations.push(datapoint);
         });
         
       });
@@ -324,11 +349,9 @@
       }
     }
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
-
-      try {
-  // get data from ir-pak	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-    var apdRunningHistory = [];  
-    var arrobjirpak =[];		
+	var apdRunningHistory = [];
+	try {  // get data from ir-pak	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+//    var arrobjirpak =[];		
       data_objects = apd_running+','+apd_mastermode+','+apd_modereg;//"ASPD.APD1.Running,ASPD.APD1.MasterMode,ASPD.APD1.ModeReg"
       nodes =  data_objects.split(',');
       
@@ -405,8 +428,8 @@
         }					
       }	
             
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
-    // Calc Start and Stop time for APD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+// Calc Start and Stop time for APD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
       var ir = -1;
       var imm = -1;
       var imr = -1;
@@ -484,29 +507,80 @@
       catch(expapd){
         console.log("APD exception ");
       }
-
-  //------------------------------------------------------------------------------------------------------------------------------------
+	  
+	try {	// get data from oscillation
+//console.log('OSCILLATION'); 
+//	  var arrobjosc =[];		
+      data_objects = slide_run;
+      var nodes =  data_objects.split(',');
+      nodes.forEach(function (node) {
+        var node_instance = new UaNode(node);
+        var data = node_instance
+        .datahistory({ starttime: from, endtime: to })
+        .values.map(function (point) {
+          return {
+          who:'osc',
+          identifier: node_instance.nodeaddr,//node_instance.browsename,
+          servertime: point.servertime,
+          timestart: point.sourcetime,
+          sourcetime: point.sourcetime,
+          value: point.value,
+          status:point.status
+          };
+        });
+        
+        data.forEach(function (datapoint) {
+			if(datapoint.status < 0x40000000)
+			  arrobjosc.push(datapoint);
+        });        
+      });
       
-      var arrobjfull = arrobjoperations.concat(arrobjirpak);
+      // Sort by sourcetime 
+      arrobjosc.sort(function (a, b) {
+        return a.sourcetime - b.sourcetime;
+        //return a.servertime - b.servertime;
+      });
+      
+// start calc timework 
+	// add first operation		
+      var oscStartObj = call("getUaDataByDate",{strnode:slide_run,datestop: from});
+      oscStartObj.who ='osc';
+      oscStartObj.identifier = slide_run;
+      oscStartObj.timestart = oscStartObj.sourcetime < from ? from : oscStartObj.sourcetime;
+      arrobjosc.unshift(oscStartObj);
+  
+	var arrobjoscfill = [];
+  // calc timestop
+	fillRunningIntervals(arrobjosc,arrobjoscfill);	
+/*				
+      if(arrobjosc.length > 0){
+        for(var i=0;i<arrobjosc.length;++i){
+		  console.log('arrobjosc.timestart = ',new Date(arrobjosc[i].timestart).toUTCString());
+          if(i>0 && arrobjosc[i-1].identifier == slide_run){
+            arrobjosc[i-1].timestop = arrobjosc[i].timestart;
+            arrobjosc[i-1].timework = arrobjosc[i-1].timestop - arrobjosc[i-1].timestart;
+          }
+        }
+        arrobjosc[arrobjosc.length-1].timestop = to;
+        arrobjosc[arrobjosc.length-1].timework = arrobjosc[arrobjosc.length-1].timestop - arrobjosc[arrobjosc.length-1].timestart;
+      }
+*/	  
+// stop calc timework 
+	}
+	catch(exposc){
+		console.log("OSC exception ");
+    }
+  //------------------------------------------------------------------------------------------------------------------------------------
+ // sort all operations irm+apd+osc     
+      var arrobjfull = arrobjoperations.concat(arrobjirpak).concat(arrobjoscfill);
       arrobjfull.sort(function (a, b) {
         return a.sourcetime - b.sourcetime;
       });
   //------------------------------------------------------------------------------------------------------------------------------------		
     
-  /*		
-        arrobjfull.forEach(function(itemObj,index,arrobjfull){
-          for(var key in itemObj){
-            var value = itemObj[key]; 					
-          }
-        });			
-  */
-  //			if(startindx >=0 && !arrobjfull[startindx].hasOwnProperty('timestop')){
-  //				arrobjfull[i].timestop = wt;
-  //				arrobjfull[i].timework = arrobjfull[i].timestop - arrobjfull[i].timestart;
-  //			}
       var realarrobj = [];
-      try {
-  // add supplement data
+  
+      try { // add supplement data about average params
         arrobjfull.forEach(function(itemObj,index,arrobjfull){				
           if(itemObj.hasOwnProperty('timestop')){
   //					var valDepthStart=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestop}).value;
@@ -529,9 +603,17 @@
               valDepthStart=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestop}).value;						
             }
             
+            var valToolPosStart=call("getUaDataByDate",{strnode:tool_pos,datestop: itemObj.timestart}).value;
+            var valToolPosStop =0;					
+            if(valToolPosStart!=0){						
+              valToolPosStop = call("getUaDataByDate",{strnode:tool_pos,datestop: itemObj.timestop}).value;
+            } 
+            
             if(valDepthStart && valDepthStop){						
               itemObj.depthstart = valDepthStart;
               itemObj.depthstop = valDepthStop;
+              itemObj.toolposstart = valToolPosStart;
+              itemObj.toolposstop = valToolPosStop;
               itemObj.penetration = valDepthStop-valDepthStart;
               itemObj.drillspeed = (itemObj.penetration/((itemObj.timestop-itemObj.timestart)/1000))*3600;
               function calcAverageParams(itemObj){
@@ -565,15 +647,18 @@
       catch(expsupp){
         console.log("Supplement exception ");
       }
-
       
-      try {		
-        var slideWorkArr = [];
-        var rotorWorkArr = [];
-        var drillWorkArr = [];
+     
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var slideWorkArr = [];
+      var rotorWorkArr = [];
+      var drillWorkArr = [];
+	  var reamingWorkArr = [];
+      try {		// fill report variables
+        
 // Calculate operations
         ofs.writeLine("Работы:;;;;;;;;;;;;;;;;");
-        var strNaming = "№;Источник;Работа;Режим;Начало;Окончание;Время работы в сек;Время работы;Положение в начале;Положение в конце;Проходка;Скорость;Нагрузка;Расход;Обороты;Момент;Давление;Перепад";		 
+        var strNaming = "№;Источник;Работа;Режим;Начало;Окончание;Время работы в сек;Время работы;Пол. КНБК в начале;Пол. КНБК в конце;Забой в начале;Забой в конце;Проходка;Скорость;Нагрузка;Расход;Обороты;Момент;Давление;Перепад";		 
         ofs.writeLine(strNaming);
         
         //var realindex=0;		
@@ -636,7 +721,9 @@
                   fullTimeIrmWashing+=itemObj.timework;
                   break;
                 case 'ПРОРАБОТКА':
-                  fullTimeIrmReaming+=itemObj.timework;
+//                  fullTimeIrmReaming+=itemObj.timework;
+                  reamingWorkArr.push({ timestart: itemObj.timestart, timestop: itemObj.timestop, timework: itemObj.timework });
+                  reamingWorkArr.push(itemObj);
                   switch(work_mode){
                     case 'при подъеме':
                       fullTimeIrmReamingRise+=itemObj.timework;
@@ -676,36 +763,37 @@
                   fullTimeIrmUndfined+=itemObj.timework;
                   break;
               }						
-            }													
+            }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////            													
             if(itemObj.identifier==apd_running){						 
               if(itemObj.value == 1){    //бурение							 
                 fullTimeApd +=itemObj.timework;
-                fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;							
+                fullApdPenetration += itemObj.penetration; 							
                 if(itemObj.mastermode == 0){
                   work = "Бурение";
                   fullTimeApdDrilling += itemObj.timework;
                   if(itemObj.modereg == 0){
                     work_mode = "По нагрузке";
                     fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
-                    fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                    fullPenetrationApdModeLoad += itemObj.penetration; 
                     countApdModeLoad++;
                   }
                   if(itemObj.modereg == 1){
                     work_mode = "По давлению";
                     fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
-                    fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                    fullPenetrationApdModePressure += itemObj.penetration; 
                     countApdModePressure++;
                   }
                   if(itemObj.modereg == 2){
                     work_mode = "По скорости";
                     fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
-                    fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                    fullPenetrationApdModeSpeed += itemObj.penetration; 
                     countApdModeSpeed++;
                   }
                   if(itemObj.modereg == 3){
                     work_mode = "По моменту";
                     fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
-                    fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                    fullPenetrationApdModeTorque += itemObj.penetration; 
                     countApdModeTorque++;
                   }
                 } 
@@ -727,30 +815,30 @@
               if(itemObj.value == 0){    //бурение
                 fullTimeApdDrilling += itemObj.timework; //itemObj.timestop - itemObj.timestart;
                 fullTimeApd +=itemObj.timework;
-                fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                fullApdPenetration += itemObj.penetration; 
                 work = "Бурение";
                 if(itemObj.modereg == 0){
                   work_mode = "По нагрузке";
                   fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
-                  fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                  fullPenetrationApdModeLoad += itemObj.penetration; 
                   countApdModeLoad++;
                 }
                 if(itemObj.modereg == 1){
                   work_mode = "По давлению";
                   fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
-                  fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                  fullPenetrationApdModePressure += itemObj.penetration; 
                   countApdModePressure++;
                 }
                 if(itemObj.modereg == 2){
                   work_mode = "По скорости";
                   fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
-                  fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                  fullPenetrationApdModeSpeed += itemObj.penetration; 
                   countApdModeSpeed++;
                 }
                 if(itemObj.modereg == 3){
                   work_mode = "По моменту";
                   fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
-                  fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                  fullPenetrationApdModeTorque += itemObj.penetration; 
                   countApdModeTorque++;
                 }
               } 
@@ -775,30 +863,34 @@
                 work_mode = "По нагрузке";
                 fullTimeApdModeLoad += itemObj.timework; //itemObj.timestop - itemObj.timestart;
                 fullTimeApd +=itemObj.timework;
-                fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                fullPenetrationApdModeLoad += itemObj.penetration; 
                 countApdModeLoad++;
               } 
               if(itemObj.value == 1){    //давление
                 work_mode = "По давлению";
                 fullTimeApdModePressure += itemObj.timework; //itemObj.timestop - itemObj.timestart;
                 fullTimeApd +=itemObj.timework;
-                fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                fullPenetrationApdModePressure += itemObj.penetration; 
                 countApdModePressure++;
               }
               if(itemObj.value == 2){    //скорость
                 work_mode = "По скорости";
                 fullTimeApdModeSpeed += itemObj.timework; //itemObj.timestop - itemObj.timestart;
                 fullTimeApd +=itemObj.timework;
-                fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                fullPenetrationApdModeSpeed += itemObj.penetration; 
                 countApdModeSpeed++;
               }		
               if(itemObj.value == 3){    //момент
                 work_mode = "По моменту";
                 fullTimeApdModeTorque += itemObj.timework; //itemObj.timestop - itemObj.timestart;
                 fullTimeApd +=itemObj.timework;
-                fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+                fullPenetrationApdModeTorque += itemObj.penetration; 
                 countApdModeTorque++;
               }					
+            }
+            if(itemObj.identifier==slide_run){
+				work = "Осцилляция";
+				work_mode = "";
             }
             
   // Prepare strings for operations	
@@ -854,7 +946,13 @@
             var tDepthstart = Math.round((itemObj.depthstart)*100)/100;
             if(isNaN(tDepthstart)) tDepthstart='-'; 					
             var tDepthstop = Math.round((itemObj.depthstop)*100)/100;
-            if(isNaN(tDepthstop)) tDepthstop='-';
+            if(isNaN(tDepthstop)) tDepthstop='-';        
+			            
+            var tToolPosstart = Math.round((itemObj.toolposstart)*100)/100;
+            if(isNaN(tToolPosstart)) tToolPosstart='-'; 					
+            var tToolPosstop = Math.round((itemObj.toolposstop)*100)/100;
+            if(isNaN(tToolPosstop)) tToolPosstop='-';
+            
             var tPenetration = Math.round((itemObj.penetration)*100)/100;
             if(isNaN(tPenetration)) tPenetration='-';
             var tDrillspeed = Math.round((itemObj.drillspeed)*100)/100;
@@ -880,6 +978,8 @@
               +strdatestop+";"
               +Math.floor(timework/1000)+";"
               +call("Sec2Date",{sec:(timework/1000)})+";"
+              +tToolPosstart+";"
+              +tToolPosstop+";"
               +tDepthstart+";"
               +tDepthstop+";"
               +tPenetration+";"
@@ -929,11 +1029,8 @@
       catch(excform){
         console.log("Forming exception ");
       }
-
+// start NIKITA //////////////////////////////////////////////////////////////////////////////////////////////////
       try {
-        // slideWorkArr = [];
-        // rotorWorkArr = [];
-        // apdRunningHistory = [];
 
         var slideRunHistory = new UaNode(slide_run)
           .datahistory({ starttime: from, endtime: to })
@@ -946,7 +1043,7 @@
 
         var slideRunIntervals = [];
         var apdRunningIntervals = [];
-
+/*
         function fillRunningIntervals(apdRunningHistory, apdRunningIntervals) {
           var lastTrue = null;
 
@@ -967,6 +1064,7 @@
           }
           lastTrue = null
         }
+*/        
         fillRunningIntervals(apdRunningHistory, apdRunningIntervals);
         fillRunningIntervals(slideRunHistory, slideRunIntervals);
 
@@ -1003,6 +1101,42 @@
         }
 
         apdRunningHistory.forEach(function(apdInterval) {
+		  
+		  reamingWorkArr.forEach(function(elem) {
+            var startWD = null
+            var endWD = null
+
+            if (apdInterval.timestart < elem.timestart && apdInterval.timestop > elem.timestart) {
+              if (apdInterval.timestop > elem.timestop) {
+                startWD = getWD(elem.timestart);
+                endWD = getWD(elem.timestop);
+                fullTimeApdReaming += elem.timework;
+              }
+              else {
+                startWD = getWD(elem.timestart);
+                endWD = getWD(apdInterval.timestop);
+                fullTimeApdReaming += apdInterval.timestop - elem.timestart;
+              }
+            }
+            if (apdInterval.timestart > elem.timestart && apdInterval.timestart < elem.timestop && apdInterval.timestop > elem.timestart) {
+              if (apdInterval.timestop > elem.timestop) {
+                startWD = getWD(apdInterval.timestart);
+                endWD = getWD(elem.timestop);
+                fullTimeApdReaming += elem.timestop - apdInterval.timestart;
+                
+              }
+              else {
+                startWD = getWD(apdInterval.timestart);
+                endWD = getWD(apdInterval.timestop);
+                fullTimeApdReaming += apdInerval.timestop - apdInterval.timestart;
+              }
+            }
+
+            if (startWD != null && endWD && endWD > startWD) {
+              fullAPDReamingPenetration += (endWD - startWD);
+            }
+          });
+          	
           rotorWorkArr.forEach(function(elem) {
           // eh
             var startWD = null
@@ -1030,12 +1164,48 @@
               else {
                 startWD = getWD(apdInterval.timestart);
                 endWD = getWD(apdInterval.timestop);
-                fullTimeApdRotor += apdInterval.timestop - apdInterval.timestart;
+                fullTimeApdRotor += apdInerval.timestop - apdInterval.timestart;
               }
             }
 
-            if (startWD != null && endWD && endWD.value > startWD.value) {
-              fullAPDRotorPenetration += (endWD.value - startWD.value);
+            if (startWD != null && endWD && endWD > startWD) {
+              fullAPDRotorPenetration += (endWD - startWD);
+            }
+          });
+          
+          slideWorkArr.forEach(function(elem) {
+          // eh
+            var startWD = null
+            var endWD = null
+
+            if (apdInterval.timestart < elem.timestart && apdInterval.timestop > elem.timestart) {
+              if (apdInterval.timestop > elem.timestop) {
+                startWD = getWD(elem.timestart);
+                endWD = getWD(elem.timestop);
+                fullTimeApdSlide += elem.timework;
+              }
+              else {
+                startWD = getWD(elem.timestart);
+                endWD = getWD(apdInterval.timestop);
+                fullTimeApdSlide += apdInterval.timestop - elem.timestart;
+              }
+            }
+            if (apdInterval.timestart > elem.timestart && apdInterval.timestart < elem.timestop && apdInterval.timestop > elem.timestart) {
+              if (apdInterval.timestop > elem.timestop) {
+                startWD = getWD(apdInterval.timestart);
+                endWD = getWD(elem.timestop);
+                fullTimeApdSlide += elem.timestop - apdInterval.timestart;
+                
+              }
+              else {
+                startWD = getWD(apdInterval.timestart);
+                endWD = getWD(apdInterval.timestop);
+                fullTimeApdSlide += apdInerval.timestop - apdInterval.timestart;
+              }
+            }
+
+            if (startWD != null && endWD && endWD > startWD) {
+              fullAPDSlidePenetration += (endWD - startWD);
             }
           });
 
@@ -1072,11 +1242,15 @@
       catch(err) {
         console.log("slide/rotor failure: ", (err && err.message) || err)
       }
+/*     
       // can't really differentiate slide drilling with apd so came up with this
       var notRotorTime = validTimeApdDrilling - fullTimeApdRotor;
       var notRotorPenetration = fullApdPenetration - fullAPDRotorPenetration;
       fullAPDSlidePenetration = notRotorPenetration > 0 ? notRotorPenetration : 0;
       fullTimeApdSlide = notRotorTime;
+*/
+// Stop NIKITA ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
       try {
   // Prepare strings to write	
       console.log("Time: "+Math.floor((to-from)/1000));
@@ -1102,6 +1276,7 @@
       
       console.log("fullTimeApdRotor: "+fullTimeApdRotor);
       console.log("fullTimeApdSlide: "+fullTimeApdSlide);
+      console.log("fullTimeApdReaming: "+fullTimeApdReaming);
       console.log("fullTimeApd: "+fullTimeApd);	
       console.log("fullTimeApdDrilling: "+fullTimeApdDrilling);
       console.log("fullTimeApdModeLoad: "+fullTimeApdModeLoad);
@@ -1230,6 +1405,7 @@
       var strAPDTimeModeOscillations = call("Sec2Date", {sec:Math.floor(fullTimeAPDOScillations/1000)});
       var strAPDRotorTimeFull = call("Sec2Date", {sec:Math.floor(fullTimeApdRotor/1000)});
       var strAPDSlideTimeFull = call("Sec2Date", {sec:Math.floor(fullTimeApdSlide/1000)});
+      var strAPDReamingTimeFull = call("Sec2Date", {sec:Math.floor(fullTimeApdReaming/1000)});
       var strAPDSlidePenetrationFull = Math.floor(fullAPDSlidePenetration * 100) / 100;
       var strAPDRotorPenetrationFull = Math.floor(fullAPDRotorPenetration * 100) / 100;
       var strAPDTimeFull = call("Sec2Date",{sec:Math.floor(fullTimeApd/1000)});
@@ -1242,15 +1418,16 @@
       var strAPDPenetrationFull = fullPenetration;
       var strAPDPenetration = Math.round(fullApdPenetration*100)/100;
            
-      var strNamingFull = "АПД итого:;Общее время(ч:м:с);Время АПД(ч:м:с);Время режима бурения АПД(ч:м:с);Время бурения АПД(ч:м:с);Время Слайд(ч:м:с);Время Ротор(ч:м:с);Время Осцилляций(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м);Проходка слайдом(м);Проходка ротором(м);";		
+      var strNamingFull = "АПД итого:;Общее время(ч:м:с);Время АПД(ч:м:с);Время режима бурения АПД(ч:м:с);Время бурения АПД(ч:м:с);Время Слайд(ч:м:с);Время Ротор(ч:м:с);Время Проработки(ч:м:с);Время Осцилляций(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м);Проходка слайдом(м);Проходка ротором(м);";		
       ofs.writeLine(strNamingFull);
 
-      objJSON.APD.APDTitle = "АПД итого:;Время АПД(ч:м:с);Время режима бурения АПД(ч:м:с);Время бурения АПД(ч:м:с);Время Слайд(ч:м:с);Время Ротор(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м);Проходка слайдом(м);Проходка ротором(м);";
+      objJSON.APD.APDTitle = "АПД итого:;Время АПД(ч:м:с);Время режима бурения АПД(ч:м:с);Время бурения АПД(ч:м:с);Время Слайд(ч:м:с);Время Ротор(ч:м:с);Время Проработки(ч:м:с);Время Осцилляций(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м);Проходка слайдом(м);Проходка ротором(м);";
       objJSON.APD.APDTimeFull = strAPDTimeFull;
       objJSON.APD.APDTimeDrilling = strAPDTimeDrilling;
       objJSON.APD.APDTimeValidDrilling = strAPDTimeValidDrilling;
-      objJSON.APD.APDTimeDrillingSlide = fullTimeApdSlide;
+      objJSON.APD.APDTimeDrillingSlide = fullTimeApdSlide;      
       objJSON.APD.APDTimeDrillingRotor = fullTimeApdRotor;
+      objJSON.APD.APDTimeDrillingReaming = fullTimeApdReaming;
       objJSON.APD.APDTimeModeOscillations = fullTimeAPDOScillations;
       objJSON.APD.APDTimeDescent = strAPDTimeDescent;
       objJSON.APD.APDTimeRise = strAPDTimeRise;		
@@ -1270,6 +1447,7 @@
                 +strAPDTimeValidDrilling+" ("+calcPrct(fullTimeApdDrilling, validTimeApdDrilling)+"%);"
                 +strAPDSlideTimeFull+" ("+calcPrct(validTimeApdDrilling, fullTimeApdSlide)+"%);"
                 +strAPDRotorTimeFull+" ("+calcPrct(validTimeApdDrilling, fullTimeApdRotor)+"%);"
+                +strAPDReamingTimeFull+" ("+calcPrct(validTimeApdDrilling, fullTimeApdReaming)+"%);"
                 +strAPDTimeModeOscillations+" ("+calcPrct(fullTimeApd, fullTimeAPDOScillations)+"%);"
                 +strAPDTimeDescent+" ("+calcPrct(fullTimeApd, fullTimeApdDescent)+"%);"
                 +strAPDTimeRise+" ("+calcPrct(fullTimeApd, fullTimeApdRise)+"%);"
