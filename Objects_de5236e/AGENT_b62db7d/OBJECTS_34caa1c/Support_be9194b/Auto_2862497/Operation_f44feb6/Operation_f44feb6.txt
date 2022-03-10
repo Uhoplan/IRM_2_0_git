@@ -1,1 +1,1 @@
-{"npt":"ПВ","group":"СПО СПУСК","oper":"СПО","suboper":"медленный спуск с вращением","opertime":0,"operclr":"#B58F76","suboperclr":"#CF8F8F","timestartgroup":1646909695024}
+{"npt":"ПВ","group":"НЕОПРЕДЕЛЕННЫЙ","oper":"Неопределенный","suboper":"","opertime":0,"operclr":"#A8A890","suboperclr":"#A8A890","timestartgroup":1646911915030}

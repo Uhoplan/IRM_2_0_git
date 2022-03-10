@@ -78,7 +78,7 @@
   <atv:argument name="Visability" value="false"/>
   <atv:argument name="VisabilitySmall" value="false"/>
   <atv:argument name="BigBN1" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1"/>
-  <atv:argument name="SmallBN1" value="AGENT.OBJECTS.IVE50.Mud.Pump.FlowPump1"/>
+  <atv:argument name="SmallBN1" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
   <atv:argument name="MaxBig" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxSrokePump1"/>
   <atv:argument name="MaxSmall" value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowPump1"/>
   <atv:argument name="MaxBar " value="AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowPump1"/>
