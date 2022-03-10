@@ -1,1 +1,1 @@
-{"npt":"ПВ","subitem":"БУРЕНИЕ","oper":"Постановка","suboper":"на клинья","opertime":0,"operclr":"#663333","suboperclr":"#FFC4C4"}
+{"npt":"ПВ","group":"СПО СПУСК","oper":"СПО","suboper":"медленный спуск с вращением","opertime":0,"operclr":"#B58F76","suboperclr":"#CF8F8F","timestartgroup":1646909695024}

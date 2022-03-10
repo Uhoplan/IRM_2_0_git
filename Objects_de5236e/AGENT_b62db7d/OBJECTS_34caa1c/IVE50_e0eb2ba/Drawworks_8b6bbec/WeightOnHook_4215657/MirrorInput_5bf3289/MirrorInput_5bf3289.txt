@@ -1,1 +1,1 @@
-arOPC/ModbusIVE50.IVE50.Drawworks.WeightOnHook
+s1500/ns=3;s="Averaging_DB_Drawworks_HoockBlock_Weight"."Value"

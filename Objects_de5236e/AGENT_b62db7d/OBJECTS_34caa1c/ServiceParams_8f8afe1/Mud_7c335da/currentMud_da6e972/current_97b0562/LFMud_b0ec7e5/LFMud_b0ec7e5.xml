@@ -3,15 +3,19 @@
   <metadata>
     <priority>0</priority>
   </metadata>
-  <parameter name="directFact" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Direct.fact"/>
-  <parameter name="kondFact" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Kond.fact"/>
-  <parameter name="techColFact" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.TechCol.fact"/>
-  <parameter name="tailFact" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Tail.fact"/>
-  <parameter name="exColFact" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.ExCol.fact"/>
+  <parameter name="directFact" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Direct.fact"/>
+  <parameter name="kondFact" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Kond.fact"/>
+  <parameter name="techColFact" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.TechCol.fact"/>
+  <parameter name="tailFact" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.Tail.fact"/>
+  <parameter name="exColFact" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.ExCol.fact"/>
   <parameter name="startDate" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Depth_day_data.start_date"/>
+  <parameter name="density1" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.currentMud.density"/>
+  <parameter name="viscosity2" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.currentMud.viscosity"/>
+  <parameter name="waterLoss3" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.currentMud.waterLoss"/>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:00:30"/>
   <code><![CDATA[var facts = [directFact, kondFact, techColFact, exColFact, tailFact]
 
-console.log("trigger")
+//console.log("trigger")
 try {
 	var density = new UaNode("AGENT.OBJECTS.ServiceParams.Mud.currentMud.density")
 	var viscosity = new UaNode("AGENT.OBJECTS.ServiceParams.Mud.currentMud.viscosity")
@@ -19,16 +23,18 @@ try {
 	
 	function findLast(facts) {
 		var last
-		var len = facts.reverse().length
-			
+		var len = facts.reverse().length	
 		for (var i = 0; i < len; i++) {
-			var rows = JSON.parse(facts[i].value).rows
-			console.log("rows: ", rows);
-			if (rows && rows.length > 0 && facts[i].servertime > startDate) {
-				last = rows[rows.length - 1]
-				console.log(last)
-				break
+			if (facts[i].value.length > 0) {
+				var rows = JSON.parse(facts[i].value).rows
+				//console.log("rows: ", rows);
+				if (rows && rows.length > 0 && facts[i].servertime > startDate) {
+					last = rows[rows.length - 1]
+					//console.log(last)
+					break
+				}
 			}
+			
 		}	
 		return last || 0
 	}
@@ -36,11 +42,11 @@ try {
 	
 	function fillParams(facts) {
 		var row = findLast(facts)
-		console.log(row)
+		//console.log(row)
 		if (row) {
 		// gomennasorry
 			Object.entries(row).map(function(val) {
-				console.log(val)
+				//console.log(val)
 				if (val[0].includes("Плотность")) {
 					//console.log("true1")
 					density.assign({ value: val[1].replace(",", ".") || "0" })
@@ -60,9 +66,8 @@ try {
 	fillParams(facts)
 }
 catch(err) {
-	console.log(err.message || err)
+	console.log("LFMud: ",err.message || err)
 }
-
 
 
 // waterLoss

@@ -3,7 +3,7 @@
   <metadata>
     <priority>0</priority>
   </metadata>
-  <parameter name="timerActv" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.timer.active"/>
+  <parameter name="timerActv" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.timer.active"/>
   <code><![CDATA[var timeInterval = 1.0;
 
 

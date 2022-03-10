@@ -1,1 +1,1 @@
-{"npt":"ПВ","group":"ПРОМЫВКА","oper":"ПРОМЫВКА","suboper":"в статике","opertime":0,"operclr":"#1583DC","suboperclr":"#389CFF","timestartgroup":1642146345027}
+{"npt":"ПВ","group":"СПО СПУСК","oper":"СПО","suboper":"медленный спуск с вращением","opertime":0,"operclr":"#B58F76","suboperclr":"#CF8F8F","timestartgroup":1646909700043}
