@@ -1,7 +1,0 @@
-NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Core/Animation
-NodeClass: Object
-BrowseName: 1:Animation
-DisplayName: en|Animation
-Description: en|Animation
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

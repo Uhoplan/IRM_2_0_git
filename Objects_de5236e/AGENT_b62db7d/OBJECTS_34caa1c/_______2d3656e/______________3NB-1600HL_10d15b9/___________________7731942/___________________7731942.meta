@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть
-NodeClass: Object
-BrowseName: 1:Динамическая часть
-DisplayName: en|Динамическая часть
-Description: en|Динамическая часть
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

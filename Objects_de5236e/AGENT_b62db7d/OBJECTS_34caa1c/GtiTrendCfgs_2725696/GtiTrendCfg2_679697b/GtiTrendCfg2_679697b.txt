@@ -1,1 +1,0 @@
-{"highchartsConfigIndex":["sec","min"]}

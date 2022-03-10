@@ -1,1 +1,0 @@
-s1500/ns=3;s="APD1"."Speed"."Drill"."Warning_Zone"

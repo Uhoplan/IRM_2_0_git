@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Slide.Offset
-NodeClass: Object
-BrowseName: 1:Offset
-DisplayName: en|Offset
-Description: en|Offset
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

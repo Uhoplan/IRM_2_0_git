@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Platforma
-NodeClass: Object
-BrowseName: 1:Platforma
-DisplayName: en|Platforma
-Description: en|Platforma
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

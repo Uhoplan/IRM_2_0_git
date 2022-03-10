@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Tool.Drillstem.Angle
-NodeClass: Object
-BrowseName: 1:Angle
-DisplayName: en|Angle
-Description: en|Angle
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

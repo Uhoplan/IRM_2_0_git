@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin
-NodeClass: Object
-BrowseName: 1:PerMaxMin
-DisplayName: en|PerMaxMin
-Description: en|PerMaxMin
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

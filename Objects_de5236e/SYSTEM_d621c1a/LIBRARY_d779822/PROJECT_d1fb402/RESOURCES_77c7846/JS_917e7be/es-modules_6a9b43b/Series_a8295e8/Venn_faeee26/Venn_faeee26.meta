@@ -1,7 +1,0 @@
-NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Venn
-NodeClass: Object
-BrowseName: 1:Venn
-DisplayName: en|Venn
-Description: en|Venn
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

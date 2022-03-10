@@ -1,1 +1,0 @@
-{"npt":"ПВ","group":"КЛИНЬЯ","oper":"Снятие","suboper":"с клиньев","opertime":0,"operclr":"#663300","suboperclr":"#996E43","timestartgroup":1646913895023,"timestart":"2022-03-10T12:05:00.076Z","servertime":"2022-03-10T12:05:00.076Z","sourcetime":"2022-03-10T12:05:00.076Z","timework":4956,"timestop":1646913905032,"timeworkgroup":10009}

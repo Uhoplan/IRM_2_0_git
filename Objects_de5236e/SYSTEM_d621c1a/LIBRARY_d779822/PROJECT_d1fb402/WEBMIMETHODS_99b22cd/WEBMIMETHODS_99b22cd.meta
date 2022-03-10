@@ -1,7 +1,0 @@
-NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.WEBMIMETHODS
-NodeClass: Object
-BrowseName: 1:WEBMIMETHODS
-DisplayName: en|WEBMIMETHODS
-Description: en|WEBMIMETHODS
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

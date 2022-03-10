@@ -1,1 +1,0 @@
-{"highchartsConfigIndex":["second","minute",null,null,null,null,null,null,null,null,null,null,null,null,null]}

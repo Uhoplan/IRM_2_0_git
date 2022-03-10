@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Зубчатый вал в сборе
-NodeClass: Object
-BrowseName: 1:Зубчатый вал в сборе
-DisplayName: en|Зубчатый вал в сборе
-Description: en|Зубчатый вал в сборе
-EventNotifier: 0
-Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.Зубчатый вал в сборе

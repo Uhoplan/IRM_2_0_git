@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.DISPLAYS.AutIinformer
-NodeClass: Object
-BrowseName: 1:AutIinformer
-DisplayName: en|AutIinformer
-Description: en|AutIinformer
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

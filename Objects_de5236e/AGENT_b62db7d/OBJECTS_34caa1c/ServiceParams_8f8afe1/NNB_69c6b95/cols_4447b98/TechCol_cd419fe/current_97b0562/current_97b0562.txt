@@ -1,1 +1,0 @@
-{"rows":[{"Дата":"","Bit":"","UBT":"","TBPK":"7","load":"","flowInput":"","maxLoad":"","diffPressure":"","minVmex":""}]}

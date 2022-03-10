@@ -1,9 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Коленчатый вал в сборе.Большое зубчатое кольцо
-NodeClass: Variable
-BrowseName: 1:Большое зубчатое кольцо
-DisplayName: en|Большое зубчатое кольцо
-Description: en|Большое зубчатое кольцо
-DataType: XmlElement
-ValueRank: -1
-AccessLevel: 7
-Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

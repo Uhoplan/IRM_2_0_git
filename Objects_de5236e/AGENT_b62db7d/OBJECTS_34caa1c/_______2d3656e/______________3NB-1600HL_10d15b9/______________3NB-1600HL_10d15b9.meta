@@ -1,7 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL
-NodeClass: Object
-BrowseName: 1:Буровой насос 3NB-1600HL
-DisplayName: en|Буровой насос 3NB-1600HL
-Description: en|Буровой насос 3NB-1600HL
-EventNotifier: 0
-Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.Буровой насос 3NB-1600HL

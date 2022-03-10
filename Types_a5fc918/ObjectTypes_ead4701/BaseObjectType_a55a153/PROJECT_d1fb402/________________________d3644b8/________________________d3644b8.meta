@@ -1,6 +1,0 @@
-NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Всасывающий трубопровод
-NodeClass: ObjectType
-BrowseName: 1:Всасывающий трубопровод
-DisplayName: en|Всасывающий трубопровод
-Description: en|Всасывающий трубопровод
-IsAbstract: false

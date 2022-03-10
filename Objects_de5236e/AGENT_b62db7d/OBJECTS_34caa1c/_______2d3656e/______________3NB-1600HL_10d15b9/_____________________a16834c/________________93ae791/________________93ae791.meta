@@ -1,9 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Гидравлическая часть.Поршень в сборе
-NodeClass: Variable
-BrowseName: 1:Поршень в сборе
-DisplayName: en|Поршень в сборе
-Description: en|Поршень в сборе
-DataType: XmlElement
-ValueRank: -1
-AccessLevel: 7
-Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

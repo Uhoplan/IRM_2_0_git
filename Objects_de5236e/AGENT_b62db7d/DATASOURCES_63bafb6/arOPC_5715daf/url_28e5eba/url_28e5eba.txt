@@ -1,1 +1,0 @@
-opcda://localhost/arOPC.arOpcServer.1

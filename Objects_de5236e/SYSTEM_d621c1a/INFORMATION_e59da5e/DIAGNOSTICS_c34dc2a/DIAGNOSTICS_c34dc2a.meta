@@ -1,7 +1,0 @@
-NodeId: ns=1;s=SYSTEM.INFORMATION.DIAGNOSTICS
-NodeClass: Object
-BrowseName: 1:DIAGNOSTICS
-DisplayName: en|DIAGNOSTICS
-Description: en|DIAGNOSTICS
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType

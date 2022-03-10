@@ -1,9 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Гидравлическая часть.Системы для разбрызгивания
-NodeClass: Variable
-BrowseName: 1:Системы для разбрызгивания
-DisplayName: en|Системы для разбрызгивания
-Description: en|Системы для разбрызгивания
-DataType: XmlElement
-ValueRank: -1
-AccessLevel: 7
-Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

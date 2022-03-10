@@ -1,9 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.WeightOnHookMax
-NodeClass: Variable
-BrowseName: 1:WeightOnHookMax
-DisplayName: en|WeightOnHookMax
-Description: en|WeightOnHookMax
-DataType: Float
-ValueRank: -1
-AccessLevel: 7
-Reference: forward HasTypeDefinition BaseVariableType

@@ -1,7 +1,0 @@
-NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Auto
-NodeClass: Object
-BrowseName: 1:Auto
-DisplayName: en|Auto
-Description: en|Auto
-EventNotifier: 0
-Reference: forward HasTypeDefinition FolderType
