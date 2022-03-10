@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Насосы.Буровой насос 3NB-1600HL.Динамическая часть.Коленчатый вал в сборе.Коленчатый вал (чертеж)
+NodeClass: Variable
+BrowseName: 1:Коленчатый вал (чертеж)
+DisplayName: en|Коленчатый вал (чертеж)
+Description: en|Коленчатый вал (чертеж)
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

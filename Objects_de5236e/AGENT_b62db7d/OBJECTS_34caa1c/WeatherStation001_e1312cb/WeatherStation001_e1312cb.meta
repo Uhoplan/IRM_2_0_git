@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WeatherStation001
+NodeClass: Object
+BrowseName: 1:WeatherStation001
+DisplayName: en|WeatherStation001
+Description: en|WeatherStation001
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.WeatherStationType
+Reference: forward HasComponent ns=1;s=ObjectTypes.PROJECT.WeatherStationType.Overview
