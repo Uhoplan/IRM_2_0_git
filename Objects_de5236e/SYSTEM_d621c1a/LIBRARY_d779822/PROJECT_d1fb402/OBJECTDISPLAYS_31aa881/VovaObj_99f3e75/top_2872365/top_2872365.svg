@@ -55,13 +55,11 @@ webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPla
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_32", "nodeId":"AGENT.OBJECTS.Rig.General.BushName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_35", "nodeId":"AGENT.OBJECTS.Rig.General.RigName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_34", "nodeId":"AGENT.OBJECTS.Rig.Brigade.BrigadeName"});]]></script>
- <g atv:refpx="1566.03" atv:refpy="30.5" id="id_13">
-  <text atv:refpx="1414.3" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_25" x="1391.8" y="24.5">ДАТА:</text>
-  <text atv:refpx="1567.99" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_26" x="1536.49" y="24.5">ВРЕМЯ:</text>
-  <text atv:refpx="1457.59" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="curent_date" x="1449.09" y="24.5">00</text>
-  <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
-  <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
-  <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
-  <text atv:refpx="1452.729" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Новый Уренгой</text>
- </g>
+ <text atv:refpx="1414.3" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_25" x="1391.8" y="24.5">ДАТА:</text>
+ <text atv:refpx="1567.99" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_26" x="1536.49" y="24.5">ВРЕМЯ:</text>
+ <text atv:refpx="1457.59" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="curent_date" x="1449.09" y="24.5">00</text>
+ <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
+ <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
+ <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
+ <text atv:refpx="1457.767" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Ханты-Мансийск</text>
 </svg>

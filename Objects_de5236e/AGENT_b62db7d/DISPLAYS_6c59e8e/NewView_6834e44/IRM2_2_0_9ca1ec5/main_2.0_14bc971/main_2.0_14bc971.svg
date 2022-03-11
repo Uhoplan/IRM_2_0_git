@@ -114,7 +114,7 @@
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel5"/>
   <atv:argument name="MaxVolume" value="40"/>
  </svg>
- <svg atv:refpx="1186.877" atv:refpy="175.214" height="414.05" id="id_66" transform="matrix(0.8453,0,0,0.8453,0,0)" width="382.62" x="1224.594" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.VSPRight" y="-4.481">
+ <svg atv:refpx="1186.877" atv:refpy="179.002" height="414.05" id="id_66" transform="matrix(0.8453,0,0,0.8453,0,0)" width="382.62" x="1224.594" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.VSPRight" y="0">
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
   <atv:argument name="Max" value="AGENT.OBJECTS.Test.PerMaxMin.VSP.MaxTDSSpeed"/>
   <atv:argument name="MaxBar" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed.High"/>
@@ -130,7 +130,7 @@
   <atv:argument name="MaxMomentMash2" value="AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque2.High"/>
   <atv:argument name="MaxMomentGidr" value="AGENT.OBJECTS.IVE50.Tool.HydrokeyTorque.High"/>
  </svg>
- <svg atv:refpx="774.859" atv:refpy="175.003" height="414.43" id="id_68" transform="matrix(0.8445,0,0,0.8445,0,0)" width="378.62" x="728.184" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.WinchLeft" y="-4.737">
+ <svg atv:refpx="774.859" atv:refpy="179.003" height="414.43" id="id_68" transform="matrix(0.8445,0,0,0.8445,0,0)" width="378.62" x="728.184" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.WinchLeft" y="0">
   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed"/>
   <atv:argument name="Max" value="AGENT.OBJECTS.Test.PerMaxMin.MaxDrillSpeed"/>
   <atv:argument name="MaxRestriction" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed.high"/>
@@ -169,7 +169,6 @@
   <atv:argument name="wellDepth" value="AGENT.OBJECTS.Test.FaykeNodes.wellDepth"/>
  </svg>
  <svg atv:refpx="419.851" atv:refpy="421.963" height="240" id="id_4" width="90" x="394.851" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.gif.processVisualization" y="296.963"/>
- <rect atv:refpx="1644.502" atv:refpy="866.347" fill="#1f1f1f" height="222.521" id="id_7" stroke="#0000ff" stroke-width="0" width="293.579" x="1515.712" y="746.087"/>
  <foreignObject height="56.743" id="id_36" width="160.957" x="350" y="760">
   <div style="text-align: center;width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0.6">ЦСГО</p>
@@ -180,13 +179,13 @@
    <p style="text-align: center;">Рабочие ёмкости</p>
   </div>
  </foreignObject>
- <foreignObject height="56.743" id="id_39" width="174.679" x="503" y="760">
+ <foreignObject height="56.743" id="id_39" width="174.679" x="523" y="760">
   <div style="text-align: center;width:100%;height:100%; color:white; font-family:Arial;font-size:0.9rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0.6">Доливная ёмкость</p>
   </div>
  </foreignObject>
  <foreignObject height="47.64" id="id_42" width="260.049" x="875.346" y="715.813">
-  <div id="hood" style="width:100%;height:100%;color:white;font-size:1.7rem;font-weight:bold" xmlns="http://www.w3.org/1999/xhtml">
+  <div id="hood" style="width:100%;height:100%;color:white;font-size:1.5rem;font-weight:bold" xmlns="http://www.w3.org/1999/xhtml">
 БЛОК ЕМКОСТЕЙ
 </div>
  </foreignObject>
@@ -203,7 +202,7 @@
   </div>
  </foreignObject>
  <foreignObject height="92.55" id="id_53" width="291.378" x="1517.421" y="715.018">
-  <div id="leftDown" style="width:100%;height:100%;color:white;font-size:1.7rem;font-weight:bold;line-height: 0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+  <div id="leftDown" style="width:100%;height:100%;color:white;font-size:1.5rem;font-weight:bold;line-height: 0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
    <p style="margin:0;">ПАРАМЕТРЫ</p>
    <br/>
    <p style="margin:0;">РАСТВОРА</p>
