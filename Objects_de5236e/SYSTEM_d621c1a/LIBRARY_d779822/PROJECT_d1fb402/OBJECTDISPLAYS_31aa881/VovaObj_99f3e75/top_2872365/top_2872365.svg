@@ -15,30 +15,24 @@
  </metadata>
  <rect atv:refpx="928.495" atv:refpy="30.001" fill="#1f1f1f" height="60" id="id_3" stroke="none" stroke-width="0" width="1853" x="2" y="0"/>
  <line atv:refpx="927" atv:refpy="61.5" id="id_4" stroke="#3a3a3a" stroke-width="4" x1="2" x2="1855" y1="61" y2="61"/>
- <text atv:refpx="124.697" atv:refpy="20" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_18" x="71.388" y="24.5">ЗАКАЗЧИК:</text>
- <text atv:refpx="269.5" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_19" x="212.5" y="24.5">ПОДРЯДЧИК:</text>
- <text atv:refpx="456" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_20" x="369.5" y="24.5">МЕСТОРОЖДЕНИЕ:</text>
- <text atv:refpx="677.517" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_21" x="654.517" y="24.5">КУСТ:</text>
- <text atv:refpx="797.676" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_22" x="749.176" y="24.5">СКВАЖИНА:</text>
- <text atv:refpx="1005.384" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_23" x="964.884" y="24.5">БРИГАДА:</text>
  <text atv:refpx="1174.275" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_24" x="1132.775" y="24.5">БУРОВАЯ:</text>
- <text atv:refpx="1414.3" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_25" x="1391.8" y="24.5">ДАТА:</text>
- <text atv:refpx="1567.99" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_26" x="1536.49" y="24.5">ВРЕМЯ:</text>
+ <text atv:refpx="1146.108" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_35" x="1132.275" y="47.5">RIG</text>
+ <text atv:refpx="1011.044" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_23" x="970.544" y="24.5">БРИГАДА:</text>
+ <text atv:refpx="1015.544" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_34" x="970.044" y="47.5">$BRIGADE$</text>
+ <text atv:refpx="840.813" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_22" x="792.313" y="24.5">СКВАЖИНА:</text>
+ <text atv:refpx="837.313" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_33" x="791.813" y="47.5">BOREHOLE</text>
+ <text atv:refpx="688.082" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_21" x="665.082" y="24.5">КУСТ:</text>
+ <text atv:refpx="687.582" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_32" x="664.582" y="47.5">BUSH</text>
+ <text atv:refpx="514.35" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_20" x="427.85" y="24.5">МЕСТОРОЖДЕНИЕ:</text>
+ <text atv:refpx="430.097" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_31" x="427.35" y="47.5">FIELD</text>
+ <text atv:refpx="297.619" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_19" x="240.619" y="24.5">ПОДРЯДЧИК:</text>
+ <text atv:refpx="306.619" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_30" x="240.119" y="47.5">$CONTRACTOR$</text>
+ <text atv:refpx="123.538" atv:refpy="20" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_18" x="70.229" y="24.5">ЗАКАЗЧИК:</text>
+ <text atv:refpx="128.017" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_29" x="70.729" y="47.5">$CUSTOMER$</text>
  <rect atv:refpx="1584.861" atv:refpy="-181.024" fill="#000000" height="173.783" id="id_2" stroke="#0000ff" stroke-width="0" width="280.587" x="1444.568" y="-267.915"/>
  <text atv:refpx="1501.316" atv:refpy="-201.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_27" x="1469.816" y="-196.349">ВРЕМЯ:</text>
  <text atv:refpx="1508.996" atv:refpy="-178.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_28" x="1469.996" y="-173.349">(МОСКВА)</text>
- <text atv:refpx="128.017" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_29" x="70.729" y="47.5">$CUSTOMER$</text>
- <text atv:refpx="281.5" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_30" x="215" y="47.5">$CONTRACTOR$</text>
- <text atv:refpx="372.205" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_31" x="369.458" y="47.5">FIELD</text>
- <text atv:refpx="677.5" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_32" x="654.5" y="47.5">BUSH</text>
- <text atv:refpx="797" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_33" x="751.5" y="47.5">BOREHOLE</text>
- <text atv:refpx="1013" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_34" x="967.5" y="47.5">$BRIGADE$</text>
- <text atv:refpx="1148.333" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_35" x="1134.5" y="47.5">RIG</text>
- <text atv:refpx="1457.59" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="curent_date" x="1449.09" y="24.5">00</text>
- <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
  <text atv:refpx="1550.366" atv:refpy="-201.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="time_moscow" x="1541.366" y="-196.349">00</text>
- <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
- <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
  <script type="text/ecmascript"><![CDATA[
 var timezone = 'Europe/Moscow';
 function clock(){
@@ -61,5 +55,13 @@ webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPla
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_32", "nodeId":"AGENT.OBJECTS.Rig.General.BushName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_35", "nodeId":"AGENT.OBJECTS.Rig.General.RigName"});
 webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_34", "nodeId":"AGENT.OBJECTS.Rig.Brigade.BrigadeName"});]]></script>
- <text atv:refpx="1452.729" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Новый Уренгой</text>
+ <g atv:refpx="1566.03" atv:refpy="30.5" id="id_13">
+  <text atv:refpx="1414.3" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_25" x="1391.8" y="24.5">ДАТА:</text>
+  <text atv:refpx="1567.99" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_26" x="1536.49" y="24.5">ВРЕМЯ:</text>
+  <text atv:refpx="1457.59" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="curent_date" x="1449.09" y="24.5">00</text>
+  <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
+  <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
+  <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
+  <text atv:refpx="1452.729" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Новый Уренгой</text>
+ </g>
 </svg>
