@@ -387,6 +387,6 @@
  <svg atv:refpx="1322.479" atv:refpy="798.751" height="71" id="id_34" transform="matrix(0.6966,0,0,0.6908,0,0)" width="201" x="1866.165" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Barrel" y="1159.525">
   <atv:argument name="Number" value="8"/>
   <atv:argument name="VOLUME" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel8"/>
-  <atv:argument name="MaxVolume" value="40"/>
+  <atv:argument name="MaxVolume" value="200"/>
  </svg>
 </svg>

@@ -1,1 +1,1 @@
-{"npt":"ПВ","group":"ОСТАНОВКА","oper":"Остановка","suboper":"без циркуляции с вращением","opertime":0,"operclr":"#37BABF","suboperclr":"#A6FFAC"}
+{"npt":"ПВ","group":"ОСТАНОВКА","oper":"Остановка","suboper":"без циркуляции с вращением","opertime":0,"operclr":"#37BABF","suboperclr":"#A6FFAC","timestartgroup":1646985335020}
